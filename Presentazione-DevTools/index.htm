@@ -1,0 +1,405 @@
+<!DOCTYPE HTML>
+<html lang="it-IT" class="fade nonumbers">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Smontiamo il Web con i Tool di Firefox!</title>
+		<meta name="viewport" content="width=device-width, user-scalable=yes">
+		<link rel="stylesheet" href="themes/mozilla/styles/style.css">
+		<link rel="stylesheet" href="themes/mozilla/styles/print.css" type="text/css" media="print" />
+	</head>
+	<body class="list">
+		<header class="caption">
+			<h1>Smontiamo il Web con i Tool di Firefox!</h1><h3>Ovvero conoscere gli strumenti e come usarli al meglio</h3>
+			<p class="footer">
+				Daniele Scasciafratte, 
+				<a href="http://twitter.com/">@Mte90Net</a>, 
+				<a href="https://plus.google.com/u/0/112897312156913513724">+Daniele Scasciafratte</a>,
+				<a href="http://mte90.net">Mte90.Net</a>
+			</p>
+		</header>
+		<aside class="talkdescription">
+			<p><button onclick="goFullScreen()">Click me stupid human!</button></p>
+			<p class="abstract">
+				Scopri quali tool offre Firefox, come usarli e come semplificano la vita!
+			</p>
+		</aside>
+
+		<div id="cover" class="slide"><div>
+			<section>
+					<header>
+						<h2>Tool di sviluppo</h2>
+					</header>
+					<img src="pictures/intro.png" 
+						 class="middle shadow" height="400"
+						 alt="">
+					<small class="byline">
+						Daniele Scasciafratte, CodeMotion Webinar
+					</small>
+				</section>
+        </div></div>
+
+		<div id="aboutme" class="slide"><div>
+				<section>
+					<header>
+						<h2>It's me, Mario ehm Daniele!</h2>
+					</header>
+					<img src="pictures/me.jpg" class="right" alt="Me">
+					<ul>
+						<li>Co-Founder Codeat</li>
+						<li>Fanatico Open Source</li>
+						<li>Sviluppatore</li>
+						<li>Geek</li>
+						<li>Debian user dal 2009</li>
+						<li>Wordpress Developer</li>
+						<li>Redattore per il network AndMore</li>
+						<li>Redattore per ChimeraRevo</li>
+						<li><b>Mozillian</b></li>
+					</ul> 
+				</section>
+			</div></div>
+			
+		<div id="usare" class="slide"><div>
+				<section>
+					<header>
+						<h2>Perchè usare i tool invece di un alert()?</h2>
+					</header>
+						<ul class="inner">
+							<li class="active">Perchè è pessimo</li>
+							<li>Il valore è in formato stringa</li>
+							<li>Non si può studiare il contenuto del parametro</li>
+							<li>Perchè in produzione non è bello</li>
+							<li>Perchè si faceva prima del Web 2.0</li>
+							<li>Usiamo console.log/warn/trace/ecc <a href="https://developer.mozilla.org/en-US/docs/Web/API/console">[documentazione]</a></li>
+							<li><b>Con i tool possiamo studiare/analizzare la pagina</b></li>
+						</ul>
+				</section>
+			</div></div>
+
+		<div id="firebug" class="slide"><div>
+				<section>
+					<header>
+						<h2>Firebug</h2>
+					</header>
+					<img src="pictures/firebug.png" class="middle" height="200" style="top:80%;left:80%;" alt="">
+					Permette di interagire con il DOM e la pagina stessa, eseguire e studiare codice JavaScript.<br>
+					Disponibile per Google Chrome e come snippet JavaScript.<br>
+					<b>Rallenta il browser e non è integrato nativamente (<a href="https://hacks.mozilla.org/2014/12/firebug-3-multiprocess-firefox-e10s/">ancora per poco</a>)</b><br><br>
+					<a href="https://getfirebug.com/wiki/index.php/Firebug_Extensions">Elenco estensioni per FireBug</a><br>
+					<small>Alcune estensioni:<br> FireStorage Plus!, FirePicker, FireQuery,<br> FireLess/FireSASS, PageSpeed o YSlow.<br><br></small>
+				</section>
+        </div></div>  
+        
+        <div id="firebugnext" class="slide"><div>
+                <section>
+                    <header>
+                        <h2>Firebug.Next (Firebug 3)</h2>
+                    </header>
+                    <img src="pictures/firebug3.png" class="middle" alt="">
+                    La nuova versione è integrata con i tool di Firefox.<br><br><br><br><br><br><br>
+                    Espande i tool nativi con le funzionalità di Firebug.<br>
+                    Supporto per le estensioni di Firebug? Può darsi<br>
+                    <a href="https://getfirebug.com/wiki/index.php/Firebug.next">Firebug.Next</a>
+                </section>
+        </div></div>  
+
+		<div id="tool" class="slide"><div>
+				<section>
+						<ul class="inner">
+							<li class="active">Come possiamo fare debug su Firefox for Android o Firefox OS?</li>
+							<li>Come possiamo vedere le pagine in 3D?</li>
+							<li>Come possiamo studiare un'animazione WebGL?</li>
+							<li>Come possiamo testare il responsive?</li>
+							<li>Come possiamo fare tutte queste cose in remoto?</li>
+							<li><b>Con i tool integrati!</b><br>
+							<img src="pictures/wooo.gif" class="" alt=""></li>
+						</ul>
+				</section>
+			</div></div>
+		
+		<div id="devedition" class="slide"><div>
+				<section>
+					<header>
+						<h2>Firefox Developer Edition</h2>
+					</header>
+					<img src="pictures/FirefoxBrowser-DevEdition.jpg" class="middle" alt="">
+				</section>
+		</div></div>
+
+		<div id="inspector" class="slide"><div>
+				<section>
+					<header>
+						<h2>Inspector</h2>
+					</header>
+					<img src="pictures/inspector.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					Ctrl + Shift + I oppure tasto destro "Analizza elemento"
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector">https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector</a>
+				</section>
+		</div></div>
+		
+		<div id="before" class="slide"><div>
+                <section>
+                    <header>
+                        <h2>Supporto per ::before e ::after</h2>
+                    </header>
+                    <img src="pictures/before-after-inspection.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br><br>
+                    Possiamo ispezionare <code>::before</code> e <code>::after</code>
+                </section>
+        </div></div>
+        
+        <div id="jquery" class="slide">
+            <div>
+                <section>
+                    <header>
+                        <h2>jQuery events</h2>
+                    </header>
+                    <img src="pictures/jQuery-events.png" class="middle" alt=""><br><br><br><br><br><br><br>
+                    Il popup dimostra il codice Javascript e non il wrapper generato da jQuery
+                </section>
+            </div>
+        </div>
+		
+		<div id="styles" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Editor di stile</h2>
+					</header>
+					<img src="pictures/style.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					Shift + F7<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Style_Editor">https://developer.mozilla.org/en-US/docs/Tools/Style_Editor</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="sourcemap" class="slide"><div>
+				<section>
+					<header>
+						<h2>Supporto alle SourceMaps</h2>
+					</header>
+					<img src="pictures/sourcemaps.gif" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					<a href="http://longhandpixels.net/blog/2014/02/live-editing-sass-firefox-vim-keybindings">Esempio di configurazione dell'ambiente</a>
+				</section>
+		</div></div>
+		
+        <div id="vim" class="slide">
+            <div>
+                <section>
+                    <header>
+                        <h2>Supporto a VIM/Emacs</h2>
+                    </header>
+                    <img src="pictures/vim.gif" style="width:500px" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+                    In <code>about:config</code> impostare <code>devtools.editor.keymap</code> come <code>vim</code> o <code>emacs</code> o <code>sublime text</code>
+                </section>
+            </div>
+        </div>
+
+		<div id="console" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Console</h2>
+					</header>
+					<img src="pictures/web-console-messages-highlighted.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					Ctrl + Shift + K<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console">https://developer.mozilla.org/en-US/docs/Tools/Web_Console</a>
+				</section>
+			</div>
+		</div>
+
+		<div id="debugger" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>JavaScript Debugger</h2>
+					</header>
+					<img src="pictures/debugger.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					Ctrl + Shift + S<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger">https://developer.mozilla.org/en-US/docs/Tools/Debugger</a>
+				</section>
+			</div>
+		</div>
+
+		<div id="network" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Monitor di rete</h2>
+					</header>
+					<img src="pictures/network.png" class="middle" alt=""><br><br><br><br><br><br><br><br>
+					Ctrl + Shift + Q<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor">https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="profiler" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Profiler</h2>
+					</header>
+					<img src="pictures/profiler.png" class="middle" alt=""><br><br><br><br><br><br><br><br>
+					Shift + F5<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Profiler">https://developer.mozilla.org/en-US/docs/Tools/Profiler</a><br>
+					<a href="https://developer.mozilla.org/media/uploads/demos/p/a/paulrouget/8bfba7f0b6c62d877a2b82dd5e10931e/hacksmozillaorg-achi_1334270447_demo_package/HWACCEL/">Hardware Acceleration Test</a> |
+					<a href="http://peacekeeper.futuremark.com/">PeaceKeeper</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="storage" class="slide">
+            <div>
+                <section>
+                    <header>
+                        <h2>Storage</h2>
+                    </header>
+                    <img src="pictures/storage.png" class="middle" alt=""><br><br><br><br><br><br><br><br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector">https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector</a>
+                </section>
+            </div>
+        </div>
+        
+        <div id="audio" class="slide">
+            <div>
+                <section>
+                    <header>
+                        <h2>Web Audio Editor</h2>
+                    </header>
+                    <img src="pictures/web-audio-editor.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Audio_Editor">https://developer.mozilla.org/en-US/docs/Tools/Web_Audio_Editor</a><br>
+                    <a href="http://mdn.github.io/violent-theremin/">Violent Theremin</a>
+                </section>
+            </div>
+        </div>
+
+		<div id="scratchpad" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Blocco appunti o Scratchpad</h2>
+					</header>
+					<img src="pictures/scratchpad.png" class="middle" alt=""><br><br><br><br><br><br><br><br>
+					Shift + F4<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Scratchpad">https://developer.mozilla.org/en-US/docs/Tools/Scratchpad</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="responsive" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Responsive View</h2>
+					</header>
+					<img src="pictures/responsive.png" class="middle" alt=""><br><br><br><br><br><br><br><br>
+					Ctrl + Shift + M<br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View">https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="3d" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>3D View</h2>
+					</header>
+					<img src="pictures/3dview.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+					<a href="http://javod.com/blog/files/tilt_building.php">Esempio interattivo</a><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Tools/3D_View">https://developer.mozilla.org/en-US/docs/Tools/3D_View</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="webgl" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Canvas debugger</h2>
+					</header>
+					<img src="pictures/canvas.jpg" class="middle" style="width: 800px;" alt=""><br><br><br><br><br><br><br><br><br><br>
+					<a href="http://get.webgl.org/" class="href">Get WebGL</a> - <a href="http://madebyevan.com/webgl-water/">WebGL Water</a>
+				</section>
+			</div>
+		</div>
+		
+		<div id="webide" class="slide">
+            <div>
+                <section>
+                    <header>
+                        <h2>WebIDE</h2>
+                    </header>
+                    <img src="pictures/webide.png" class="middle" alt=""><br><br><br><br><br><br><br><br><br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Tools/WebIDE">https://developer.mozilla.org/en-US/docs/Tools/WebIDE</a>
+                </section>
+            </div>
+        </div>
+        
+        <div id="valence" class="slide">
+            <div>
+                <section>
+                    <header>
+                    <h2>Valence (Firefox Developer Tools Adapters)</h2>
+                    </header>
+                    Addon sperimentale che permette di utilizzare i tool di Firefox non solo con browser Gecko-Based.<br>
+                    Sfruttando il debug remoto al momento è possibile fare debug per Chrome, Chrome per Android e Safari per iOS<br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Tools/Valence">https://developer.mozilla.org/en-US/docs/Tools/Valence</a>
+                </section>
+            </div>
+        </div>
+		
+		<div id="plugin" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Estensioni per i tool</h2>
+					</header>
+					<ul>
+					<ul>
+						<li><a href="https://github.com/rpl/angularjs-batarang/releases">AngularJS Inspector</a></li>
+						<li><a href="https://addons.mozilla.org/it/firefox/addon/ember-inspector/">Ember Inspector</a></li>
+						<li><a href="https://github.com/vladikoff/grunt-devtools">Grunt Task Runner</a>
+						<li><a href="https://addons.mozilla.org/it/firefox/addon/devtools-prototyper/">DevTools Prototyper</a>
+					</ul>
+				</section>
+			</div>
+		</div>
+		
+		<div id="link" class="slide">
+			<div>
+				<section>
+					<header>
+						<h2>Link</h2>
+					</header>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Keyboard_shortcuts">Combinazioni di tasti</a></li>
+						<li><a href="https://twitter.com/FirefoxDevTools">FirefoxDevTools su twitter</a></li>
+						<li><a href="https://github.com/victorporof/Restartless-Template">Template per lo sviluppo di estensioni per i tools</a></li>
+						<li><a href="https://hacks.mozilla.org/category/developer-tools/">Mozilla Hacks - Categoria dedicata ai tools</a></li>
+						<li><a href="http://ffdevtools.uservoice.com/forums/246087-firefox-developer-tools-ideas">FF Dev Tools User Voice</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<div id="thanks" class="slide"><div>
+				<section>
+					<header>
+						<h2>Domande?</h2>
+					</header>
+					<figure class="frame middle swing">
+						<img src="pictures/redpanda.jpg" class="right" alt="Red panda (Firefox)">
+					</figure>
+					<ul class="nobull oneline demourl">
+						<li>Daniele Scasciafratte</li>
+						<li><a href="http://twitter.com/Mte90Net">@Mte90Net</a></li>
+						<li><strong>Slides</strong>: mte90.github.io/Presentazione-DevTools</li>
+					</ul>
+				</section>
+			</div></div>
+
+		<script src="scripts/script.js"></script>
+		<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	</body>
+</html>
