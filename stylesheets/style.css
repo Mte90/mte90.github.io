@@ -95,10 +95,6 @@ li {
   vertical-align: top;
 }
 
-.footer {
-  margin-top: 50px;
-}
-
 /* Media Queries */
 @media all and (max-width: 421px) {
   .only-small {
