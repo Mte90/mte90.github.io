@@ -47,9 +47,6 @@ li {
 .phone-number {
   vertical-align: middle;
 }
-.email-address {
-  vertical-align: bottom;
-}
 
 .my-name {
   font-weight: 900;
@@ -101,14 +98,6 @@ li {
 .footer {
   margin-top: 50px;
 }
-
-/*.only-small {
-  display: none;
-}
-
-.only-big {
-  display: none;
-}*/
 
 /* Media Queries */
 @media all and (max-width: 421px) {
