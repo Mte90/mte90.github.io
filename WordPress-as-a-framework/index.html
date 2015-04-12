@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Wordpress as a Framework 2.0</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                    <h1>Wordpress as a Framework 2.0</h1>
+                    <h4>no longer only blog cms</h4>
+					<p>
+                        <small>By <a href="http://mte90.net">Daniele Scasciafratte</a> based on <a href="http://eugeniopetulla.com/">Eugenio Petullà</a> slides</small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
+				<h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">Daniele Scasciafratte</h2>
+                    <ul style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">
+                        <li>Co Founder Codeat - Full Stack Developer</li>
+                        <li>Mozillian</li>
+                        <li>Redattore per il network AndMore e ChimeraRevo</li>
+                        <li>Utente Debian Linux dal 2009</li>
+                        <li>WordPress Developer/Translator</li>
+                        <li>Open Source Addicted</li>
+					</ul>
+				</section>
+
+                <section data-transition="slide" data-background-transition="convex" data-background="img/forget.gif">
+                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #000;color:#fff;">forget what you know about wordpress</h2>
+                </section>
+
+				<section data-transition="slide" data-background-transition="concave">
+					<img src="img/cms.png">
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Web Application Framework
+
+						A software framework is designed to support the development of dynamic websites, web applications, web services and web resources. The framework aims to alleviate the overhead associated with common activities performed in web development. For example, many frameworks provide libraries for database access, templating frameworks and session management, and they often promote code reuse.  
+						
+						<small>Cit: http://en.wikipedia.org/wiki/Web_application_framework</small>
+					</script>
+				</section>
+
+				<section data-markdown>
+                    <script type="text/template">
+                        ## Is a Framework?
+
+* **Web Application**: <span class="fragment">CRUD <i><i>&#10003;</i></i></span>
+* **Web Services**: <span class="fragment">XML-RPC <i>&#10003;</i>,</span> <span class="fragment">JSON REST API <i>&#10003;</i></span>
+* **Database**: <span class="fragment">MySQL & derivated <i>&#10003;</i>,</span> <span class="fragment">PosteGreSQL (partially) <i>&#10003;</i></span>
+* **Template System**: <span class="fragment">Template Hierarchy <i>&#10003;</i>,</span> <span class="fragment">Your Favorite <i>&#10003;</i></span>
+* **User Management**: <span class="fragment">Multiple User Roles <i>&#10003;</i></span>
+* **Code reuse**: <span class="fragment">Core Function and Classes <i>&#10003;</i>, </span> <span class="fragment">Plugins Function and Classes <i>&#10003;</i></span>
+* **Expandable**: <span class="fragment">Free Plugins <i>&#10003;</i>, </span> <span class="fragment">Premium Plugins <i>&#10003;</i></span>
+* **Update**: <span class="fragment">Auto Update <i>&#10003;</i></span>
+* **Backend UI**: <span class="fragment">Standard Theme <i>&#10003;</i>,</span> <span class="fragment">Custom Theme <i>&#10003;</i></span>
+* **URL Rewrite**: <span class="fragment">Native system <i>&#10003;</i></span>
+* **AJAX**: <span class="fragment">Native system <i>&#10003;</i></span>
+                    </script>
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex">
+                    <img src="img/hook.png">
+                </section>
+                
+				<section>
+                    <h2>Filter Hook</h2>
+                    <pre><code data-trim contenteditable>
+function custom_excerpt_length( $length ) {
+    return 30;
+}
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+                    </code></pre>
+                    <h2>Action Hook</h2>
+				<pre><code data-trim contenteditable>
+function modify_post_type_supports() {
+    remove_post_type_support( 'pages', 'comments' );
+}
+                    
+add_action( 'init', 'modify_post_type_supports', 11 ); 
+                    </code></pre>
+				</section>
+				
+				<section data-transition="slide" data-background-transition="convex" data-background="img/bang.gif">
+                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #000;color:#fff;">we just started!</h2>
+				</section>
+
+				<section data-transition="slide" data-background-transition="convex" data-background="img/backend.png">
+                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #fff">Custom Post type</h2>
+				</section>
+
+                <section>
+                    <h2>Create a custom post type</h2>
+                    <pre><code data-trim contenteditable>
+// Register Custom Post Type
+function show() {
+    $labels = array(
+        'name'                => _x( 'Shows', 'Post Type General Name', 'file_language' ),
+        'singular_name'       => _x( 'Show', 'Post Type Singular Name', 'file_language' ),
+        'menu_name'           => __( 'Show', 'file_language' ),
+        'name_admin_bar'      => __( 'Show', 'file_language' ),
+        'parent_item_colon'   => __( 'Parent Item:', 'file_language' ),
+        'all_items'           => __( 'All Items', 'file_language' ),
+        'add_new_item'        => __( 'Add New Item', 'file_language' ),
+        'add_new'             => __( 'Add New', 'file_language' ),
+        'new_item'            => __( 'New Item', 'file_language' ),
+        'edit_item'           => __( 'Edit Item', 'file_language' ),
+        'update_item'         => __( 'Update Item', 'file_language' ),
+        'view_item'           => __( 'View Item', 'file_language' ),
+        'search_items'        => __( 'Search Item', 'file_language' ),
+        'not_found'           => __( 'Not found', 'file_language' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'file_language' ),
+        );
+    $args = array(
+        'label'               => __( 'show', 'file_language' ),
+        'description'         => __( 'Show Description', 'file_language' ),
+        'labels'              => $labels,
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', ),
+        'taxonomies'          => array( 'portfolio_category' ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_position'       => 5,
+        'show_in_admin_bar'   => true,
+        'show_in_nav_menus'   => true,
+        'can_export'          => false,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+        );
+    register_post_type( 'show', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'show', 0 );
+                    </code></pre>
+                </section>
+                
+                <section data-transition="slide" data-background-transition="convex" data-background="img/omg.gif">
+                </section>
+                
+                <section data-transition="slide" data-background-transition="convex" data-background="img/media.png">
+                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #fff">Media manager</h2>
+				</section>
+				
+				<section data-markdown>
+                    <script type="text/template">
+                        ## External Libraries Integrated
+                        
+* jQuery
+* jQuery UI 
+* Backbone.JS 
+* Underscore.JS 
+* TinyMCE
+* MediaElement.JS
+* Thickbox
+* SimplePIE
+* PHP Mailer
+                        
+                    </script>
+				</section>
+
+                <section>
+                    <h2>Native API Integrated</h2>
+<ul>                        
+<li class="fragment">Widgets</li>
+<li class="fragment">Options/Settings</li>
+<li class="fragment">Quicktags (TinyMCE)</li>
+<li class="fragment">Shortcode</li>
+<li class="fragment">Transients</li>
+<li class="fragment">Metadata</li>
+<li class="fragment">oEmbed</li>
+<li class="fragment">Cron</li>
+<li class="fragment">Rewrite</li>
+<li class="fragment">Pointer</li>
+<li class="fragment">Heartbeat</li>
+<li class="fragment">Multisite</li>
+<li class="fragment">.po, .mo support</li>
+</ul>
+                </section>
+                
+                <section data-transition="slide" data-background-transition="convex" data-background="img/fantastic.gif">
+                    
+                </section>
+                
+                <section data-transition="slide" data-background-transition="convex" data-background="img/speed.png">
+                    <h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">Hack, Percona DB, MariaDB, MemCache, Varnis, Nginx, CDN, PageSpeed, WP CLI</h2>
+                </section>
+                
+                <section>
+                    <img src="img/commitstrip.jpg" style="max-width: 470px;">
+                </section>
+				
+				<section data-transition="slide" data-background-transition="convex" data-background="img/end.gif">
+                    <h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">The end</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - Password: Open Source 2015</div><div class="hashtag">#AQPOS15</div></div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
