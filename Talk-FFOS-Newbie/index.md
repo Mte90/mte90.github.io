@@ -3,7 +3,7 @@
 
 Develop an app has never been easier
 
->Linux Day 2014 - Roma2Lug  
+>MilanoJS - Aprile 2015  
 >Speaker: Daniele "Mte90" Scasciafratte (@Mte90Net)
 
 ##It's Me Mario Ehm Daniele
@@ -13,12 +13,12 @@ Daniele Scasciafratte aka [Mte90](http://www.mte90.net)
 * Geek since I started to disassemble electronic items
 * Debian (Sid) GNU/Linux user since 2009
 * Lovers of KDE and Qt
-* Proud **Mozillian**
+* Proud **Mozillian**, soon Mozilla Rep
 * Firefox OS Training Lead Italy
-* Wordpress Italy Plus Moderator (8000+ members)
-* Dartlang Italia Member
+* Industria Italiana Software Libero admin
 * Libreitalia Member
-* ChimeraRevo Blogger
+* ChimeraRevo and AndMore Blogger
+* Co Founder Codeat - Full Stack Developer
 
 ##Firefox OS
 ![](./img/firefoxos.jpg)
@@ -112,7 +112,7 @@ Simple way for adding the missing APIs in the other browsers
 * Multibrowser support
 * WebActivity support 
 * Useful for debug
-* Alert or Console.log message(on send sms, open contact etc...)
+* Alert or Console.log message (on send sms, open contact etc...)
 
 [http://mte90.github.io/moz-polyfills/](http://mte90.github.io/moz-polyfills/)
 
@@ -134,13 +134,10 @@ Simple way for adding the missing APIs in the other browsers
 ##Testing
 ![](./img/testing.jpg)  
 
-* App Manager/WebIDE integrated into Firefox
-* Firefox OS Simulator (1.2, 1.3, 1.4, 2.0, 2.1) an extension for Firefox  
-* Devices and Simulator work with App Manager/WebIDE
+* WebIDE integrated in Firefox
+* Firefox OS Simulator (1.3, 1.4, 2.0, 2.1, 2.2) an extension for Firefox  
+* Devices and Simulator work with WebIDE
 * They use ADB to communicate with Firefox OS devices
-
-<br>
-[https://ftp.mozilla.org/pub/mozilla.org/labs/fxos-simulator/](https://ftp.mozilla.org/pub/mozilla.org/labs/fxos-simulator/)
 
 ##Cross Origin Request
 ![](./img/bug.jpg)  
@@ -151,13 +148,15 @@ The flag `mozSystem: true` in the AJAX request disable the block of the browser
 
 ![](./img/bash.jpg)  
 
-##Node-fxos
+##Node-fxos/Node-firefox
+![](./img/automate.jpg)  
 Node tools for Firefox OS (gulp and grunt support)  
-*fxos-deploy, fxos-start, fxos-simulators, fx-ports, fxos-reloadcss, fxos-findapp*  
-[http://nicola.github.io/node-fxos/](http://nicola.github.io/node-fxos/#examples)
+*Ex: fxos-deploy, fxos-start, x-ports, fxos-reloadcss*  
+[http://nicola.github.io/node-fxos/](http://nicola.github.io/node-fxos/#examples)  
+[https://github.com/mozilla/node-firefox](https://github.com/mozilla/node-firefox), [Introducing node-firefox](https://hacks.mozilla.org/2015/02/introducing-node-firefox/)
 
 ##Documentation
-![](./img/documentation.png)  
+![](./img/documentation.jpg)  
 
 ##MDN
 ![](./img/mdn.png)  
@@ -172,19 +171,18 @@ Node tools for Firefox OS (gulp and grunt support)
 [https://developer.mozilla.org/](https://developer.mozilla.org/)
 
 ##Developing for Firefox OS
-![](./img/guide.jpg)  
+![](./img/guide.png)  
 
 * Free Ebook in different format (PDF, Mobi, Epub)
-* Italian version in revision mode
-* The Italian version have new material (backport in the English version soon)
+* Italian version in **public beta mode** with new topics (backport in the English version soon)
 * German and Portuguese translation
 
 <br>
 [https://leanpub.com/quickguidefirefoxosdevelopment](https://leanpub.com/quickguidefirefoxosdevelopment)  
-[https://github.com/Mte90/firefoxos-quick-guide](https://github.com/Mte90/firefoxos-quick-guide)
+[https://leanpub.com/guidavelocesviluppofirefoxos](https://leanpub.com/guidavelocesviluppofirefoxos)
 
 ##Workflow
-![](./img/workflow.jpg) 
+![](./img/workflow.png) 
 
 ##Development Workflow
 * Create a manifest.webapp
