@@ -5,8 +5,8 @@
  *********************************************/
 
 body {
-	@include bodyBackground();
 	background-color: $backgroundColor;
+	@include bodyBackground();
 }
 
 .reveal {

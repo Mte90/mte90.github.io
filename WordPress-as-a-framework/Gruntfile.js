@@ -15,22 +15,7 @@ module.exports = function(grunt) {
 				' */'
 		},
 
-		uglify: {
-			options: {
-				banner: '<%= meta.banner %>\n'
-			},
-			build: {
-				src: 'js/reveal.js',
-				dest: 'js/reveal.min.js'
-			}
-		},
-
 		sass: {
-			core: {
-				files: {
-					'css/reveal.css': 'css/reveal.scss',
-				}
-			},
 			themes: {
 				files: {
 					'css/theme/codeat.css': 'css/theme/source/codeat.scss',
@@ -38,16 +23,10 @@ module.exports = function(grunt) {
 			}
 		},
 
-		autoprefixer: {
-			dist: {
-				src: 'css/reveal.css'
-			}
-		},
-
 		cssmin: {
 			compress: {
 				files: {
-					'css/reveal.min.css': [ 'css/reveal.css' ]
+					'css/codeat.min.css': [ 'css/theme/codeat.css' ]
 				}
 			}
 		},
@@ -100,10 +79,6 @@ module.exports = function(grunt) {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'css-themes'
 			},
-			css: {
-				files: [ 'css/reveal.scss' ],
-				tasks: 'css-core'
-			},
             html: {
                 files: [ 'index.html']
             }
@@ -114,23 +89,18 @@ module.exports = function(grunt) {
 	// Dependencies
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-sass' );
-	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
 
 	// JS task
-	grunt.registerTask( 'js', [ 'jshint', 'uglify' ] );
+	grunt.registerTask( 'js', [ 'jshint' ] );
 
 	// Theme CSS
-	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
-
-	// Core framework CSS
-	grunt.registerTask( 'css-core', [ 'sass:core', 'autoprefixer', 'cssmin' ] );
+	grunt.registerTask( 'css-themes', [ 'sass:themes', 'cssmin' ] );
 
 	// All CSS
 	grunt.registerTask( 'css', [ 'sass', 'autoprefixer', 'cssmin' ] );

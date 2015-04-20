@@ -7,7 +7,7 @@
 		<title>Wordpress as a Framework 2.0</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
+		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
 		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
 
 		<!-- Code syntax highlighting -->
@@ -28,7 +28,8 @@
 	</head>
 
 	<body>
-		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+	<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+	<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - Password: Open Source 2015</div><div class="hashtag">#AQPOS15</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -41,19 +42,24 @@
 				</section>
 
 				<section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
-				<h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">Daniele Scasciafratte</h2>
-                    <ul style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">
-                        <li>Co Founder Codeat - Full Stack Developer</li>
-                        <li>Mozillian</li>
-                        <li>Redattore per il network AndMore e ChimeraRevo</li>
-                        <li>Utente Debian Linux dal 2009</li>
-                        <li>WordPress Developer/Translator</li>
-                        <li>Open Source Addicted</li>
-					</ul>
+                    <div class="background">
+                        <h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+                        <ul class="white-black-shadow">
+                            <li>Co Founder Codeat - Full Stack Developer</li>
+                            <li>Mozillian</li>
+                            <li>Redattore per il network AndMore e ChimeraRevo</li>
+                            <li>Utente Debian Linux dal 2009</li>
+                            <li>WordPress Developer/Translator</li>
+                            <li>Open Source Addicted</li>
+                            <li>Industria Italiana Software Libero Admin</li>
+                        </ul>
+					</div>
 				</section>
 
-                <section data-transition="slide" data-background-transition="convex" data-background="img/forget.gif">
-                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #000;color:#fff;">forget what you know about wordpress</h2>
+                <section class="force-bottom" data-transition="slide" data-background-transition="convex" data-background="img/forget.gif">
+                    <div class="background">
+                        <h2 class="white-black-shadow">forget what you know about wordpress</h2>
+                    </div>
                 </section>
 
 				<section data-transition="slide" data-background-transition="concave">
@@ -111,12 +117,14 @@ add_action( 'init', 'modify_post_type_supports', 11 );
                     </code></pre>
 				</section>
 				
-				<section data-transition="slide" data-background-transition="convex" data-background="img/bang.gif">
-                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #000;color:#fff;">we just started!</h2>
+				<section data-transition="slide" data-background-transition="convex" data-background="img/bang.gif" class="force-bottom">
+                    <div class="background">
+                        <h2 class="white-black-shadow">we just started!</h2>
+                    </div>
 				</section>
 
-				<section data-transition="slide" data-background-transition="convex" data-background="img/backend.png">
-                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #fff">Custom Post type</h2>
+				<section data-transition="slide" data-background-transition="convex" data-background="img/backend.png" class="fullcover">
+                    <h2 class="black-shadow">Custom Post type</h2>
 				</section>
 
                 <section>
@@ -154,7 +162,6 @@ function show() {
         'menu_position'       => 5,
         'show_in_admin_bar'   => true,
         'show_in_nav_menus'   => true,
-        'can_export'          => false,
         'has_archive'         => true,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
@@ -170,8 +177,8 @@ add_action( 'init', 'show', 0 );
                 <section data-transition="slide" data-background-transition="convex" data-background="img/omg.gif">
                 </section>
                 
-                <section data-transition="slide" data-background-transition="convex" data-background="img/media.png">
-                    <h2 style="text-shadow:-1px -1px 1px #111, 2px 2px 1px #fff">Media manager</h2>
+                <section data-transition="slide" data-background-transition="convex" data-background="img/media.png" class="fullcover">
+                    <h2 class="black-shadow">Media manager</h2>
 				</section>
 				
 				<section data-markdown>
@@ -210,12 +217,14 @@ add_action( 'init', 'show', 0 );
 </ul>
                 </section>
                 
-                <section data-transition="slide" data-background-transition="convex" data-background="img/fantastic.gif">
+                <section data-transition="slide" data-background-transition="convex" data-background="img/fantastic.gif" class="fullcover">
                     
                 </section>
                 
                 <section data-transition="slide" data-background-transition="convex" data-background="img/speed.png">
-                    <h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">Hack, Percona DB, MariaDB, MemCache, Varnis, Nginx, CDN, PageSpeed, WP CLI</h2>
+                    <div class="background">
+                        <h2 class="white-black-shadow">Hack, Percona DB, MariaDB, MemCache, Varnis, Nginx, CDN, PageSpeed, WP CLI</h2>
+                    </div>
                 </section>
                 
                 <section>
@@ -223,13 +232,12 @@ add_action( 'init', 'show', 0 );
                 </section>
 				
 				<section data-transition="slide" data-background-transition="convex" data-background="img/end.gif">
-                    <h2 style="color: #fff;text-shadow:-1px -1px 1px #111, 2px 2px 1px #000">The end</h2>
+                    <h2 class="white-black-shadow">The end</h2>
 				</section>
 
 			</div>
 		</div>
 
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - Password: Open Source 2015</div><div class="hashtag">#AQPOS15</div></div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 

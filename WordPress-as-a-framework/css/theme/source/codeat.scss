@@ -6,7 +6,7 @@
 
 
 // Default mixins and settings -----------------
-@import "../template/mixins";
+@import "../template/mixins"; 
 @import "../template/settings";
 // ---------------------------------------------
 
@@ -37,15 +37,23 @@ $selectionBackgroundColor: #4E3A4C;
 	@include radial-gradient( rgba(77, 77, 77, 0.5), #f7fbfc );
 }
 
-
 // Theme template ------------------------------
 @import "../../reveal.scss";
 @import "../template/theme";
 // ---------------------------------------------
 
+.bottom {
+	position: absolute;
+	bottom:0px;
+}
+// Bar
 .barra {
-	background:rgba(255, 255, 255, 0.3);
+	background:rgba(255, 255, 255, 0.4);
 	height:40px;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index: 999;
 	.titolo, .hashtag {
 		font-style:italic;
 		float:left;
@@ -56,7 +64,7 @@ $selectionBackgroundColor: #4E3A4C;
 		font-size: 14px;
 	}
 	.logo {
-		background: url(../logo.png);
+		background: url(logo.png);
 		background-repeat: no-repeat;
 		width:201px;
 		height:35px;
@@ -65,18 +73,54 @@ $selectionBackgroundColor: #4E3A4C;
 		margin-top:3px;
 	}
 	&.bottom {
-		width:100%
+		top:auto;
+		bottom:0;
 	}
 	.hashtag {
 		float:right;
 	}
 }
 
-.bottom {
-	position: absolute;
-	bottom:0px;
-}
-
 i {
 	color: #0EA11A;
+}
+// Background colored area
+.background {
+	background: rgba(78, 58, 76, 0.6);
+	padding:5px !important;
+	position: relative;
+	color: #171616;
+	p {
+		margin-bottom: 0 !important;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		color: #171616;
+		margin-bottom: 0 !important;
+	}
+}
+// Force content slid position
+.force-bottom {
+	bottom:20px !important;
+	top:auto !important;
+}
+.force-top {
+	top:0px !important;
+}
+//Shadow class
+.white-black-shadow {
+	color: #fff !important;
+	text-shadow:-1px -1px 1px #111, 2px 2px 1px #000 !important;
+}
+.black-shadow {
+	text-shadow:-1px -1px 1px #111, 2px 2px 1px #000 !important;
+}
+//fix background
+.slide-background {
+	&.force-bottom {
+		bottom:auto !important;
+	}
+}
+//Not crop the image
+.slide-background.fullcover {
+	background-size: contain;
 }

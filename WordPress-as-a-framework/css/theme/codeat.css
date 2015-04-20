@@ -292,7 +292,7 @@ body {
   display: none;
   position: absolute;
   width: 100%;
-  margin-top: -20px;
+  margin-top: 20px;
   z-index: 10;
   transform-style: preserve-3d;
   transition: transform-origin 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), transform 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), visibility 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), opacity 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -999,14 +999,14 @@ body {
  * GLOBAL STYLES
  *********************************************/
 body {
+  background-color: #fff;
   background: rgba(77, 77, 77, 0.5);
   background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, rgba(77, 77, 77, 0.5)));
   background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
   background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
   background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
-  background: radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
-  background-color: #fff; }
+  background: radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%); }
 
 .reveal {
   font-family: 'Spinnaker', sans-serif;
@@ -1253,9 +1253,17 @@ body {
 .reveal .slide-number {
   color: #4E3A4C; }
 
+.bottom {
+  position: absolute;
+  bottom: 0px; }
+
 .barra {
-  background: rgba(255, 255, 255, 0.3);
-  height: 40px; }
+  background: rgba(255, 255, 255, 0.4);
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999; }
   .barra .titolo, .barra .hashtag {
     font-style: italic;
     float: left;
@@ -1265,7 +1273,7 @@ body {
     font-weight: bold;
     font-size: 14px; }
   .barra .logo {
-    background: url(../logo.png);
+    background: url(logo.png);
     background-repeat: no-repeat;
     width: 201px;
     height: 35px;
@@ -1273,13 +1281,41 @@ body {
     padding-right: 5px;
     margin-top: 3px; }
   .barra.bottom {
-    width: 100%; }
+    top: auto;
+    bottom: 0; }
   .barra .hashtag {
     float: right; }
 
-.bottom {
-  position: absolute;
-  bottom: 0px; }
-
 i {
   color: #0EA11A; }
+
+.background {
+  background: rgba(78, 58, 76, 0.6);
+  padding: 5px !important;
+  position: relative;
+  color: #171616; }
+  .background p {
+    margin-bottom: 0 !important; }
+  .background h1, .background h2, .background h3, .background h4, .background h5, .background h6 {
+    color: #171616;
+    margin-bottom: 0 !important; }
+
+.force-bottom {
+  bottom: 20px !important;
+  top: auto !important; }
+
+.force-top {
+  top: 0px !important; }
+
+.white-black-shadow {
+  color: #fff !important;
+  text-shadow: -1px -1px 1px #111, 2px 2px 1px #000 !important; }
+
+.black-shadow {
+  text-shadow: -1px -1px 1px #111, 2px 2px 1px #000 !important; }
+
+.slide-background.force-bottom {
+  bottom: auto !important; }
+
+.slide-background.fullcover {
+  background-size: contain; }
