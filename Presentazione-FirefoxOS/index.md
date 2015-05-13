@@ -3,7 +3,7 @@
 
 Scopriamo le sue caratteristiche! 
 
->Open Source Day - Udine  
+>Firefox OS e Mozilla a Rimini  
 >Relatore: Daniele Mte90 Scasciafratte (@Mte90Net)
 
 ##Chi sono
