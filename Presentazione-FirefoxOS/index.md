@@ -355,6 +355,6 @@ Cerchiamo anche un grafico per la realizzazione vettoriale del logo!
 ![](./img/question.jpg)  
 Se avete domande fatele adesso o mai più (scherzo)  
 <br>
-Link presentazione: [http://goo.gl/0rTcyh](http://goo.gl/0rTcyh)  
+Link presentazione: [http://mte90.github.io/Presentazione-FirefoxOS](http://mte90.github.io/Presentazione-FirefoxOS)  
 Presentazione di:  
 Daniele Scasciafratte - [Mte90Net](http://twitter.com/Mte90Net) - [Mte90.net](http://www.mte90.net)
