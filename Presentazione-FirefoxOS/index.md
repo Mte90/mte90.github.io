@@ -3,7 +3,7 @@
 
 Scopriamo le sue caratteristiche! 
 
->Firefox OS e Mozilla a Rimini  
+>Debian/Ubuntu Community Conference  
 >Relatore: Daniele Mte90 Scasciafratte (@Mte90Net)
 
 ##Chi sono
@@ -67,9 +67,8 @@ Tutte le applicazioni sono realizzate con i tre Assassini ovvero **HTML/CSS/JS**
 
 ##La leggenda delle Web App lente
 ![](./img/firefox-starting-up.jpg)  
-L'app di Facebook **realizzata in HTML5** era molto lenta, successivamente venne realizzata un app nativa  
-
-Realizzata malamente infatti per dimostrare la bontà delle Web App **Sencha (ex ExtJS)** realizzò un [clone in HTML5](http://www.sencha.com/blog/the-making-of-fastbook-an-html5-love-story) funzionante  
+Come si fà a dire che una Web App è lenta quando i browser hanno fatto passi da gigante negli ultimi anni in termini di performance?  
+Specialmente in ambito mobile dove basta realizzare un applicativo fatto bene per non doversi più preoccupare più di niente?
 
 ##Web App è fico
 In **Firefox OS** si possono ottenere app con le stesse performance di una nativa  
@@ -80,7 +79,7 @@ Alcuni esempi di tool/librerie/linguaggi:
 * Zepto invece di jQuery
 * Mini Framework Javascript 
 * Framework CSS Responsive
-* jQuery Mobile
+* ReactJS
 * AngularJS
 * PolymerJS
 * PhoneGap
@@ -138,7 +137,7 @@ Fonte: [https://developer.mozilla.org/en-US/docs/WebAPI/Permissions](https://dev
 App di esempio:
 
 * Tutte quelle presenti di base
-* RingTone Picker (oltre 40000 download :-D)
+* RingTone Picker (oltre 50000 download :-D)
 
 <br>
 Fonte: [https://developer.mozilla.org/en-US/Apps/Developing/Packaged_apps](https://developer.mozilla.org/en-US/Apps/Developing/Packaged_apps)
@@ -217,7 +216,7 @@ Poche righe di codice ed un manifest!
 ##Come testare la propria applicazione
 Esiste il simulatore di Firefox OS che è una estensione per Firefox disponibile per [Windows, Mac e Linux](https://ftp.mozilla.org/pub/mozilla.org/labs/fxos-simulator/)  
 
-Le versioni disponibili attualmente sono 1.2-1.3-1.4-2.0-2.1-2.2 insieme ad ADB Helper per il debug remoto.
+Le versioni disponibili attualmente sono 1.3-1.4-2.0-2.1-2.2-3.0 insieme ad ADB Helper per il debug remoto.
 
 ##Differenze tra simulatore e device fisici
 ![](./img/firefox-phone.png)  
@@ -285,12 +284,15 @@ Le applicazioni sono sotto **sandbox**!
 
 Ogni file Javascript ha un suo processo, quindi isolamento dei crash (il file và in crash non l'applicazione o il sistema) con un facile debug
 
+## Niente Account
+Per usare il telefono non è necessario avere un account impostato sul dispositivo
+
 ##Giochi
 ![](./img/pong.jpg)  
 La Disney realizza giochi per Firefox OS, c'è anche Cut the rope  
 [Quake Benchmark](https://marketplace.firefox.com/app/quake-benchmark) è un esempio WebGL!
 
-Sul marketplace ce ne sono 1721 (un terzo): [https://marketplace.firefox.com/category/games](https://marketplace.firefox.com/category/games)
+Sul marketplace ce ne sono 2000 (un terzo): [https://marketplace.firefox.com/category/games](https://marketplace.firefox.com/category/games)
 
 <small>Approfondimento: [Optimizing your JavaScript game for Firefox OS](https://hacks.mozilla.org/2013/05/optimizing-your-javascript-game-for-firefox-os/),[E-Book](http://www.amazon.it/Beginning-Firefox-HTML5-Game-Programming-ebook/dp/B00IZUYIGO/ref=sr_1_7?ie=UTF8&qid=1398181859&sr=8-7&keywords=firefox+os)</small>
 
