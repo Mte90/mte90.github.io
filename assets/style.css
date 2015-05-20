@@ -4,11 +4,11 @@ html {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: inherit !important;
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif !important;
 }
 
 a {
@@ -21,20 +21,22 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
-}
-
-h4 {
-    font-size:16px;
+  font-family: 'Roboto', sans-serif !important;
+  margin-top:5px !important;
+  margin-bottom:5px !important;
 }
 
 h2 {
-    margin-top:0;
+    margin-top:0 !important;
 }
 
-span, a, li {
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+span, a, li,h4 {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 16px !important;
+}
+
+h4 a {
+    font-weight:bold;
 }
 
 ul {
@@ -86,12 +88,6 @@ li {
   margin-bottom: 0px;
 }
 
-.my-credentials {
-  margin-top: -5px;
-  font-weight: 300;
-  color: #888;
-}
-
 .section-header {
   border-bottom: 1px solid black;
   position: relative;
@@ -111,7 +107,6 @@ li {
   display: inline-block;
   width: 16px;
   vertical-align: middle;
-  padding-right: 25px;
   margin-left:15px;
 }
 
@@ -126,6 +121,15 @@ li {
   width: 225px;
   display: inline-block;
   vertical-align: top;
+}
+
+.bar {
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  padding-top:3px;
+  padding-bottom:3px;
+  margin:0;
+  text-align:center;
 }
 
 /* Media Queries */
@@ -175,5 +179,5 @@ li {
   }
 }
 .col-md-8, .col-md-4 {
-    padding:0;
+    padding:0 !important;
 }
