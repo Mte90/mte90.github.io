@@ -12,12 +12,12 @@ body {
 }
 
 a {
-  color: #5a5a5a;
+  color: #5a5a5a !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: #000;
+  color: #000 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,6 +45,31 @@ ul {
 li {
   margin-left: 0;
   padding-bottom: 10px;
+}
+
+._1 {
+    -webkit-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+._2 {
+    -webkit-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    -o-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+._3 {
+    -webkit-animation-delay: 1.2000000000000002s;
+    -ms-animation-delay: 1.2000000000000002s;
+    -o-animation-delay: 1.2000000000000002s;
+    animation-delay: 1.2000000000000002s;
+}
+._4 {
+    -webkit-animation-delay: 1.6s;
+    -ms-animation-delay: 1.6s;
+    -o-animation-delay: 1.6s;
+    animation-delay: 1.6s;
 }
 
 .container {

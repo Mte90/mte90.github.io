@@ -1,14 +1,23 @@
 <!doctype html>
 <html>
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:900,300,700,400|Raleway:700,400,300' rel='stylesheet' type='text/css'>
-    <link href='http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css' rel="stylesheet">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link href='stylesheets/animate.css' rel='stylesheet' type='text/css'>
-    <link href='stylesheets/stagger.css' rel='stylesheet' type='text/css'>
-    <link href='stylesheets/style.css' rel='stylesheet' type='text/css'>
-    <script async data-main="main" src="fallback.min.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:900,300,700|Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='assets/animate.css' rel='stylesheet' type='text/css'>
+    <link href='assets/style.css' rel='stylesheet' type='text/css'>
+    <script async src="assets/fallback.min.js" type="text/javascript"></script>
+    <script>
+    fallback.load({
+        'bootstrap.min.css': [
+            'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
+            'assets/bootstrap.min.css'
+            ],
+        'ionicons.min.css': [
+            'http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.c2ss',
+            'assets/ionicons.min.css'
+            ],
+        });</script>
     <title>Daniele Scasciafratte - List of my Talks</title>
 </head>
 
