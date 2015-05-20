@@ -28,6 +28,10 @@ h4 {
     font-size:16px;
 }
 
+h2 {
+    margin-top:0;
+}
+
 span, a, li {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
@@ -70,7 +74,6 @@ li {
 
 .contact {
   font-family: 'Raleway', sans-serif;
-  width: 250px;
   margin-top: 25px;
   /*position: absolute;*/
   /*top: 35px;*/
@@ -84,6 +87,7 @@ li {
   width: 16px;
   vertical-align: middle;
   padding-right: 25px;
+  margin-left:15px;
 }
 
 .left-column {
@@ -144,4 +148,7 @@ li {
     width: 100%;
     display: block;
   }
+}
+.col-md-8, .col-md-4 {
+    padding:0;
 }
