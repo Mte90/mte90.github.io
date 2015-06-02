@@ -15,7 +15,7 @@ Sono Daniele Scasciafratte conosciuto nel web come [Mte90](http://www.mte90.net)
 * Debian user dal 2009
 * Amante di KDE e delle Qt
 * Wordpress Developer
-* **Mozillian**
+* **Mozillian%Mozilla Rep**
 
 ##Cos'è Firefox OS
 ![](./img/fox.png)  
@@ -306,19 +306,6 @@ I requisiti per la [compilazione](https://developer.mozilla.org/en-US/docs/Mozil
 
 La batteria dura molto, per esempio una settimana con wifi (me lo ero scordato acceso più di una volta)
 
-##Alcatel One Touch Fire
-<div style="float:left">![](./img/alcatel.jpg)  </div>
-<div style="float:right;width:70%">
-
-* Firefox OS 1.1 (obsoleta)
-* Ram: 256 MB
-* MicroSD da 2 GB inclusa
-* CPU: 1 Ghz
-* Costo <s>79,90</s> 59,90 € con sim TIM da 5 €
-* WiFi - BlueTooth
-* Durata batteria quasi una settimana
-* Aggiornare Alcatel One Touch Fire - [http://goo.gl/w3Tsp8](http://goo.gl/w3Tsp8)
-
 </div>
 ##Italiano
 ![](./img/italia.jpg)  
@@ -338,7 +325,7 @@ Cerchiamo anche un grafico per la realizzazione vettoriale del logo!
 * [Mozhacks](https://hacks.mozilla.org/category/firefox-os/) - il blog di Mozilla dedicato agli sviluppatori
 * [Mozilla Developer Network](https://developer.mozilla.org/it/) - La miglior fonte di informazione per lo sviluppo web
 * [Developers Hub](https://marketplace.firefox.com/developers/) - portale del Marketplace dedicato agli sviluppatori
-* [Firefox OS Quick Guide](https://github.com/Mte90/firefoxos-quick-guide) - Guida veloce in Italiano con nuovo materiale in scrittura
+* [Firefox OS Quick Guide](https://github.com/MozillaItalia/firefoxos-quick-guide) - Guida veloce in Italiano con nuovo materiale in scrittura
 * [Building Blocks](http://buildingfirefoxos.com/) - Esempi, codice e documentazione per gli sviluppatori
 * [Github](http://www.github.com) - Molte applicazione e i prodotti Mozilla sono qui
 * [Firefox OS app tools](https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_app_tools)
