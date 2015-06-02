@@ -20,6 +20,14 @@ a:hover {
   color: #000 !important;
 }
 
+a.video {
+    color: #337AB7 !important;
+}
+
+li a {
+    color: #6E3238 !important
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif !important;
   margin-top:5px !important;
