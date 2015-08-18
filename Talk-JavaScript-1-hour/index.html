@@ -61,6 +61,36 @@
 						<h2 class="white-black-shadow">JS Vanilla vs jQuery</h2>
 					</div>
 				</section>
+				
+				<section>
+                                    <h2 class="white-black-shadow">Comparison</h2>
+                                    <table>
+                                        <tr>
+                                            <td>JavaScript</td>
+                                            <td>jQuery</td>
+                                        </tr>
+                                        <tr class="fragment">
+                                            <td>Scripting Language</td>
+                                            <td>Framework for JavaScript</td>
+                                        </tr>
+                                        <tr class="fragment">
+                                            <td>Superfast time execution</td>
+                                            <td>Require to loading the library</td>
+                                        </tr>
+                                        <tr class="fragment">
+                                            <td>Difficult to write</td>
+                                            <td>Simple to write</td>
+                                        </tr>
+                                        <tr class="fragment">
+                                            <td>Every browser can have different APIs</td>
+                                            <td>Support also for old browsers</td>
+                                        </tr>
+                                        <tr class="fragment">
+                                            <td>Today is important to known JavaScript</td>
+                                            <td>jQuery is the foundation for many webapp</td>
+                                        </tr>
+                                    </table>
+                                </section>
 
 				<section>
 					<h2>Document Object Model</h2>
@@ -92,11 +122,11 @@
                                                 font-weight: bolder;
                                             }
 					</style>
-					<p class="fragment grow">
+					<p class="grow">
                                             HTML
                                             <pre><code class="html">&lt;p class="key" id="principal"&gt;Lorem Ipsum&lt;/p&gt;</pre></code>
 					</p>
-					<p class="fragment roll-in">
+					<p class="roll-in">
 					CSS
                                             <pre><code data-trim class="html">
 <style>
@@ -113,7 +143,7 @@
     
 				<section>
 					<h2>Selectors in JavaScript</h2>
-					<p class="lorem" id="ipsum">Lorem Ipsum</p>
+					<p class="lorem fragment" id="ipsum">Lorem Ipsum</p>
 					<p>
                                             <pre><code class="html">&lt;p class="lorem" id="ipsum"&gt;Lorem Ipsum&lt;/p&gt;</pre></code>
 					</p>
@@ -137,7 +167,10 @@ jQuery('#ipsum').css('font-weight','bolder');
 					</p>					
 				</section>
 
-				<section data-transition="slide" data-background-transition="convex" data-background="img/button.jpg">
+				<section data-transition="slide" data-background-transition="convex" data-background="img/events.gif">
+                                        <div class="background">
+						<h2 class="white-black-shadow">Events</h2>
+                                        </div>
 				</section>
 
 				<section data-transition="slide" data-background-transition="zoom">
@@ -173,17 +206,58 @@ jQuery('#jsipsum').click(function () {
 					</p>
 				</section>
 
-				<section>
-					<h2>AJAX & REST API</h2>
+				<section class='force-top' data-background="img/request.jpg">
+					<div class="background">
+						<h2 class="white-black-shadow">Ajax</h2>
+                                        </div>
+				</section>
+								
+				<section data-background="img/omg.gif">
+				</section>				
+				
+				<section data-transition="slide" data-background-transition="zoom">
 					<p>
-						TODO
+                                            JavaScript
+                                            <pre><code class="javascript" data-trim>
+var httpRequest = new XMLHttpRequest()
+httpRequest.onreadystatechange = function (data) {
+    console.log(data);
+}
+httpRequest.open('GET', 'http://domain.tld/api')
+httpRequest.send()
+                                            </pre></code>
+					</p>
+					<p>
+                                            jQuery
+                                            <pre><code class="javascript" data-trim>
+jQuery.get( 'http://domain.tld/api', function( data ) { 
+    console.log(data);
+}
+                                            </pre></code>
 					</p>
 				</section>
+				
+				<section data-markdown>
+                                    <script type="text/template">
+					##Link
+                                        
+					* https://github.com/Mte90/Talk-OWA-App/
+					* http://www.mte90.net/2014/07/parliamo-jquery-vs-javascript-vanilla/
+					* https://github.com/Mte90/Memory
+					* http://www.sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/
+					* http://www.sitepoint.com/jquery-vs-raw-javascript-3-events-ajax/
+					* http://youmightnotneedjquery.com/
+					* https://plainjs.com/javascript/
+					* http://eloquentjavascript.net/
+					* http://skillsandmore.org/courses/javascript-il-linguaggio-dinamico-del-web/
+                                    </script>
+				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
+
+				<section>
+                                        <h2>Question Time</h2>
 					<p>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						<img src='img/answer.jpg' />
 					</p>
 				</section>
 
