@@ -69,8 +69,8 @@
 					<p class="fragment roll-in">Utilizzabile nelle pagine opzioni</p>
 					<p class="fragment roll-in">Nei post type anche da frontend</p>
 					<p class="fragment roll-in">Moduli aggiuntivi</p>
-					<p class="fragment roll-in">Documentazione: <a href="https://github.com/WebDevStudios/CMB2/wiki">https://github.com/WebDevStudios/CMB2/wiki</a></p>
-					<p class="fragment roll-in">Snippet <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library">https://github.com/WebDevStudios/CMB2-Snippet-Library</a></p>
+					<p class="fragment roll-in">Wiki: <a href="https://github.com/WebDevStudios/CMB2/wiki">https://github.com/WebDevStudios/CMB2/wiki</a></p>
+					<p class="fragment roll-in">Snippets: <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library">https://github.com/WebDevStudios/CMB2-Snippet-Library</a></p>
 					<p class="fragment roll-in"><a href="http://wpandmore.info/crea-meta-box-senza-problemi/">http://wpandmore.info/crea-meta-box-senza-problemi/</a></p>					
 				</section>
 				
@@ -125,18 +125,7 @@
               dependencies: [
                 {src: 'lib/js/classList.js', condition: function () {
                     return !document.body.classList;
-                  }},
-                {src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                    return !!document.querySelector('pre code');
-                  }, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                  }},
+                  }}
               ]
             });
 
