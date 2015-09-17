@@ -55,7 +55,7 @@
 						</ul>
 					</div>
 				</section>
-				
+
 				<section>
 					<h4 class="fragment roll-in">Hai mai modificato un tema di altri?</h4>
 					<h4 class="fragment roll-in">Hai mai scritto un tema da zero?</h4>
@@ -63,11 +63,11 @@
 
 				<section data-background="img/cmb2.png">
 					<div class="fragment">
-					<p><a href="https://wordpress.org/plugins/cmb2/">https://wordpress.org/plugins/cmb2/</a></p>
-					<p class="fragment"><a href="https://github.com/WebDevStudios/CMB2">https://github.com/WebDevStudios/CMB2</a></p>
+						<p><a href="https://wordpress.org/plugins/cmb2/">https://wordpress.org/plugins/cmb2/</a></p>
+						<p class="fragment"><a href="https://github.com/WebDevStudios/CMB2">https://github.com/WebDevStudios/CMB2</a></p>
 					</div>
 				</section>
-				
+
 				<section>
 					<h2>Feature</h2>
 					<p class="fragment roll-in">Multilingua</p>
@@ -80,11 +80,11 @@
 					<p class="fragment roll-in">Snippets: <a href="https://github.com/WebDevStudios/CMB2-Snippet-Library">github.com/WebDevStudios/CMB2-Snippet-Library</a></p>
 					<p class="fragment roll-in"><a href="http://wpandmore.info/crea-meta-box-senza-problemi/">wpandmore.info/crea-meta-box-senza-problemi/</a></p>					
 				</section>
-				
+
 				<section data-transition="fade" data-background-transition="convex">
 					<img src="img/fregatura.jpg">
 				</section>
-				
+
 				<section data-transition="fade" data-background-transition="convex">
 					<img src="img/opensource.jpg">
 				</section>
@@ -95,58 +95,55 @@
 						<small><a href="https://github.com/WebDevStudios/CMB2/wiki/Field-Types">https://github.com/WebDevStudios/CMB2/wiki/Field-Types</a></small>
 					</p>
 				</section>
-				
+
 				<section>
 					<h2>Inseriamo il codice di esempio</h2>
 				</section>
-				
-				<section>
-					<pre><code data-trim class="php">
-add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
 
+				<section>
+					<pre><code data-trim class="php" style="max-height: 630px;">
+// Hook di inizializzazione
+add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
 function cmb2_sample_metaboxes() {
 
-    // Start with an underscore to hide fields from custom fields list
+    // Un _ all'inizio fá in modo che dal backend nel box per i campi personalizzati non venga visualizzato
     $prefix = '_yourprefix_';
 
-    /**
-     * Initiate the metabox
-     */
+    // Creiamo il box
     $cmb = new_cmb2_box( array(
-        'id'            => 'test_metabox',
-        'title'         => __( 'Test Metabox', 'cmb2' ),
-        'object_types'  => array( 'page', ), // Post type
-        'context'       => 'normal',
-        'priority'      => 'high',
-        'show_names'    => true, // Show field names on the left
-        // 'closed'     => true, // Keep the metabox closed by default
+        'id'            => 'test_metabox', // ID di riferimento, deve essere univoco
+        'title'         => __( 'Test Metabox', 'cmb2' ), // Il titolo del box
+        'object_types'  => array( 'page', 'post', 'iltuocpt', 'user' ), // I Post type
+        'context'       => 'normal', // Indica la posizione se centrale o laterale
+        'priority'      => 'high', // Indica l'ordine
+        'show_names'    => true, // Mostra il titolo del campo
+        // 'closed'     => true, // Box chiuso di default
     ) );
 
-    // Regular text field
+    // Classico campo di testo
     $cmb->add_field( array(
-        'name'       => __( 'Test Text', 'cmb2' ),
-        'desc'       => __( 'field description (optional)', 'cmb2' ),
-        'id'         => $prefix . 'text',
-        'type'       => 'text',
-        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-        // 'on_front'        => false, // Optionally designate a field to wp-admin only
-        // 'repeatable'      => true,
+        'name'       => __( 'Test Text', 'cmb2' ), // Titolo del campo
+        'desc'       => __( 'field description (optional)', 'cmb2' ), // Descrizione del campo
+        'id'         => $prefix . 'text', // ID di riferimento del valore e del box, meglio univoco
+        'type'       => 'text', // Il tipo di campo
+        // 'show_on_cb'      => 'cmb2_hide_if_no_cats', // Callback per mostrare il campo tramite del nostro codice
+        // 'sanitization_cb' => 'my_custom_sanitization', // Validazione del valore del campo tramite del nostro codice
+        // 'on_front'        => false, // Visualizzarlo da frontend
+        // 'repeatable'      => true, // Campo ripetuto
     ) );
 }
-                                            </pre></code>
+					</code></pre>
 				</section>
-				
+
 				<section>
 					<h2>Modifichiamo una pagina e salviamo</h2>
 				</section>
-				
+
 				<section>
 					<h2>Modifichiamo il file page.php</h2>
 					<small><a href="https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage">https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage</a></small>
 				</section>
-				
+
 				<section data-transition="fade" data-background-transition="convex">
 					<img src="img/amazing.jpg">
 				</section>
@@ -176,7 +173,7 @@ function cmb2_sample_metaboxes() {
                 {src: 'lib/js/classList.js', condition: function () {
                     return !document.body.classList;
                   }},
-                  {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
                     return !!document.querySelector('pre code');
                   }, callback: function () {
                     hljs.initHighlightingOnLoad();
