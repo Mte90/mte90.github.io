@@ -1,310 +1,303 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>JavaScript in 1 hour</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <title>JavaScript in 1 hour</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
-		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/codeat.min.css" id="theme">
+        <link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/github.css">
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/github.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
+        <!-- Printing and PDF exports -->
+        <script>
             var link = document.createElement('link');
             link.rel = 'stylesheet';
             link.type = 'text/css';
             link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
             document.getElementsByTagName('head')[0].appendChild(link);
-		</script>
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
-		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Firefox OS/Arduino Workshop Fabriano</div><div class="hashtag">#fxosfabriano</div></div>
-		<div class="reveal">
+    <body>
+        <div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+        <div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Firefox OS/Arduino Workshop Fabriano</div><div class="hashtag">#fxosfabriano</div></div>
+        <div class="reveal">
 
-			<div class="slides">
-				<section>
-					<h1>JavaScript in 1 hour</h1>
-					<h3>Discover the language that rule the web!</h3>
-					<p>
-						Include comparison of JavaScript code and jQuery code!
-					</p>
-				</section>
+            <div class="slides">
+                <section>
+                    <h1>JavaScript in 1 hour</h1>
+                    <h3>Discover the language that rule the web!</h3>
+                    <p>
+                        Include comparison of JavaScript code and jQuery code!
+                    </p>
+                </section>
 
-				<section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
-                                    <div class="background">
-                                        <h2 class="white-black-shadow">Daniele Scasciafratte</h2>
-                                        <ul class="white-black-shadow">
-                                            <li>Co Founder Codeat - Full Stack Developer</li>
-                                            <li>Mozillian & Mozilla Reps</li>
-                                            <li>Author for network AndMore, ChimeraRevo and TechEconomy</li>
-                                            <li>Debian Linux user since 2009</li>
-                                            <li>WordPress Developer/Translator</li>
-                                            <li>Open Source Addicted</li>
-                                            <li>Industria Italiana Software Libero Admin</li>
-                                        </ul>
-                                    </div>
-				</section>
-				
-				<section class="force-top">
-                                    <p>
-					<img src='img/js-frameworks.jpg' style="margin-top:-40px;" />
-                                    </p>
-				</section>
+                <section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
+                    <div class="background">
+                        <h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+                        <ul class="white-black-shadow">
+                            <li>Co Founder Codeat - Full Stack Developer</li>
+                            <li>Mozillian & Mozilla Reps</li>
+                            <li>Author for network AndMore, ChimeraRevo and TechEconomy</li>
+                            <li>Debian Linux user since 2009</li>
+                            <li>WordPress Developer/Translator</li>
+                            <li>Open Source Addicted</li>
+                            <li>Industria Italiana Software Libero Admin</li>
+                        </ul>
+                    </div>
+                </section>
 
-				<section class="force-bottom" data-background="img/fight.jpg">
-					<div class="background">
-						<h2 class="white-black-shadow">JS Vanilla vs jQuery</h2>
-					</div>
-				</section>
-				
-				<section>
-                                    <h2 class="white-black-shadow">Comparison</h2>
-                                    <table>
-                                        <tr>
-                                            <td>JavaScript</td>
-                                            <td>jQuery</td>
-                                        </tr>
-                                        <tr class="fragment">
-                                            <td>Scripting Language</td>
-                                            <td>Framework for JavaScript</td>
-                                        </tr>
-                                        <tr class="fragment">
-                                            <td>Superfast time execution</td>
-                                            <td>Require to loading the library</td>
-                                        </tr>
-                                        <tr class="fragment">
-                                            <td>Difficult to write</td>
-                                            <td>Simple to write</td>
-                                        </tr>
-                                        <tr class="fragment">
-                                            <td>Every browser can have different APIs</td>
-                                            <td>Support also for old browsers</td>
-                                        </tr>
-                                        <tr class="fragment">
-                                            <td>Today is important to known JavaScript</td>
-                                            <td>jQuery is the foundation for many webapp</td>
-                                        </tr>
-                                    </table>
-                                </section>
+                <section class="force-top">
+                    <p>
+                        <img src='img/js-frameworks.jpg' style="margin-top:-40px;" />
+                    </p>
+                </section>
 
-				<section>
-					<h2>Document Object Model</h2>
-					<div><h5><a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model'>From Mozilla Developer Network</a></h5></div>
-					<blockquote class="fragment" cite="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"><small>
-						The Document Object Model (DOM) is a programming interface for HTML, XML and SVG documents. It provides a structured representation of the document (a tree) and it defines a way that the structure can be accessed from programs so that they can change the document structure, style and content. The DOM provides a representation of the document as a structured group of nodes and objects that have properties and methods. Nodes can also have event handlers attached to them, and once that event is triggered the event handlers get executed. Essentially, it connects web pages to scripts or programming languages.
-					</small></blockquote>
-					<br>
-					<div class="fragment roll-in">
-                                            <h5>Open the developer tools</h5>
-                                            <span>Ctrl + Shift + i</span>
-					</div>
-				</section>
-				
-				<section class="force-top" data-transition="slide" data-background-transition="convex" data-background="img/catch-me.gif">
-                                    <div class="background">
-                                        <h2 class="white-black-shadow">Selectors</h2>
-                                    </div>
-                                </section>
+                <section class="force-bottom" data-background="img/fight.jpg">
+                    <div class="background">
+                        <h2 class="white-black-shadow">JS Vanilla vs jQuery</h2>
+                    </div>
+                </section>
 
-				<section>
-					<h2>An example</h2>
-					<p class="key fragment" id="principal">Lorem Ipsum</p>
-					<style>
-                                            .key {
-                                                color: green;
-                                            }
-                                            #principal {
-                                                font-weight: bolder;
-                                            }
-					</style>
-					<p class="grow">
-                                            HTML
-                                            <pre><code class="html">&lt;p class="key" id="principal"&gt;Lorem Ipsum&lt;/p&gt;</pre></code>
-					</p>
-					<p class="roll-in">
-					CSS
-                                            <pre><code data-trim class="html">
+                <section>
+                    <h2 class="white-black-shadow">Comparison</h2>
+                    <table>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>jQuery</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Scripting Language</td>
+                            <td>Framework for JavaScript</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Superfast time execution</td>
+                            <td>Require to loading the library</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Difficult to write</td>
+                            <td>Simple to write</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Every browser can have different APIs</td>
+                            <td>Support also for old browsers</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Today is important to known JavaScript</td>
+                            <td>jQuery is the foundation for many webapps</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Document Object Model</h2>
+                    <div><h5><a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model'>From Mozilla Developer Network</a></h5></div>
+                    <blockquote class="fragment" cite="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"><small>
+                            The Document Object Model (DOM) is a programming interface for HTML, XML and SVG documents. It provides a structured representation of the document (a tree) and it defines a way that the structure can be accessed from programs so that they can change the document structure, style and content. The DOM provides a representation of the document as a structured group of nodes and objects that have properties and methods. Nodes can also have event handlers attached to them, and once that event is triggered the event handlers get executed. Essentially, it connects web pages to scripts or programming languages.
+                        </small></blockquote>
+                    <br>
+                    <div class="fragment roll-in">
+                        <h5>Open the developer tools</h5>
+                        <span>Ctrl + Shift + i</span>
+                    </div>
+                </section>
+
+                <section class="force-top" data-transition="slide" data-background-transition="convex" data-background="img/catch-me.gif">
+                    <div class="background">
+                        <h2 class="white-black-shadow">Selectors</h2>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>An example</h2>
+                    <p class="key fragment" id="principal">Lorem Ipsum</p>
+                    <style>
+                        .key {
+                            color: green;
+                        }
+                        #principal {
+                            font-weight: bolder;
+                        }
+                    </style>
+                    <p class="grow">
+                        HTML
+                    <pre><code class="html">&lt;p class="key" id="principal"&gt;Lorem Ipsum&lt;/p&gt;</code></pre>
+                    </p>
+                    <p class="roll-in">
+                        CSS
+                    <pre><code data-trim class="html">
 <style>
-    .key {
-        color: green;
-    }
-    #principal {
-        font-weight: bolder;
-    }
+                                .key {
+                                    color: green;
+                                }
+                                #principal {
+                                    font-weight: bolder;
+                                }
 </style>
-                                            </pre></code>
-					</p>
-				</section>
-    
-				<section>
-					<h2>Selectors in JavaScript</h2>
-					<p class="lorem fragment" id="ipsum">Lorem Ipsum</p>
-					<p>
-                                            <pre><code class="html">&lt;p class="lorem" id="ipsum"&gt;Lorem Ipsum&lt;/p&gt;</pre></code>
-					</p>
-					<script>
-                                            document.querySelector('.lorem').style.color = 'green';
-                                            document.querySelector('#ipsum').style.fontWeight = 'bolder';
-					</script>
-					<p>
-                                            JavaScript
-                                            <pre><code class="javascript" data-trim>
+					</code></pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Selectors in JavaScript</h2>
+                    <p class="lorem fragment" id="ipsum">Lorem Ipsum</p>
+                    <p>
+                    <pre><code class="html">&lt;p class="lorem" id="ipsum"&gt;Lorem Ipsum&lt;/p&gt;</code></pre>
+                    </p>
+                    <script>
+                        document.querySelector('.lorem').style.color = 'green';
+                        document.querySelector('#ipsum').style.fontWeight = 'bolder';
+                    </script>
+                    <p>
+                        JavaScript
+                    <pre><code class="javascript" data-trim>
 document.querySelector('.lorem').style.color = 'green';
 document.querySelector('#ipsum').style.fontWeight = 'bolder';
-                                            </pre></code>
-					</p>
-					<p>
-                                            jQuery
-                                            <pre><code class="javascript" data-trim>
+					</code></pre>
+                    </p>
+                    <p>
+                        jQuery
+                    <pre><code class="javascript" data-trim>
 jQuery('.lorem').css('color','green');
 jQuery('#ipsum').css('font-weight','bolder');
-                                            </pre></code>
-					</p>					
-				</section>
+					</code></pre>
+                    </p>					
+                </section>
 
-				<section data-transition="slide" data-background-transition="convex" data-background="img/events.gif">
-                                        <div class="background">
-						<h2 class="white-black-shadow">Events</h2>
-                                        </div>
-				</section>
+                <section data-transition="slide" data-background-transition="convex" data-background="img/events.gif">
+                    <div class="background">
+                        <h2 class="white-black-shadow">Events</h2>
+                    </div>
+                </section>
 
-				<section data-transition="slide" data-background-transition="zoom">
-					<p id="jsipsum" style="cursor:pointer">Click me</p>
-					<script>
-                                            document.querySelector('#jsipsum').addEventListener('click', function () {
-                                                this.style.color = 'green';
-                                                this.style.fontWeight = 'bolder';
-                                                console.log('Style changed');
-                                            });
-					</script>
-					<p>
-                                            <pre><code class="html">&lt;p id="jsipsum"&gt;Click me&lt;/p&gt;</pre></code>
-					</p>
-					<p>
-                                            JavaScript
-                                            <pre><code class="javascript" data-trim>
+                <section data-transition="slide" data-background-transition="zoom">
+                    <p id="jsipsum" style="cursor:pointer">Click me</p>
+                    <script>
+                        document.querySelector('#jsipsum').addEventListener('click', function () {
+                          this.style.color = 'green';
+                          this.style.fontWeight = 'bolder';
+                          console.log('Style changed');
+                        });
+                    </script>
+                    <p>
+                    <pre><code class="html">&lt;p id="jsipsum"&gt;Click me&lt;/p&gt;</pre></code>
+                    </p>
+                    <p>
+                        JavaScript
+                    <pre><code class="javascript" data-trim>
 document.querySelector('#jsipsum').addEventListener('click', function () {
     this.style.color = 'green';
     this.style.fontWeight = 'bolder';
     console.log('Style changed');
 });
-                                            </pre></code>
-					</p>
-					<p>
-                                            jQuery
-                                            <pre><code class="javascript" data-trim>
+					</code></pre>
+                    </p>
+                    <p>
+                        jQuery
+                    <pre><code class="javascript" data-trim>
 jQuery('#jsipsum').click(function () {
     jQuery(this).css('color','green').css('font-weight','bolder');
     console.log('Style changed');
 });
-                                            </pre></code>
-					</p>
-				</section>
+					</code></pre>
+                    </p>
+                </section>
 
-				<section class='force-top' data-background="img/request.jpg">
-					<div class="background">
-						<h2 class="white-black-shadow">Ajax</h2>
-                                        </div>
-				</section>
-								
-				<section data-background="img/omg.gif">
-				</section>				
-				
-				<section data-transition="slide" data-background-transition="zoom">
-					<p>
-                                            JavaScript
-                                            <pre><code class="javascript" data-trim>
+                <section class='force-top' data-background="img/request.jpg">
+                    <div class="background">
+                        <h2 class="white-black-shadow">Ajax</h2>
+                    </div>
+                </section>
+
+                <section data-background="img/omg.gif">
+                </section>				
+
+                <section data-transition="slide" data-background-transition="zoom">
+                    <p>
+                        JavaScript
+                    <pre><code class="javascript" data-trim>
 var httpRequest = new XMLHttpRequest()
 httpRequest.onreadystatechange = function (data) {
     console.log(data);
 }
 httpRequest.open('GET', 'http://domain.tld/api')
 httpRequest.send()
-                                            </pre></code>
-					</p>
-					<p>
-                                            jQuery
-                                            <pre><code class="javascript" data-trim>
+					</code></pre>
+                    </p>
+                    <p>
+                        jQuery
+                    <pre><code class="javascript" data-trim>
 jQuery.get( 'http://domain.tld/api', function( data ) { 
     console.log(data);
 }
-                                            </pre></code>
-					</p>
-				</section>
-				
-				<section data-markdown>
-                                    <script type="text/template">
-					##Link
-                                        
-					* https://github.com/Mte90/Talk-OWA-App/
-					* http://www.mte90.net/2014/07/parliamo-jquery-vs-javascript-vanilla/
-					* https://github.com/Mte90/Memory
-					* http://www.sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/
-					* http://www.sitepoint.com/jquery-vs-raw-javascript-3-events-ajax/
-					* http://youmightnotneedjquery.com/
-					* https://plainjs.com/javascript/
-					* http://eloquentjavascript.net/
-					* http://skillsandmore.org/courses/javascript-il-linguaggio-dinamico-del-web/
-                                    </script>
-				</section>
+					</code></pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Link</h2>
+                    <ul>
+                        <li><a href="https://github.com/Mte90/Talk-OWA-App/">github.com/Mte90/Talk-OWA-App/</a></li>
+                        <li><a href="http://www.mte90.net/2014/07/parliamo-jquery-vs-javascript-vanilla/">mte90.net/2014/07/parliamo-jquery-vs-javascript-vanilla/</a></li>
+                        <li><a href="https://github.com/Mte90/Memory">github.com/Mte90/Memory</a></li>
+                        <li><a href="http://www.sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/">sitepoint.com/jquery-vs-raw-javascript-1-dom-forms/</a></li>
+                        <li><a href="http://www.sitepoint.com/jquery-vs-raw-javascript-3-events-ajax/">sitepoint.com/jquery-vs-raw-javascript-3-events-ajax/</a></li>
+                        <li><a href="http://youmightnotneedjquery.com/">youmightnotneedjquery.com/</a></li>
+                        <li><a href="https://plainjs.com/javascript/">plainjs.com/javascript/</a></li>
+                        <li><a href="http://eloquentjavascript.net/">eloquentjavascript.net/</a></li>
+                        <li><a href="http://skillsandmore.org/courses/javascript-il-linguaggio-dinamico-del-web/">skillsandmore.org/courses/javascript-il-linguaggio-dinamico-del-web/</a></li>
+                    </ul>
+                </section>
 
 
-				<section>
-                                        <h2>Question Time</h2>
-					<p>
-						<img src='img/answer.jpg' />
-					</p>
-				</section>
+                <section>
+                    <h2>Question Time</h2>
+                    <p>
+                        <img src='img/answer.jpg' />
+                    </p>
+                </section>
 
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-            Reveal.initialize({
-              controls: false,
-              progress: true,
-              history: true,
-              center: true,
-              touch: true,
-              overview: false,
-              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+                        Reveal.initialize({
+                          controls: false,
+                          progress: true,
+                          history: true,
+                          center: true,
+                          touch: true,
+                          overview: false,
+                          transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
-              dependencies: [
-                {src: 'lib/js/classList.js', condition: function () {
-                    return !document.body.classList;
-                  }},
-                {src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                    return !!document.querySelector('pre code');
-                  }, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                  }},
-              ]
-            });
+                          dependencies: [
+                            {src: 'lib/js/classList.js', condition: function () {
+                                return !document.body.classList;
+                              }},
+                            {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                                return !!document.querySelector('pre code');
+                              }, callback: function () {
+                                hljs.initHighlightingOnLoad();
+                              }},
+                          ]
+                        });
 
-            document.querySelector('.titolo').textContent = document.title;
+                        document.querySelector('.titolo').textContent = document.title;
 
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
