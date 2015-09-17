@@ -101,11 +101,50 @@
 				</section>
 				
 				<section>
+					<pre><code data-trim class="php">
+add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
+
+function cmb2_sample_metaboxes() {
+
+    // Start with an underscore to hide fields from custom fields list
+    $prefix = '_yourprefix_';
+
+    /**
+     * Initiate the metabox
+     */
+    $cmb = new_cmb2_box( array(
+        'id'            => 'test_metabox',
+        'title'         => __( 'Test Metabox', 'cmb2' ),
+        'object_types'  => array( 'page', ), // Post type
+        'context'       => 'normal',
+        'priority'      => 'high',
+        'show_names'    => true, // Show field names on the left
+        // 'closed'     => true, // Keep the metabox closed by default
+    ) );
+
+    // Regular text field
+    $cmb->add_field( array(
+        'name'       => __( 'Test Text', 'cmb2' ),
+        'desc'       => __( 'field description (optional)', 'cmb2' ),
+        'id'         => $prefix . 'text',
+        'type'       => 'text',
+        'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+        // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+        // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+        // 'on_front'        => false, // Optionally designate a field to wp-admin only
+        // 'repeatable'      => true,
+    ) );
+}
+                                            </pre></code>
+				</section>
+				
+				<section>
 					<h2>Modifichiamo una pagina e salviamo</h2>
 				</section>
 				
 				<section>
-					<h2>Modifichiamo il file single.php</h2>
+					<h2>Modifichiamo il file page.php</h2>
+					<small><a href="https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage">https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage</a></small>
 				</section>
 				
 				<section data-transition="fade" data-background-transition="convex">
@@ -136,7 +175,12 @@
               dependencies: [
                 {src: 'lib/js/classList.js', condition: function () {
                     return !document.body.classList;
-                  }}
+                  }},
+                  {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
               ]
             });
 
