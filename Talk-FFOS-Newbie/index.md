@@ -3,7 +3,7 @@
 
 Develop an app has never been easier
 
->MilanoJS - Aprile 2015  
+>HTML5 Codeshow Roma - Mozilla Codeshow  
 >Speaker: Daniele "Mte90" Scasciafratte (@Mte90Net)
 
 ##It's Me Mario Ehm Daniele
