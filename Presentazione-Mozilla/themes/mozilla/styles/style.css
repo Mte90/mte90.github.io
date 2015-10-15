@@ -49,6 +49,25 @@ body:after {
 	color:rgb(255,255,255);
 }
 
+.slide.sandstone section {
+	background:url(../images/bg-sandstone-2.png);
+	color:rgb(0,0,0);
+}
+
+.slide.sandstone header {
+	color:rgb(0,0,0);
+}
+
+.slide.darkgrey section {
+	background:url(../images/bg-darkgrey-2.png);
+	color:rgb(0,0,0);
+}
+
+.slide.blue section {
+	background:url(../images/bg-blue-2.png);
+	color:rgb(0,0,0);
+}
+
 /* 
 	No numbering in the progress bar:
   add "nonumbers" class to <html> 
@@ -122,7 +141,7 @@ body:after {
 	margin:0 0 58px;
 	color:rgb(255,255,255);
 	text-transform: uppercase;
-	font:lighter 40px/1.13 'Fira Sans', sans-serif;
+	font:bold 40px/1.13 'Fira Sans', sans-serif;
 }
 
 /* Elements */
@@ -640,7 +659,6 @@ ul.inline li:last-child::after {
 }
 * [contenteditable]:focus {
 	background: #f8f8f8;
-
 }
 
 /* Meta */ 
