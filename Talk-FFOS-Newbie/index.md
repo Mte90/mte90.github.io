@@ -95,6 +95,19 @@ CSS framework of Gaia with documentation (include PSDs)
 <br>
 Examples/Documentation: [https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks](https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks)  
 
+##Gaia Components
+CSS framework of Gaia with documentation (include PSDs)  
+
+* Each component has its own repo
+* Easily Installable
+* Versioned separately
+* Tested separately
+* CSS Variables
+* Unit test
+
+<br>
+Demos: [http://wilsonpage.github.io/presentations/web-components-in-production](http://wilsonpage.github.io/presentations/web-components-in-production) , [http://github.com/gaia-components](http://github.com/gaia-components)
+
 ##l10n.js
 
 * Multibrowser
