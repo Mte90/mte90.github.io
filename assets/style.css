@@ -1,23 +1,23 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit !important;
+	box-sizing: inherit !important;
 }
 
 body {
-  font-family: 'Raleway', sans-serif !important;
+	font-family: 'Raleway', sans-serif !important;
 }
 
 a {
-  color: #5a5a5a !important;
-  text-decoration: none;
+	color: #5a5a5a !important;
+	text-decoration: none;
 }
 
 a:hover {
-  color: #000 !important;
+	color: #000 !important;
 }
 
 a.video {
@@ -29,9 +29,9 @@ li a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif !important;
-  margin-top:5px !important;
-  margin-bottom:5px !important;
+	font-family: 'Roboto', sans-serif !important;
+	margin-top:5px !important;
+	margin-bottom:5px !important;
 }
 
 h2 {
@@ -39,8 +39,8 @@ h2 {
 }
 
 span, a, li,h4 {
-  font-family: 'Raleway', sans-serif !important;
-  font-size: 16px !important;
+	font-family: 'Raleway', sans-serif !important;
+	font-size: 16px !important;
 }
 
 h4 a {
@@ -48,13 +48,13 @@ h4 a {
 }
 
 ul {
-  margin-left: 0;
-  padding-left: 20px;
+	margin-left: 0;
+	padding-left: 20px;
 }
 
 li {
-  margin-left: 0;
-  padding-bottom: 8px;
+	margin-left: 0;
+	padding-bottom: 8px;
 }
 
 ._1 {
@@ -83,22 +83,22 @@ li {
 }
 
 .container {
-  /*width: 650px;*/
-  margin: 0 auto;
+	/*width: 650px;*/
+	margin: 0 auto;
 }
 
 .phone-number {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .my-name {
-  font-weight: 900;
-  margin-bottom: 0px;
+	font-weight: 900;
+	margin-bottom: 0px;
 }
 
 .section-header {
-  border-bottom: 1px solid black;
-  position: relative;
+	border-bottom: 1px solid black;
+	position: relative;
 }
 
 .header {
@@ -106,95 +106,95 @@ li {
 }
 
 .contact {
-  font-family: 'Raleway', sans-serif;
-  margin-top: 25px;
-  /*position: absolute;*/
-  /*top: 35px;*/
-  /*right: 15px;*/
-  font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 25px;
+	/*position: absolute;*/
+	/*top: 35px;*/
+	/*right: 15px;*/
+	font-size: 16px;
 }
 
 .icon {
-  font-size: 25px;
-  display: inline-block;
-  width: 16px;
-  vertical-align: middle;
-  margin-left:15px;
+	font-size: 25px;
+	display: inline-block;
+	width: 16px;
+	vertical-align: middle;
+	margin-left:15px;
 }
 
 .left-column {
-  width: 400px;
-  padding-right: 35px;
-  display: inline-block;
-  vertical-align: top;
+	width: 400px;
+	padding-right: 35px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .right-column {
-  width: 225px;
-  display: inline-block;
-  vertical-align: top;
+	width: 225px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .qrcode {
 	width:250px;
-		height:250px;
-		margin:0 auto;
+	height:250px;
+	margin:0 auto;
 }
 
 .bar {
-  border-top: 1px solid rgba(128, 128, 128, 0.2);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-  padding-top:3px;
-  padding-bottom:3px;
-  margin:0;
-  text-align:center;
+	border-top: 1px solid rgba(128, 128, 128, 0.2);
+	border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+	padding-top:3px;
+	padding-bottom:3px;
+	margin:0;
+	text-align:center;
 }
 
 /* Media Queries */
 @media all and (max-width: 421px) {
-  .only-small {
-    display: block;
-  }
+	.only-small {
+		display: block;
+	}
 }
 
 @media all and (min-width: 800px) {
-  .only-big {
-    display: block;
-  }
+	.only-big {
+		display: block;
+	}
 }
 @media all and (max-width: 700px) {
-  .my-name {
-    font-size: 40px;
-  }
+	.my-name {
+		font-size: 40px;
+	}
 
-  .my-credentials {
-    font-size: 20px;
-  }
-  .contact {
-    margin-top: -10px;
-    position: static;
-    font-size: 16px;
-  }
+	.my-credentials {
+		font-size: 20px;
+	}
+	.contact {
+		margin-top: -10px;
+		position: static;
+		font-size: 16px;
+	}
 
-  body {
-    padding: 0px 15px;
-  }
+	body {
+		padding: 0px 15px;
+	}
 
-  .left-column {
-    width: 100%;
-    display: block;
-    padding-right: 0;
-  }
+	.left-column {
+		width: 100%;
+		display: block;
+		padding-right: 0;
+	}
 
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
+	.container {
+		width: 100%;
+		margin: 0 auto;
+	}
 
-  .right-column {
-    width: 100%;
-    display: block;
-  }
+	.right-column {
+		width: 100%;
+		display: block;
+	}
 }
 .col-md-8, .col-md-4 {
     padding:0 !important;
