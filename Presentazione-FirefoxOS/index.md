@@ -10,12 +10,13 @@ Scopriamo le sue caratteristiche!
 
 Sono Daniele Scasciafratte conosciuto nel web come [Mte90](http://www.mte90.net)
 
-* Firefox OS Training Lead per l'Italia
-* Fanatico Open Source
-* Debian user dal 2009
-* Amante di KDE e delle Qt
-* Wordpress Developer
-* **Mozillian%Mozilla Rep**
+* Co-Founder Codeat
+* Open Source Developer/Translator/Evangelist
+* WordPress (Developer) Italia Community Member/Translator
+* Industria Italiana del Software Libero Admin
+* Debian (sid) user since 2009
+* Writer for Italian sites: AndMore's network, ChimeraRevo and TechEconomy
+* **Mozillian & Mozilla Reps**
 
 ##Cos'è Firefox OS
 ![](./img/fox.png)  
@@ -24,11 +25,12 @@ Firefox OS **nome in codice Boot to Gecko** è un sistema operativo basato su **
 Fonte: [https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS)
 
 ##Screenshot
-![](./img/FirefoxOS_Homescreen.png)
-![](./img/FirefoxOS_Search.png)
+![](./img/ffos-addons.png)
+![](./img/ffos-lock.jpg)
 
 ##Screenshot
-![](./img/FirefoxOS_Icon_Grid.png)![](./img/FirefoxOS_Marketplace.png)
+![](./img/FirefoxOS_Search.png)
+![](./img/FirefoxOS_Marketplace.png)
 
 ##Screenshot
 ![](./img/FirefoxOS_Contacts.png)
@@ -38,7 +40,7 @@ Fonte: [https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS](https://dev
 ![](./img/FirefoxOS_Call.png)
 ![](./img/FirefoxOS_Browser.png)
 
-##Perchè costa poco?
+##Perchè solo dispositivi economici?
 ![](./img/shut-up-and-take-my-money.jpg)  
 
 * Mozilla propone **standard aperti**
@@ -46,6 +48,7 @@ Fonte: [https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS](https://dev
 * Realizzato per portare il web mobile a tutti
 * Componenti non molto costosi (qualcuno ha detto lo smartphone da 25$?)
 * Sistema fluido e funzionale senza grandi esigenze
+* [http://firefoxosdevices.org](firefoxosdevices.org)
 
 ##Gonk, Gecko e Gaia
 ![](./img/three-rings.jpg)  
@@ -67,8 +70,8 @@ Tutte le applicazioni sono realizzate con i tre Assassini ovvero **HTML/CSS/JS**
 
 ##La leggenda delle Web App lente
 ![](./img/firefox-starting-up.jpg)  
-Come si fà a dire che una Web App è lenta quando i browser hanno fatto passi da gigante negli ultimi anni in termini di performance?  
-Specialmente in ambito mobile dove basta realizzare un applicativo fatto bene per non doversi più preoccupare più di niente?
+I browser hanno fatto passi da gigante negli ultimi anni in termini di performance!  
+Specialmente in ambito mobile dove un app fatta bene é irriconoscibile da una nativa.
 
 ##Web App è fico
 In **Firefox OS** si possono ottenere app con le stesse performance di una nativa  
@@ -85,19 +88,13 @@ Alcuni esempi di tool/librerie/linguaggi:
 * PhoneGap
 * Dart
 
-##Building Blocks
-**Pubblicità**  
-[Building Blocks](http://buildingfirefoxos.com/) è un framework css aggiornato quotidianamente con le ultime modifiche di Gaia che permette di realizzare delle interfacce uguale a quella del sistema  
-<br><br>
-PS: Ci sono i file PSD ma non ditelo ai grafici!
-
 ##Web App Hosted vs Packaged
 Firefox OS ha due tipi di applicazioni che si **differenziano dai permessi** che hanno sul dispositivo e se **si scaricano fisicamente sul dispositivo**
 
 ##I permessi
-Su altri sistemi siamo abituati ai permessi di amministrazione.  
-Firefox OS specifica i permessi di ogni app nel suo manifest e se permesso dall'utente verranno eseguiti.  
-I permessi di root servono solo agli sviluppatori: per il flash semplificato delle rom e si attivano solo con un kernel compilato con l'opzione abilitata
+Firefox OS **specifica i permessi** di ogni app nel suo manifest e **se permesso dall'utente** verranno eseguiti.  
+
+I **permessi di root servono** solo agli sviluppatori: per il flash semplificato delle rom e si attivano solo con un kernel compilato con l'opzione abilitata
 
 Fonte:[https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security), [Apps CSP](https://developer.mozilla.org/en-US/Apps/CSP)
 
@@ -144,7 +141,7 @@ Fonte: [https://developer.mozilla.org/en-US/Apps/Developing/Packaged_apps](https
 
 ##Quante API in giro
 ![](./img/bee.png)  
-Le API sono presentate al **W3C** come draft  
+Le API sono presentate al **W3C** come draft!  
 Alcune API native di Firefox OS
 
 > WebTelephony, Vibration API, WebSMS, Idle API, Screen Orientation, Settings API, Power manager API, Mobile Connection API, TCP Socket API, Geolocation API, WiFi Information API, Device Storage API, Contacts API, Mouse Lock API, Open WebApps, WebBluetooth, Network Information API, Battery Status API, Alarm API, Browser API, Time/Clock API, Web Activities, Push Notification API, Permission API, WebFM API, FileHandle API, Network Stats API, WebPayment
@@ -235,9 +232,17 @@ Tramite Firefox e un dispositivo con Firefox OS o Firefox for Android collegato 
 
 Fonte: <https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging>
 
+##Web Components
+**Pubblicità**   
+Sono in [Working Draft](http://www.w3.org/TR/2013/WD-components-intro-20130606/) dal W3C e supportati da Chrome e Firefox.  
+Si trattano di nuovi elementi (i widget in poche parole) con tag HTML personalizzati  
+Le librerie [Polymer](http://www.polymer-project.org/) di Google e [Gaia Componenets](https://github.com/gaia-components) di Mozilla ne includono già pronte come un calendario o la barra di stato.  
+<br>
+Fonti: [HTML5Rocks](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/), [Web Componenets in Firefox OS](https://github.com/gaia-components)
+
 ##Come fare un'Open Web App
 * Pensa ad un sito web pensato per più interfacce (Desktop, Smartphone e Tablet)
-* Scarica il [boilerplate ufficiale](https://github.com/robnyman/Firefox-OS-Boilerplate-App) o [Building Blocks](http://buildingfirefoxos.com/)
+* Scarica il [boilerplate ufficiale](https://github.com/robnyman/Firefox-OS-Boilerplate-App)
 * Libera la fantasia
 <br><br>
 Se conosci HTML/CSS/JS ti basta sapere questo!!
@@ -254,7 +259,7 @@ Le app presenti sul Marketplace sono per quattro tipi diversi di interfacce/disp
 * Firefox OS per tablet
 
 ##Le differenze tra Firefox
-Il marketplace è disponibile per questi quattro ambienti ma la differenza principale è l'API che supportano (es: la versione desktop non ha l'Orientation API) e la risoluzione  
+Il marketplace è disponibile per questi **quattro ambienti** ma la differenza principale è l'**API che supportano** (es: la versione desktop non ha l'Orientation API) e la risoluzione  
 
 Se installate un'app su desktop creerà una icona nel menu del sistema, su mobile invece nello screen o nel menu  
 
@@ -265,14 +270,6 @@ Se installate un'app su desktop creerà una icona nel menu del sistema, su mobil
 * Se Hosted caricare sul proprio server web (anche Github per esempio)
 * Se Packaged comprimere tutto in un file zip
 * Inviare l'app sul Marketplace per la recensione
-
-##Web Components
-**Pubblicità**   
-Sono in [Working Draft](http://www.w3.org/TR/2013/WD-components-intro-20130606/) dal W3C e supportati da Chrome e Firefox.  
-Si trattano di nuovi elementi (i widget in poche parole) con tag HTML personalizzati  
-Le librerie [Polymer](http://www.polymer-project.org/) di Google e [Brick](http://brick.mozilla.io/) di Mozilla ne includono già pronte come un calendario o la barra di stato.  
-<br>
-Fonti: [HTML5Rocks](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/), [Introducing Brick](https://hacks.mozilla.org/2013/08/introducing-brick-minimal-markup-web-components-for-faster-app-development/), [Brickly](http://mte90.github.io/Brickly)
 
 ##Varie
 ![](./img/varie.jpg)  
@@ -297,7 +294,7 @@ Sul marketplace ce ne sono 2000 (un terzo): [https://marketplace.firefox.com/cat
 <small>Approfondimento: [Optimizing your JavaScript game for Firefox OS](https://hacks.mozilla.org/2013/05/optimizing-your-javascript-game-for-firefox-os/),[E-Book](http://www.amazon.it/Beginning-Firefox-HTML5-Game-Programming-ebook/dp/B00IZUYIGO/ref=sr_1_7?ie=UTF8&qid=1398181859&sr=8-7&keywords=firefox+os)</small>
 
 ##Firefox OS multi dispositivo
-Firefox OS è scaricabile e compilabile tramite la guida per molti dispositivi ma pochi sono supportati ufficialmente  
+Firefox OS è scaricabile e compilabile tramite la guida per molti dispositivi ma pochi sono supportati ufficialmente, si trovano ROM giá pronte su [firefoxos.mozilla.community](http://firefoxos.mozilla.community/)
 <br><br>
 La pagina su [XDA Developers](http://forum.xda-developers.com/tags.php?tag=firefox+os) contiene diversi esperimenti di porting  
 I requisiti per la [compilazione](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Firefox_OS_build_prerequisites), [ambiente per la compilazione](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Preparing_for_your_first_B2G_build), come fare un [porting](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Porting) e la guida per la [compilazione](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Building) si trovano su MDN
@@ -306,7 +303,6 @@ I requisiti per la [compilazione](https://developer.mozilla.org/en-US/docs/Mozil
 
 La batteria dura molto, per esempio una settimana con wifi (me lo ero scordato acceso più di una volta)
 
-</div>
 ##Italiano
 ![](./img/italia.jpg)  
 Firefox OS è tradotto in italiano!  
@@ -325,8 +321,7 @@ Cerchiamo anche un grafico per la realizzazione vettoriale del logo!
 * [Mozhacks](https://hacks.mozilla.org/category/firefox-os/) - il blog di Mozilla dedicato agli sviluppatori
 * [Mozilla Developer Network](https://developer.mozilla.org/it/) - La miglior fonte di informazione per lo sviluppo web
 * [Developers Hub](https://marketplace.firefox.com/developers/) - portale del Marketplace dedicato agli sviluppatori
-* [Firefox OS Quick Guide](https://github.com/MozillaItalia/firefoxos-quick-guide) - Guida veloce in Italiano con nuovo materiale in scrittura
-* [Building Blocks](http://buildingfirefoxos.com/) - Esempi, codice e documentazione per gli sviluppatori
+* [Firefox OS Quick Guide](https://github.com/MozillaItalia/firefoxos-quick-guide) - Guida veloce in Italiano con nuovo materiale
 * [Github](http://www.github.com) - Molte applicazione e i prodotti Mozilla sono qui
 * [Firefox OS app tools](https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_app_tools)
 
@@ -346,4 +341,4 @@ Se avete domande fatele adesso o mai più (scherzo)
 <br>
 Link presentazione: [http://mte90.github.io/Presentazione-FirefoxOS](http://mte90.github.io/Presentazione-FirefoxOS)  
 Presentazione di:  
-Daniele Scasciafratte - [Mte90Net](http://twitter.com/Mte90Net) - [Mte90.net](http://www.mte90.net)
+Daniele Scasciafratte - [@Mte90Net](http://twitter.com/Mte90Net) - [Mte90.net](http://www.mte90.net)
