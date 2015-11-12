@@ -238,7 +238,7 @@ Sono in [Working Draft](http://www.w3.org/TR/2013/WD-components-intro-20130606/)
 Si trattano di nuovi elementi (i widget in poche parole) con tag HTML personalizzati  
 Le librerie [Polymer](http://www.polymer-project.org/) di Google e [Gaia Componenets](https://github.com/gaia-components) di Mozilla ne includono già pronte come un calendario o la barra di stato.  
 <br>
-Fonti: [HTML5Rocks](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/), [Web Componenets in Firefox OS](https://github.com/gaia-components)
+Fonti: [HTML5Rocks](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/), [Web Components in Firefox OS](https://github.com/gaia-components)
 
 ##Come fare un'Open Web App
 * Pensa ad un sito web pensato per più interfacce (Desktop, Smartphone e Tablet)

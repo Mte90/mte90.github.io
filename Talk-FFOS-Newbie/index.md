@@ -10,38 +10,36 @@ Develop an app has never been easier
 
 Daniele Scasciafratte aka [Mte90](http://www.mte90.net)
 
-* Geek since I started to disassemble electronic items
-* Debian (Sid) GNU/Linux user since 2009
-* Lovers of KDE and Qt
-* Proud **Mozillian**, soon Mozilla Rep
-* Firefox OS Training Lead Italy
-* Industria Italiana Software Libero admin
-* Libreitalia Member
-* ChimeraRevo and AndMore Blogger
-* Co Founder Codeat - Full Stack Developer
+* Co-Founder Codeat
+* Open Source Developer/Translator/Evangelist
+* WordPress (Developer) Italia Community Member/Translator
+* Industria Italiana del Software Libero Admin
+* Debian (sid) user since 2009
+* Writer for Italian sites: AndMore's network, ChimeraRevo and TechEconomy
+* **Mozillian & Mozilla Reps**
 
 ##Firefox OS
 ![](./img/firefoxos.jpg)
 
-Firefox OS is a mobile operative system based on **Linux** and **Android**, divided in three layers:  
+Firefox OS is a **mobile operative system** based on **Linux** and **Android**, divided in three layers:  
 **Gonk** (the kernel), **Gecko** (browser engine) and **Gaia** (HTML5 UI)
 
 ##You like to win easily, don't you?
 ![](./img/vincere.jpg)  
-Firefox OS is very simple for a HTML5 Developer, Web Developer, Lazy Developer, Javascript Developer, Apps Developer, Bored Developer etc.  
+Firefox OS is **very simple** for a HTML5 **Developer**, Web **Developer**, Lazy **Developer**, Javascript **Developer**, Apps **Developer**, Bored **Developer** etc.  
 
 ##Standard W3C APIs
 ![](./img/stop-changing-the-api-i-know-where-you-live-thumb.jpg)  
-Firefox OS use Gecko, that follows the W3C guidelines for the APIs  
-Furthermore many of these API was born on Firefox OS like Vibration API or Battery API
+Firefox OS use **Gecko**, that **follows the W3C guidelines** for the APIs  
+Furthermore many of these API **was born on Firefox OS** like Vibration API or Battery API
 
 ##Vendor APIs
 ![](./img/what.jpg)  
-Firefox OS have vendor APIs (often they're privileged) for access to SO features like the Alarm   
+Firefox OS have **vendor APIs** (often they're privileged) for access to SO features like the Alarm   
 
 ##WebActivity APIs
 ![](./img/communicate.jpg)  
-WebActivity is the solution for exchange data/communicate/launch other app/etc between an app and the other one 
+WebActivity is the solution for **exchange data/communicate/launch** other app/etc between an app and the other one 
 
 ##I choose you
 
@@ -60,14 +58,14 @@ Library: <https://hacks.mozilla.org/2014/09/introducing-fxpay-for-in-app-payment
 
 ##We want the code!
 ![](./img/javascript.jpg)   
-Let's talk about some useful resources for the newbie developer and the Firefox OS Developer
+Let's talk about some **useful resources** for the **newbie developer** and the Firefox OS Developer
 
 ##Open Web Apps
 ![](./img/openwebapps.jpg)  
 
 * Web app packaged (local without web server) or hosted (online)
 * Installable on (Windows, OSX, Linux, Android, Firefox OS)
-* Pure HTML5, CSS and JavaScript
+* **Pure HTML5, CSS and JavaScript**
 * Opened in a window/fullscreen
 * In the start menu/launcher
 * *In Android a real .apk!*
@@ -84,25 +82,15 @@ Let's start with an interactive example!
 
 <br><small>[http://robnyman.github.io/Firefox-OS-Boilerplate-App/](http://robnyman.github.io/Firefox-OS-Boilerplate-App/)</small>
 
-##Firefox OS Building Blocks
-CSS framework of Gaia with documentation (include PSDs)  
-
-* CSS Transitions
-* UI interface
-* Form elements
-* Icon font
-
-<br>
-Examples/Documentation: [https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks](https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks)  
-
 ##Gaia Components
-CSS framework of Gaia with documentation (include PSDs)  
+JavaScript framework of Gaia with documentation
 
 * Each component has its own repo
 * Easily Installable
 * Versioned separately
 * Tested separately
 * CSS Variables
+* Native UI
 * Unit test
 
 <br>
@@ -147,10 +135,11 @@ Simple way for adding the missing APIs in the other browsers
 ##Testing
 ![](./img/testing.jpg)  
 
+* Firefox Developer Edition
 * WebIDE integrated in Firefox
-* Firefox OS Simulator (1.3, 1.4, 2.0, 2.1, 2.2) an extension for Firefox  
+* Firefox OS Simulator (1.3, 1.4, 2.0, 2.1, 2.2, 3.0) an extension for Firefox  
 * Devices and Simulator work with WebIDE
-* They use ADB to communicate with Firefox OS devices
+* Use ADB to communicate with Firefox OS devices
 
 ##Cross Origin Request
 ![](./img/bug.jpg)  
@@ -188,7 +177,7 @@ Node tools for Firefox OS (gulp and grunt support)
 
 * Free Ebook in different format (PDF, Mobi, Epub)
 * Italian version in **public beta mode** with new topics (backport in the English version soon)
-* German and Portuguese translation
+* Italian, German and Portuguese translation
 
 <br>
 [https://leanpub.com/quickguidefirefoxosdevelopment](https://leanpub.com/quickguidefirefoxosdevelopment)  
@@ -229,7 +218,6 @@ Simple validator that check your manifest and other little things
 * [Developers Hub](https://marketplace.firefox.com/developers/) - Marketplace Portal for developers
 * [Github](http://www.github.com) - Many app are on Github
 * [Mozilla Italia Forum](http://forum.mozillaitalia.org/)
-* [Mozilla-Student-Projects/Projects-Tracker](https://github.com/Mozilla-Student-Projects/Projects-Tracker/issues)
 
 ##
 ![](./img/question.jpg)  
