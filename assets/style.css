@@ -101,6 +101,10 @@ li {
   position: relative;
 }
 
+.header {
+	padding:0 !important;
+}
+
 .contact {
   font-family: 'Raleway', sans-serif;
   margin-top: 25px;
@@ -129,6 +133,12 @@ li {
   width: 225px;
   display: inline-block;
   vertical-align: top;
+}
+
+.qrcode {
+	width:250px;
+		height:250px;
+		margin:0 auto;
 }
 
 .bar {
