@@ -14,13 +14,6 @@ body {
   background:url("http://mozorg.cdn.mozilla.net/media/img/sandstone/bg-gradient-sand.png") repeat-x scroll 0 0px, url("http://mozorg.cdn.mozilla.net/media/img/sandstone/bg-sand.png") repeat scroll 0 0px, none repeat scroll 0 0 #F5F1E8;
   color:#333333;
   font-family: 'Open Sans',sans-serif;
-  width: 1024px;
-  height: 640px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  overflow: hidden;
-  margin: -320px 0px 0px -512px;
 }
 
 .reveal {
@@ -48,8 +41,13 @@ body {
 	background:#fff;
 	font-family: 'Open Sans',sans-serif;
 	font-style: normal;
-	font-size:26px;
+	font-size:22px;
 	font-weight: 400;
+        padding: 5px 5px 0px;
+}
+
+blockquote p {
+	margin:0 !important;
 }
 
 hr {
@@ -63,10 +61,18 @@ li {
 .reveal section img {
 	margin:0 !important;
 }
-
+.reveal .slide-number {
+	position: fixed;
+	display: block;
+	right: 15px;
+	bottom: 15px;
+	opacity: 0.5;
+	z-index: 31;
+	font-size: 18px;
+	color: #484848;
+}
 .reveal .slides > section, .reveal .slides > section > section {
 	padding:0 !important;
-	margin-top: -20px;
 }
 /*********************************************
  * HEADERS
@@ -191,6 +197,7 @@ li {
  *********************************************/
 .reveal .progress {
 	background: #D9C0A0;
+    border-top: 2px solid #C2C2AF;
 }
 
 .reveal .progress span {
