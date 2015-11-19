@@ -12,11 +12,11 @@ Daniele Scasciafratte aka [Mte90](http://www.mte90.net)
 
 * Co-Founder Codeat
 * Open Source Developer/Translator/Evangelist
-* WordPress (Developer) Italia Community Member/Translator
+* WordPress Italia Community Member/Translator/Developer
 * Industria Italiana del Software Libero Admin
 * Debian (sid) user since 2009
 * Writer for Italian sites: AndMore's network, ChimeraRevo and TechEconomy
-* **Mozillian & Mozilla Reps**
+* **Mozillian & Mozilla Reps & Participation Leader**
 
 ##Firefox OS
 ![](./img/firefoxos.jpg)
