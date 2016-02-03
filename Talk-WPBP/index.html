@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WordPress Plugin Boilerplate Powered and you</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Nome Evento </div><div class="hashtag">#evento</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h2>WordPress Plugin Boilerplate Powered and you</h2>
+					<img src="pictures/logo.png">
+					<p>
+						<small>Created by <a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder Codeat - Full Stack Developer</li>
+							<li>Mozillian & Mozilla Reps & Participation Leader</li>
+							<li>Articolista per AndMore, ChimeraRevo e TechEconomy</li>
+							<li>Utente Debian Linux dal 2009</li>
+							<li>WordPress Contributor/Developer/Translator</li>
+							<li>Open Source Addicted</li>
+							<li>Industria Italiana Software Libero Admin</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Pick a framework</h2>
+						<ul>
+							<li class="fragment">Which one to choose</li>
+							<li class="fragment">It will be reliable over time?</li>
+							<li class="fragment">It will be maintained?</li>
+							<li class="fragment">Tools that offer us?</li>
+							<li class="fragment">It has a community?</li>
+							<li class="fragment">It depends on a marketplace?</li>
+							<li class="fragment">It's free?</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WPBP is Framework-Free</h2>
+						<ul>
+							<li class="fragment">Existing libraries for specific tasks</li>
+							<li class="fragment">Independent of each other</li>
+							<li class="fragment">Tested</li>
+							<li class="fragment">Easy to edit (if necessary)</li>
+							<li class="fragment">Different releases</li>
+							<li class="fragment">Based on native WordPress API</li>
+							<li class="fragment">Simplified wrapper or features easily accessible</li>
+							<li class="fragment">Do not grow old</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/attention.gif">
+				</section>
+
+				<section>
+					<h2>SASS & CoffeeScript with Grunt</h2>
+				</section>
+
+				<section>
+					<div>
+						<h2>CPT Core/Taxonomy Core by WebDevStudios</h2>
+						<pre><code>register_via_cpt_core( array(
+    __( 'Q & A', 'your-text-domain' ), // Singular
+    __( 'Q & As', 'your-text-domain' ), // Plural
+    'q-and-a-items' // Registered name/slug
+) );
+
+register_via_taxonomy_core( array(
+    __( 'Genre', 'your-text-domain' ), // Singular
+    __( 'Genres', 'your-text-domain' ), // Plural
+    'genre' // Registered name/slug
+) );</code></pre>
+						<p>github.com/WebDevStudios/CPT_Core - github.com/WebDevStudios/Taxonomy_Core</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>CMB2 by WebDevStudios</h2>
+						<pre><code>$cmb_demo = new_cmb2_box( array(
+	'id'            => $prefix . 'metabox',
+	'title'         => __( 'Test Metabox', 'cmb2' ),
+	'object_types'  => array( 'page', ), // Post type
+	// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+	// 'context'    => 'normal',
+	// 'priority'   => 'high',
+	// 'closed'     => true, // true to keep the metabox closed by default
+) );
+$cmb_demo->add_field( array(
+	'name'       => __( 'Test Text', 'cmb2' ),
+	'desc'       => __( 'field description (optional)', 'cmb2' ),
+	'id'         => $prefix . 'text',
+	'type'       => 'text',
+	// 'on_front'        => false, // Optionally designate a field to wp-admin only
+	// 'repeatable'      => true,
+) );</code></pre>
+						<p>github.com/WebDevStudios/CMB2</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>CMB2 Google Maps</h2>
+						<p>Field for stores latitude/longitude based on GMaps</p>
+						<p>github.com/mustardBees/cmb_field_map</p>
+						<h2>CMB2 Grid</h2>
+						<p>Grid system for CMB2 metabox</p>
+						<p>github.com/origgami/CMB2-grid</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WordPress Widgets Helper Class</h2>
+						<p>Simple class to create widget with settings</p>
+						<p>github.com/sksmatt/WordPress-Widgets-Helper-Class</p>
+						<p>WPBP contain a customized version with more features</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WP Admin Notice</h2>
+						<p>Easily way to create custom contextual help dropdown</p>
+						<p>github.com/voceconnect/wp-contextual-help</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WP Contextual Help</h2>
+						<p>Notice in admin area easily</p>
+						<p>github.com/nathanielks/wordpress-admin-notice</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>PointerPlus</h2>
+						<p>Simple pointers in admin area with many features</p>
+						<p>github.com/Mte90/pointerplus</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>CronPlus</h2>
+						<p>Create cron events easily</p>
+						<p>github.com/Mte90/cronplus</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WP Background Processing</h2>
+						<p>Non-blocking asynchronous request or background processing tool for tasks</p>
+						<p>github.com/A5hleyRich/wp-background-processing</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Freemius SDK</h2>
+						<p>Freemius is an analytics & monetization platform for plugin developers</p>
+						<p>github.com/Freemius/wordpress-sdk</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Debug Panel Support</h2>
+						<p>Create a panel in Debug bar plugin for your use</p>
+						<p>github.com/benbalter/wordpress-plugin-boilerplate-classes</p>
+						<p>WPBP contain a customized version with more features</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>CPT Columns</h2>
+						<p>Custom columns in post type</p>
+						<p>en.bainternet.info/custom-post-types-columns/</p>
+						<p>WPBP contain a customized version with more features</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WP Requirements</h2>
+						<p>Disable activation of plugin in case of missing requirements</p>
+						<p>github.com/dsawardekar/wp-requirements</p>
+						<p>WPBP contain a customized version with more features</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Fake Page</h2>
+						<p>Create a virtual page</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Languages function wrapper</h2>
+						<p>Support for WPML/Ceceppa Multilingua/Polylang</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Custom template also for email multilanguage</h2>
+						<p>Based on WooCommerce</p>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Snippet included:</h2>
+						<ul>
+							<li>Shortcode example code</li>
+							<li>Dashicon as dependence of admin stylesheet</li>
+							<li>Bubble notification on pending cpts</li>
+							<li>Import/Export settings</li>
+							<li>Custom capabilities with cpts and taxonomy support</li>
+							<li>wp_localize_script for pass PHP var to JS in the frontend</li>
+							<li>Class in frontend body with the slug of plugin</li>
+							<li>Support for your CPTs in At glance widget in dashboard</li>
+							<li>Support for your CPTs in Activity widget in dashboard</li>
+							<li>Support for CMB in the options page</li>
+							<li>Integrated DOM-Based Routing on frontend of <a href="https://github.com/roots/roots/blob/master/assets/js/_main.js">Roots Template</a></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Yeoman Generator</h2>
+					<pre><code>npm install -g yo generator-wp-plugin-boilerplate-powered</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Tools support included</h2>
+					<ul>
+						<li>PHPCompatInfo</li>
+						<li>PHPDoc</li>
+						<li>PHP Coding Standard Fixer</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Tools added</h2>
+					<ul>
+						<li>apigen.sh</li>
+						<li>wp-boilerplate-version.sh</li>
+						<li>https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/How-use-the-Scripts-and-CLI-tools</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Wiki</h2>
+					<ul>
+						<li>https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/</li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered">WordPress Plugin Boilerplate Powered</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
