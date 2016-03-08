@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Firefox and WebExtensions</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=792, user-scalable=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+		<link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
+	</head>
+	<body class="list">
+		<header class="caption">
+			<h1>Firefox and WebExtensions</h1>
+			<p>Discover the new APIs based from Chrome to create extensions</p>
+		</header>
+		<section class="slide cover" id="Cover"><div>
+				<h2>Firefox and WebExtensions</h2>
+				<p><a href="http://mte90.net">Daniele Scasciafratte</a></p>
+				<img src="pictures/cover.jpg" alt="">
+			</div></section>
+		<section class="slide">
+            <div>
+                <h2>It's me, Mario ehm Daniele!</h2>
+                <img src="pictures/me.png" class="right" alt="Me">
+                <ul>
+                    <li>Co-Founder Codeat</li>
+                    <li>Open Source Developer/Translator/Evangelist</li>
+                    <li>WordPress Italia Community<br> Member/Translator/Developer</li>
+                    <li>Industria Italiana del Software Libero</li>
+                    <li>Debian (sid) user since 2009</li>
+                    <li>Writer for Italian sites: AndMore's network,<br> ChimeraRevo and TechEconomy</li>
+                    <li><b>Mozillian & Mozilla Reps & Participation Leader</b></li>
+                </ul> 
+            </div>
+        </section>
+		<section class="slide shout gradient-nightly"><div>
+				<h2>Firefox is the most customizable browser</h2>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Addons are important in Firefox</h2>
+				<p><a href="https://wiki.mozilla.org/Firefox/Go_Faster">Go Faster</a> (https://wiki.mozilla.org/Firefox/Go_Faster) is a project to move specific features of Firefox as addons.</p>
+				<p>This project shows how the addons are important in Firefox.</p>
+				<br>
+				<p>For addons developers is important to show how the APIs are powerful.</p>
+				<br>
+				<small>Addons of Go Faster project: Firefox Hello and Pocket.</small>
+			</div></section>
+		<section class="slide blue"><div>
+				<h2>XUL/XPCOM</h2>
+				<p><b>XUL</b> is an XML technology used for the Firefox interface.</p>
+				<p><b>XPCOM</b> is a Javascript framework to interact with XUL with an APIs differents from the classic HTML5.</p>
+				<p></p>
+				<p class="next">That technologies are <b>used internally</b> so they can change from a release to another!</p>
+				<p class="next">For a Web Developer is difficult to learn these technology respect the classic HTML, CSS and JavaScript.</p>
+			</div></section>
+		<section class="slide gray"><div>
+				<h2>Welcome WebExtensions 1.0!</h2>
+				<ul>
+                    <li class="next">Standard HTML, CSS and JavaScript</li>
+                    <li class="next">Parity with Chrome Extensions API (initially)</li>
+                    <li class="next">Stability because is a different API respect to XUL/XPCOM</li>
+                    <li class="next">Documentation available from Chrome</li>
+                    <li class="next">e10s compatible</li>
+                    <li class="next">Chrome extensions now works also in Firefox!</li>
+                </ul> 
+				<small class="next">Parity with Chrome extension API: https://bugzilla.mozilla.org/show_bug.cgi?id=1161828</small>
+			</div></section>
+		<section class="slide shout darkgray"><div>
+				<h3>arewewebextensionsyet.com</h3>
+				<h5 class="next">223 open bugs and 283 closed bugs</h5>
+			</div></section>
+		<section class="slide gray"><div>
+				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
+			</div></section>
+		<section class="slide"><div>
+				<h2>manifest.json</h2>
+				<pre>
+			<code>{</code>
+			<code>"manifest_version": 2,</code>
+			<code>"name": "Borderify",</code>
+			<code>"version": "1.0",</code>
+			<code>"description": "Adds a solid red [...]",</code>
+			<code>"icons": { [...] }</code>
+			<code><mark>"applications": {</mark></code>
+			<code><mark>   "gecko": {</mark></code>
+			<code><mark>      "id": "borderify@mozilla.org",</mark></code>
+			<code><mark>      "strict_min_version": "45.0.0"</mark></code>
+			<code><mark>   }</mark></code>
+			<code><mark>},</mark></code>
+			<code>"content_scripts": [ {</code>
+			<code>   "matches": ["*://*.mozilla.org/*"],</code>
+			<code>   "js": ["borderify.js"]</code>
+			<code>} ]</code>
+			<code>}</code>
+				</pre>
+			</div></section>
+		<section class="slide gray"><div>
+				<h2>Background scripts</h2>
+				<figure>
+					<blockquote>
+						<p>WebExtensions often need to maintain long-term state, or perform long-term operations, independently of the lifetime of any particular web pages or browser windows. That's what background scripts are for.</p>
+						<p>Background scripts are loaded as soon as the extension is loaded and stay loaded until the extension is disabled or uninstalled. You can use any of the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API">WebExtension APIs</a> in the script, as long as you have requested the necessary <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions">permissions</a>.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div></section>
+		<section class="slide gray"><div>
+				<h2>Content scripts</h2>
+				<figure>
+					<blockquote>
+						<p>Use content scripts to access and manipulate web pages. Content scripts are loaded into web pages and run in the context of that particular page.</p>
+						<p>Content scripts can see and manipulate the page's DOM, just like normal scripts loaded by the page.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div></section>
+			<section class="slide gray"><div>
+				<h2>Content scripts</h2>
+				<figure>
+					<blockquote>
+						<p>A browser action is a button you can add to the browser toolbar. Users can click the button to interact with your extension.</p>
+						<p>You can optionally define a popup for the button using HTML, CSS, and JavaScript.</p>
+						<p><img src="pictures/browser-action.png"></p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div></section>
+		<section class="slide gray"><div>
+				<h2>Web accessible resources</h2>
+				<figure>
+					<blockquote>
+						<p>Web accessible resources are resources such as images, HTML, CSS, JavaScript, that you include in the extension and want to make accessible to content scripts and page scripts. Resources which are made web-accessible can be referenced by page scripts and content scripts using a special URI scheme.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div></section>
+		<section class="slide blue"><div>
+				<h2>We want examples!</h2>
+				<ol>
+					<li>https://github.com/mdn/webextensions-examples</li>
+					<li>or</li>
+					<li>git clone git@github.com:mdn/webextensions-examples.git</li>
+					<li>Look all the examples!</li>
+				</ol>
+			</div></section>
+		<section class="slide blue"><div>
+				<h2>Try it!</h2>
+				<p><img class="center" src="pictures/debugging.png"></p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Roadmap</h2>
+				<ul>
+					<li>Offical support in Firefox(for Android) 48</li>
+					<li class="next">After 48:</li>
+					<li class="next">native.js to create new WebExt APIs</li>
+					<li class="next">Chrome parity</li>
+					<li class="next">Migration from old SDK</li>
+				</ul>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Chrome to Firefox</h2>
+				<p>
+					https://github.com/abarreir/crx2ff
+				</p>
+				<p>
+					Analyse and convert a Chrome extension as a Firefox WebExtension
+				</p>
+				<pre><code>npm install -g crx2ff</code></pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Web-ext</h2>
+				<p>
+					Command line tool to help build, run, and test web extensions.
+				</p>
+				<p>
+					Run an extension from cli, linting, validation and packaging.
+				</p>
+				<pre><code>web-ext run -s /path/extension/ --firefox-binary=/path/firefox</code></pre>
+				<pre><code>web-ext build -s /path/extension/</code></pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Question?</h2>
+				<figure class="frame place swing">
+					<img src="pictures/redpanda.jpg" alt="Red panda (Firefox)">
+				</figure>
+				<div class="bottom">
+                    Daniele Scasciafratte | <a href="http://twitter.com/Mte90Net">@Mte90Net</a> | <strong>Slides</strong>: mte90.github.io/Talk-WebExt/
+                </div>
+			</div></section>
+
+		<!--
+			To hide progress bar from entire presentation
+			just remove “progress” element.
+		-->
+		<div class="progress"><div></div></div>
+		<script src="shower/scripts.js"></script>
+		<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+	</body>
+</html>
