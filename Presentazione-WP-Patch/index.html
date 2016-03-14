@@ -51,13 +51,16 @@
 							<li>Utente Debian Linux dal 2009</li>
 							<li>WordPress Contributor/Developer/Translator</li>
 							<li>Open Source Addicted</li>
-							<li>Industria Italiana Software Libero Admin</li>
+							<li>Industria Italiana Software Libero Vice President</li>
 						</ul>
 					</div>
 				</section>
-				
+
 				<section>
-                                    <img src="pictures/contribute.jpg">
+					<img src="pictures/contribute.jpg">
+				</section>
+				
+				<section class="force-top" data-background="pictures/start.gif">
 				</section>
 
 				<section class="force-top" data-background="pictures/noob.gif">
@@ -71,185 +74,120 @@
 				
 				<section class="force-bottom" data-background="pictures/credere.gif">
 					<div class="background">
+						<h2 class="white-black-shadow">Needs refresh</h2>
+						<p>
+							<a class="white-black-shadow" target="_blank" href="https://core.trac.wordpress.org/query?status=!closed&keywords=~needs-refresh">https://core.trac.wordpress.org/query?status=!closed&keywords=~needs-refresh</a>
+						</p>
+					</div>
+				</section>
+
+				<section class="force-bottom" data-background="pictures/excellent.gif">
+					<div class="background">
 						<h2 class="white-black-shadow">No Patch</h2>
 						<p>
 							<a class="white-black-shadow" target="_blank" href="https://core.trac.wordpress.org/tickets/no-patch">https://core.trac.wordpress.org/tickets/no-patch</a>
 						</p>
 					</div>
 				</section>
-
-				<section class="force-top">
-                                        <h2>Varying Vagrant Vagrants</h2>
-                                        <p>
-						<ul>
-                                                    <li><a target="_blank" href="https://github.com/Varying-Vagrant-Vagrants/VVV">https://github.com/Varying-Vagrant-Vagrants/VVV</a></li>
-                                                    <li class="fragment">Alla scoperta di Vagrant e VVV per lo sviluppo WordPress - <a target="_blank" href="http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/">http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/</a></li>
-                                                    <li class="fragment">Scopri come creare Ambienti di Sviluppo adatti a tutte le Situazioni! - <a target="_blank" href="https://www.youtube.com/watch?v=3wVX-TKKoU8">https://www.youtube.com/watch?v=3wVX-TKKoU8</a></li>
-                                                </ul>
-                                        </p>
-                                        <p class="fragment">Vediamolo in azione!</p>
-				</section>
-
-				<section id="fragments">
-					<h2>Fragments</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-					<aside class="notes">
-						This slide has fragments which are also stepped through in the notes window.
-					</aside>
-				</section>
-
-				<section>
-					<h2>Fragment Styles</h2>
-					<p>There's different types of fragments, like:</p>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment roll-in">roll-in</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment current-visible">current-visible</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
-				</section>
-
-				<section data-background="#dddddd">
-					<h2>Slide Backgrounds</h2>
-					<p>
-						Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-					</p>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-					<h2>Image Backgrounds</h2>
-					<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-					<h2>Tiled Backgrounds</h2>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-				</section>
-				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-						<h2>Video Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+				
+				<section class="force-bottom" data-background="pictures/office.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Ambiente di lavoro</h2>
 					</div>
 				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="convex">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "convex".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'convex' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
+				<section class="force-top">
+					<h2>Varying Vagrant Vagrants</h2>
+					<div>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li><a target="_blank" href="https://github.com/Varying-Vagrant-Vagrants/VVV">https://github.com/Varying-Vagrant-Vagrants/VVV</a></li>
+						<li class="fragment">Alla scoperta di Vagrant e VVV per lo sviluppo WordPress - <a target="_blank" href="http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/">http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/</a></li>
+						<li class="fragment">Scopri come creare Ambienti di Sviluppo adatti a tutte le Situazioni! - <a target="_blank" href="https://www.youtube.com/watch?v=3wVX-TKKoU8">https://www.youtube.com/watch?v=3wVX-TKKoU8</a></li>
 					</ul>
+					</div>
+					<p class="fragment">Vediamolo in azione!</p>
+				</section>
+				
+				<section class="force-top" data-background="pictures/standard.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">WordPress Coding Standards</h2>
+						<p><a class="white-black-shadow" href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/" target="_blank">https://make.wordpress.org/core/handbook/best-practices/coding-standards/</a></p>
+					</div>
+				</section>
+				
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/many.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Keywords</h2>
+					</div>
+				</section>
+				
+				<section>
+						<ul>
+							<li>needs-patch/has-patch</li>
+							<li class="fragment">dev-feedback</li>
+							<li class="fragment">needs-testing</li>
+							<li class="fragment">needs-unit-tests</li>
+							<li class="fragment">needs-docs</li>
+							<li class="fragment">needs-codex</li>
+						</ul>
+				</section>
+
+				<section id="fragments">
+					<h2>Proviamo un ticket</h2>
+					<p class="fragment">Quale?</p>
+					<p class="fragment"><a href="http://mte90.net/wp-ticket" target="_blank">http://mte90.net/wp-ticket</a></p>
+					<p class="fragment">Sporchiamoci le mani!</p>
+				</section>
+				
+				<section class="force-bottom" data-background="pictures/create-patch.png">
+					<div class="background">
+						<h2 class="white-black-shadow">Creiamo la patch</h2>
+						<div>
+							<pre><code>svn diff > [# ticket].[# patch].patch</code></pre>
+						</div>
+					</div>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h2>Inviamo la patch</h2>
+					<p class="fragment roll-in">Spieghiamo la differenza rispetto la patch precedente</p>
+					<p class="fragment roll-in">Aggiorniamo le varie keyword</p>
+					<p class="fragment roll-in">Aspettiamo</p>
+					<p class="fragment roll-in">Aspettiamo..</p>
+					<p class="fragment roll-in">Partecipiamo nel ticket</p>
+					<p class="fragment roll-in">Aspettiamo...</p>
 				</section>
 
 				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
+					<img src="pictures/profilo.png" alt="" style="max-width: 900px;">
 				</section>
 
+				<section class="force-bottom" data-background="pictures/mindblown.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Manuale</h2>
+						<p>
+							<a class="white-black-shadow" href="https://make.wordpress.org/core/handbook/" target="_blank">https://make.wordpress.org/core/handbook/</a>
+						</p>
+					</div>
+				</section>
+				
 				<section>
-					<h2>Clever Quotes</h2>
+					<h2>Partecipa</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-							&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+						<a href="https://make.wordpress.org/core/" target="_blank">https://make.wordpress.org/core/</a>
 					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
 				</section>
 
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+					<h2>Talk Ispirato da</h2>
+					<p>
+						<a href="https://deliciousbrains.com/developers-guide-contributing-wordpress-core/" target="_blank">https://deliciousbrains.com/developers-guide-contributing-wordpress-core/</a>
+					</p>
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						https://deliciousbrains.com/developers-guide-contributing-wordpress-core/
-					</p>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<img src="pictures/question.gif" alt="" style="max-width: 900px;">
+					<a href="http://mte90.github.io/Presentazione-WP-Patch/">http://mte90.github.io/Presentazione-WP-Patch/</a>
 				</section>
 
 			</div>
