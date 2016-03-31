@@ -36,39 +36,42 @@
 						<small>Di <a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">Mte90Net</a></small>
 					</p>
 				</section>
+				
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder Codeat - Full Stack Developer</li>
+							<li>Mozillian & Mozilla Reps & Participation Leader</li>
+							<li>Articolista per AndMore, ChimeraRevo e TechEconomy</li>
+							<li>Utente Debian Linux dal 2009</li>
+							<li>WordPress Contributor/Developer/Translator</li>
+							<li>Open Source Addicted</li>
+							<li>Industria Italiana Software Libero Vice President</li>
+						</ul>
+					</div>
+				</section>
 
 				<section>
 					<div class="background">
-						<h2>Hello There</h2>
+						<h2>La mia esperienza</h2>
 						<p>
-							reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+							Traduzioni -> Supporto</br>
+							Contributi da sviluppatore -> Promozione</br>
+							Reclutamento -> Oggi</br>
 						</p>
 					</div>
 				</section>
 
-				<section class="force-bottom">
-					<div class="background">
-						<h2 class="white-black-shadow">Touch Optimized</h2>
-						<p>
-							Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-						</p>
-					</div>
+				<section data-background="pictures/stop.gif">
 				</section>
-
-				<section data-markdown class="force-top">
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-
-						```
-						<section data-markdown>
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						</section>
-						```
-					</script>
+				
+				
+				<section data-background="pictures/enough.gif">
+						<h2 class="white-black-shadow">Open Source</h2>
+						<blockquote cite="https://it.wikipedia.org/wiki/Open_source">
+						&ldquo;Open source (termine inglese che significa sorgente aperta), in informatica, indica un software di cui gli autori (più precisamente i detentori dei diritti) rendono pubblico il codice sorgente, favorendone il libero studio e permettendo a programmatori indipendenti di apportarvi modifiche ed estensioni. Questa possibilità è regolata tramite l'applicazione di apposite licenze d'uso.&rdquo;
+					</blockquote>
 				</section>
 
 				<section id="fragments">
@@ -129,27 +132,6 @@
 						You can override background transitions per-slide.
 					</p>
 					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
 
 				<section>
@@ -259,12 +241,7 @@ function linkify( selector ) {
                   }},
                 {src: 'plugin/markdown/markdown.js', condition: function () {
                     return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                    return !!document.querySelector('pre code');
-                  }, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                  }},
+                  }}
               ]
             });
 
