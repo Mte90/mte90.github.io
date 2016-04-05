@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress 4.4 - Le novitá</title>
+		<title>WordPress 4.5 - Le novitá</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
@@ -29,26 +29,22 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Roma Meetup </div><div class="hashtag">#wproma</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Roma Meetup</div><div class="hashtag">#wproma</div></div>
 		<div class="reveal">
 
 			<div class="slides">
 				<section>
-					<h1>WordPress 4.4</h1>
-					<h3>Le novitá e i feature plugin</h3>
+					<h1>WordPress 4.5</h1>
+					<h3>Le novitá</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a><br><br>
-							Source: <a href="https://make.wordpress.org/core/2015/11/11/wordpress-4-4-field-guide/">make.wordpress.org/core/2015/11/11/wordpress-4-4-field-guide/</a>, <a href="http://premium.wpmudev.org/blog/obscure-wordpress-features/">premium.wpmudev.org/blog/obscure-wordpress-features/</a>, <a href="http://premium.wpmudev.org/blog/wordpress-4-4/">premium.wpmudev.org/blog/wordpress-4-4/</a></small>
+							Source: <a href="https://make.wordpress.org/core/2016/03/30/wordpress-4-5-field-guide/">make.wordpress.org/core/2016/03/30/wordpress-4-5-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-5-features-and-screenshots/">wpbeginner.com/news/whats-coming-in-wordpress-4-5-features-and-screenshots/</a></small>
 					</p>
 				</section>
 				
 				<section>
-					<img src="img/fear.jpg">
-				</section>
-				
-				<section>
-					<h2>WordPress 4.4 Clifford</h2>
-					<h3>469 contributor</h3>
+					<h2>WordPress 4.5 Clifford</h2>
+					<h3>469 contributor, 372 bugs fixati</h3>
 				</section>
 
 				<section data-transition="slide" data-background="img/hello.gif">
@@ -61,140 +57,74 @@
 							<li>Utente Debian Linux dal 2009</li>
 							<li>WordPress Core Contributor/Developer/Translator</li>
 							<li>Open Source Addicted</li>
-							<li>Industria Italiana Software Libero Admin</li>
+							<li>Industria Italiana Software Libero Vice President</li>
 						</ul>
 					</div>
 				</section>
-
+				
 				<section>
-					<h2>WordPress e gli oEmbed</h2>
-					<img src="img/oembed.png">
-					<p>
-						WordPress é un Provider per gli oEmbed verso gli altri siti, personalizzabile e <a href="https://wordpress.org/plugins/disable-embeds/">disattivabile</a>
-					</p>
+					<h2>Custom Logo</h2>
+					<img src="img/themelogosupport.png">
+				</section>
+				
+				<section data-background-transition="zoom">
+					<h2>Custom Logo esempio</h2>
+					<pre><code>function theme_prefix_setup() {
+    add_theme_support( 'custom-logo' );
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
+/**/
+if ( function_exists( 'the_custom_logo' ) ) {
+      the_custom_logo();
+}
+</code></pre>
 				</section>
 
 				<section>
-					<h2>Rest API Infrastructure</h2>
-					<ul>
-						<li>WP-API plugin in merging in due parti (Infrastructure e Endpoint)</li>
-						<li class="fragment">Infrastructure permette di realizzare le proprie API</li>
-						<li class="fragment">Il plugin se presente carica solo gli Endpoint</li>
-						<li class="fragment">Gli endpoint sono le varie url: /users, /posts ecc</li>
-						<li class="fragment">Nella 4.4 é presente la prima parte</li>
-					</ul>
+					<h2>Link inline editor</h2>
+					<img src="img/inlinelinkediting.gif">
 				</section>
-
+				
 				<section>
-					<h2>Term Meta per le Tassonomia</h2>
-					<ul>
-						<li>Nuova tabella nel db <code>wp_termmeta</code></li>
-						<li class="fragment">Possibilitá di creare dei custom field</li>
-						<li class="fragment">Preparatevi al supporto in ACF, CMB2, ecc</li>
-					</ul>
+					<h2>Moderazione commenti WP 4.4</h2>
+					<img src="img/comment44.png">
 				</section>
-
+				
 				<section>
-					<h2>wp_title é deprecato</h2>
-					<ul>
-						<li>Il titolo verrá generato automaticamente in <code>get_header()</code></li>
-						<li class="fragment">Retrocompatibilitá garantita con avviso</li>
-						<li class="fragment roll-in">Potete scordarvi <code>wp_title</code></li>
-					</ul>
+					<h2>Moderazione commenti WP 4.5</h2>
+					<img src="img/comment45.png">
 				</section>
-
+				
 				<section>
-					<h2>Twenty Sixteen</h2>
-					<img src="img/twenty-sixteen.png" style="max-width: 780px;">
+					<h2>Responsive Preview nel Customizer</h2>
+					<img src="img/responsivepreviews.png">
 				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						##Twenty Sixteen - le funzionalitá
-
-						* Multiple menu positions and a social menu.
-						* Optional sidebar.
-						* Custom color options and beautiful default color schemes.
-						* Harmonious fluid grid using mobile-first approach.
-						* Custom background and header.
-						* Overflow displaying large images.
-						* Ability to add intro to post using custom excerpt.
-					</script>
-				</section>
-
+				
 				<section>
-					<h2>Immagini Responsive</h2>
-					<p>I temi moderni lo fanno giá di base...</p>
-					<p class="fragment roll-in">ridimensionano solo l'immagine!</p>
-					<p class="fragment">Il nuovo standard HTML5 fá scaricare al browser</p>
-					<p class="fragment">l'immagine della misura piú adatta</p>
+					<h2>Embeds templating</h2>
+					<img src="img/embeds.png">
 				</section>
 
 				<section data-background-transition="zoom">
-					<h2>Esempio di codice HTML</h2>
-					<pre><code><img 
-srcset="large.jpg 1920w,
-		medium.jpg 960w, 
-		small.jpg 480w"
-src="medium.jpg" alt="file"></code></pre>
+					<h2>wp_add_inline_script</h2>
+					<pre><code>add_action( 'admin_init', function() {
+        wp_add_inline_script( 'common', 'console.log("after");' );
+        wp_add_inline_script( 'jquery-core', 'jQuery.noConflict();' );
+});</code></pre>
 				</section>
 
 				<section>
-					<h3>single-{post_type}-{post_name}.php</h3>
-					<h3>single-page-{chi-sono}.php</h3>
-					<p><code>post_name</code> é lo slug</p>
+					<h3>jQuery 1.12.1, Backbone.js 1.2.3 e Underscore.js 1.8.3</h3>
 				</section>
 				
 				<section>
-					<h2>Incolla e diventa un link!</h2>
-					<img src="img/link-maker.gif" style="max-width: 780px;">
+					<h1>WordCamp Torino</h1>
+					<h3>Torino 1-2 Aprile 2016</h3>
 				</section>
 				
 				<section>
-					<h2>Feature Plugin</h2>
-					<img src="img/wp.jpg" style="max-width: 780px;">
-					<small><a href="https://make.wordpress.org/core/features-as-plugins/">make.wordpress.org/core/features-as-plugins/</a></small>
-				</section>
-
-				<section>
-					<h2>Shortcake (Shortcode UI)</h2>
-					<img src="img/shortcake.png" style="max-width: 780px;">
-				</section>
-				
-				<section>
-					<img src="img/shortcake1.png" style="max-width: 780px;">
-				</section>
-				
-				<section>
-					<img src="img/shortcake2.png" style="max-width: 700px;">
-				</section>
-				
-				<section>
-					<img src="img/shortcake4.png" style="max-width: 860px;">
-				</section>
-				
-				<section>
-					<img src="img/shortcake3.png" style="max-width: 950px;">
-				</section>
-				
-				<section>
-					<h2>2FA - Two-Factor</h2>
-					<blockquote>
-						In order to better combat brute force login attempts and stolen passwords, WordPress needs a standardized-yet-extensible core system for providing opt-in Two-Factor Authentication to users. <br><br>
-We are aiming to be ready to merge in to Core in February of 2016, during the 4.5 release cycle.
-					</blockquote>
-					<small><a href="https://wordpress.org/plugins/two-factor/">wordpress.org/plugins/two-factor/</a></small>
-				</section>
-				
-				<section>
-					<h1>WordPress Contributor Day</h1>
-					<h3>Milano 7 Novembre 2015</h3>
-					<p>Traduzioni, Sviluppo, Accessibilitá, Mobile, Supporto e Community</p>
-					<ul>
-						<li><a href="https://it.wordpress.org/">it.wordpress.org</a></li>
-						<li><a href="https://it.wordpress.org/meetup/">it.wordpress.org/meetup - 13 meetup</a></li>
-						<li><a href="http://bit.ly/1LXTQrJ">bit.ly/1LXTQrJ - Vieni in community con Slack</a></li>
-					</ul>
+					<img src="img/wrodcamp.jpg" />
 				</section>
 
 				<section>
