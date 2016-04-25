@@ -43,12 +43,12 @@
 				<br>
 				<p>For addons developers is important to show how the APIs are powerful.</p>
 				<br>
-				<small>Addons of Go Faster project: Firefox Hello and Pocket.</small>
+				<small>Addons of Go Faster project: Hello, Hot Fixes, WebExtensions, Pocket.</small>
 			</div></section>
 		<section class="slide blue"><div>
 				<h2>XUL/XPCOM</h2>
-				<p><b>XUL</b> is an XML technology used for the Firefox interface.</p>
-				<p><b>XPCOM</b> is a Javascript framework to interact with XUL with an APIs differents from the classic HTML5.</p>
+				<p><b>XUL</b> is a XML technology used for the Firefox interface.</p>
+				<p><b>XPCOM</b> is a JavaScript framework to interact with XUL with an APIs differents from the classic HTML5.</p>
 				<p></p>
 				<p class="next">That technologies are <b>used internally</b> so they can change from a release to another!</p>
 				<p class="next">For a Web Developer is difficult to learn these technology respect the classic HTML, CSS and JavaScript.</p>
@@ -67,7 +67,7 @@
 			</div></section>
 		<section class="slide shout darkgray"><div>
 				<h3>arewewebextensionsyet.com</h3>
-				<h5 class="next">223 open bugs and 283 closed bugs</h5>
+				<h5 class="next">249 open bugs and 362 closed bugs</h5>
 			</div></section>
 		<section class="slide gray"><div>
 				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
@@ -155,6 +155,7 @@
 				<h2>Roadmap</h2>
 				<ul>
 					<li>Offical support in Firefox(for Android) 48</li>
+					<li class="next">Available from 45</li>
 					<li class="next">After 48:</li>
 					<li class="next">native.js to create new WebExt APIs</li>
 					<li class="next">Chrome parity</li>
@@ -184,6 +185,16 @@
 				</p>
 				<pre><code>web-ext run -s /path/extension/ --firefox-binary=/path/firefox</code></pre>
 				<pre><code>web-ext build -s /path/extension/</code></pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Pack-ext</h2>
+				<p>
+					https://github.com/Mte90/Script/blob/master/pack-ext.py
+				</p>
+				<p>
+					Package the file as Zip package for Chrome and Xpi for Firefox.
+				</p>
+				<pre><code>pack-ext.py ./</code></pre>
 			</div></section>
 		<section class="slide red"><div>
 				<h2>Link</h2>
