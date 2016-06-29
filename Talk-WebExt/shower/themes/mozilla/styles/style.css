@@ -187,6 +187,9 @@ small {
 .slide p {
     margin: 0 0 50px;
 }
+.slide p.next {
+    margin: 0 0 5px;
+}
 .slide p.note {
     color: #878787;
 }
