@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress 4.5 - Le novitá</title>
+		<title>WordPress 4.6 - Le novitá</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
@@ -34,17 +34,17 @@
 
 			<div class="slides">
 				<section>
-					<h1>WordPress 4.5</h1>
+					<h1>WordPress 4.6</h1>
 					<h3>Le novitá</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a><br><br>
-							Source: <a href="https://make.wordpress.org/core/2016/03/30/wordpress-4-5-field-guide/">make.wordpress.org/core/2016/03/30/wordpress-4-5-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-5-features-and-screenshots/">wpbeginner.com/news/whats-coming-in-wordpress-4-5-features-and-screenshots/</a></small>
+							Source: <a href="https://make.wordpress.org/core/2016/07/26/wordpress-4-6-field-guide/">make.wordpress.org/core/2016/07/26/wordpress-4-6-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-6-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-6-features-and-screenshots/</a></small>
 					</p>
 				</section>
 				
 				<section>
-					<h2>WordPress 4.5 Coleman</h2>
-					<h3>277 contributor, 372 bugs fixati</h3>
+					<h2>WordPress 4.6 Coleman</h2>
+					<h3>277 contributor, 280 bugs, 125 enhancements, 7 feature requests</h3>
 				</section>
 
 				<section data-transition="slide" data-background="img/hello.gif">
@@ -63,68 +63,53 @@
 				</section>
 				
 				<section>
-					<h2>Custom Logo</h2>
-					<img src="img/themelogosupport.png">
+					<h2>Shiny Updates</h2>
+					<img src="img/shinyupdates.gif">
 				</section>
 				
 				<section data-background-transition="zoom">
-					<h2>Custom Logo esempio</h2>
-					<pre><code>function theme_prefix_setup() {
-    add_theme_support( 'custom-logo' );
-}
-add_action( 'after_setup_theme', 'theme_prefix_setup' );
-
-/**/
-if ( function_exists( 'the_custom_logo' ) ) {
-      the_custom_logo();
-}
-</code></pre>
+					<h2>Native Font</h2>
+					L'area amministriva ora utilizza i font di sistema
 				</section>
 
 				<section>
-					<h2>Link inline editor</h2>
-					<img src="img/inlinelinkediting.gif">
+					<h2>Broken Link Alert</h2>
+					<img src="img/badlink.png">
 				</section>
 				
 				<section>
-					<h2>Moderazione commenti WP 4.4</h2>
-					<img src="img/comment44.png">
+					<h2>Cache per i commenti</h2>
+					I commenti possono essere messi in cache nativamente da WordPress
 				</section>
 				
 				<section>
-					<h2>Moderazione commenti WP 4.5</h2>
-					<img src="img/comment45.png">
+					<h2>Translation Just-in-time Loading</h2>
+					Per chi carica le traduzioni su translate.wordpress.org non é piŭ necessario includere i file di lingua nel pacchetto.
 				</section>
 				
 				<section>
-					<h2>Responsive Preview nel Customizer</h2>
-					<img src="img/responsivepreviews.png">
+					<h2>Old Tag/Category view</h2>
+					<img src="img/tags-screen-source-order-and-tab-order.png">
 				</section>
 				
 				<section>
-					<h2>Embeds templating</h2>
-					<img src="img/embeds.png">
-				</section>
-
-				<section data-background-transition="zoom">
-					<h2>wp_add_inline_script</h2>
-					<pre><code>add_action( 'admin_init', function() {
-        wp_add_inline_script( 'common', 'console.log("after");' );
-        wp_add_inline_script( 'jquery-core', 'jQuery.noConflict();' );
-});</code></pre>
+					<h2>New Tag/Category view</h2>
+					<img src="img/new-tags.png">
 				</section>
 
 				<section>
-					<h3>jQuery 1.12.1, Backbone.js 1.2.3 e Underscore.js 1.8.3</h3>
+					<h3>Masonry 3.3.2, Backbone.js 1.3.3 e TinyMCE.js 4.4.1</h3>
 				</section>
 				
 				<section>
-					<h1>WordCamp Torino</h1>
-					<h3>Torino 1-2 Aprile 2016</h3>
-				</section>
-				
-				<section>
-					<img src="img/wrodcamp.jpg" />
+					<h3>Migliorie interne</h3>
+					<ul>
+						<li>WP_Post_Type - $wp_post_types ora é una classe di oggetti</li>
+						<li>WP_Term_Query - Query per le tassonomie</li>
+						<li>Nuovi API per il Customizer</li>
+						<li>Supporto Nativo per WP-CLI</li>
+						<li>WP_Site_Query & WP_Network_Query - Per query in ambiente multisite</li>
+					</ul>
 				</section>
 
 				<section>
