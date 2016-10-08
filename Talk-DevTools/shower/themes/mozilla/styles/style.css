@@ -66,7 +66,7 @@ a {
     text-decoration:none;
 }
 small {
-    font-size:12px !important;
+    font-size:16px !important;
 }
 .caption {
     display: none;
@@ -92,10 +92,15 @@ small {
 }
 .slide a {
     color:#000;
+	font-size:26px;
+}
+section.slide {
+	font-size:24px;
 }
 .slide h1, .slide h2 {
     text-transform: uppercase;
     font-weight: 700;
+	line-height:1.1;
 }
 .slide h1, .caption h1 {
     font-size:46px;
@@ -104,8 +109,9 @@ small {
     color:#000;
     font-size:40px;
 }
+.slide.red h2, .slide.lightblue h2, .slide.blue h2, .slide.darkgray h2, .slide.green h2, .slide.lightpurple h2, .slide.purple h2, .slide.orange h2,
 .slide.red, .slide.lightblue, .slide.blue, .slide.darkgray, .slide.green, .slide.lightpurple, .slide.purple, .slide.orange {
-    color: #fff;
+	color:#fff;
 }
 .slide.red {
     background: #c13832;
@@ -178,7 +184,7 @@ small {
     height: 595px;
 }
 .slide h2 {
-    margin: 0 0 37px;
+    margin: 0 0 30px;
 }
 .slide p {
     margin: 0 0 50px;
@@ -186,6 +192,9 @@ small {
 }
 .slide p.note {
     color: #878787;
+}
+.slide p.next {
+    margin: 0 0 10px;
 }
 .slide b, .slide strong {
     font-weight: 700;
@@ -219,6 +228,7 @@ small {
 }
 .slide blockquote {
     font-style: italic;
+	font-size:26px;
 }
 .slide blockquote:before {
     position: absolute;
@@ -228,7 +238,6 @@ small {
     content: '\201C'
 }
 .slide blockquote+figcaption {
-    margin: -50px 0 50px;
     font-style: italic;
     font-weight: 700;
 }
@@ -342,6 +351,8 @@ small {
     top: 0;
     left: 0;
     z-index: -1;
+	width: 100%;
+	height: 100%;
 }
 .slide.cover.w img, .slide.cover.w svg, .slide.cover.w video, .slide.cover.w object, .slide.cover.w canvas, .slide.cover.w iframe {
     top: 50%;
@@ -709,7 +720,7 @@ small {
 .left {
     float: left;
     position: relative;
-    padding-right: 80px;
+    padding-right: 60px;
 }
 .bottom {
     position: absolute;
