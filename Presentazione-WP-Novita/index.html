@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress 4.6 - Le novitá</title>
+		<title>WordPress 4.7 - Le novitá</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.css" id="theme">
@@ -34,17 +34,12 @@
 
 			<div class="slides">
 				<section>
-					<h1>WordPress 4.6</h1>
+					<h1>WordPress 4.7</h1>
 					<h3>Le novitá</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a><br><br>
-							Source: <a href="https://make.wordpress.org/core/2016/07/26/wordpress-4-6-field-guide/">make.wordpress.org/core/2016/07/26/wordpress-4-6-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-6-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-6-features-and-screenshots/</a></small>
+							Source: <a href="https://make.wordpress.org/core/2016/12/05/wordpress-4-7-field-guide/">make.wordpress.org/core/2016/12/05/wordpress-4-7-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-7-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-7-features-and-screenshots/</a></small>
 					</p>
-				</section>
-				
-				<section>
-					<h2>WordPress 4.6 Pepper</h2>
-					<h3>272 contributor, 280 bugs, 125 enhancements, 7 feature requests</h3>
 				</section>
 
 				<section data-transition="slide" data-background="img/hello.gif">
@@ -62,93 +57,100 @@
 				</section>
 				
 				<section>
-					<h2>Shiny Updates</h2>
-					<img src="img/shinyupdates.gif" width="900px" style="max-width:900px">
+					<h2>WordPress 4.7 Vaughan</h2>
+					<h3>482 contributor, con 205 per la prima volta</h3>
+				</section>
+				
+				<section>
+					<img src="img/twenty-seventeen.jpg" width="900px" style="max-width:900px">
 				</section>
 				
 				<section data-background-transition="zoom">
-					<h2>Native Font</h2>
-					L'area amministriva ora utilizza i font di sistema per diminuire i tempi di caricamento ed elaborazione
+					<h2>Theme Starter Content</h2>
+					<video style="width: 100%; height: 100%;">
+						<source type="video/mp4" src="img/starter-content.mp4">
+					</video>
 				</section>
 
 				<section>
-					<h2>Broken Link Alert</h2>
-					<img src="img/badlink.png" width="900px" style="max-width:900px">
+					<h2>Customizer - Edit Shortcut</h2>
+					<video style="width: 100%; height: 90%;">
+						<source type="video/mp4" src="img/edit-shortcuts.mp4">
+					</video>
+				</section>
+
+				<section>
+					<h2>Customizer - Menu Building</h2>
+					<img src="img/menu.jpg" width="900px" style="max-width:900px">
+				</section>
+
+				<section>
+					<h2>Customizer - Custom CSS</h2>
+					<img src="img/css.jpg" width="900px" style="max-width:900px">
+				</section>
+
+				<section>
+					<h2>PDF thumbnails</h2>
+					<img src="img/pdf-thumbnails.jpg" width="900px" style="max-width:900px">
+				</section>
+
+				<section>
+					<h2>Editor Enhancements</h2>
+					<img src="img/editorchanges.png" width="900px" style="max-width:500px">
+				</section>
+
+				<section>
+					<h2>Lingua della Dashboard per utente</h2>
+					<img src="img/adminlocale.jpg" width="900px" style="max-width:900px">
 				</section>
 				
 				<section>
-					<h2>Cache per i commenti</h2>
-					I commenti possono essere messi in cache nativamente da WordPress
+					<h2>REST API Content Endpoints</h2>
+					Endpoints per Articoli, Commenti, Termini, Utenti, meta e Impostazioni.
+				</section>
+
+				<section>
+					<h2>Azioni di massa per gli sviluppatori</h2>
+					<img src="img/custombulkactions.png" width="900px" style="max-width:900px">
 				</section>
 				
 				<section>
-					<h2>Translation Just-in-time Loading</h2>
-					Per chi carica le traduzioni su translate.wordpress.org non é piu necessario includere i file di lingua nel pacchetto
-				</section>
-				
-				<section>
-					<h2>Old Tag/Category view</h2>
-					<img src="img/tags-screen-source-order-and-tab-order.png" style="max-width: 700px;">
-				</section>
-				
-				<section>
-					<h2>New Tag/Category view</h2>
-					<img src="img/new-tags.png" style="max-width: 700px;">
+					<h2>Post Type Templates</h2>
+					<pre><code data-trim data-noescape>
+&lt;?php
+/*
+Template Name: Full-width layout
+Template Post Type: post, page, product
+*/
+    </code></pre>
+					<img src="img/posttypetemplates.png">
 				</section>
 				
 				<section>
 					<h3>Migliorie interne</h3>
 					<ul>
-						<li class="fragment">WP_Post_Type - $wp_post_types ora é una classe di oggetti</li>
-						<li class="fragment">WP_Term_Query - Query per le tassonomie</li>
-						<li class="fragment">Nuovi API per il Customizer</li>
-						<li class="fragment">Supporto Nativo per WP-CLI</li>
-						<li class="fragment">WP_Site_Query & WP_Network_Query - Per query in ambiente multisite</li>
-						<li class="fragment">Masonry 3.3.2, Backbone.js 1.3.3 e TinyMCE.js 4.4.1</li>
+						<li class="fragment"><i>get_theme_file_uri()</i> Cerca il file prima nel child e poi nel genitore</li>
+						<li class="fragment">WP_Hook - $wp_filter ora è un array di oggetti</li>
+						<li class="fragment">WP_TaxonomyHook - $wp_taxonomies ora è un array di oggetti</li>
+						<li class="fragment"><i>wp_list_sort()</i> Ordina gli oggetti o array per diversi valori</li>
+						<li class="fragment"><i>wp_doing_ajax()</i> No DOING_AJAX</li>
+						<li class="fragment"><i>pre_do_shortcode_tag</i> Filtro per cambiare gli shortcode</li>
+						<li class="fragment"><i>smilies/smilies_src</i> Per aggiungere nuovi smilies es: :LOGO:</li>
+						<li class="fragment">Accesso automatico dopo l'installazione</li>
 					</ul>
 				</section>
-				
+
 				<section>
-					<h3>Glot Dict 1.1.4</h3>
-					<img src="img/glotdict.png">
-					<ul>
-						<li>23 lingue supportate</li>
-						<li>Download automatico delle nuove versioni del glossario</li>
-						<li>Combinazioni di tasti</li>
-						<li>Velocizzato il caricamento delle pagine</li>
-						<li>Migliorie interne per il parsing dei termini</li>
-						<li>Link allo status mondiale delle stringhe</li>
-					</ul>
+					<img src="img/stateofwp1.jpg" width="900px" style="max-width:900px">
 				</section>
-				
+
 				<section>
-					<h2>Diventa un PTE</h2>
-					<ul>
-						<li class="fragment">Caricamento dei file pot</li>
-						<li class="fragment">Filtri potenziati</li>
-						<li class="fragment">Approvazione di stringhe</li>
-						<li class="fragment">PTE Bot</li>
-						<li class="fragment">Aiuti la community</li>
-						<li class="fragment">Aiuti i tuoi clienti</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h1>WordPress Italian Translation Day</h1>
-					<p>24-25 Settembre o <b>1-2 Ottobre</b></p>
-					<p>https://public.pad.fsfe.org/p/wproma-tday-2016</p>
-					<p>o</p>
-					<p>http://goo.gl/SHxrJE</p>
+					<img src="img/stateofwp2.jpg" width="900px" style="max-width:900px">
 				</section>
 				
 				<section>
 					<h2>Siamo su Trello</h2>
 					<img src="img/trello.jpg">
-				</section>
-				
-				<section>
-					<h1 class="fragment">Wordcamp Rome</h1>
-					<h3>Gadget!</h3>
 				</section>
 
 				<section>
