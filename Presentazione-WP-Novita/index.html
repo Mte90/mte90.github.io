@@ -108,6 +108,95 @@
 					<h2>REST API Content Endpoints</h2>
 					Endpoints per Articoli, Commenti, Termini, Utenti, meta e Impostazioni.
 				</section>
+				
+				<section>
+					<h2>Add a post type in the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'init', 'my_book_cpt' );
+function my_book_cpt() {
+
+$args = array(
+	'show_in_rest'       => true,
+	/** 'rest_base'          => 'books',
+	'rest_controller_class' => 'WP_REST_Posts_Controller' **/
+);
+
+register_post_type( 'book', $args );
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
+				</section>
+
+				<section>
+					<h2>Add an existing post type in the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'init', 'my_custom_post_type_rest_support', 25 );
+function my_custom_post_type_rest_support() {
+  	global $wp_post_types;
+  
+  	$post_type_name = 'book';
+  	if( isset( $wp_post_types[ $post_type_name ] ) ) {
+  		$wp_post_types[$post_type_name]->show_in_rest = true;
+  		$wp_post_types[$post_type_name]->rest_base = $post_type_name;
+  		$wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
+  	}
+}
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
+				</section>
+				
+				<section>
+					<h2>Add custom field to the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'rest_api_init', 'slug_register_book' );
+function slug_register_starship() {
+    register_rest_field( 'post',
+        'book',
+        array(
+            'get_callback'    => 'slug_get_meta',
+            'update_callback' => 'slug_update_book',
+            'schema'          => null,
+        )
+    );
+}
+
+function slug_get_book( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name );
+}
+
+function slug_update_book( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+    return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
+}
+
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
+				</section>
+				
+				<section>
+					<h2>Add a custom endpoint</h2>
+					<pre><code data-trim contenteditable>
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'myplugin/v1', '/author/(?P< id>\d+)', array(
+		'methods' => 'GET',
+		'callback' => 'get_last_post_title_of_author',
+	) );
+} );
+function get_last_post_title_of_author( $data ) {
+	$posts = get_posts( array(
+		'author' => $data['id'],
+	) );
+
+	if ( empty( $posts ) ) {
+		return null;
+	}
+
+	return $posts[0]->post_title;
+}
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
+				</section>
 
 				<section>
 					<h2>Azioni di massa per gli sviluppatori</h2>
