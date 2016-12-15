@@ -24,17 +24,33 @@
                 <img src="pictures/me.png" class="right" alt="Me">
                 <ul>
                     <li>Co-Founder Codeat</li>
-                    <li>Open Source Developer/Translator/Evangelist</li>
-                    <li>WordPress Italia Community<br> Member/Translator/Developer</li>
+                    <li>Open Source MultiVersal</li>
+                    <li>WordPress 🇮🇹 Community<br> Translator/Developer</li>
+                    <li>WordPress Core Contributor</li>
                     <li>Industria Italiana del Software Libero</li>
-                    <li>Debian (sid) user since 2009</li>
-                    <li>Writer for Italian sites: AndMore's network,<br> ChimeraRevo and TechEconomy</li>
-                    <li><b>Mozillian & Mozilla Reps<br> & Participation Leader</b></li>
+                    <li>Mozilla 🇮🇹</li>
+                    <li><b>Mozillian & Mozilla Rep<br> & Mozilla Tech Speaker</b></li>
                 </ul> 
             </div>
         </section>
+		<style>
+			.mosaic div, .mosaic span {
+				position:relative;
+			}
+			.mosaic span {
+				display:block;
+			}
+		</style>
+		<section class="slide mosaic"><div>
+                <div><img src="pictures/firebug.png"><span style="top: -122px !important;left: 201px !important;">Firebug > DevTools</span></div>
+                <div style="left: 422px !important;top: -190px !important;"><img src="pictures/foxmarks.png"><span style="top: -122px !important;left: 206px !important;">Foxmarks ><br> Bookmark Syncing</span></div>
+                <div style="top: -227px !important;left: -25px !important;"><img src="pictures/pinning.png"><span style="top: -92px !important;left: 172px !important;">Faviconize Tab ><br> Tab Pinning</span></div>
+                <div style="left: 471px !important;top: -402px !important;"><img src="pictures/tab.png"><br><span>Multizilla > Tab Browsing</span></div>
+                <div style="top: -360px;left: -16px !important;"><img src="pictures/session.png"><span>Session Manager > Session Restore</span></div>
+                <div style="top: -476px;left: 485px !important;"><img src="pictures/testpilot.png"><span>Test Pilot</span></div>
+			</div></section>
 		<section class="slide shout gradient-nightly"><div>
-				<h2>Firefox is the most customizable browser</h2>
+				<h2 style="top:50%">Firefox is the most customizable browser</h2>
 			</div></section>
 		<section class="slide"><div>
 				<h2>Addons are important in Firefox</h2>
@@ -60,16 +76,16 @@
 				<ul>
                     <li class="next">Standard HTML, CSS and JavaScript</li>
                     <li class="next">Stability because is a different API respect to XUL/XPCOM</li>
-                    <li class="next">Parity with Chrome Extensions API (initially)</li>
+                    <li class="next">Parity with Chrome Extensions API</li>
                     <li class="next">Documentation available from Chrome</li>
-                    <li class="next">Chrome extensions now works also in Firefox!</li>
-                    <li class="next">e10s compatible</li>
-                </ul> 
-				<small class="next">Parity with Chrome extension API: https://bugzilla.mozilla.org/show_bug.cgi?id=1161828</small>
+                    <li class="next">Chrome, Opera and soon Edge extensions now works also in Firefox!</li>
+                    <li class="next">e10s compatible out-the-box</li>
+                    <li class="next">Support for Firefox for Android</li>
+                    <li class="next">Sandboxing</li>
+                </ul>
 			</div></section>
 		<section class="slide shout darkgray"><div>
 				<h3>arewewebextensionsyet.com</h3>
-				<h5 class="next">249 open bugs and 362 closed bugs</h5>
 			</div></section>
 		<section class="slide gray"><div>
 				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
@@ -83,12 +99,6 @@
 			<code>"version": "1.0",</code>
 			<code>"description": "Adds a solid red [...]",</code>
 			<code>"icons": { [...] }</code>
-			<code><mark>"applications": {</mark></code>
-			<code><mark>   "gecko": {</mark></code>
-			<code><mark>      "id": "borderify@mozilla.org",</mark></code>
-			<code><mark>      "strict_min_version": "45.0.0"</mark></code>
-			<code><mark>   }</mark></code>
-			<code><mark>},</mark></code>
 			<code>"content_scripts": [ {</code>
 			<code>   "matches": ["*://*.mozilla.org/*"],</code>
 			<code>   "js": ["borderify.js"]</code>
@@ -141,6 +151,26 @@
 				<small>Define on manifest.json</small>
 			</div></section>
 		<section class="slide blue"><div>
+				<h2>Review</h2>
+				<ul>
+					<li>Volunteers perform thousands of reviews every month</li>
+					<li>Volunteers perform 100% of theme reviews and 74% of other add-on reviews
+</li>
+					<li>Oct-Dec: 80% reviewed under 5 days, 6% between 5 and 10 days, 13% over 10 days</li>
+				</ul>
+			</div></section>
+		<section class="slide red"><div>
+				<h2>Roadmap</h2>
+				<ul>
+					<li>Available from 45</li>
+					<li class="next">SDK with WebExtension embedding already available</li>
+					<li class="next">End 2017 only WebExtension for Firefox</li>
+					<li class="next">File System Access</li>
+					<li class="next">Sidebar and other UI element APIs</li>
+					<li class="next">WebExtension Experiments to create new APIs</li>
+				</ul>
+			</div></section>
+		<section class="slide blue"><div>
 				<h2>We want examples!</h2>
 				<ol>
 					<li>https://github.com/mdn/webextensions-examples</li>
@@ -156,31 +186,6 @@
 		<section class="slide blue"><div>
 				<h2>Options!</h2>
 				<p><img class="center" src="pictures/panel.png"></p>
-			</div></section>
-		<section class="slide blue"><div>
-				<h2>Review</h2>
-				<p><img class="center" src="pictures/review.png"></p>
-			</div></section>
-		<section class="slide red"><div>
-				<h2>Roadmap</h2>
-				<ul>
-					<li>Offical support in Firefox(for Android) 48</li>
-					<li class="next">Available from 45</li>
-					<li class="next">After 50:</li>
-					<li class="next">native.js to create new WebExt APIs</li>
-					<li class="next">Chrome parity</li>
-					<li class="next">Migration from old SDK</li>
-				</ul>
-			</div></section>
-		<section class="slide"><div>
-				<h2>Chrome to Firefox</h2>
-				<p>
-					https://github.com/abarreir/crx2ff
-				</p>
-				<p>
-					Analyse and convert a Chrome extension as a Firefox WebExtension
-				</p>
-				<pre><code>npm install -g crx2ff</code></pre>
 			</div></section>
 		<section class="slide"><div>
 				<h2>Web-ext</h2>
