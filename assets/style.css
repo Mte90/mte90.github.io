@@ -83,12 +83,12 @@ li {
 }
 
 .container {
-	/*width: 650px;*/
 	margin: 0 auto;
 }
 
-.phone-number {
+.social {
 	vertical-align: middle;
+	text-align: right;
 }
 
 .my-name {
@@ -108,9 +108,6 @@ li {
 .contact {
 	font-family: 'Raleway', sans-serif;
 	margin-top: 18px;
-	/*position: absolute;*/
-	/*top: 35px;*/
-	/*right: 15px;*/
 	font-size: 16px;
 }
 
@@ -148,6 +145,10 @@ li {
 	padding-bottom:3px;
 	margin:0;
 	text-align:center;
+}
+
+li.old-talk {
+	cursor:pointer;
 }
 
 /* Media Queries */
