@@ -82,6 +82,10 @@ li {
     animation-delay: 1.6s;
 }
 
+hr {
+	margin:5px !important;
+}
+
 .container {
 	margin: 0 auto;
 }
@@ -149,6 +153,19 @@ li {
 
 li.old-talk {
 	cursor:pointer;
+}
+
+li .abstract {
+	float:right;
+	font-weight:bold;
+	cursor:pointer;
+	text-align:right;
+}
+
+li .abstract div {
+	font-weight:initial;
+	cursor:auto;
+	margin: 4px;
 }
 
 /* Media Queries */

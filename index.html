@@ -41,6 +41,14 @@
 				}
 				e.preventDefault();
 			  });
+			  document.querySelector('.abstract span').addEventListener("click", function (e) {
+				if (document.querySelector('.abstract div').classList.contains('hide')) {
+				  document.querySelector('.abstract div').classList.remove('hide');
+				} else {
+				  document.querySelector('.abstract div').classList.add('hide');
+				}
+				e.preventDefault();
+			  });
 			  document.querySelector('.old-talk').addEventListener("click", function (e) {
 				var list = this.querySelector('ul');
 				if (list.classList.contains('hide')) {
@@ -101,7 +109,13 @@
                 <div class="animated fadeIn _4">
                     <h2>English</h2>
                     <ul>
-						<li><a target="_blank" href="Talk-WPBP"><b>Wordpress</b> Plugin <b>Boilerplate</b> Powered 2.0</a> - Discover a new world with the help of composer</li>
+						<li><a target="_blank" href="Talk-WPBP"><b>Wordpress</b> Plugin <b>Boilerplate</b> Powered 2.0</a>
+							<div class="abstract"><span>Abstract</span>
+								<div class="hide">
+									WordPress is the most used CMS in the world and it is very easy to do a plugin with saving of time using libraries, help of Composer and a code generator. WPBP is a boilerplate for plugins that do everything for you!<hr>
+									We will discover the WPBP project and how to do in live a little plugin. You will see the WordPress development in a different way!
+								</div>
+							</div></li>
 						<li><a target="_blank" href="Talk-WP-REST">How to extend the <b>WordPress</b> Rest API and do magic stuff</a>  [<a class="video" href="https://www.youtube.com/watch?v=XT1sgi7TUTY">Video in Italian</a>] - Example and how much they are amazing</li>
 						<li><a target="_blank" href="Talk-WP-Italia">The <b>WordPress</b> Italia community</a> [<a class="video" href="https://www.youtube.com/watch?v=ZUNTPGlENU4">Video in Italian</a>] - or why we conquered the world</li>
 						<li><a target="_blank" href="https://docs.google.com/presentation/d/1RrDjagEKXx12kRSolAg9_UP-MdMduL1hQpdaqKgeMBU/edit?usp=sharing">Why your community need a glossary</a> - The experience as developer and glossary mantainer in the <b>WordPress</b> Italia community</li>
@@ -111,7 +125,7 @@
 						<li><a target="_blank" href="Talk-WP-Patch">How to do a patch for <b>WordPress</b></a> - Take a look how it is easy and interesting!</li>
 						<li><a target="_blank" href="Talk-Janitor">You need a <b>Janitor</b>!</a> - Get a cloud develoment environment to contribute in a project with a click</li>
 						<li><a target="_blank" href="Talk-WebExt"><b>Firefox</b> and <b>WebExtensions</b></a> [<a class="video" href="https://www.youtube.com/watch?v=Npkd1FvSWIs">Video in Italian</a>] - Write an addons it has never been easier</li>
-                        <li><a target="_blank" href="Talk-DevTools">Demolish the web with the <b>Firefox</b> Dev Tools</a> [<a class="video" href="https://www.youtube.com/watch?v=w2vOnRhZL4w">Video in Italian</a>] - Discover many unknown features of Firefox Developer Edition and try it with cool <b>examples</b>!</li>
+                        <li><a target="_blank" href="Talk-DevTools">Demolish the web with the <b>Firefox</b> Dev Tools</a> [<a class="video" href="https://www.youtube.com/watch?v=w2vOnRhZL4w">Video in Italian</a>] - Discover many unknown features of Firefox Developer Edition!</li>
                         <li><a target="_blank" href="Talk-JavaScript-1-hour"><b>JavaScript</b> in 1 hour</a> [<a class="video" href="https://www.youtube.com/watch?v=_fD22UL2af8">Video</a>] - Comparison of <b>JavaScript</b> code and <b>jQuery</b> Code simplified</li>
                         <li><a target="_blank" href="WordPress-as-a-framework"><b>WordPress</b> as a framework</a> - Change your mind about WordPress with meme!</li>
 						<li class="old-talk"><i>Talk obsoletes</i>
