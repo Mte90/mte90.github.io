@@ -53,10 +53,10 @@
 				  e.preventDefault();
 				});
 			  }
-			  elements = document.querySelectorAll('.old-talk');
+			  elements = document.querySelectorAll('.old-talk span');
 			  for (var i = 0; i < elements.length; i++) {
 				elements[i].addEventListener("click", function (e) {
-				  var list = this.querySelector('ul');
+				  var list = this.parentNode.querySelector('ul');
 				  if (list.classList.contains('hide')) {
 					list.classList.remove('hide');
 				  } else {
@@ -116,7 +116,12 @@
                 <div class="animated fadeIn _4">
                     <h2>English</h2>
                     <ul>
-						<li><a target="_blank" href="Talk-WhyGlossary">Why your community need a glossary 2 Ed</a> - The experience as developer, glossary mantainer, translation editor from the <b>WordPress</b> Polyglots community</li>
+						<li><a target="_blank" href="Talk-WhyGlossary">Why your community need a glossary 2 Ed</a> - The experience of the <b>WordPress</b> Polyglots community with data and real stories!
+							<div class="abstract"><span>Abstract</span>
+								<div class="hide">
+									Localization is important to improve the quality and workflow of translators and a glossary is the first thing that a community can do. <br>Discover the WordPress Polyglots experience with stories and data that show how can change your community.
+								</div>
+							</div></li>
 						<li><a target="_blank" href="Talk-WPBP"><b>Wordpress</b> Plugin <b>Boilerplate</b> Powered 2.0</a>
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
@@ -169,13 +174,13 @@
 							</div></li>
                         <li><a target="_blank" href="Talk-JavaScript-1-hour"><b>JavaScript</b> in 1 hour</a> [<a class="video" href="https://www.youtube.com/watch?v=_fD22UL2af8">Video</a>] - Comparison of <b>JavaScript</b> code and <b>jQuery</b> Code simplified</li>
                         <li><a target="_blank" href="WordPress-as-a-framework"><b>WordPress</b> as a framework</a> - Change your mind about WordPress with meme!</li>
-						<li class="old-talk"><i>Talk obsoletes</i>
+						<li class="old-talk"><span><i>Talk obsoletes</i></span>
 							<ul class="hide">
-								<li><b>[Obsolete]</b> <a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016 </li>
-								<li><b></b> <a target="_blank" href="Talk-JS-Mozilla"><b>JS libraries</b> by Mozilla for you</a> - <b>Mozilla</b> created in the last years many JavaScript libraries but maybe you don't know them</li>
-								<li><b></b> <a target="_blank" href="Talk-FFOS-Newbie"><b>Firefox OS</b> Development for Newbie</a> - All the tools, libraries and tips for the newbie</li>
-								<li><b></b> <a target="_blank" href="Talk-FF-OWA"><b>Firefox</b> (OS/For Android) and the Open Web App</a> - <b>Open Web App</b> explained easily with code examples and many screenshots</li>
-								<li><b></b> <a target="_blank" href="ffos-arduino.html">Resources for <b>Firefox OS</b>/<b>Arduino</b> Workshop</a></li>
+								<li><a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016 </li>
+								<li><a target="_blank" href="Talk-JS-Mozilla"><b>JS libraries</b> by Mozilla for you</a> - <b>Mozilla</b> created in the last years many JavaScript libraries but maybe you don't know them</li>
+								<li><a target="_blank" href="Talk-FFOS-Newbie"><b>Firefox OS</b> Development for Newbie</a> - All the tools, libraries and tips for the newbie</li>
+								<li><a target="_blank" href="Talk-FF-OWA"><b>Firefox</b> (OS/For Android) and the Open Web App</a> - <b>Open Web App</b> explained easily with code examples and many screenshots</li>
+								<li><<a target="_blank" href="ffos-arduino.html">Resources for <b>Firefox OS</b>/<b>Arduino</b> Workshop</a></li>
 								<li><a target="_blank" href="https://docs.google.com/presentation/d/1RrDjagEKXx12kRSolAg9_UP-MdMduL1hQpdaqKgeMBU/edit?usp=sharing">Why your community need a glossary 1 Ed</a> [<a class="video" href="http://wordpress.tv/2017/04/29/glotdict-pte-bot-and-bulkrejectgp-why-your-community-needs-a-glossary/">Video</a>] - The experience as developer and glossary mantainer in the <b>WordPress</b> Italia community</li>
 							</ul>
 						</li>
@@ -197,7 +202,7 @@
                         <li><a target="_blank" href="Presentazione-WP-Patch">Come fare una patch per <b>WordPress</b></a> - Vediamo come si fá con i vari passaggi e con dimostrazioni [<a class="video" href="http://wordpress.tv/2016/04/27/daniele-scasciafratte-come-fare-patch-wp/">Video</a>]</li>
                         <li><a target="_blank" href="Presentazione-CMB">Come aggiungere dei custom field al tuo tema <b>WordPress</b></a> - Un talk interattivo di programmazione su come sfruttare la libreria <b>CMB</b></li>
                         <li><a target="_blank" href="Presentazione-Industria">Cos'&egrave; l'associazione <b>Industria Italiana</b> del Software Libero</a> [<a class="video" href="https://www.youtube.com/watch?v=OzO-glJaITo">Video</a>] - La mia spiegazione</li>
-						<li class="old-talk"><i>Talk storici/obsoleti</i>
+						<li class="old-talk"><span><i>Talk storici/obsoleti</i></span>
 							<ul class="hide">
 								<li><b>[Storico]</b> <a target="_blank" href="Cms-Soluzione">I CMS sono la soluzione?</a> - Piccolo intervento per <b>Industria Italiana</b> del Software Libero</li>
 								<li><b>[Storico]</b> <a target="_blank" href="Talk-Mozilla-meetup">Meetup <b>Mozilla</b> al Codemotion Roma 2015</a> [<a class="video" href="https://www.youtube.com/watch?v=HizwFM7eQMY">Video</a>] - Presentazione dei progetti italiani e della sua community</li>
