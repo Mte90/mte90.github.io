@@ -29,7 +29,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte</div><div class="hashtag">#mozwpdays</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte</div><div class="hashtag">#oscal</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -70,19 +70,140 @@
 
 				<section>
 					<div>
-						<h2>New modules:</h2>
+						<h2>WPBP Original Modules:</h2>
+						The modules are indipendent each other with a specific things in mind.<br>
 						<ul>
-							<li class="fragment">WPBP/PointerPlus</li>
-							<li class="fragment">WPBP/CronPlus</li>
-							<li class="fragment">WPBP/Widgets-Helper</li>
-							<li class="fragment">WPBP/FakePage</li>
-							<li class="fragment">WPBP/Template</li>
-							<li class="fragment">WPBP/Debug</li>
-							<li class="fragment">WPBP/CPT_Columns</li>
-							<li class="fragment">WPBP/Requirements</li>
-							<li class="fragment">WPBP/Language</li>
-							<li class="fragment">WPBP/Backbone-Modal-View</li>
+							<li class="fragment">Be simple</li>
+							<li class="fragment">By parameters</li>
+							<li class="fragment">Examples included</li>
+							<li class="fragment">Easy API</li>
+							<li class="fragment">Be simple again</li>
 						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WPBP/PointerPlus</h2>
+						<img src="pictures/pointerplus.png">
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>WPBP/CronPlus:</h2>
+						<pre><code>
+$args = array(
+    // hourly,daily,twicedaily,weekly,monthly or timestamp for single event
+    'recurrence' => 'hourly',
+    // schedule (specific interval) or single (at the time specified)
+    'schedule' => 'schedule',
+    // Name of the Cron job used internally
+    'name' => 'cronplusexample',
+    // Callback to execute when the cron job is launched
+    'cb' => 'cronplus_example',
+    // Args passed to the hook executed during the cron
+    'args' => array( get_the_ID() )
+);
+
+function cronplus_example( $id ) {
+	echo $id;
+}
+
+$cronplus = new CronPlus( $args );
+// Schedule the event
+$cronplus->schedule_event();
+// Remove the event by the schedule
+$cronplus->clear_schedule();
+// Jump the scheduled event
+$cronplus->unschedule_event();
+						</code></pre>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Widgets-Helper</h2>
+						<p>A class that extends the built-in WP_Widget class to provide an easier/faster way to create Widgets for WordPress.</p>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/FakePage</h2>
+						<pre><code>new Fake_Page(
+	array(
+    'slug' => 'fake_slug',
+    'post_title' => 'Fake Page Title',
+    'post_content' => 'This is the fake page content'
+	)
+);.</code></pre>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Template</h2>
+						<pre><code>// This is like the woocommerce function
+function load_content_demo( $original_template ) {
+        if ( is_singular( 'demo' ) && in_the_loop() ) {
+            return wpbp_get_template_part( 'plugin-name-folder', 'content', 'demo', false );
+        } else {
+            return $original_template;
+        }
+}
+add_filter( 'template_include', 'load_content_demo' );
+
+// This is an extended version that search for folder with names based on locales like it_IT
+$get_template_email = wpbp_get_template_part( 'plugin-name-folder' , 'header', 'prefix' );</code></pre>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Debug</h2>
+						<pre><code>$debug = new WPBP_Debug( );
+$debug->log( __( 'Plugin Loaded', 'your-textdomain' ) );</code></pre>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/CPT_Columns</h2>
+						<pre><code>$post_columns = new CPT_columns( 'demo' );
+$post_columns->add_column( 'cmb2_field', array(
+    'label' => __( 'CMB2 Field' ),
+    'type' => 'post_meta', //text, thumbnail, post_meta, author, custom_tax, custom_value
+    'meta_key' => '_demo_meta_text',
+    'orderby' => 'meta_value', // For WP-Query
+    'sortable' => true,
+    'prefix' => '<b>',
+    'suffix' => '</b>',
+    'def' => 'Not defined', // Default value in case post meta not found
+    'order' => '-1' // This is the last column
+	)
+);</code></pre>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Requirements</h2>
+						<img src="pictures/requirements.png">
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Language</h2>
+						<p>Wrap specific methods to get string or register it or get the language for Ceceppa Multilingua, Polylang and WPML plugins.</p>
+					</div>
+				</section>
+				
+				<section>
+					<div>
+						<h2>WPBP/Backbone-Modal-View</h2>
+						<img src="pictures/bb-view.gif">
 					</div>
 				</section>
 
