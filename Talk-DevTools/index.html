@@ -112,9 +112,9 @@
 
         <section class="slide red">
             <div>
-                <h2>Support for <code>::before</code> and <code>::after</code></h2>
+                <h2>Useless Rules</h2>
                 <div class="center">
-                    <img src="pictures/before-after-inspection.png" alt=""><br>
+                    <img src="pictures/useless-rules.png" alt="" style="margin-left: -40px;"><br>
                 </div>
             </div>
         </section>
@@ -317,6 +317,17 @@
                     <img src="pictures/web-console-messages-highlighted.png" alt=""><br>
                     Ctrl + Shift + K<br>
                     <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console">https://developer.mozilla.org/en-US/docs/Tools/Web_Console</a>.
+                </div>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div>
+                <h2>Reference the Current and Previous Element or value</h2>
+                <div class="center">
+                    If you have an element currently selected in your Inspector, you can use the reference <code>$0</code> to call it within your code. For example, to see the elements' contents you would type <code>$0.innerHTML</code>.<br>
+					For previous you can use $1, $2 and so on.<br><br>
+					To access to the previous value returned in console <code>$_</code>.
                 </div>
             </div>
         </section>
