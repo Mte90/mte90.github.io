@@ -87,7 +87,7 @@
 					<div>
 						<h2>What I've done</h2>
 						<ul>
-							<li><a href="http://www.mte90.net/wp-content/uploads/2015/03/introduzione-a-pyqt-2-ed.pdf">Italian Ebook</a> - Introduzione a PyQt 2 Edizione, 15 pages!</li>
+							<li><a href="http://www.mte90.net/wp-content/uploads/2015/03/introduzione-a-pyqt-2-ed.pdf">Italian e-book</a> - Introduzione a PyQt 2 Edizione, 15 pages!</li>
 							<li><a href="https://github.com/Mte90/PyQT-Boilerplate">github.com/Mte90/PyQT-Boilerplate</a> - Create a PyQt software pretty easy!</li>
 							<li><a href="https://github.com/Mte90/QAsana">github.com/Mte90/QAsana</a> - Asana client with hotkey and auto position on multimonitor screen</li>
 							<li><a href="https://github.com/Mte90/Plessc">github.com/Mte90/Plessc</a> - Gui frontend for lessc</li>
@@ -97,162 +97,36 @@
 					</div>
 				</section>
 
-				<section class="force-bottom">
+				<section class="force-bottom" data-background="pictures/qt-designer.png">
 					<div class="background">
-						<h2 class="white-black-shadow">Touch Optimized</h2>
-						<p>
-							Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-						</p>
+						<h2 class="white-black-shadow">Interface</h2>
 					</div>
 				</section>
 
-				<section id="fragments">
-					<h2>Fragments</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-					<aside class="notes">
-						This slide has fragments which are also stepped through in the notes window.
-					</aside>
-				</section>
-
 				<section>
-					<h2>Fragment Styles</h2>
-					<p>There's different types of fragments, like:</p>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment roll-in">roll-in</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment current-visible">current-visible</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
+					<div>
+						<h2>Interface to Python code</h2>
+
+						<ul>
+							<li><a href="https://github.com/CSB-at-ZIB/BioPARKIN/blob/master/tools/makepyqt.pyw">Tool for PyQt4</a></li>
+							<li>pyuic5 -x mainWindow.ui -o MainWindow.py - for PyQt5</li>
+							<li class="fragment"><b>Why?</b></li>
+							<li class="fragment">Better integration with IDE/Editor</li>
+							<li class="fragment">Better to read instead of a XML file</li>
+						</ul>
+					</div>
 				</section>
 
-				<section data-background="#dddddd">
-					<h2>Slide Backgrounds</h2>
-					<p>
-						Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-					</p>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-					<h2>Image Backgrounds</h2>
-					<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-					<h2>Tiled Backgrounds</h2>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="convex">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "convex".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'convex' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-							&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+				<section class="force-bottom" data-background="pictures/yeah.gif">
+					<div>
+						<h2 class="white-black-shadow">Time to code with the boilerplate!</h2>
+					</div>
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						- <a href="mte90.github.io/Talk-PyQT/">Slides</a>
 					</p>
 				</section>
 
@@ -276,23 +150,23 @@ function linkify( selector ) {
 			  transition: 'zoom', // none/fade/slide/convex/concave/zoom
 			  keyboard: {
 				78: function () {
-						animateGif()
-					},
+				  animateGif()
+				},
 				34: function () {
-						animateGif()
-					},
+				  animateGif()
+				},
 				76: function () {
-						animateGif()
-					},
+				  animateGif()
+				},
 				39: function () {
-						animateGif()
-					},
+				  animateGif()
+				},
 				74: function () {
-						animateGif()
-					},
+				  animateGif()
+				},
 				40: function () {
-						animateGif()
-					}
+				  animateGif()
+				}
 			  },
 			  dependencies: [
 				{src: 'lib/js/classList.js', condition: function () {
