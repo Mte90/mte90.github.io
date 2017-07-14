@@ -8,143 +8,185 @@
         <link href='assets/style.css' rel='stylesheet' type='text/css'>
         <script src="assets/fallback.min.js" type="text/javascript"></script>
         <script>
-			fallback.load({
-			  'bootstrap.min.css': [
-				'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-				'assets/bootstrap.min.css'
-			  ],
-			  'ionicons.min.css': [
-				'http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css',
-				'assets/ionicons.min.css'
-			  ],
-			});
-			document.addEventListener("DOMContentLoaded", function () {
-			  (function (i, s, o, g, r, a, m) {
+		// fallback.load
+		fallback.load( {
+			'bootstrap.min.css': [
+			'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+			'assets/bootstrap.min.css'
+			],
+			'ionicons.min.css': [
+			'http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css',
+			'assets/ionicons.min.css'
+			 ],
+		} );
+
+		// event [DOMContentLoaded]
+		document.addEventListener("DOMContentLoaded", function () {
+			( function (i, s, o, g, r, a, m) {
 				i['GoogleAnalyticsObject'] = r;
+
 				i[r] = i[r] || function () {
-				  (i[r].q = i[r].q || []).push(arguments)
+					( i[r].q = i[r].q || []).push(arguments)
 				}, i[r].l = 1 * new Date();
-				a = s.createElement(o),
-						m = s.getElementsByTagName(o)[0];
+
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
 				a.async = 1;
 				a.src = g;
-				m.parentNode.insertBefore(a, m)
-			  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+				m.parentNode.insertBefore(a, m);
+			} )(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-			  ga('create', 'UA-67857332-1', 'auto');
-			  ga('send', 'pageview');
-			  document.querySelector('#share-qr').addEventListener("click", function (e) {
+			ga('create', 'UA-67857332-1', 'auto');
+			ga('send', 'pageview');
+
+			document.querySelector('#share-qr').addEventListener("click", function (e) {
 				if (document.querySelector('.qrcode').classList.contains('hide')) {
-				  document.querySelector('.qrcode').classList.remove('hide');
-				} else {
-				  document.querySelector('.qrcode').classList.add('hide');
+					document.querySelector('.qrcode').classList.remove('hide');
+				} 
+				else {
+					document.querySelector('.qrcode').classList.add('hide');
 				}
 				e.preventDefault();
-			  });
-			  elements = document.querySelectorAll('.abstract span');
-			  for (var i = 0; i < elements.length; i++) {
+			} );
+
+			elements = document.querySelectorAll('.abstract span');
+
+			for (var i = 0; i < elements.length; i++) {
 				elements[i].addEventListener("click", function (e) {
-				  container = this.parentNode.querySelector('div');
-				  if (container.classList.contains('hide')) {
-					container.classList.remove('hide');
-				  } else {
-					container.classList.add('hide');
-				  }
-				  e.preventDefault();
-				});
-			  }
-			  elements = document.querySelectorAll('.old-talk span');
-			  for (var i = 0; i < elements.length; i++) {
+					container = this.parentNode.querySelector('div');
+					if (container.classList.contains('hide')) {
+						container.classList.remove('hide');
+					} 
+					else {
+						container.classList.add('hide');
+					}
+					e.preventDefault();
+				} );
+			};
+
+			elements = document.querySelectorAll('.old-talk span');
+
+			for (var i = 0; i < elements.length; i++) {
 				elements[i].addEventListener("click", function (e) {
-				  var list = this.parentNode.querySelector('ul');
-				  if (list.classList.contains('hide')) {
-					list.classList.remove('hide');
-				  } else {
-					list.classList.add('hide');
-				  }
-				  e.preventDefault();
-				});
-			  }
-			});
+					var list = this.parentNode.querySelector('ul');
+					if (list.classList.contains('hide')) {
+						list.classList.remove('hide');
+					} 
+					else {
+						list.classList.add('hide');
+					}
+					e.preventDefault();
+				} );
+			}
+		} );
         </script>
         <title>Daniele Scasciafratte - List of my Talks</title>
     </head>
 
     <body>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="col-md-8 header">
-                    <h1 class="my-name animated fadeInDown _1">Daniele Scasciafratte <a target="_blank" href="http://www.mte90.net/"> - Developer, Evangelist, Writer</a></h1>
-                </div>
-                <div class="col-md-4 header">
-                    <div class="contact animated fadeInDown _3">
-                        <div class="social">
-                            <span class="icon ion-social-github"></span>
-                            <a target="_blank" href="https://github.com/Mte90">GitHub</a>
-                            <span class="icon ion-social-twitter"></span>
-                            <a target="_blank" href="https://twitter.com/Mte90Net/">@Mte90Net</a> 
-							<span class="icon ion-android-share"></span>
-                            <a target="_blank" href="#" id="share-qr">Qr Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<!-- [container] -->
+		<div class="container">
 			<div class="col-md-12">
-				<h4 class="my-credentials animated fadeInUp _2"><a target="_blank" href="http://www.mte90.net/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker, Co Founder <a target="_blank" href="http://codeat.it">Codeat</a> as Full Stack Developer/CTO, Vice President of <a target="_blank" href="http://industriasoftwarelibero.it/">Industria Italiana del Software Libero</a><br>
-					WordPress Core Contributor, Open Source Multiversal & Italian Native Speaker, English-Esperanto-Spanish</h4>
+				<div class="col-md-8 header">
+					<h1 class="my-name animated fadeInDown _1">Daniele Scasciafratte <a target="_blank" href="http://www.mte90.net/"> - Developer, Evangelist, Writer</a></h1>
+				</div>
+
+				<div class="col-md-4 header">
+					<div class="contact animated fadeInDown _3">
+						<div class="social">
+							<span class="icon ion-social-github"></span>
+							<a target="_blank" href="https://github.com/Mte90">GitHub</a>
+							<span class="icon ion-social-twitter"></span>
+							<a target="_blank" href="https://twitter.com/Mte90Net/">@Mte90Net</a> 
+							<span class="icon ion-android-share"></span>
+							<a target="_blank" href="#" id="share-qr">Qr Code</a>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<div class="col-md-12">
+				<h4 class="my-credentials animated fadeInUp _2">
+					<a target="_blank" href="http://www.mte90.net/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker, 
+					Co Founder <a target="_blank" href="http://codeat.it">Codeat</a> as Full Stack Developer/CTO, 
+					Vice President of <a target="_blank" href="http://industriasoftwarelibero.it/">Industria Italiana del Software Libero</a>
+					<p>WordPress Core Contributor, Open Source Multiversal & Italian Native Speaker, English-Esperanto-Spanish</p>
+				</h4>
+			</div>
+
         </div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="animated fadeIn _2">
+
+		<!-- [container] -->
+		<div class="container">
+			<div class="col-md-12">
+				<div class="animated fadeIn _2">
 					<h4 class="bar">For a reportage of all my events as speaker or attendee, check my blog on <a href="https://mte90.net/en/i-was-there/">I was there</a> or <a href="https://mte90.net/io-cero/">Io C'ero</a>!</h4>
-                </div>
+				</div>
 				<div class="animated fadeIn _3">
 					<h4 class="bar">Do you want suggest a new talk? Open a ticket on <a href="https://github.com/Mte90/mte90.github.io/issues">GitHub</a>!</h4>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
+
+		<!-- [container] -->
 		<div class="container">
-            <div class="col-md-12">
-                <div class="hide qrcode">
-                    <img src="assets/qrcode.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="animated fadeIn _4">
-                    <h2>English</h2>
-                    <ul>
-						<li><a target="_blank" href="Talk-PyQT">How to develop a PyQt software</a> - Do you want to create a desktop application with Python? Discover the Qt world!
+			<div class="col-md-12">
+				<div class="hide qrcode">
+					<img src="assets/qrcode.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<!-- [container] -->
+		<div class="container">
+			<div class="col-md-12">
+				<div class="animated fadeIn _4">
+					<h2>English</h2>
+					<ul>
+						<li>
+							<a target="_blank" href="Talk-PyQT">How to develop a PyQt software</a> - Do you want to create a desktop application with Python? Discover the Qt world!
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									A desktop application simple to create on Linux today is very simple with Python and Qt. In this talk we will see how to do it with live coding and demo.
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-WhyGlossary">Why your community need a glossary 2 Ed</a> - The experience of the <b>WordPress</b> Polyglots community with data and real stories!
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WhyGlossary">Why your community need a glossary 2 Ed</a> - The experience of the <b>WordPress</b> Polyglots community with data and real stories!
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									Localization is important to improve the quality and workflow of translators and a glossary is the first thing that a community can do. <br>Discover the WordPress Polyglots experience with stories and data that show how can change your community.
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-WPBP"><b>Wordpress</b> Plugin <b>Boilerplate</b> Powered 2.0</a>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WPBP"><b>Wordpress</b> Plugin <b>Boilerplate</b> Powered 2.0</a>
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									WordPress is the most used CMS in the world and it is very easy to do a plugin with saving of time using libraries, help of Composer and a code generator. WPBP is a boilerplate for plugins that do everything for you!<hr>
 									We will discover the WPBP project and how to do in live a little plugin. You will see the WordPress development in a different way!
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-WP-REST">How to extend the <b>WordPress</b> Rest API and do magic stuff</a>  [<a class="video" href="https://www.youtube.com/watch?v=XT1sgi7TUTY">Video in Italian</a>] - Examples and how much they are amazing</li>
-						<li><a target="_blank" href="Talk-WP-Italia">The <b>WordPress</b> Italia community</a> [<a class="video" href="https://www.youtube.com/watch?v=ZUNTPGlENU4">Video in Italian</a>] - or why we conquered the world</li>
-						<li><a target="_blank" href="https://www.youtube.com/watch?v=CP4pmbV7Dbc">What is a <b>Mozilla TechSpeaker</b></a> - 3 minutes video explanation about the program</li>
-						<li><a target="_blank" href="Talk-HowTalk">How to do a <b>Talk</b></a> [<a class="video" href="http://wordpress.tv/2017/04/09/daniele-scasciafratte-come-fare-un-talk/">Video in Italian</a>]<div class="abstract"><span>Abstract</span>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WP-REST">How to extend the <b>WordPress</b> Rest API and do magic stuff</a>  [<a class="video" href="https://www.youtube.com/watch?v=XT1sgi7TUTY">Video in Italian</a>] - Examples and how much they are amazing
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WP-Italia">The <b>WordPress</b> Italia community</a> [<a class="video" href="https://www.youtube.com/watch?v=ZUNTPGlENU4">Video in Italian</a>] - or why we conquered the world
+						</li>
+						<li>
+							<a target="_blank" href="https://www.youtube.com/watch?v=CP4pmbV7Dbc">What is a <b>Mozilla TechSpeaker</b></a> - 3 minutes video explanation about the program
+						</li>
+						<li>
+							<a target="_blank" href="Talk-HowTalk">How to do a <b>Talk</b></a> [<a class="video" href="http://wordpress.tv/2017/04/09/daniele-scasciafratte-come-fare-un-talk/">Video in Italian</a>]
+							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									You never done a talk or you have no idea where to start. Don't get afraid, there are many tips and suggestions for your first talk!<hr>
 									Let's discover how to gather ideas and how to do the talk and practice!
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-Coaching"><b>Coaching</b> for open source community</a> [<a class="video" href="https://vimeo.com/184594005">Video in Italian</a>]
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-Coaching"><b>Coaching</b> for open source community</a> [<a class="video" href="https://vimeo.com/184594005">Video in Italian</a>]
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									Do you know that there are many little tips and approaches that can improve your community health and quality for the participation?<hr>
@@ -152,83 +194,154 @@
 									That passion is the key but is not enough to manage a community and let to grow and improve his effect every day.
 									Coaching is a way to improve your action as communty leader or volunteer without change your workflow.
 								</div>
-							</div></li>
-						<li><a target="_blank" href="#">A deep dive into <b>VVV</b> for <b>WordPress</b></a> [<a class="video" href="http://wordpress.tv/2017/04/10/daniele-scasciafratte-deep-dive-into-vvv/">Video</a>]</li>
-						<li><a target="_blank" href="Talk-WP-Patch">How to do a patch for <b>WordPress</b></a><div class="abstract"><span>Abstract</span>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="#">A deep dive into <b>VVV</b> for <b>WordPress</b></a> [<a class="video" href="http://wordpress.tv/2017/04/10/daniele-scasciafratte-deep-dive-into-vvv/">Video</a>]
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WP-Patch">How to do a patch for <b>WordPress</b></a>
+							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									WordPress it's an important piece of internet today and with Vagrant and few tips you can do it your first patch!<hr>
 									Discover where find tickets, how to do and publish a patch but the most important part how to create your environment to develop that can be used also for your develop needs.
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-Janitor">You need a <b>Janitor</b>!</a><div class="abstract"><span>Abstract</span>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-Janitor">You need a <b>Janitor</b>!</a>
+							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									Firefox, Chromium, Servo, KDE and Thunderbird has two things in common. They are open source projects with a large codebase and organize the dev environment is not easy but with Janitor and the cloud it's possible!
 								</div>
-							</div></li>
-						<li><a target="_blank" href="Talk-WebExt">45 minute to Browser Super Powers</a> [<a class="video" href="https://www.youtube.com/watch?v=Npkd1FvSWIs">Video in Italian</a>]<div class="abstract"><span>Abstract</span>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WebExt">45 minute to Browser Super Powers</a> [<a class="video" href="https://www.youtube.com/watch?v=Npkd1FvSWIs">Video in Italian</a>]
+							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									Do you know that Firefox now has a new technology that simplify the development of an extension? And also use and extend the API of Chrome? Yeah, I am serious you can do the same extension for many browsers!<hr>
 									WebExtension are the future for addons in Firefox but this is not enough because they works also on Chrome, Opera and soon Edge without any changes!
 									Think about it, the cross browser addon issues is only an old nightmare! In conclusion because all this amazing news and how it is easy to extend Firefox will be available new APIs to customize the Firefox experience in this year.
 								</div>
-							</div></li>
-                        <li><a target="_blank" href="Talk-DevTools">Demolish the web with the <b>Firefox</b> Dev Tools</a> [<a class="video" href="https://www.youtube.com/watch?v=rVM-lvTkOl8">Video in Italian</a>]<div class="abstract"><span>Abstract</span>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-DevTools">Demolish the web with the <b>Firefox</b> Dev Tools</a> [<a class="video" href="https://www.youtube.com/watch?v=rVM-lvTkOl8">Video in Italian</a>]
+							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									Firefox has amazing dev tools that support the last technologies but they can used also with other browsers and NodeJS.<hr>
 									Firefox is not only a browser but also a tool for a developer to speed up his job. In this talk we will see few tricks and also new features that you probably don't know.
 								</div>
-							</div></li>
-                        <li><a target="_blank" href="Talk-JavaScript-1-hour"><b>JavaScript</b> in 1 hour</a> [<a class="video" href="https://www.youtube.com/watch?v=_fD22UL2af8">Video</a>] - Comparison of <b>JavaScript</b> code and <b>jQuery</b> Code simplified</li>
-                        <li><a target="_blank" href="WordPress-as-a-framework"><b>WordPress</b> as a framework</a> - Change your mind about WordPress with meme!</li>
-						<li class="old-talk"><span><i>Talk obsoletes</i></span>
-							<ul class="hide">
-								<li><a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016 </li>
-								<li><a target="_blank" href="Talk-JS-Mozilla"><b>JS libraries</b> by Mozilla for you</a> - <b>Mozilla</b> created in the last years many JavaScript libraries but maybe you don't know them</li>
-								<li><a target="_blank" href="Talk-FFOS-Newbie"><b>Firefox OS</b> Development for Newbie</a> - All the tools, libraries and tips for the newbie</li>
-								<li><a target="_blank" href="Talk-FF-OWA"><b>Firefox</b> (OS/For Android) and the Open Web App</a> - <b>Open Web App</b> explained easily with code examples and many screenshots</li>
-								<li><<a target="_blank" href="ffos-arduino.html">Resources for <b>Firefox OS</b>/<b>Arduino</b> Workshop</a></li>
-								<li><a target="_blank" href="https://docs.google.com/presentation/d/1RrDjagEKXx12kRSolAg9_UP-MdMduL1hQpdaqKgeMBU/edit?usp=sharing">Why your community need a glossary 1 Ed</a> [<a class="video" href="http://wordpress.tv/2017/04/29/glotdict-pte-bot-and-bulkrejectgp-why-your-community-needs-a-glossary/">Video</a>] - The experience as developer and glossary mantainer in the <b>WordPress</b> Italia community</li>
-							</ul>
+							</div>
 						</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-12">
-                <div class="animated fadeIn _4">
-                    <h2>Italiano <a class="video" href="https://www.youtube.com/playlist?list=PLTW7CYCRxoFHTs0GeWLqRvdXRdwZo9XV3"> - Video Playlist</a></h2>
-                    <ul>
-						<li><a target="_blank" href="https://docs.google.com/presentation/d/1TUmxsRvNZVFfDRR6BfiUN7lMjGjEOyRST3eqlI9I7mo/edit?usp=sharing">Una startup può nascere grazie a soluzioni opensource?</a> - Un light talk di 15 minuti con alcuni suggerimenti</li>
-						<li><a target="_blank" href="https://docs.google.com/presentation/d/1Upx7SmLFpNKwruthrfVp5pfuwH8v97t586jOj4AjbEA/edit?usp=drive_web">Firefox e la privacy</a> - Scopri cos'é il tracciamento e come Firefox ti aiuta a proteggerti sulla rete!</li>
-						<li><a target="_blank" href="https://docs.google.com/presentation/d/1Wmdi7NXgotoKEx-qBFV-oVbu_4P7EOr4dOg22Nw60vU/edit#slide=id.p">Un giorno in viaggio</a> - Ti sei mai domandato quali rischi per la sicurezza dei tuoi dati incontri durante un viaggio?</li>
-                        <li><a target="_blank" href="Presentazione-Mozilla">Join <b>Mozilla</b>, We have pasta</a> [<a class="video" href="https://www.youtube.com/watch?v=aocOmFosqds">Video</a>] - Presentazione su <b>Mozilla</b> e sul suo manifesto</li>
-						<li><a target="_blank" href="https://docs.google.com/presentation/d/1SYDABVZQYsfdrIU4Avl9eHjFG3XbsprNn2FgdQP93ow/edit#slide=id.p">Mozilla ChangeCopyright, Riprendiamoci la libertà</a> - La campagna di Mozilla per la tutela degli internauti contro la legge europea del copyright</li>
-						<li><a target="_blank" href="Presentazione-WP-Novita">Le novitá di <b>WordPress</b> 4.7</a> - Scopriamo le ultime novitá e gli ultimi feature plugin</li>
-						<li><a target="_blank" href="Presentazione-OSC">Cos'é l'<b>Open Source</b> e <b>Linux</b></a> - Le basi chiare e semplici sul perché bisogna farne parte, Linux Presentation Day 2016 a Rieti</li>
-                        <li><a target="_blank" href="Presentazione-WP-Patch">Come fare una patch per <b>WordPress</b></a> - Vediamo come si fá con i vari passaggi e con dimostrazioni [<a class="video" href="http://wordpress.tv/2016/04/27/daniele-scasciafratte-come-fare-patch-wp/">Video</a>]</li>
-                        <li><a target="_blank" href="Presentazione-CMB">Come aggiungere dei custom field al tuo tema <b>WordPress</b></a> - Un talk interattivo di programmazione su come sfruttare la libreria <b>CMB</b></li>
-                        <li><a target="_blank" href="Presentazione-Industria">Cos'&egrave; l'associazione <b>Industria Italiana</b> del Software Libero</a> [<a class="video" href="https://www.youtube.com/watch?v=OzO-glJaITo">Video</a>] - La mia spiegazione</li>
-						<li class="old-talk"><span><i>Talk storici/obsoleti</i></span>
+						<li>
+							<a target="_blank" href="Talk-JavaScript-1-hour"><b>JavaScript</b> in 1 hour</a> [<a class="video" href="https://www.youtube.com/watch?v=_fD22UL2af8">Video</a>] - Comparison of <b>JavaScript</b> code and <b>jQuery</b> Code simplified
+						</li>
+						<li>
+							<a target="_blank" href="WordPress-as-a-framework"><b>WordPress</b> as a framework</a> - Change your mind about WordPress with meme!
+						</li>
+						<li class="old-talk">
+							<span><i>Talk obsoletes</i></span>
 							<ul class="hide">
-								<li><b>[Storico]</b> <a target="_blank" href="Cms-Soluzione">I CMS sono la soluzione?</a> - Piccolo intervento per <b>Industria Italiana</b> del Software Libero</li>
-								<li><b>[Storico]</b> <a target="_blank" href="Talk-Mozilla-meetup">Meetup <b>Mozilla</b> al Codemotion Roma 2015</a> [<a class="video" href="https://www.youtube.com/watch?v=HizwFM7eQMY">Video</a>] - Presentazione dei progetti italiani e della sua community</li>
-								<li><b>[Obsoleto]</b> <a target="_blank" href="Presentazione-FirefoxOS"><b>Firefox OS</b> per utenti e sviluppatori</a> [<a class="video" href="https://www.youtube.com/watch?v=Vl859h345lI">Versione 2015</a>, <a class="video" href="https://www.youtube.com/watch?v=mOFUOh5LW9U&index=14">Versione 2013</a>] - Introduzione quasi tecnica, senza codice, ideale per chi vuole scoprire <b>Firefox OS</b></li>
-								<li><b>[Storico]</b> <a target="_blank" href="https://docs.google.com/presentation/d/13aR67MKmIvYHu2h8aafGArkkdtCHEzgt2cQvChu3pTA/edit?usp=sharing"><b>Wordpress</b> Plugin Boilerplate Powered</a> - Il Boilerplate armato di librerie con tool per programmatori</li>
-								<li><b>[Storico]</b> <a target="_blank" href="Presentazione-DevTools">Smontiamo il Web con i Tool di <b>Firefox</b>!</a> [<a class="video" href="https://www.youtube.com/watch?v=1qEkA29v_VA&list=PLTW7CYCRxoFHMxBdWJwtJ_a9SNemz-rdh">Video</a>, <a class="video" href="https://www.youtube.com/watch?v=8yZoTWWL-aI">Video</a>] - Scopriamo i vari tool di <b>Firefox</b> con alcune feature sconosciute e delle demo per provarli</li>
-								<li><b>[Obsoleto]</b> <a target="_blank" href="Talk-MakerOWA/">Il web, i maker e le Open Web App per Maker Faire Roma 2014</a> - App HTML5 installabile (con notifiche di sistema) che parla con Arduino via REST</li>
-								<li><b>[Obsoleto]</b> <a target="_blank" href="Presentazione-Boilerplate"><b>Firefox OS</b> Boilerplate</a> - Presentazione dedicata a Firefox OS Boilerplate</li>
-								<li><b>[Storico]</b> <a target="_blank" href="Quasar-2012">Semplicemente Web 2.0</a> - Presentazione di fine corso Web & Interaction 2012 all'Istituto Quasar di Roma</li>
+								<li>
+									<a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016 
+								</li>
+								<li>
+									<a target="_blank" href="Talk-JS-Mozilla"><b>JS libraries</b> by Mozilla for you</a> - <b>Mozilla</b> created in the last years many JavaScript libraries but maybe you don't know them
+								</li>
+								<li>
+									<a target="_blank" href="Talk-FFOS-Newbie"><b>Firefox OS</b> Development for Newbie</a> - All the tools, libraries and tips for the newbie
+								</li>
+								<li>
+									<a target="_blank" href="Talk-FF-OWA"><b>Firefox</b> (OS/For Android) and the Open Web App</a> - <b>Open Web App</b> explained easily with code examples and many screenshots
+								</li>
+								<li>
+									<a target="_blank" href="ffos-arduino.html">Resources for <b>Firefox OS</b>/<b>Arduino</b> Workshop</a></li>
+								<li>
+									<a target="_blank" href="https://docs.google.com/presentation/d/1RrDjagEKXx12kRSolAg9_UP-MdMduL1hQpdaqKgeMBU/edit?usp=sharing">Why your community need a glossary 1 Ed</a> [<a class="video" href="http://wordpress.tv/2017/04/29/glotdict-pte-bot-and-bulkrejectgp-why-your-community-needs-a-glossary/">Video</a>] - The experience as developer and glossary mantainer in the <b>WordPress</b> Italia community
+								</li>
 							</ul>
 						</li>
 					</ul>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="col-md-12">
-                <p class="text-muted footer animated fadeInUp _6">Copyright &copy; Daniele Scasciafratte 2013 and beyond!</p>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
+    
+		<!-- [container] -->
+		<div class="container">
+			<div class="col-md-12">
+				<div class="animated fadeIn _4">
+					<h2>Italiano <a class="video" href="https://www.youtube.com/playlist?list=PLTW7CYCRxoFHTs0GeWLqRvdXRdwZo9XV3"> - Video Playlist</a></h2>
+					<ul>
+						<li>
+							<a target="_blank" href="https://docs.google.com/presentation/d/1TUmxsRvNZVFfDRR6BfiUN7lMjGjEOyRST3eqlI9I7mo/edit?usp=sharing">Una startup può nascere grazie a soluzioni opensource?</a> - Un light talk di 15 minuti con alcuni suggerimenti
+						</li>
+						<li>
+							<a target="_blank" href="https://docs.google.com/presentation/d/1Upx7SmLFpNKwruthrfVp5pfuwH8v97t586jOj4AjbEA/edit?usp=drive_web">Firefox e la privacy</a> - Scopri cos'é il tracciamento e come Firefox ti aiuta a proteggerti sulla rete!
+						</li>
+						<li>
+							<a target="_blank" href="https://docs.google.com/presentation/d/1Wmdi7NXgotoKEx-qBFV-oVbu_4P7EOr4dOg22Nw60vU/edit#slide=id.p">Un giorno in viaggio</a> - Ti sei mai domandato quali rischi per la sicurezza dei tuoi dati incontri durante un viaggio?
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-Mozilla">Join <b>Mozilla</b>, We have pasta</a> [<a class="video" href="https://www.youtube.com/watch?v=aocOmFosqds">Video</a>] - Presentazione su <b>Mozilla</b> e sul suo manifesto
+						</li>
+						<li>
+							<a target="_blank" href="https://docs.google.com/presentation/d/1SYDABVZQYsfdrIU4Avl9eHjFG3XbsprNn2FgdQP93ow/edit#slide=id.p">Mozilla ChangeCopyright, Riprendiamoci la libertà</a> - La campagna di Mozilla per la tutela degli internauti contro la legge europea del copyright
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-WP-Novita">Le novitá di <b>WordPress</b> 4.7</a> - Scopriamo le ultime novitá e gli ultimi feature plugin
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-OSC">Cos'é l'<b>Open Source</b> e <b>Linux</b></a> - Le basi chiare e semplici sul perché bisogna farne parte, Linux Presentation Day 2016 a Rieti
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-WP-Patch">Come fare una patch per <b>WordPress</b></a> - Vediamo come si fá con i vari passaggi e con dimostrazioni [<a class="video" href="http://wordpress.tv/2016/04/27/daniele-scasciafratte-come-fare-patch-wp/">Video</a>]
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-CMB">Come aggiungere dei custom field al tuo tema <b>WordPress</b></a> - Un talk interattivo di programmazione su come sfruttare la libreria <b>CMB</b>
+						</li>
+						<li>
+							<a target="_blank" href="Presentazione-Industria">Cos'&egrave; l'associazione <b>Industria Italiana</b> del Software Libero</a> [<a class="video" href="https://www.youtube.com/watch?v=OzO-glJaITo">Video</a>] - La mia spiegazione
+						</li>
+						<li class="old-talk"><span><i>Talk storici/obsoleti</i></span>
+							<ul class="hide">
+								<li>
+									<b>[Storico]</b> <a target="_blank" href="Cms-Soluzione">I CMS sono la soluzione?</a> - Piccolo intervento per <b>Industria Italiana</b> del Software Libero
+								</li>
+								<li>
+									<b>[Storico]</b> <a target="_blank" href="Talk-Mozilla-meetup">Meetup <b>Mozilla</b> al Codemotion Roma 2015</a> [<a class="video" href="https://www.youtube.com/watch?v=HizwFM7eQMY">Video</a>] - Presentazione dei progetti italiani e della sua community
+								</li>
+								<li>
+									<b>[Obsoleto]</b> <a target="_blank" href="Presentazione-FirefoxOS"><b>Firefox OS</b> per utenti e sviluppatori</a> [<a class="video" href="https://www.youtube.com/watch?v=Vl859h345lI">Versione 2015</a>, <a class="video" href="https://www.youtube.com/watch?v=mOFUOh5LW9U&index=14">Versione 2013</a>] - Introduzione quasi tecnica, senza codice, ideale per chi vuole scoprire <b>Firefox OS</b>
+								</li>
+								<li>
+									<b>[Storico]</b> <a target="_blank" href="https://docs.google.com/presentation/d/13aR67MKmIvYHu2h8aafGArkkdtCHEzgt2cQvChu3pTA/edit?usp=sharing"><b>Wordpress</b> Plugin Boilerplate Powered</a> - Il Boilerplate armato di librerie con tool per programmatori
+								</li>
+								<li>
+									<b>[Storico]</b> <a target="_blank" href="Presentazione-DevTools">Smontiamo il Web con i Tool di <b>Firefox</b>!</a> [<a class="video" href="https://www.youtube.com/watch?v=1qEkA29v_VA&list=PLTW7CYCRxoFHMxBdWJwtJ_a9SNemz-rdh">Video</a>, <a class="video" href="https://www.youtube.com/watch?v=8yZoTWWL-aI">Video</a>] - Scopriamo i vari tool di <b>Firefox</b> con alcune feature sconosciute e delle demo per provarli
+								</li>
+								<li>
+									<b>[Obsoleto]</b> <a target="_blank" href="Talk-MakerOWA/">Il web, i maker e le Open Web App per Maker Faire Roma 2014</a> - App HTML5 installabile (con notifiche di sistema) che parla con Arduino via REST
+								</li>
+								<li>
+									<b>[Obsoleto]</b> <a target="_blank" href="Presentazione-Boilerplate"><b>Firefox OS</b> Boilerplate</a> - Presentazione dedicata a Firefox OS Boilerplate
+								</li>
+								<li>
+									<b>[Storico]</b> <a target="_blank" href="Quasar-2012">Semplicemente Web 2.0</a> - Presentazione di fine corso Web & Interaction 2012 all'Istituto Quasar di Roma
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    
+		<!-- [container] -->
+		<div class="container">
+			<div class="col-md-12">
+				<p class="text-muted footer animated fadeInUp _6">Copyright &copy; Daniele Scasciafratte 2013 and beyond!</p>
+			</div>
+		</div>
     </body>
 </html>
