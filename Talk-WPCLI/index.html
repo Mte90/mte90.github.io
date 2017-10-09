@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>What you can do with WP-CLI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordPress Meetup Roma</div><div class="hashtag">#wproma</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>WP-CLI</h1>
+					<h3>What you can do with this tool?</h3>
+					<p>
+						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>Project Translation Editor in WordPress Italia</li>
+							<li>Industria Italiana Software Libero Vice Presidente</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Few info</h2>
+					<p class="fragment">PHP 5.3+</p>
+					<p class="fragment">WordPress 3.7 or later</p>
+					<p class="fragment roll-in">No root privileges required</p>
+					<p class="fragment roll-in">SSH support (<a href="https://make.wordpress.org/cli/handbook/running-commands-remotely/">make.wordpress.org/cli/handbook/running-commands-remotely/</a>)</p>
+					<p class="fragment">Official project since December 2016</p>
+					<p class="fragment">Already included on VVV</p>
+					<p class="fragment">Extendable by plugin or packages</p>
+					<p class="fragment">No login required</p>
+					<p class="fragment"><b>FAST</b></p>
+				</section>
+
+				<section>
+					<h2>How to install it</h2>
+					<pre><code data-trim>
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+###### OR #######
+composer global require wp-cli/wp-cli
+###### OR #######
+Deb/RPM builds: https://github.com/wp-cli/builds
+					</code></pre>
+					<h2>Update it</h2>
+					<pre><code data-trim>
+wp cli update
+					</code></pre>
+					<p>By <a href="https://make.wordpress.org/cli/handbook/installing/">make.wordpress.org/cli/handbook/installing/</a> with Bash/ZSH completions docs</p>
+				</section>
+
+				<section>
+					<h2>Install WordPress</h2>
+					<pre><code data-trim>
+wp core download --locale=it_IT
+wp core config --dbuser="wp" --dbpass="wp" --dbprefix="wp_"
+wp core install --siteurl="https://yourdomain.tld"
+##### OR #####
+wp core install --prompt
+					</code></pre>
+					<p>By <a href="https://developer.wordpress.org/cli/commands/core/install/">developer.wordpress.org/cli/commands/core/install/</a></p>
+				</section>
+
+				<section class="force-bottom" data-background="pictures/yes.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Real examples!</h2>
+					</div>
+				</section>
+
+				<section>
+					<h2>Search & Replace</h2>
+					<pre><code data-trim>
+wp search-replace http://domain.com https://domain.com
+wp search-replace http://domain.com https://domain.com --network
+##### OR #####
+wp search-replace http://olddomain.com https://newdomain.com --export=newdb.sql --all-tables
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Upgrade all the websites in a folder</h2>
+					<pre><code data-trim>
+#!/bin/bash
+declare -a wp_sites=('/usr/local/web/site1/htdocs' '/usr/local/web/site2/htdocs' '/usr/local/web/site3/htdocs')
+
+for site in "${wp_sites[@]}"; do
+    echo Upgrading $site...
+    wp --path=$site db export $site/db-backup.sql
+    wp --path=$site core update
+done
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Disable commands for a site with `wp-cli.yml`</h2>
+					<pre><code data-trim>
+disabled_commands:
+    - db drop
+    - search-replace
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Database operation</h2>
+					<pre><code data-trim>
+wp db query "show tables;"
+wp db export
+wp db reset --yes # Yes reset the DB!
+wp db import ~/db-export.sql
+wp db search 'http:\/\/' --regex --stats
+wp db size --tables
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Plugin management</h2>
+					<pre><code data-trim>
+wp plugin install glossary-by-codeat --activate
+##### OR #####
+wp plugin activate glossary-by-codeat
+wp plugin deactivate glossary-by-codeat
+wp plugin update glossary-by-codeat
+wp plugin list
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Options</h2>
+					<pre><code data-trim>
+wp option get option-name
+wp option add option-name
+wp option delete option-name
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Various tasks</h2>
+					<pre><code data-trim>
+wp transient delete --expired
+wp cache flush # Redis Memcached or PHP-APCu
+wp media regenerate 
+vim $(wp config path)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Profile package</h2>
+					<pre><code data-trim>
+wp package install wp-cli/profile-command
+wp profile stage --allow-root --all
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| hook                     | callback_count | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| muplugins_loaded:before  |                | 0.178s  | 0.0009s    | 1           | 25%         | 1          | 3            | 0s           | 0             |
+| muplugins_loaded         | 2              | 0.0003s | 0s         | 0           | 50%         | 1          | 1            | 0s           | 0             |
+| plugins_loaded:before    |                | 0.2855s | 0.0041s    | 19          | 83.95%      | 136        | 26           | 0s           | 0             |
+| plugins_loaded           | 34             | 0.2442s | 0.0009s    | 3           | 98.31%      | 116        | 2            | 0s           | 0             |
+| setup_theme:before       |                | 0.0005s | 0s         | 0           | 100%        | 4          | 0            | 0s           | 0             |
+| setup_theme              | 1              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| after_setup_theme:before |                | 0.2653s | 0.0011s    | 3           | 99.68%      | 615        | 2            | 0s           | 0             |
+| after_setup_theme        | 17             | 0.0241s | 0.0002s    | 1           | 98.8%       | 82         | 1            | 0s           | 0             |
+| init:before              |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| init                     | 82             | 0.261s  | 0.0016s    | 9           | 98.74%      | 703        | 9            | 0s           | 0             |
+| wp_loaded:before         |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| wp_loaded                | 7              | 0.0012s | 0s         | 0           | 100%        | 6          | 0            | 0s           | 0             |
+| parse_request:before     |                | 0.0192s | 0s         | 0           | 100%        | 14         | 0            | 0s           | 0             |
+| parse_request            | 2              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| send_headers:before      |                | 0.0001s | 0s         | 0           | 100%        | 4          | 0            | 0s           | 0             |
+| send_headers             | 0              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| pre_get_posts:before     |                | 0.0003s | 0s         | 0           | 100%        | 10         | 0            | 0s           | 0             |
+| pre_get_posts            | 8              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| the_posts:before         |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| the_posts                | 2              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| wp:before                |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| wp                       | 10             | 0.068s  | 0.0148s    | 30          | 97.3%       | 756        | 21           | 0s           | 0             |
+| template_redirect:before |                | 0.0005s | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| template_redirect        | 20             | 0.0098s | 0.0005s    | 1           | 99.06%      | 105        | 1            | 0s           | 0             |
+| template_include:before  |                | 0.0004s | 0s         | 0           | 100%        | 9          | 0            | 0s           | 0             |
+| template_include         | 1              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| wp_head:before           |                | 0.0028s | 0.0003s    | 2           | 85.71%      | 18         | 3            | 0s           | 0             |
+| wp_head                  | 42             | 0.0887s | 0.004s     | 9           | 97.85%      | 682        | 15           | 0s           | 0             |
+| loop_start:before        |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
+| wp_footer                | 14             | 0.0068s | 0s         | 0           | 100%        | 61         | 0            | 0s           | 0             |
+| wp_footer:after          |                | 0.0002s | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| total (31)               | 242            | 1.4571s | 0.0284s    | 78          | 90.8%       | 3323       | 84           | 0s           | 0             |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+wp profile hook --all --spotlight --url=https://yourdomain.com --allow-root
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| callback                                     | location                                            | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| wpseo_init()                                 | wordpress-seo/wp-seo-main.php:252                   | 0.0136s | 0s         | 0           | 100%        | 34         | 0            | 0s           | 0             |
+| wpto_Public->wpto_remove_yoast_information() | wp-theme-optimizer/public/class-wpto-public.php:187 | 0.0151s | 0s         | 0           | 100%        | 18         | 0            | 0s           | 0             |
+| wp_enqueue_scripts()                         | wp-includes/script-loader.php:1294                  | 0.015s  | 0s         | 0           | 100%        | 348        | 0            | 0s           | 0             |
+| generate_construct_header()                  | generatepress/inc/template-tags.php:514             | 0.0041s | 0.0002s    | 2           | 100%        | 93         | 0            | 0s           | 0             |
+| generate_add_navigation_after_header()       | generatepress/inc/navigation.php:23                 | 0.0132s | 0.0003s    | 3           | 100%        | 367        | 0            | 0s           | 0             |
+| wp_trim_excerpt()                            | wp-includes/formatting.php:3289                     | 0.0186s | 0s         | 0           | 100%        | 16         | 0            | 0s           | 0             |
+| generate_construct_sidebars()                | generatepress/functions.php:434                     | 0.0129s | 0.0001s    | 1           | 100%        | 178        | 0            | 0s           | 0             |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| total (7)                                    |                                                     | 0.0927s | 0.0006s    | 6           | 100%        | 1054       | 0            | 0s           | 0             |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Profile every plugin</h2>
+					<pre><code data-trim>
+#!/bin/bash
+echo "Loop of curl request, with plugin disabled for the page $1"
+
+for p in $(wp plugin list --fields=name --status=active)
+do
+echo "Plugin: $p"
+    for i in {1..5}
+    do
+        curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 | sed 's/\,/./'
+    done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
+    wp plugin activate $p
+done
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Profile a page</h2>
+					<pre><code data-trim>
+#!/bin/bash
+
+echo "Loop of curl request for the page $1"
+
+for i in {1..20}
+do
+    curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 | sed 's/\,/./'
+done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Create a command</h2>
+					<pre><code data-trim>
+# Register a custom 'foo' command to output a supplied positional param.
+#
+# $ wp foo bar --append=qux
+# Success: bar qux
+
+/**
+ * My awesome closure command
+ *
+ * Message
+ * : An awesome message to display
+ *
+ * --append="your message"
+ * : An awesome message to append to the original message.
+ *
+ * @when before_wp_load
+ */
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	$foo = function( $args, $assoc_args ) {
+		WP_CLI::success( $args[0] . ' ' . $assoc_args['append'] );
+	};
+	WP_CLI::add_command( 'foo', $foo );
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Cool package to discover for you</h2>
+					<p class="fragment"><a href="https://github.com/markri/wp-sec">https://github.com/markri/wp-sec</a></p>
+					<p class="fragment"><a href="https://github.com/mikedance/wp-cli-favorite-plugins">https://github.com/mikedance/wp-cli-favorite-plugins</a></p>
+					<p class="fragment"><a href="https://github.com/petenelson/wp-cli-size">https://github.com/petenelson/wp-cli-size</a></p>
+					<p class="fragment"><a href="https://github.com/wp-cli/doctor-command">https://github.com/wp-cli/doctor-command</a></p>
+				</section>
+
+				<section>
+					<h2>WP CLI GUI</h2>
+					<p>
+						<a href="https://wpcligui.com/">wpcligui.com</a>
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://wp-cli.org/">https://wp-cli.org/</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="lib/js/freezeframe.pkgd.min.js"></script>
+		<script src="js/gif.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			  keyboard: {
+				78: function () {animateGif() },
+				34: function () {animateGif() },
+				76: function () {animateGif() },
+				39: function () {animateGif() },
+				74: function () {animateGif() },
+				40: function () {animateGif() }
+			  },
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
