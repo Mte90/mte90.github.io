@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress 4.7 - Le novitá</title>
+		<title>WordPress 4.9 - Le novitá</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.css" id="theme">
@@ -34,11 +34,11 @@
 
 			<div class="slides">
 				<section>
-					<h1>WordPress 4.7</h1>
+					<h1>WordPress 4.9</h1>
 					<h3>Le novitá</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a><br><br>
-							Source: <a href="https://make.wordpress.org/core/2016/12/05/wordpress-4-7-field-guide/">make.wordpress.org/core/2016/12/05/wordpress-4-7-field-guide/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-7-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-7-features-and-screenshots/</a></small>
+							Source: <a href="https://wordpress.org/news/2017/10/wordpress-4-9-beta-1/">wordpress.org/news/2017/10/wordpress-4-9-beta-1/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-9-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-9-features-and-screenshots/</a></small>
 					</p>
 				</section>
 
@@ -48,7 +48,7 @@
 						<ul class="white-black-shadow">
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
-							<li>Mozillian & Mozilla Reps</li>
+							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>WordPress Core Contributor/Developer</li>
 							<li>Project Translation Editor in WordPress Italia</li>
 							<li>Industria Italiana Software Libero Vice Presidente</li>
@@ -57,184 +57,90 @@
 				</section>
 				
 				<section>
-					<h2>WordPress 4.7 Vaughan</h2>
-					<h3>482 contributor, con 205 per la prima volta</h3>
-				</section>
-				
-				<section>
-					<img src="img/twenty-seventeen.jpg" width="900px" style="max-width:900px">
+					<h2>WordPress 4.9 - 14 Novembre</h2>
+					<h3><s>482 contributor, con 205 per la prima volta</s></h3>
 				</section>
 				
 				<section data-background-transition="zoom">
-					<h2>Theme Starter Content</h2>
-					<video style="width: 100%; height: 100%;">
-						<source type="video/mp4" src="img/starter-content.mp4">
-					</video>
+					<h2>Sala come Bozza sul Customizer</h2>
+					<img src="img/savethemedraft.png">
 				</section>
 
 				<section>
-					<h2>Customizer - Edit Shortcut</h2>
-					<video style="width: 100%; height: 90%;">
-						<source type="video/mp4" src="img/edit-shortcuts.mp4">
-					</video>
+					<h2>Customizer - Programma le modifiche con link di anteprima</h2>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Q2-n1LCOnbg" frameborder="0" allowfullscreen></iframe>
 				</section>
 
 				<section>
-					<h2>Customizer - Menu Building</h2>
-					<img src="img/menu.jpg" width="900px" style="max-width:900px">
+					<h2>Gallery widget</h2>
+					<img src="img/gallerywidget.jpg">
 				</section>
 
 				<section>
-					<h2>Customizer - Custom CSS</h2>
-					<img src="img/css.jpg" width="900px" style="max-width:900px">
+					<h2>Aggiungi Media nel Widget di testo</h2>
+					<img src="img/addmediatxtwidget.jpg">
 				</section>
 
 				<section>
-					<h2>PDF thumbnails</h2>
-					<img src="img/pdf-thumbnails.jpg" width="900px" style="max-width:900px">
+					<h2>Syntax Highlighting con CodeMirror</h2>
+					<img src="img/error-highlighting.png">
 				</section>
 
 				<section>
-					<h2>Editor Enhancements</h2>
-					<img src="img/editorchanges.png" width="900px" style="max-width:500px">
-				</section>
-
-				<section>
-					<h2>Lingua della Dashboard per utente</h2>
-					<img src="img/adminlocale.jpg" width="900px" style="max-width:900px">
+					<h2>Disabilita Syntax Highlighting</h2>
+					<img src="img/disablesyntaxhighlighting.png">
 				</section>
 				
 				<section>
-					<h2>REST API Content Endpoints</h2>
-					Endpoints per Articoli, Commenti, Termini, Utenti, meta e Impostazioni.
+					<h2>L'Editor di codice mostra ora tutti i file!</h2>
 				</section>
 				
 				<section>
-					<h2>Add a post type in the Rest API</h2>
-					<pre><code data-trim contenteditable>
-					add_action( 'init', 'my_book_cpt' );
-function my_book_cpt() {
-
-$args = array(
-	'show_in_rest'       => true,
-	/** 'rest_base'          => 'books',
-	'rest_controller_class' => 'WP_REST_Posts_Controller' **/
-);
-
-register_post_type( 'book', $args );
+					<h2>Sandbox nell'Editor di codice</h2>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/xAWYaeMUaRA" frameborder="0" allowfullscreen></iframe>
+				</section>
+				
+				<section>
+					<h2>Oembed e shortcode abilitati nel widget di testo!</h2>
+				</section>
+				
+				<section>
+					<h2>Ciaone alla libreria SWFUpload</h2>
+				</section>
+				
+				<section>
+					<h2>WP-JS-Hooks</h2>
+					<pre><code data-trim>
+addAction( 'hook', 'vendor/plugin/function', callback, priority )
+addFilter( 'hook', 'vendor/plugin/function', callback, priority )
+removeAction( 'hook', 'vendor/plugin/function' )
+removeFilter( 'hook', 'vendor/plugin/function' )
+removeAllActions( 'hook' )
+removeAllFilters( 'hook' )
+doAction( 'hook', arg1, arg2, moreArgs, finalArg )
+applyFilters( 'hook', content, arg1, arg2, moreArgs, finalArg )
+doingAction( 'hook' )
+doingFilter( 'hook' )
+didAction( 'hook' )
+didFilter( 'hook' )
+hasAction( 'hook' )
+hasFilter( 'hook' )
 					</code></pre>
-					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
-				</section>
-
-				<section>
-					<h2>Add an existing post type in the Rest API</h2>
-					<pre><code data-trim contenteditable>
-					add_action( 'init', 'my_custom_post_type_rest_support', 25 );
-function my_custom_post_type_rest_support() {
-  	global $wp_post_types;
-  
-  	$post_type_name = 'book';
-  	if( isset( $wp_post_types[ $post_type_name ] ) ) {
-  		$wp_post_types[$post_type_name]->show_in_rest = true;
-  		$wp_post_types[$post_type_name]->rest_base = $post_type_name;
-  		$wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
-  	}
-}
-					</code></pre>
-					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
-				</section>
-				
-				<section>
-					<h2>Add custom field to the Rest API</h2>
-					<pre><code data-trim contenteditable>
-					add_action( 'rest_api_init', 'slug_register_book' );
-function slug_register_starship() {
-    register_rest_field( 'post',
-        'book',
-        array(
-            'get_callback'    => 'slug_get_meta',
-            'update_callback' => 'slug_update_book',
-            'schema'          => null,
-        )
-    );
-}
-
-function slug_get_book( $object, $field_name, $request ) {
-    return get_post_meta( $object[ 'id' ], $field_name );
-}
-
-function slug_update_book( $value, $object, $field_name ) {
-    if ( ! $value || ! is_string( $value ) ) {
-        return;
-    }
-    return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
-}
-
-					</code></pre>
-					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
-				</section>
-				
-				<section>
-					<h2>Add a custom endpoint</h2>
-					<pre><code data-trim contenteditable>
-add_action( 'rest_api_init', function () {
-	register_rest_route( 'myplugin/v1', '/author/(?P< id>\d+)', array(
-		'methods' => 'GET',
-		'callback' => 'get_last_post_title_of_author',
-	) );
-} );
-function get_last_post_title_of_author( $data ) {
-	$posts = get_posts( array(
-		'author' => $data['id'],
-	) );
-
-	if ( empty( $posts ) ) {
-		return null;
-	}
-
-	return $posts[0]->post_title;
-}
-					</code></pre>
-					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
-				</section>
-
-				<section>
-					<h2>Azioni di massa per gli sviluppatori</h2>
-					<img src="img/custombulkactions.png" width="900px" style="max-width:900px">
-				</section>
-				
-				<section>
-					<h2>Post Type Templates</h2>
-					<pre><code data-trim data-noescape>
-&lt;?php
-/*
-Template Name: Full-width layout
-Template Post Type: post, page, product
-*/
-    </code></pre>
-					<img src="img/posttypetemplates.png">
+					<small><a href="https://www.npmjs.com/package/@wordpress/hooks">npm i @wordpress/hooks</a></small>
 				</section>
 				
 				<section>
 					<h3>Migliorie interne</h3>
 					<ul>
-						<li class="fragment"><i>get_theme_file_uri()</i> Cerca il file prima nel child e poi nel genitore</li>
-						<li class="fragment">WP_Hook - $wp_filter ora è un array di oggetti</li>
-						<li class="fragment">WP_TaxonomyHook - $wp_taxonomies ora è un array di oggetti</li>
-						<li class="fragment"><i>wp_list_sort()</i> Ordina gli oggetti o array per diversi valori</li>
-						<li class="fragment"><i>wp_doing_ajax()</i> No DOING_AJAX</li>
-						<li class="fragment"><i>pre_do_shortcode_tag</i> Filtro per cambiare gli shortcode</li>
-						<li class="fragment"><i>smilies/smilies_src</i> Per aggiungere nuovi smilies es: :LOGO:</li>
-						<li class="fragment">Accesso automatico dopo l'installazione</li>
+						<li class="fragment"><i>get_site_by()</i> Sostituisce get_blog_details()</li>
+						<li class="fragment"><i>wp_unschedule_hook()</i> Rimuovi tutti gli eventi di un hook</li>
+						<li class="fragment">wp_is_mobile - Filtro per la regex che determina se l'utente è da mobile</li>
+						<li class="fragment">username_exists - Filtro per poter creare nomi utente riservati</li>
+						<li class="fragment">pre_move_uploaded_file - Per preprocessare i file prima del caricamento</li>
+						<li class="fragment">wp_pre_insert_user_data - Per processare i nuovi utenti prima del salvataggio</li>
+						<li class="fragment">PHP 7.2 ufficialmente supportato</li>
+						<li class="fragment">Migliorata la documentazione in diversi punti</li>
 					</ul>
-				</section>
-
-				<section>
-					<img src="img/stateofwp1.jpg" width="900px" style="max-width:900px">
-				</section>
-
-				<section>
-					<img src="img/stateofwp2.jpg" width="900px" style="max-width:900px">
 				</section>
 				
 				<section>
