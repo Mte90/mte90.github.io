@@ -41,7 +41,7 @@
 			document.querySelector('#share-qr').addEventListener("click", function (e) {
 				if (document.querySelector('.qrcode').classList.contains('hide')) {
 					document.querySelector('.qrcode').classList.remove('hide');
-				} 
+				}
 				else {
 					document.querySelector('.qrcode').classList.add('hide');
 				}
@@ -54,9 +54,11 @@
 				elements[i].addEventListener("click", function (e) {
 					container = this.parentNode.querySelector('div');
 					if (container.classList.contains('hide')) {
+                                                this.parentNode.style.width = '100%';
 						container.classList.remove('hide');
-					} 
+					}
 					else {
+                                                this.parentNode.style.width = '';
 						container.classList.add('hide');
 					}
 					e.preventDefault();
@@ -70,7 +72,7 @@
 					var list = this.parentNode.querySelector('ul');
 					if (list.classList.contains('hide')) {
 						list.classList.remove('hide');
-					} 
+					}
 					else {
 						list.classList.add('hide');
 					}
@@ -83,7 +85,6 @@
     </head>
 
     <body>
-		<!-- [container] -->
 		<div class="container">
 			<div class="col-md-12">
 				<div class="col-md-8 header">
@@ -96,7 +97,7 @@
 							<span class="icon ion-social-github"></span>
 							<a target="_blank" href="https://github.com/Mte90">GitHub</a>
 							<span class="icon ion-social-twitter"></span>
-							<a target="_blank" href="https://twitter.com/Mte90Net/">@Mte90Net</a> 
+							<a target="_blank" href="https://twitter.com/Mte90Net/">@Mte90Net</a>
 							<span class="icon ion-android-share"></span>
 							<a target="_blank" href="#" id="share-qr">Qr Code</a>
 						</div>
@@ -106,8 +107,8 @@
 
 			<div class="col-md-12">
 				<h4 class="my-credentials animated fadeInUp _2">
-					<a target="_blank" href="http://www.mte90.net/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker, 
-					Co Founder <a target="_blank" href="http://codeat.it">Codeat</a> as Full Stack Developer/CTO, 
+					<a target="_blank" href="http://www.mte90.net/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker,
+					Co Founder <a target="_blank" href="http://codeat.it">Codeat</a> as Full Stack Developer/CTO,
 					Vice President of <a target="_blank" href="http://industriasoftwarelibero.it/">Industria Italiana del Software Libero</a>
 					<p>WordPress Core Contributor, Open Source Multiversal & Italian Native Speaker, English-Esperanto-Spanish</p>
 				</h4>
@@ -115,7 +116,7 @@
 
 		</div>
 
-		<!-- [container] -->
+
 		<div class="container">
 			<div class="col-md-12">
 				<div class="animated fadeIn _2">
@@ -127,7 +128,7 @@
 			</div>
 		</div>
 
-		<!-- [container] -->
+
 		<div class="container">
 			<div class="col-md-12">
 				<div class="hide qrcode">
@@ -136,7 +137,7 @@
 			</div>
 		</div>
 
-		<!-- [container] -->
+
 		<div class="container">
 			<div class="col-md-12">
 				<div class="animated fadeIn _4">
@@ -151,10 +152,29 @@
 							</div>
 						</li>
 						<li>
-							<a target="_blank" href="Talk-PyQT">How to develop a PyQt software</a> - Do you want to create a desktop application with Python? Discover the Qt world!
+							<a target="_blank" href="Talk-PyQT">How to develop a PyQt software</a> [<a class="video" href="https://www.youtube.com/watch?v=bbkFkf2WBgk">Video in English</a>] - Do you want to create a desktop application with Python? Discover the Qt world!
 							<div class="abstract"><span>Abstract</span>
 								<div class="hide">
 									A desktop application simple to create on Linux today is very simple with Python and Qt. In this talk we will see how to do it with live coding and demo.
+								</div>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-WebExt">45 minute to Browser Super Powers</a> [<a class="video" href="https://www.youtube.com/watch?v=Npkd1FvSWIs">Video in Italian</a>]
+							<div class="abstract"><span>Abstract</span>
+								<div class="hide">
+									Do you know that Firefox now has a new technology that simplify the development of an extension? And also use and extend the API of Chrome? Yeah, I am serious you can do the same extension for many browsers!<hr>
+									WebExtension are the future for addons in Firefox but this is not enough because they works also on Chrome, Opera and soon Edge without any changes!
+									Think about it, the cross browser addon issues is only an old nightmare! In conclusion because all this amazing news and how it is easy to extend Firefox will be available new APIs to customize the Firefox experience in this year.
+								</div>
+							</div>
+						</li>
+						<li>
+							<a target="_blank" href="Talk-DevTools"><b>Firefox</b> is ready for the modern dev?</a> [<a class="video" href="https://www.youtube.com/watch?v=rVM-lvTkOl8">Video in Italian</a> | <a class="video" href="https://www.youtube.com/watch?v=bS1PBrq_qEA">Video in Italian</a>]
+							<div class="abstract"><span>Abstract</span>
+								<div class="hide">
+									Firefox has amazing dev tools that support the last technologies but they can used also with other browsers and NodeJS.<hr>
+									Firefox is not only a browser but also a tool for a developer to speed up his job. In this talk we will see few tricks and also new features that you probably don't know.
 								</div>
 							</div>
 						</li>
@@ -225,25 +245,6 @@
 							</div>
 						</li>
 						<li>
-							<a target="_blank" href="Talk-WebExt">45 minute to Browser Super Powers</a> [<a class="video" href="https://www.youtube.com/watch?v=Npkd1FvSWIs">Video in Italian</a>]
-							<div class="abstract"><span>Abstract</span>
-								<div class="hide">
-									Do you know that Firefox now has a new technology that simplify the development of an extension? And also use and extend the API of Chrome? Yeah, I am serious you can do the same extension for many browsers!<hr>
-									WebExtension are the future for addons in Firefox but this is not enough because they works also on Chrome, Opera and soon Edge without any changes!
-									Think about it, the cross browser addon issues is only an old nightmare! In conclusion because all this amazing news and how it is easy to extend Firefox will be available new APIs to customize the Firefox experience in this year.
-								</div>
-							</div>
-						</li>
-						<li>
-							<a target="_blank" href="Talk-DevTools"><b>Firefox</b> is ready for the modern dev?</a> [<a class="video" href="https://www.youtube.com/watch?v=rVM-lvTkOl8">Video in Italian</a>]
-							<div class="abstract"><span>Abstract</span>
-								<div class="hide">
-									Firefox has amazing dev tools that support the last technologies but they can used also with other browsers and NodeJS.<hr>
-									Firefox is not only a browser but also a tool for a developer to speed up his job. In this talk we will see few tricks and also new features that you probably don't know.
-								</div>
-							</div>
-						</li>
-						<li>
 							<a target="_blank" href="Talk-JavaScript-1-hour"><b>JavaScript</b> in 1 hour</a> [<a class="video" href="https://www.youtube.com/watch?v=_fD22UL2af8">Video</a>] - Comparison of <b>JavaScript</b> code and <b>jQuery</b> Code simplified
 						</li>
 						<li>
@@ -253,7 +254,7 @@
 							<span><i>Talk obsoletes</i></span>
 							<ul class="hide">
 								<li>
-									<a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016 
+									<a target="_blank" href="https://drive.google.com/open?id=0B_NWlC6Yu_j8ZDlvaTFmOHN3YWs">GlotDict 1.0.x</a> [<a class="video" href="http://wordpress.tv/2016/05/31/daniele-scasciafratte-glotdict-how-a-browser-extension-changes-your-translation-workflow/">Video</a>] – How a browser extension changes your translation workflow for WP Translation Day 2016
 								</li>
 								<li>
 									<a target="_blank" href="Talk-JS-Mozilla"><b>JS libraries</b> by Mozilla for you</a> - <b>Mozilla</b> created in the last years many JavaScript libraries but maybe you don't know them
@@ -275,13 +276,15 @@
 				</div>
 			</div>
 		</div>
-    
-		<!-- [container] -->
+
 		<div class="container">
 			<div class="col-md-12">
 				<div class="animated fadeIn _4">
 					<h2>Italiano <a class="video" href="https://www.youtube.com/playlist?list=PLTW7CYCRxoFHTs0GeWLqRvdXRdwZo9XV3"> - Video Playlist</a></h2>
 					<ul>
+						<li>
+							<a target="_blank" href="Presentazione-WP-Novita">Le novitá di <b>WordPress</b> 4.9</a> - Scopriamo le ultime novitá di WordPress e cosa ci aspetta!
+						</li>
 						<li>
 							<a target="_blank" href="https://docs.google.com/presentation/d/1TUmxsRvNZVFfDRR6BfiUN7lMjGjEOyRST3eqlI9I7mo/edit?usp=sharing">Una startup può nascere grazie a soluzioni opensource?</a> - Un light talk di 15 minuti con alcuni suggerimenti
 						</li>
@@ -296,9 +299,6 @@
 						</li>
 						<li>
 							<a target="_blank" href="https://docs.google.com/presentation/d/1SYDABVZQYsfdrIU4Avl9eHjFG3XbsprNn2FgdQP93ow/edit#slide=id.p">Mozilla ChangeCopyright, Riprendiamoci la libertà</a> - La campagna di Mozilla per la tutela degli internauti contro la legge europea del copyright
-						</li>
-						<li>
-							<a target="_blank" href="Presentazione-WP-Novita">Le novitá di <b>WordPress</b> 4.7</a> - Scopriamo le ultime novitá e gli ultimi feature plugin
 						</li>
 						<li>
 							<a target="_blank" href="Presentazione-OSC">Cos'é l'<b>Open Source</b> e <b>Linux</b></a> - Le basi chiare e semplici sul perché bisogna farne parte, Linux Presentation Day 2016 a Rieti
@@ -344,8 +344,7 @@
 				</div>
 			</div>
 		</div>
-    
-		<!-- [container] -->
+
 		<div class="container">
 			<div class="col-md-12">
 				<p class="text-muted footer animated fadeInUp _6">Copyright &copy; Daniele Scasciafratte 2013 and beyond!</p>
