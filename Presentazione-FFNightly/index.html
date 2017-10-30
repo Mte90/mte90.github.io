@@ -1,0 +1,401 @@
+
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>Firefox Nightly o come innamorarsi di Firefox 57</title>
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme/mozilla2017.css">
+      <link rel="stylesheet" href="presentation_assets/nightly/style.css">
+      <!-- Theme used for syntax highlighting of code -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+      <!-- Printing and PDF exports -->
+      <script>
+         var link = document.createElement( 'link' );
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName( 'head' )[0].appendChild( link );
+      </script>
+   </head>
+   <body>
+      <div class="reveal" data-background="./presentation_assets/nightly/background-nightly.jpg">
+         <div class="slides" data-background="./presentation_assets/nightly/background-nightly.jpg">
+            <section class="center frontpage" data-background="./presentation_assets/nightly/background-nightly.jpg">
+               <h1 class="frontpage">nightly</h1>
+               <img src="./presentation_assets/nightly/mozita.png">
+               <span style="font-family: monospace; color: black; letter-spacing: 1em; color: gold">&lt;reloaded/&gt;</span>
+               <footer><b>Daniele Scasciafratte</b> <br> <i>Firefox Nightly Champion</i><br>Firefox Quantum Sprint</footer>
+            </section>
+            <section>
+               <h4>Firefox <b class="green">Nightly</b> in poche parole?</h4>
+               <img src="presentation_assets/nightly/logo-nightly.png">
+               <ul>
+                  <li class="fragment">Compilato ogni giorno (due volte) dal repository mozilla-central (~100 commit al giorno)</li>
+                  <li class="fragment">Segnalazione dei Crash e telemetria attivata in modo predefinito</li>
+                  <li class="fragment">Molte funzionalità sperimentali sono già attivate</li>
+                  <li class="fragment">Anche per Android</li>
+                  <li class="fragment">Maestosità/Altro termine++, Stabilità-</li>
+               </ul>
+            </section>
+            <section>
+               <h4>Ciclo di rilascio</h4>
+               <table class="trainmodel">
+                  <tr style="background-color: white;">
+                     <th style="text-align: center; color: #751010;">57</td>
+                     <th style="text-align: center; color: #751010;">56</td>
+                     <th style="text-align: center; color: #751010;">55</td>
+                     <th style="text-align: center; color: #751010;">54</td>
+                     <th style="text-align: center; color: #751010;">53</td>
+                  </tr>
+                  <tr>
+                     <td style="background-color: transparent;text-align: center"></td>
+                     <td style="background-color: transparent"></td>
+                     <td style="background-color: black;text-align: center">Nightly</td>
+                     <td style="background-color: orange;text-align: center">Beta</td>
+                     <td style="background-color: green;text-align: center">Rilascio</td>
+                  </tr>
+                  <tr>
+                     <td style="background-color: transparent;text-align: center"></td>
+                     <td style="background-color: black;text-align: center">Nightly</td>
+                     <td style="background-color: orange;text-align: center">Beta</td>
+                     <td style="background-color: green;text-align: center">Rilascio</td>
+                     <td style="background-color: transparent"></td>
+                  </tr>
+                  <tr>
+                     <td style="background-color: black;text-align: center">Nightly</td>
+                     <td style="background-color: orange;text-align: center">Beta</td>
+                     <td style="background-color: green;text-align: center">Rilascio</td>
+                     <td style="background-color: transparent"></td>
+                     <td style="background-color: transparent"></td>
+                  </tr>
+                  <tr style="background-color: white; color: darkgray; display:none">
+                     <th style="text-align: center">6 weeks</td>
+                     <th style="text-align: center">6 weeks</td>
+                     <th style="text-align: center">6 weeks</td>
+                     <th style="text-align: center">6 weeks</td>
+                     <th style="text-align: center">6 weeks</td>
+                     <th style="text-align: center">6 weeks</td>
+                  </tr>
+               </table>
+               <p>Cicli da 8 settimane: Nightly + Developer Edition/Beta = 16 settimane per il rilascio</p>
+            </section>
+            <section>
+               <h4>Perché c'è <b class="green">bisogno</b> di utenti per Firefox Nightly?</h4>
+               <ul>
+                  <li class="fragment">Abbiamo bisogno di <i>segnalazioni di crash</i> per lavorare sulla stabilità</li>
+                  <li class="fragment">La <i>Telemetria</i> fornisce informazioni molto utili e importanti</li>
+                  <li class="fragment">Persone con conoscenze informatiche possono fare bug report di qualità</li>
+                  <li class="fragment">Per rilevare problemi nelle traduzioni</li>
+                  <li class="fragment">Se Mozilla vuole rilasciare velocemente nuove funzionalità i problemi sono individuati prima</li>
+                  <li class="fragment">Abbiamo bisogno di testing per Quantum</li>
+                  <li class="fragment">Per divertirci insieme :-D</li>
+                  <li class="fragment">Per creare una comunità di tecnici!</li>
+               </ul>
+            </section>
+            <section>
+               <h4>Chi sono gli utenti Nightly? <br><small>Febbraio 2017</small></h4>
+               <ul class="nobullet">
+               <li class="windows"><img src="presentation_assets/nightly/windows.svg">89%</li>
+               <li class="mac"><img src="presentation_assets/nightly/linux.svg">6%</li>
+               <li class="apple"><img src="presentation_assets/nightly/apple.svg">5%</li>
+            </section>
+            <section>
+               <h4>Dove e lingue (Feb. 2017)</h4>
+               <table class="demography">
+                  <caption>Top 15 Paesi</caption>
+                  <tbody>
+                     <tr>
+                        <th>Paesie</th>
+                        <th>% di utenti Nightly</th>
+                     </tr>
+                     <tr>
+                        <th>Stati Uniti di America</th>
+                        <td>16.6</td>
+                     </tr>
+                     <tr>
+                        <th>Germania</th>
+                        <td>9.5</td>
+                     </tr>
+                     <tr>
+                        <th>Russia</th>
+                        <td>5.8</td>
+                     </tr>
+                     <tr>
+                        <th>India</th>
+                        <td>5.4</td>
+                     </tr>
+                     <tr>
+                        <th>Indonesia</th>
+                        <td>5.0</td>
+                     </tr>
+                     <tr>
+                        <th>Francia</th>
+                        <td>3.9</td>
+                     </tr>
+                     <tr>
+                        <th>Regno Unito</th>
+                        <td>3.4</td>
+                     </tr>
+                     <tr>
+                        <th>Canada</th>
+                        <td>2.9</td>
+                     </tr>
+                     <tr>
+                        <th>Polonia</th>
+                        <td>2.4</td>
+                     </tr>
+                     <tr>
+                        <th>Ucraina</th>
+                        <td>2.4</td>
+                     </tr>
+                     <tr>
+                        <th>Giappone</th>
+                        <td>2.0</td>
+                     </tr>
+                     <tr>
+                        <th>Australia</th>
+                        <td>1.8</td>
+                     </tr>
+                     <tr>
+                        <th>Brasile</th>
+                        <td>1.8</td>
+                     </tr>
+                     <tr>
+                        <th>Olanda</th>
+                        <td>1.6</td>
+                     </tr>
+                     <tr>
+                        <th>Italia</th>
+                        <td><b>1.6</b></td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table class="demography">
+                  <caption>Top 15 lingue</caption>
+                  <tbody>
+                     <tr>
+                        <th>Codice Locale</th>
+                        <th>% di utenti Nightly</th>
+                     </tr>
+                     <tr>
+                        <th>en-US</th>
+                        <td>86.5</td>
+                     </tr>
+                     <tr>
+                        <th>ru</th>
+                        <td>5.2</td>
+                     </tr>
+                     <tr>
+                        <th>de</th>
+                        <td>1.8</td>
+                     </tr>
+                     <tr>
+                        <th>fr</th>
+                        <td>1.5</td>
+                     </tr>
+                     <tr>
+                        <th>ja</th>
+                        <td>0.8</td>
+                     </tr>
+                     <tr>
+                        <th>pl</th>
+                        <td>0.6</td>
+                     </tr>
+                     <tr>
+                        <th>en-GB</th>
+                        <td>0.6</td>
+                     </tr>
+                     <tr>
+                        <th>es-ES</th>
+                        <td>0.4</td>
+                     </tr>
+                     <tr>
+                        <th>zh-CN</th>
+                        <td>0.3</td>
+                     </tr>
+                     <tr>
+                        <th>pt-BR</th>
+                        <td>0.3</td>
+                     </tr>
+                     <tr>
+                        <th>it</th>
+                        <td><b>0.2</b></td>
+                     </tr>
+                     <tr>
+                        <th>ko</th>
+                        <td>0.2</td>
+                     </tr>
+                     <tr>
+                        <th>uk</th>
+                        <td>0.2</td>
+                     </tr>
+                     <tr>
+                        <th>zh-TW</th>
+                        <td>0.2</td>
+                     </tr>
+                     <tr>
+                        <th>ar</th>
+                        <td>0.1</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </section>
+            <section>
+               <img src="presentation_assets/nightly/NightlyUsersWorldMap.png" style="float:right">
+            </section>
+            <section>
+               <h4 class="top-title">Preferiti con risorse già disponibili</h4>
+               <img src="presentation_assets/nightly/bookmarks.png">
+            </section>
+            <section>
+               <h4 class="top-title"><span>Il Blog</span></h4>
+               <img src="presentation_assets/nightly/blog.png">
+            </section>
+            <section>
+               <h4 class="top-title"><span>Twitter</span></h4>
+               <img src="presentation_assets/nightly/twitter.png">
+            </section>
+            <section>
+               <h4 class="top-title">Altro</h4>
+               <ul>
+                  <li>#nightly IRC channel + bridged Telegram group</li>
+                  <li>Funzionalità sperimentali su https://developer.mozilla.org/en-US/Firefox/Experimental_features</li>
+               </ul>
+               <img src="presentation_assets/nightly/dogefox.png">
+            </section>
+            <section>
+               <h4 class="top-title">Firefox 57</h4>
+               <img src="presentation_assets/nightly/ff57.jpg">
+            </section>
+            <section>
+               <h4 class="top-title">Meno crash!</h4>
+               <img src="presentation_assets/nightly/crash.png" style="height:500px">
+            </section>
+            <section>
+               <h4 class="top-title">Novità</h4>
+               <ul>
+                  <li class="fragment">Il progetto Quantum ha reso Firefox veramente <i>veloce</i></li>
+                  <li class="fragment"><i>MultiProcesso</i> disponibile in modo predefinito</li>
+                  <li class="fragment">Contiene codice scritto in Rust -> <a href="https://servo.org">servo.org</a></li>
+                  <li class="fragment">Supporta WebAssembly -> <a href="https://www.websightjs.com/">websightjs.com</a></li>
+                  <li class="fragment">Nuovo ecosistema di estensioni (veloce, sicuro e affidabile)</li>
+                  <li class="fragment">Supporto a WebVR -> <a href="http://mozvr.com">mozvr.com</a></li>
+                  <li class="fragment">Telemetria migliorata e più leggera</li>
+                  <li class="fragment">Strumenti di sviluppo migliorati</li>
+                  <li class="fragment">Nuova interfaccia per le opzioni</li>
+                  <li class="fragment">Nuova design e interfaccia</li>
+                  <li class="fragment">Firefox Sync integrato tra desktop e mobile</li>
+                  <li class="fragment">Integrazione nativa con Pocket (acquisita da Mozilla)</li>
+                  <li class="fragment">Abbiamo già detto che è veloce?</li>
+               </ul>
+            </section>
+            <section>
+               <h4 class="top-title">Nuovo tour</h4>
+               <img src="presentation_assets/nightly/tour.gif">
+            </section>
+            <section>
+               <h4 class="top-title">PageAction</h4>
+               <img src="presentation_assets/nightly/pageaction.png">
+            </section>
+            <section>
+               <h4 class="top-title">Segnalibri</h4>
+               <video muted="" autoplay="" loop="">
+                  <source src="presentation_assets/nightly/video/bookmarking.webm" type="video/webm">
+                  <source src="presentation_assets/nightly/video/bookmarking.ogv" type="video/ogg; codecs='theora, vorbis'">
+                  <source src="presentation_assets/nightly/video/bookmarking.mp4" type="video/mp4">
+                </video>
+            </section>
+            <section>
+               <h4 class="top-title">Screenshot</h4>
+               <video muted="" loop="" autoplay="">
+                  <source src="presentation_assets/nightly/video/screenshots.webm" type="video/webm">
+                  <source src="presentation_assets/nightly/video/screenshots.ogv" type="video/ogg; codecs='theora, vorbis'">
+                  <source src="presentation_assets/nightly/video/screenshots.mp4" type="video/mp4">
+                </video>
+            </section>
+            <section>
+               <h4 class="top-title">Nuova Interfaccia</h4>
+               <img src="presentation_assets/nightly/photon.png">
+            </section>
+            <section>
+               <h4 class="top-title">Nuovo menu</h4>
+               <img src="presentation_assets/nightly/menu.png">
+            </section>
+            <section>
+               <h4 class="top-title">Opzioni</h4>
+               <img src="presentation_assets/nightly/opzioni.png">
+            </section>
+            <section>
+               <h4 class="top-title">Auto completamento dei moduli intelligente</h4>
+               <img src="presentation_assets/nightly/autofill.gif">
+            </section>
+            <section>
+               <h4 class="top-title">Nuove animazioni (Video non aggiornato)</h4>
+               <iframe width="900" height="600" src="https://www.youtube.com/embed/7MiKf8Rqf5w" frameborder="0" allowfullscreen></iframe>
+            </section>
+            <section>
+               <h4 class="top-title">testpilot.firefox.com</h4>
+               <img src="presentation_assets/nightly/testpilot.png">
+            </section>
+            <section>
+               <h4 class="top-title">Altre Novità</h4>
+               <ul>
+                  <li class="fragment">Firefox headless</li>
+                  <li class="fragment">Possibilità di fare screenshot in Firefox dalla modalità headless</li>
+                  <li class="fragment">Il vecchio Addon SDK è stato rimosso</li>
+                  <li class="fragment">Animazioni della interfaccia sono asincrone e vettoriali</li>
+                  <li class="fragment">Tema chiaro e scuro</li>
+                  <li class="fragment">Caricamento di molte funzionalità in Firefox solo quando richiesto</li>
+                  <li class="fragment">Payment Request API disponibile (tramite opzione)</li>
+                  <li class="fragment">Campi HTML Data/Ora disponibili</li>
+                  <li class="fragment"><b>Pulsante WebCompat</b></li>
+               </ul>
+            </section>
+            <section>
+               <h4 class="top-title">Cosa puoi fare per Mozilla?</h4>
+               <ul>
+                  <li class="fragment"><b>Usa la Nightly!</b></li>
+                  <li class="fragment">Attiva la telemetria su Firefox!</li>
+                  <li class="fragment">Prova TestPilot!</li>
+                  <li class="fragment">Segui Mozilla Italia su Facebook e Twitter</li>
+                  <li class="fragment">Leggi e partecipa su <a href="https://internethealthreport.org/v01/">Internet Health Report</a></li>
+                  <li class="fragment"><b>Partecipa al progetto WebCompat</b></li>
+               </ul>
+            </section>
+            <section>
+               <h4 class="top-title">Attività per promuovere e segnalare bug di Firefox Nightly</h4>
+               <h3><a href="https://activate.mozilla.community/nightly/">hactivate.mozilla.community/nightly</a></h3>
+            </section>
+            <section>
+               <h4 class="top-title">Cos'é WebCompat</h4>
+               <img src="presentation_assets/nightly/webcompat.png">
+            </section>
+            <section>
+               <h4 class="top-title">Segnala un sito malfunzionante</h4>
+               <img src="presentation_assets/nightly/segnala.png">
+            </section>
+            <section>
+               <h4 class="top-title">Una lista di siti da verificare</h4>
+               <h3><a href="https://public.etherpad-mozilla.org/p/mozita-ffsprint2017">public.etherpad-mozilla.org/p/mozita-ffsprint2017</a></h3>
+            </section>
+            <section>
+               <h4 class="centerText">Domande?</h4>
+            </section>
+            <footer class="none"></footer>
+         </div>
+      </div>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
+      <script>
+         // More info https://github.com/hakimel/reveal.js#configuration
+         Reveal.initialize({
+             history: true,
+             center: true,
+         });
+      </script>
+   </body>
+</html>
+
