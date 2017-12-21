@@ -4,22 +4,31 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=792, user-scalable=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-        	<link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+		<link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
 		<link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
-		<title>45 minute to Browser Super Powers</title>
+		<title>Get ready to Browser Super Powers</title>
+
+		<style>
+			.mosaic div, .mosaic span {
+				position:relative;
+			}
+			.mosaic span {
+				display:block;
+			}
+		</style>
 	</head>
 
 	<body class="list">
 		<header class="caption">
-			<h1>45 minute to Browser Super Powers</h1>
-			<p>Discover the new APIs based from Chrome to create extensions</p>
+			<h1>Get ready to Browser Super Powers!</h1>
+			<p>Discover the new APIs to create browser extensions</p>
 		</header>
 
 		<section class="slide cover" id="Cover">
 			<div>
-				<h2>45 minute to Browser Super Powers</h2>
-				<p><a href="http://mte90.net">Daniele Scasciafratte</a></p>
+				<h2 style="margin-top:-30px">Get ready  to Browser Super Powers</h2>
 				<img src="pictures/cover.jpg" alt="">
+				<p style="left: 39%;bottom: 20px;position: absolute;"><a href="http://mte90.net">Daniele Scasciafratte</a></p>
 			</div>
 		</section>
 
@@ -38,15 +47,6 @@
 				</ul> 
 			</div>
 		</section>
-
-		<style>
-			.mosaic div, .mosaic span {
-				position:relative;
-			}
-			.mosaic span {
-				display:block;
-			}
-		</style>
 
 		<section class="slide mosaic">
 			<div>
@@ -73,16 +73,15 @@
 
 		<section class="slide shout gradient-nightly">
 			<div>
-				<h2 style="top:50%">Firefox is the most customizable browser</h2>
+				<h2 style="top:50%">Firefox still the most customizable browser (?)</h2>
 			</div>
 		</section>
 
 		<section class="slide">
 			<div>
 				<h2>Add-ons are important in Firefox</h2>
-				<p><a href="https://wiki.mozilla.org/Firefox/Go_Faster">Go Faster or System addons</a> (https://wiki.mozilla.org/Firefox/Go_Faster) and <a href="http://testpilot.firefox.com">Test Pilot</a> (http://testpilot.firefox.com).</p>
-				<p class="next">These projects show how the addons are important in Firefox.</p>
-				<p class="next">For addons developers is important to show how the APIs are powerful.</p>
+				<p>System addons and <a href="http://testpilot.firefox.com">Test Pilot</a> (http://testpilot.firefox.com).</p>
+				<p>DevTools can be developed today as an extension inside Firefox.</p>
 				<br>
 				<p class="next">2017 Stats of Addons.Mozilla.org</p>
 				<p class="next">40% of users have add-ons</p>
@@ -92,30 +91,25 @@
 			</div>
 		</section>
 
-		<section class="slide blue">
+		<section class="slide blue shout">
 			<div>
-				<h2>XUL/XPCOM</h2>
-				<p><b>XUL</b> is a XML technology used for the Firefox interface.</p>
-				<p><b>XPCOM</b> is a JavaScript framework to interact with XUL with an APIs differents from the classic HTML5.</p>
-				<p></p>
-				<p class="next">That technologies are <b>used internally</b> so they can change from a release to another!</p>
-				<p class="next">For a Web Developer is difficult to learn these technology respect the classic HTML, CSS and JavaScript.</p>
+				<h2>Bye Bye<br>XUL/XPCOM</h2>
 			</div>
 		</section>
 
 		<section class="slide gray">
 			<div>
-				<h2>Welcome WebExtensions 1.0!</h2>
+				<h2>Today WebExtensions 1.0</h2>
 				<ul>
-					<li class="next">Standard HTML, CSS and JavaScript</li>
-					<li class="next">Stability because is a different API respect to XUL/XPCOM</li>
-					<li class="next">Parity with Chrome Extensions API</li>
-					<li class="next">Documentation available from Chrome</li>
-					<li class="next">e10s compatible out-the-box</li>
-					<li class="next">Support for Firefox for Android</li>
-					<li class="next">Sandboxing</li>
-					<li class="next">Chrome, Opera and soon Edge and QtWebKit support!</li>
-					<li class="next"><img src="pictures/oneapi.jpg"></li>
+					<li>Standard HTML, CSS and JavaScript</li>
+					<li>Stability because is a different API respect to XUL/XPCOM</li>
+					<li>Parity with Chrome Extensions API</li>
+					<li>On Windows the extension have their own process (from Firefox 56)</li>
+					<li>Multiprocess compatible out-the-box</li>
+					<li>Support for Firefox for Android</li>
+					<li>Sandboxing</li>
+					<li>Chrome, Opera, Edge supported!</li>
+					<li><img src="pictures/oneapi.jpg"></li>
 				</ul>
 			</div>
 		</section>
@@ -126,6 +120,74 @@
 			</div>
 		</section>
 
+		<section class="slide gray">
+			<div>
+				<h2>Container API</h2>
+				<ul>
+					<li class="next">Firefox Test Pilot</li>
+					<li class="next">Firefox 57 included</li>
+				</ul>
+				<blockquote class="next">Containers is a feature that lets you separate your work, shopping or personal browsing without having to clear your history, log in and out, or use multiple browsers.<br>
+Container tabs are like normal tabs except the sites you visit will have access to a separate slice of the browser's storage. This means your site preferences, logged in sessions, and advertising tracking data won't carry over to the new container. Likewise, any browsing you do within the new container will not affect your logged in sessions, or tracking data of your other containers. </blockquote>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>PageAction API</h2>
+				<blockquote>You can listen for clicks on the icon, or specify a popup that will open when the icon is clicked.</blockquote>
+				<img src="pictures/page-action.png" class="center">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Communicate between extensions</h2>
+				<img src="pictures/sendmessage.png" class="center" style="margin-left: -40px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>About:home customizable</h2>
+				<pre>
+					<code>"chrome_url_overrides" : {</code>
+					<code>  "newtab": "my-new-tab.html"</code>
+					<code>}</code>
+				</pre>
+				Actually Chrome API support also <code>bookmarks</code> and <code>history</code>.
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>oAuth</h2>
+				<img src="pictures/identity.png" class="center" style="margin-top: -25px;margin-left: -40px;">
+			</div>
+		</section>
+		
+		<section class="slide gray">
+			<div>
+				<h2>Native Messaging</h2>
+				<img src="pictures/native-messaging.png" class="center" style="margin-top: -30px;">
+			</div>
+		</section>
+		
+		<section class="slide gray">
+			<div>
+				<h2>Print Preview</h2>
+				<code>tabs.print()</code> to open the Print Window and <code>tabs.printPreview()</code> to open the preview of the actual tab for printing.<br>
+				<code>tabs.saveAsPDF()</code>, well ehm, this API save the tab as PDF!
+			</div>
+		</section>
+		
+		<section class="slide gray">
+			<div>
+				<h2>Reader Mode</h2>
+				<code>tabs.toggleReaderMode()</code> to open the tab specified in the Reader Mode/View.
+			</div>
+		</section>
+		
 		<section class="slide gray"><div>
 				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
 			</div>
@@ -206,25 +268,30 @@
 				<small>Define on manifest.json</small>
 			</div>
 		</section>
-			
+
 		<section class="slide blue">
 			<div>
-				<h2>Review on AMO - 2017 Stats</h2>
-				<ul>
-					<li>Automatically reivision only specific API require a review<s>Volunteers perform thousands of reviews every month</s></li>
-				</ul>
-				<p>In the Chrome Web Store is automatically the release of an extension after an hour but require to buy the account for 5$ (and the interface for developers is very ugly).</p>
+				<h2>Review on AMO</h2>
+				<p>Today they are automatical (manual only in case of using specific kind of APIs), so release an extension is <b>FAST</b> like Quantum!</p>
+				<p style="font-size:40px">Say Bye Bye too long review time of weeks!</p>
 			</div>
 		</section>
 
 		<section class="slide red">
 			<div>
-				<h2>Roadmap</h2>
+				<h2>Roadmap next year?</h2>
 				<ul>
-					<li>Available from 45</li>
-					<li class="next">SDK with WebExtension embedding already available</li>
-					<li class="next">Firefox 53 only WebExtension on new on addons.mozilla.org</li>
-					<li class="next">End 2017 (Firefox 57) only WebExtension for Firefox</li>
+					<li class="next"><code>webRequest</code> reconize now includes proxy information in Firefox 57.</li>
+					<li class="next"><code>storage.managed</code> allows administrators or other applications to configure extensions for users in Firefox 57 (with a JSON).</li>
+					<li class="next"><code>createSidebarPane</code> for Developer Tools in Firefox 57.</li>
+					<li class="next"><code>find</code> to search in all the tabs in Firefox 57.</li>
+					<li class="next">Privacy API with more options for extension on Firefox 57/58.</li>
+					<li class="next">Theme API in Firefox 58!</li>
+					<li class="next">Improved XHR/Fetch requests to use a sessions/headers of a specific frame in Firefox 58!</li>
+					<li class="next">Set a new search engine (with popup) in Firefox 58!</li>
+					<li class="next">Better permission management in Firefox for Android 58!</li>
+					<li class="next">More performance and improving</li>
+					<li class="next">New APIs for tabs (like tab hiding)</li>
 					<li class="next">File System APIs</li>
 				</ul>
 			</div>
@@ -237,7 +304,7 @@
 					<li><a href='https://github.com/mdn/webextensions-examples'>https://github.com/mdn/webextensions-examples</a></li>
 					<li>or</li>
 					<li>git clone git@github.com:mdn/webextensions-examples.git</li>
-					<li>Look all the 39 examples for different APIs!</li>
+					<li>Look all the 45 examples for different APIs!</li>
 				</ol>
 			</div>
 		</section>
@@ -318,16 +385,32 @@
 		</section>
 
 		<section class="slide red">
+			<div>NEws from W3C</h2>
+				<ul>
+					<li class="next">Browser Extensions last update as draft 23 July 2017</li>
+					<li class="next">Native Messaging for Browser Extensions as draft 17 October 2016.</li>
+					<li class="next">createSidebarPane for Developer Tools in Firefox 57.</li>
+					<li class="next">find to search in all the tabs in Firefox 57.</li>
+					<li class="next">fPrivacy APi with more options for extension on Firefox 57/58.</li>
+					<li class="next">Theme API in Firefox 58!</li>
+					<li class="next">Improved XHR/Fetch requests to use a sessions/headers of a specific frame in Firefox 58!</li>
+					<li class="next">Set a new search engine (with popup) in Firefox 58!</li>
+					<li class="next">Better permission management in Firefox for Android 58!</li><li class="next">More performance and improving</li>
+					<li class="next">New APIs for tabs (like tab hiding)</li>
+					<li class="next">File System APIs</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide red">
 			<div>
 				<h2>Link</h2>
 				<ul>
-					<li><a href="http://stackoverflow.com/a/9517879/1902215">Building a Chrome Extension - Inject code in a page using a Content script</a></li>
-					<li><a href="http://www.ghacks.net/2016/05/23/install-google-chrome-extensions-firefox/">http://www.ghacks.net/2016/05/23/install-google-chrome-extensions-firefox/</a></li>
-					<li><a href="https://mozilla.aha.io/published/0d49e74c6853d3d721010bd9d4f67f34?page=2">Firefox WebExtensions Roadmap</a></li>
+					<li><a href="https://blog.mozilla.org/addons/">Everything you need to know to be updated is the Addons blog</a></li>
+					<li><a href="https://discourse.mozilla.org/c/add-ons">EYou need help? Check the Discourse Addons category!</a></li>
+					<li><a href="https://github.com/bfred-it/Awesome-WebExtensions">https://github.com/bfred-it/Awesome-WebExtensions</a></li>
 					<li><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">WebExtensions Docs on MDN</a></li>
 					<li><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs">WebExtensions APIs</a></li>
-					<li><a href="https://blog.mozilla.org/addons/2017/01/24/preventing-add-ons-third-party-software-from-loading-dlls-into-firefox/">Preventing Add-ons & Third-party Software From Loading DLLs Into Firefox</a></li>
-					<li><a href="https://blog.mozilla.org/addons/2017/06/09/keeping-add-ons-community/">Keeping Up with the Add-ons Community</a></li>
 				</ul>
 			</div>
 		</section>
