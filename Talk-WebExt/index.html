@@ -71,23 +71,23 @@
 			</div>
 		</section>
 
-		<section class="slide shout gradient-nightly">
-			<div>
-				<h2 style="top:50%">Firefox still the most customizable browser (?)</h2>
-			</div>
-		</section>
-
 		<section class="slide">
 			<div>
 				<h2>Add-ons are important in Firefox</h2>
 				<p>System addons and <a href="http://testpilot.firefox.com">Test Pilot</a> (http://testpilot.firefox.com).</p>
-				<p>DevTools can be developed today as an extension inside Firefox (and extendended too).</p>
+				<p>DevTools can be developed today as an extension inside Firefox (and extended too).</p>
 				<br>
 				<p class="next"><b>2017 Stats of Addons.Mozilla.org</b></p>
 				<p class="next">roughly 50% of users have add-ons</p>
 				<p class="next">26000 add-ons</p>
 				<p class="next">19000 extension developers</p>
 				<p class="next">12 million monthly users on AMO</p>
+			</div>
+		</section>
+
+		<section class="slide shout gradient-nightly">
+			<div>
+				<h2 style="top:50%">Firefox still the most customizable browser (?)</h2>
 			</div>
 		</section>
 
@@ -128,7 +128,7 @@
 					<li class="next">Firefox 57 included</li>
 				</ul>
 				<blockquote class="next">Containers is a feature that lets you separate your work, shopping or personal browsing without having to clear your history, log in and out, or use multiple browsers.<br>
-Container tabs are like normal tabs except the sites you visit will have access to a separate slice of the browser's storage. This means your site preferences, logged in sessions, and advertising tracking data won't carry over to the new container. Likewise, any browsing you do within the new container will not affect your logged in sessions, or tracking data of your other containers. </blockquote>
+					Container tabs are like normal tabs except the sites you visit will have access to a separate slice of the browser's storage. This means your site preferences, logged in sessions, and advertising tracking data won't carry over to the new container. Likewise, any browsing you do within the new container will not affect your logged in sessions, or tracking data of your other containers. </blockquote>
 			</div>
 		</section>
 
@@ -173,44 +173,69 @@ Container tabs are like normal tabs except the sites you visit will have access 
 				<img src="pictures/identity.png" class="center" style="margin-top: -25px;margin-left: -40px;">
 			</div>
 		</section>
-		
+
 		<section class="slide gray">
 			<div>
 				<h2>Example OAuth</h2>
 				<img src="pictures/advanced-github-notifier.png" class="center" style="margin-top: -30px;">
 			</div>
 		</section>
-		
+
 		<section class="slide gray">
 			<div>
 				<h2>Native Messaging</h2>
 				<img src="pictures/native-messaging.png" class="center" style="margin-top: -30px;">
 			</div>
 		</section>
-		
+
+		<section class="slide gray">
+			<div>
+				<h2>My_native_app.json</h2>
+				<pre>
+					<code>{</code>
+					<code>  "name": "ping_pong",</code>
+					<code>  "description": "Example host for native messaging",</code>
+					<code>  "path": "/path/to/native-messaging/app/ping_pong.py",</code>
+					<code>  "type": "stdio",</code>
+					<code>  "allowed_extensions": [ "ping_pong@example.org" ]</code>
+					<code>}</code>
+				</pre>
+				<h2>JS code</h2>
+				<pre>
+					<code>var port = browser.runtime.connectNative("ping_pong");</code>
+					<code>port.onMessage.addListener((response) => {</code>
+					<code>  console.log("Received: " + response);</code>
+					<code>});</code>
+					<code>browser.browserAction.onClicked.addListener(() => {</code>
+					<code>  console.log("Sending:  ping");</code>
+					<code>  port.postMessage("ping");</code>
+					<code>});</code>
+				</pre>
+			</div>
+		</section>
+
 		<section class="slide gray">
 			<div>
 				<h2>Example Native Messaging</h2>
 				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/kde_connect/</blockquote><br>
 				<img src="pictures/kde-connect.png" class="center" style="margin-top: -30px;">
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/midi-input-provider/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/withexeditor/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/web2mp3/</blockquote><br>
 			</div>
 		</section>
-		
+
 		<section class="slide gray">
 			<div>
 				<h2>Print Preview</h2>
 				<code>tabs.print()</code> to open the Print Window and <code>tabs.printPreview()</code> to open the preview of the actual tab for printing.<br>
-				<code>tabs.saveAsPDF()</code>, well ehm, this API save the tab as PDF!
-			</div>
-		</section>
-		
-		<section class="slide gray">
-			<div>
+				<code>tabs.saveAsPDF()</code>, well ehm, this API save the tab as PDF!<br><br>
 				<h2>Reader Mode</h2>
 				<code>tabs.toggleReaderMode()</code> to open the tab specified in the Reader Mode/View.
 			</div>
 		</section>
-		
+
 		<section class="slide gray">
 			<div>
 				<h2>Tabs API</h2>
@@ -218,7 +243,7 @@ Container tabs are like normal tabs except the sites you visit will have access 
 				<a href="https://addons.mozilla.org/firefox/addon/tab-invaders/">https://addons.mozilla.org/firefox/addon/tab-invaders/</a>
 			</div>
 		</section>
-		
+
 		<section class="slide gray"><div>
 				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
 			</div>
@@ -305,8 +330,6 @@ Container tabs are like normal tabs except the sites you visit will have access 
 				<h2>Review on AMO</h2>
 				<p>Today they are automatical (manual only in case of using specific kind of APIs), so release an extension is <b>FAST</b> like Quantum!</p>
 				<p style="font-size:40px">Say Bye Bye too long review time of weeks!</p>
-				
-				<p class="next">There was different cases of Spam Extension but they are already working on it!</p>
 			</div>
 		</section>
 
@@ -314,17 +337,19 @@ Container tabs are like normal tabs except the sites you visit will have access 
 			<div>
 				<h2>Roadmap 2018</h2>
 				<ul>
-					<li class="next"><code>webRequest</code> reconize now includes proxy information in Firefox 57.</li>
-					<li class="next"><code>storage.managed</code> allows administrators or other applications to configure extensions for users in Firefox 57 (with a JSON).</li>
-					<li class="next"><code>createSidebarPane</code> for Developer Tools in Firefox 57.</li>
-					<li class="next"><code>find</code> to search in all the tabs in Firefox 57.</li>
-					<li class="next">Privacy API with more options for extension on Firefox 57/58.</li>
-					<li class="next">Theme API in Firefox 58!</li>
-					<li class="next">Improved XHR/Fetch requests to use a sessions/headers of a specific frame in Firefox 58!</li>
-					<li class="next">Set a new search engine (with popup) in Firefox 58!</li>
-					<li class="next">Better permission management in Firefox for Android 58!</li>
-					<li class="next">More performance and improving</li>
-					<li class="next">New APIs for tabs (like tab hiding)</li>
+					<li><code>webRequest</code> reconize now includes proxy information in Firefox 57.</li>
+					<li><code>storage.managed</code> allows administrators or other applications to configure extensions for users in Firefox 57 (with a JSON).</li>
+					<li><code>createSidebarPane</code> for Developer Tools in Firefox 57.</li>
+					<li><code>find</code> to search in all the tabs in Firefox 57.</li>
+					<li>Privacy API with more options for extensions on Firefox 57/58.</li>
+					<li>Theme API in Firefox 58!</li>
+					<li>Improved XHR/Fetch requests to use a sessions/headers of a specific frame in Firefox 58!</li>
+					<li>Set a new search engine (with popup) in Firefox 58!</li>
+					<li>Better permission management in Firefox for Android 58!</li>
+					<li>Tab hiding on Firefox 59</li>
+					<li>Page action to show based on url pattern on manifest.json in Firefox 59</li>
+					<li>WebExt experiments bundled in the same extension (missing docs)</li>
+					<li>More performance and improving</li>
 				</ul>
 			</div>
 		</section>
@@ -358,23 +383,10 @@ Container tabs are like normal tabs except the sites you visit will have access 
 					Command line tool to help build, run, watcher, and test web extensions.
 				</p>
 				<p>
-					Run an extension from cli, linting, validation and packaging.
+					Run an extension from cli, linting, signing, validation and packaging.
 				</p>
 				<pre><code>web-ext run -s /path/extension/ --firefox-binary=/path/firefox</code></pre>
 				<pre><code>web-ext build -s /path/extension/</code></pre>
-			</div>
-		</section>
-
-		<section class="slide">
-			<div>
-				<h2>Pack-ext</h2>
-				<p>
-					https://github.com/Mte90/Script/blob/master/pack-ext.py
-				</p>
-				<p>
-					Package the file as Zip package for Chrome and Xpi for Firefox.
-				</p>
-				<pre><code>pack-ext.py ./</code></pre>
 			</div>
 		</section>
 
@@ -420,10 +432,10 @@ Container tabs are like normal tabs except the sites you visit will have access 
 			<div>
 				<h2>News from W3C</h2>
 				<ul>
-					<li class="next">Browser Extensions last update as draft 23 July 2017</li>
-					<li class="next">Native Messaging for Browser Extensions as draft 17 October 2016.</li>
-					<li class="next">After Firefox Quantum the definition of standard will start again</li>
-					<li class="next"><a href="https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421">https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421</a></li>
+					<li>Browser Extensions last update as draft 23 July 2017</li>
+					<li>Native Messaging for Browser Extensions as draft 17 October 2016.</li>
+					<li>After Firefox Quantum the definition of standard will start again</li>
+					<li><a href="https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421">https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421</a></li>
 				</ul>
 			</div>
 		</section>
