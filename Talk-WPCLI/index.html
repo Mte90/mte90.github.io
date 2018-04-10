@@ -107,6 +107,21 @@ wp core install --prompt
 				</section>
 
 				<section>
+					<h2>Change a constant on wp-config.php</h2>
+					<pre><code data-trim>wp config set WP_DEBUG true --type=constant --raw</code></pre>
+				</section>
+
+				<section>
+					<h2>Load PHP file before running the command</h2>
+					<pre><code data-trim>--require=fixer.php</code></pre>
+				</section>
+
+				<section>
+					<h2>Import image by url</h2>
+					<pre><code data-trim>wp media import url --post_id=123 --title="It's me an image"</code></pre>
+				</section>
+				
+				<section>
 					<h2>Search & Replace</h2>
 					<pre><code data-trim>
 wp search-replace http://domain.com https://domain.com
