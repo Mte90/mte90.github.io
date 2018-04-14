@@ -29,7 +29,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - ConfSL</div><div class="hashtag">#ConfSL</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - WordCamp Bologna</div><div class="hashtag">#wcbol</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -46,12 +46,10 @@
 						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
 						<ul class="white-black-shadow">
 							<li>Co Founder Codeat - Full Stack Developer</li>
-							<li>Mozillian & Mozilla Reps & Participation Leader</li>
-							<li>Articolista per AndMore, ChimeraRevo e TechEconomy</li>
-							<li>Utente Debian Linux dal 2009</li>
+							<li>Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>WordPress Contributor/Developer/Translator</li>
 							<li>Open Source Addicted</li>
-							<li>Industria Italiana Software Libero Vice President</li>
+							<li>Industria Italiana Software Libero President</li>
 						</ul>
 					</div>
 				</section>
@@ -78,19 +76,21 @@
 
 				<section data-markdown>
                     <script type="text/template">
-                        ## Is a Framework?
+                        ## Really a Framework?
 
 * **Web Application**: <span class="fragment">CRUD <i><i>&#10003;</i></i></span>
 * **Web Services**: <span class="fragment">XML-RPC <i>&#10003;</i>,</span> <span class="fragment">JSON REST API <i>&#10003;</i></span>
 * **Database**: <span class="fragment">MySQL & derivated <i>&#10003;</i>,</span> <span class="fragment">PosteGreSQL (partially) <i>&#10003;</i></span>
 * **Template System**: <span class="fragment">Template Hierarchy <i>&#10003;</i>,</span> <span class="fragment">Your Favorite <i>&#10003;</i></span>
-* **User Management**: <span class="fragment">Multiple User Roles <i>&#10003;</i></span>
-* **Code reuse**: <span class="fragment">Core Function and Classes <i>&#10003;</i>, </span> <span class="fragment">Plugins Function and Classes <i>&#10003;</i></span>
+* **User Management**: <span class="fragment">Multiple User Roles <i>&#10003;</i>,</span> <span class="fragment">Capabilities <i>&#10003;</i></span>
 * **Expandable**: <span class="fragment">Free Plugins <i>&#10003;</i>, </span> <span class="fragment">Premium Plugins <i>&#10003;</i></span>
+* **Meta**: <span class="fragment">Custom Meta <i>&#10003;</i>, </span> <span class="fragment">Custom Tables <i>&#10003;</i></span>
 * **Update**: <span class="fragment">Auto Update <i>&#10003;</i></span>
 * **Backend UI**: <span class="fragment">Standard Theme <i>&#10003;</i>,</span> <span class="fragment">Custom Theme <i>&#10003;</i></span>
 * **URL Rewrite**: <span class="fragment">Native system <i>&#10003;</i></span>
 * **AJAX**: <span class="fragment">Native system <i>&#10003;</i></span>
+* **Multisite**: <span class="fragment">Native system <i>&#10003;</i></span>
+* **Cache**: <span class="fragment">Native system <i>&#10003;</i>,</span><span class="fragment">Expandable <i>&#10003;</i></span>
                     </script>
                 </section>
 
@@ -194,6 +194,7 @@ add_action( 'init', 'show', 0 );
 * Thickbox
 * SimplePIE
 * PHP Mailer
+* Requests
 
                     </script>
 				</section>
@@ -214,6 +215,7 @@ add_action( 'init', 'show', 0 );
 						<li class="fragment">Heartbeat</li>
 						<li class="fragment">Multisite</li>
 						<li class="fragment">.po, .mo support</li>
+						<li class="fragment">Over 8000+ tests</li>
 					</ul>
                 </section>
 
@@ -221,9 +223,31 @@ add_action( 'init', 'show', 0 );
 
                 </section>
 
+                <section data-transition="slide">
+                    <h2>PHP support</h2>
+					<ul>                        
+						<li class="fragment">Minimum Requirement: PHP 5.2, MariaDB 10, MySQL 5.6</li>
+						<li class="fragment">Recommend Requirement: PHP 7.2, MariaDB 10, MySQL 5.6</li>
+						<li class="fragment">Requires PHP for plugin: Maybe 4.9.6</li>
+					</ul>
+                </section>
+
+                <section data-transition="slide">
+                    <h2>WP CLI</h2>
+					<ul> 
+						<li class="fragment">Easy to install</li>
+						<li class="fragment">Easy to expand by plugins or packages</li>
+						<li class="fragment">Command for profiling</li>
+						<li class="fragment">No login required</li>
+						<li class="fragment">Same features of WordPress</li>
+						<li class="fragment">More features of WordPress</li>
+						<li class="fragment">No webserver limits</li>
+					</ul>
+                </section>
+
                 <section data-transition="slide" data-background-transition="convex" data-background="img/speed.png">
                     <div class="background">
-                        <h2 class="white-black-shadow">Hack, Percona DB, MariaDB, MemCache, Varnish, Nginx, CDN, PageSpeed, WP CLI</h2>
+                        <h2 class="white-black-shadow">Percona DB, MariaDB, MemCache, Varnish, Nginx, CDN, PageSpeed</h2>
                     </div>
                 </section>
 
