@@ -128,9 +128,8 @@ add_action( 'init', 'modify_post_type_supports', 11 );
 				</section>
 
                 <section>
-                    <h2>Create a custom post type</h2>
-                    <pre><code data-trim contenteditable>
-// Register Custom Post Type
+                    <h2>Custom post type</h2>
+                    <pre style="height:550px"><code style="max-height:550px" data-trim contenteditable>
 function show() {
     $labels = array(
         'name'                => _x( 'Shows', 'Post Type General Name', 'file_language' ),
@@ -157,6 +156,7 @@ function show() {
         'taxonomies'          => array( 'portfolio_category' ),
         'hierarchical'        => false,
         'public'              => true,
+		'show_in_rest'        => true, // Support for rest
         'show_ui'             => true,
         'show_in_menu'        => true,
         'menu_position'       => 5,
@@ -204,7 +204,6 @@ add_action( 'init', 'show', 0 );
 					<ul>                        
 						<li class="fragment">Widgets</li>
 						<li class="fragment">Options/Settings</li>
-						<li class="fragment">Quicktags (TinyMCE)</li>
 						<li class="fragment">Shortcode</li>
 						<li class="fragment">Transients</li>
 						<li class="fragment">Metadata</li>
@@ -214,6 +213,7 @@ add_action( 'init', 'show', 0 );
 						<li class="fragment">Pointer</li>
 						<li class="fragment">Heartbeat</li>
 						<li class="fragment">Multisite</li>
+						<li class="fragment">REST</li>
 						<li class="fragment">.po, .mo support</li>
 						<li class="fragment">Over 8000+ tests</li>
 					</ul>
@@ -228,7 +228,7 @@ add_action( 'init', 'show', 0 );
 					<ul>                        
 						<li class="fragment">Minimum Requirement: PHP 5.2, MariaDB 10, MySQL 5.6</li>
 						<li class="fragment">Recommend Requirement: PHP 7.2, MariaDB 10, MySQL 5.6</li>
-						<li class="fragment">Requires PHP for plugin: Maybe 4.9.6</li>
+						<li class="fragment">Requires PHP for plugin: Maybe 4.9.7</li>
 					</ul>
                 </section>
 
@@ -249,6 +249,18 @@ add_action( 'init', 'show', 0 );
                     <div class="background">
                         <h2 class="white-black-shadow">Percona DB, MariaDB, MemCache, Varnish, Nginx, CDN, PageSpeed</h2>
                     </div>
+                </section>
+
+                <section data-transition="slide">
+                    <h2>Composer</h2>
+					<ul> 
+						<li class="fragment">A lot of plugins or libraries easy to integrate in your project/plugin</li>
+						<li class="fragment">https://github.com/CMB2/CMB2</li>
+						<li class="fragment">https://github.com/wpbp/cronplus</li>
+						<li class="fragment">https://github.com/lucatume/wp-browser</li>
+						<li class="fragment">https://github.com/wpackagist-plugin/posts-to-posts</li>
+						<li class="fragment">https://github.com/corcel/corcel</li>
+					</ul>
                 </section>
 
                 <section>
