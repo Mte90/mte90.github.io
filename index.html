@@ -44,11 +44,10 @@
 				e.preventDefault();
 			  });
 
-			  elements = document.querySelectorAll('.abstract span');
-
+			  elements = document.querySelectorAll('.abstract span, .old-talk span');
 			  for (var i = 0; i < elements.length; i++) {
 				elements[i].addEventListener("click", function (e) {
-				  container = this.parentNode.querySelector('div');
+				  var container = this.parentNode.querySelector('div, ul');
 				  if (container.classList.contains('hide')) {
 					this.parentNode.style.width = '100%';
 					container.classList.remove('hide');
@@ -59,20 +58,6 @@
 				  e.preventDefault();
 				});
 			  };
-
-			  elements = document.querySelectorAll('.old-talk span');
-
-			  for (var i = 0; i < elements.length; i++) {
-				elements[i].addEventListener("click", function (e) {
-				  var list = this.parentNode.querySelector('ul');
-				  if (list.classList.contains('hide')) {
-					list.classList.remove('hide');
-				  } else {
-					list.classList.add('hide');
-				  }
-				  e.preventDefault();
-				});
-			  }
 			});
         </script>
         <title>Daniele Scasciafratte - List of my Talks</title>
@@ -82,7 +67,7 @@
 		<div class="container">
 			<div class="col-md-12">
 				<div class="col-md-8 header">
-					<h1 class="my-name animated fadeInDown _1">Daniele Scasciafratte <a target="_blank" href="http://www.mte90.net/"> - Developer, Evangelist, Writer</a></h1>
+					<h1 class="my-name animated fadeInDown _1">Daniele Scasciafratte <a target="_blank" href="https://daniele.tech/"> - Developer, Evangelist, Writer</a></h1>
 				</div>
 
 				<div class="col-md-4 header">
@@ -101,27 +86,24 @@
 
 			<div class="col-md-12">
 				<h4 class="my-credentials animated fadeInUp _2">
-					<a target="_blank" href="http://www.mte90.net/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker,
-					Co Founder <a target="_blank" href="http://codeat.it">Codeat</a> as Full Stack Developer/CTO,
-					President of <a target="_blank" href="http://industriasoftwarelibero.it/">Industria Italiana del Software Libero</a>
+					<a target="_blank" href="https://daniele.tech/en/mozillian/">Mozilla Rep</a>, Mozilla TechSpeaker,
+					Co Founder <a target="_blank" href="https://codeat.it">Codeat</a> as Full Stack Developer/CTO,
+					President of <a target="_blank" href="https://industriasoftwarelibero.it/">Industria Italiana del Software Libero</a>
 				</h4>
 				<p class="my-credentials animated fadeInUp _2">WordPress Core Contributor, Open Source Multiversal & Italian Native Speaker, English-Esperanto-Spanish</p>
 			</div>
-
 		</div>
-
 
 		<div class="container">
 			<div class="col-md-12">
 				<div class="animated fadeIn _2">
-					<h4 class="bar">For a reportage of all my events as speaker or attendee, check my blog on <a href="https://mte90.net/en/i-was-there/">I was there</a> or <a href="https://mte90.net/io-cero/">Io C'ero</a>!</h4>
+					<h4 class="bar">For a reportage of all my events as speaker or attendee, check my blog on <a href="https://daniele.tech/en/i-was-there/">I was there</a> or <a href="https://daniele.tech/io-cero/">Io C'ero</a>!</h4>
 				</div>
 				<div class="animated fadeIn _3">
 					<h4 class="bar">Do you want suggest a new talk? Open a ticket on <a href="https://github.com/Mte90/mte90.github.io/issues">GitHub</a>!</h4>
 				</div>
 			</div>
 		</div>
-
 
 		<div class="container">
 			<div class="col-md-12">
@@ -130,7 +112,6 @@
 				</div>
 			</div>
 		</div>
-
 
 		<div class="container">
 			<div class="col-md-12">
