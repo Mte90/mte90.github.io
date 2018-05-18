@@ -15,11 +15,11 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
 
 		<!--[if lt IE 9]>
@@ -37,7 +37,7 @@
 					<h1>Wordpress as a Framework 2.0</h1>
 					<h4>no longer only blog cms</h4>
 					<p>
-						<small>By <a href="http://mte90.net">Daniele Scasciafratte</a> based on <a href="http://eugeniopetulla.com/">Eugenio Petullà</a> slides</small>
+						<small>By <a href="http://daniele.tech">Daniele Scasciafratte</a></small>
 					</p>
 				</section>
 
@@ -74,28 +74,37 @@
 					</script>
 				</section>
 
+				<section>
+					<img src="img/loc.png">
+				</section>
+
 				<section data-markdown>
                     <script type="text/template">
                         ## Really a Framework?
 
-* **Web Application**: <span class="fragment">CRUD <i><i>&#10003;</i></i></span>
-* **Web Services**: <span class="fragment">XML-RPC <i>&#10003;</i>,</span> <span class="fragment">JSON REST API <i>&#10003;</i></span>
-* **Database**: <span class="fragment">MySQL & derivated <i>&#10003;</i>,</span> <span class="fragment">PosteGreSQL (partially) <i>&#10003;</i></span>
-* **Template System**: <span class="fragment">Template Hierarchy <i>&#10003;</i>,</span> <span class="fragment">Your Favorite <i>&#10003;</i></span>
-* **User Management**: <span class="fragment">Multiple User Roles <i>&#10003;</i>,</span> <span class="fragment">Capabilities <i>&#10003;</i></span>
-* **Expandable**: <span class="fragment">Free Plugins <i>&#10003;</i>, </span> <span class="fragment">Premium Plugins <i>&#10003;</i></span>
-* **Meta**: <span class="fragment">Custom Meta <i>&#10003;</i>, </span> <span class="fragment">Custom Tables <i>&#10003;</i></span>
-* **Update**: <span class="fragment">Auto Update <i>&#10003;</i></span>
-* **Backend UI**: <span class="fragment">Standard Theme <i>&#10003;</i>,</span> <span class="fragment">Custom Theme <i>&#10003;</i></span>
-* **URL Rewrite**: <span class="fragment">Native system <i>&#10003;</i></span>
-* **AJAX**: <span class="fragment">Native system <i>&#10003;</i></span>
-* **Multisite**: <span class="fragment">Native system <i>&#10003;</i></span>
-* **Cache**: <span class="fragment">Native system <i>&#10003;</i>,</span><span class="fragment">Expandable <i>&#10003;</i></span>
+						* **Web Application**: <span class="fragment">CRUD <i><i>&#10003;</i></i></span>
+						* **Web Services**: <span class="fragment">XML-RPC <i>&#10003;</i>,</span> <span class="fragment">JSON REST API <i>&#10003;</i></span>
+						* **Database**: <span class="fragment">MySQL & derivated <i>&#10003;</i>,</span> <span class="fragment">PosteGreSQL (partially) <i>&#10003;</i></span>
+						* **Template System**: <span class="fragment">Template Hierarchy <i>&#10003;</i>,</span> <span class="fragment">Your Favorite <i>&#10003;</i></span>
+						* **User Management**: <span class="fragment">Multiple User Roles <i>&#10003;</i>,</span> <span class="fragment">Capabilities <i>&#10003;</i></span>
+						* **Expandable**: <span class="fragment">Free Plugins <i>&#10003;</i>, </span> <span class="fragment">Premium Plugins <i>&#10003;</i></span>
+						* **Meta**: <span class="fragment">Custom Meta <i>&#10003;</i>, </span> <span class="fragment">Custom Tables <i>&#10003;</i></span>
+						* **Update**: <span class="fragment">Auto Update <i>&#10003;</i></span>
+						* **Backend UI**: <span class="fragment">Standard Theme <i>&#10003;</i>,</span> <span class="fragment">Custom Theme <i>&#10003;</i></span>
+						* **URL Rewrite**: <span class="fragment">Native system <i>&#10003;</i></span>
+						* **AJAX**: <span class="fragment">Native system <i>&#10003;</i></span>
+						* **Multisite**: <span class="fragment">Native system <i>&#10003;</i></span>
+						* **Cache**: <span class="fragment">Native system <i>&#10003;</i>,</span><span class="fragment">Expandable <i>&#10003;</i></span>
                     </script>
                 </section>
 
                 <section data-transition="slide" data-background-transition="convex">
-                    <img src="img/hook.png">
+                    <img src="img/hook.png" style="margin-top: -15px;">
+                </section>
+
+                <section data-transition="slide">
+					<h2>Examples of reimplementation</h2>
+                    <img src="img/similar-hooks.png" style="margin-top: -15px;">
                 </section>
 
 				<section>
@@ -181,22 +190,21 @@ add_action( 'init', 'show', 0 );
                     <h2 class="black-shadow">Media manager</h2>
 				</section>
 
-				<section data-markdown>
-                    <script type="text/template">
-                        ## External Libraries Integrated
-						
-* jQuery
-* jQuery UI 
-* Backbone.JS 
-* Underscore.JS 
-* TinyMCE
-* MediaElement.JS
-* Thickbox
-* SimplePIE
-* PHP Mailer
-* Requests
+				<section>
+					<h2>External Libraries Integrated</h2>
 
-                    </script>
+					<ul>
+						<li>jQuery</li>
+						<li>jQuery UI </li>
+						<li>Backbone.JS </li>
+						<li>Underscore.JS </li>
+						<li>TinyMCE</li>
+						<li>MediaElement.JS</li>
+						<li>Thickbox</li>
+						<li>SimplePIE</li>
+						<li>PHP Mailer</li>
+						<li>Requests</li>
+					</ul>
 				</section>
 
                 <section>
@@ -263,6 +271,15 @@ add_action( 'init', 'show', 0 );
 					</ul>
                 </section>
 
+                <section data-transition="slide">
+                    <h2>Other resources</h2>
+					<ul> 
+						<li class="fragment">https://github.com/Mte90/awesome-wordpress-developer-tips</li>
+						<li class="fragment">https://make.wordpress.org/core/2018/05/16/preparing-wordpress-for-a-javascript-future-part-1-build-step-and-folder-reorganization/</li>
+						<li class="fragment">https://make.wordpress.org/core/2018/05/01/javascript-internationalization-the-missing-pieces/</li>
+					</ul>
+                </section>
+
                 <section>
                     <img src="img/commitstrip.jpg" style="max-width: 470px;">
                 </section>
@@ -279,34 +296,34 @@ add_action( 'init', 'show', 0 );
 
 		<script>
 
-            Reveal.initialize({
-              controls: false,
-              progress: true,
-              history: true,
-              center: true,
-              touch: true,
-              overview: false,
-              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			Reveal.initialize({
+			  controls: false,
+			  progress: true,
+			  history: true,
+			  center: true,
+			  touch: true,
+			  overview: false,
+			  transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
-              dependencies: [
-                {src: 'lib/js/classList.js', condition: function () {
-                    return !document.body.classList;
-                  }},
-                {src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                    return !!document.querySelector('pre code');
-                  }, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                  }},
-              ]
-            });
+			  dependencies: [
+				{src: 'lib/js/classList.js', condition: function () {
+					return !document.body.classList;
+				  }},
+				{src: 'plugin/markdown/marked.js', condition: function () {
+					return !!document.querySelector('[data-markdown]');
+				  }},
+				{src: 'plugin/markdown/markdown.js', condition: function () {
+					return !!document.querySelector('[data-markdown]');
+				  }},
+				{src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+					return !!document.querySelector('pre code');
+				  }, callback: function () {
+					hljs.initHighlightingOnLoad();
+				  }},
+			  ]
+			});
 
-            document.querySelector('.titolo').textContent = document.title;
+			document.querySelector('.titolo').textContent = document.title;
 
 		</script>
 
