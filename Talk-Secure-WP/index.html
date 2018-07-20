@@ -189,7 +189,7 @@
 							<ul>
 								<li>If exploitable</li>
 								<li>Common misconfiguration</li>
-								<li>Other informations</li>								
+								<li>Other informations</li>
 							</ul>
 						</li>
 						<li class="fragment">Enumerate users</li>
@@ -199,7 +199,7 @@
 						<li class="fragment">Multiple threads</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<h2>The first commands to run</h2>
 					<pre><code data-trim>
@@ -207,6 +207,20 @@ wpscan --url www.example.com
 wpscan --url www.example.com --enumerate
 					</code></pre>
 					<p>Only 2 commands are enough to understand if the website is managed with a <b>professional</b> behaviour or not.</p>
+				</section>
+
+				<section>
+					<h2>WPSeku</h2>
+					<ul>
+						<li class="fragment">Rewritten WPScan in Python</li>
+						<li class="fragment">Focus on plugin code (if in wp.org repo)
+							<ul>
+								<li>For XSS</li>
+								<li>For use of critical methods</li>
+							</ul>
+                        </li>
+						<li class="fragment">Brute force usernames also for XML-RPC</li>
+					</ul>
 				</section>
 
 				<section>
@@ -256,7 +270,7 @@ if ( !is_wp_error( $user ) )
 							<ul>
 								<li>WordPress</li>
 								<li>Every plugins</li>
-								<li>Every themes</li>								
+								<li>Every themes</li>
 							</ul>
 						</li>
 						<li class="fragment">Compare your clean/hacked version with a diff tool
