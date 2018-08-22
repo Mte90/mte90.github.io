@@ -59,20 +59,14 @@ li {
 
 ._1 {
     -webkit-animation-delay: 0.4s;
-    -ms-animation-delay: 0.4s;
-    -o-animation-delay: 0.4s;
     animation-delay: 0.4s;
 }
 ._2 {
     -webkit-animation-delay: 0.8s;
-    -ms-animation-delay: 0.8s;
-    -o-animation-delay: 0.8s;
     animation-delay: 0.8s;
 }
 ._3 {
     -webkit-animation-delay: 1.2000000000000002s;
-    -ms-animation-delay: 1.2000000000000002s;
-    -o-animation-delay: 1.2000000000000002s;
     animation-delay: 1.2000000000000002s;
 }
 ._4 {
@@ -98,6 +92,10 @@ hr {
 .my-name {
 	font-weight: 900;
 	margin-bottom: 0px;
+}
+
+.container, body {
+	padding:0 !important;
 }
 
 .section-header {
@@ -173,10 +171,14 @@ li .abstract div {
 	.only-small {
 		display: block;
 	}
+	
+	.abstract,.only-big {
+		display:none;
+	}
 }
 
 @media all and (min-width: 800px) {
-	.only-big {
+	.only-big,.abstract {
 		display: block;
 	}
 }
