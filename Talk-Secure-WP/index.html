@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Terni</div><div class="hashtag">#ihcamp</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Terni</div><div class="hashtag">#wpterni</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -53,6 +53,20 @@
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>Industria Italiana Software Libero Presidente</li>
 						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div style="margin-top: -20px;">
+						<img src="pictures/cry/sheldon.gif"/>
+						<img src="pictures/cry/hobbit.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/homealone.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/spiderman.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/homer.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/superman.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/stanlioollio.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/starwars.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/stitch.gif" style="max-width: 300px;"/>
 					</div>
 				</section>
 
@@ -117,7 +131,7 @@
 							<li>Non-standard
 								<ul>
 									<li>UI</li>
-									<li>Custom stuff that doesn't use WordPress framework</li>
+									<li>Custom stuff that doesn't use the WordPress framework</li>
 									<li>Reimplementation of already available WP features</li>
 								</ul>
 							</li>
@@ -125,10 +139,10 @@
 				</section>
 
 				<section>
-						<h3>Gold rules for an administrator</h3>
+						<h3>Golden rules for an administrator</h3>
 						<ul>
 							<li class="fragment">Block access to <b>wp-admin</b></li>
-							<li class="fragment">Block File browsing of web servers</li>
+							<li class="fragment">Block File browsing from web servers</li>
 							<li class="fragment">Update always WordPress and plugins
 								<ul>
 									<li>Especially premium stuff from marketplaces</li>
@@ -136,7 +150,7 @@
 							</li>
 							<li class="fragment">Block comments and other interactions for non-logged users</li>
 							<li class="fragment">Check file permissions</li>
-							<li class="fragment">Ban bots and IPs</li>
+							<li class="fragment">Ban bots and bad IPs</li>
 							<li class="fragment">Enable protection for brute force</li>
 							<li class="fragment">Remove the user 1 (admin)</li>
 							<li class="fragment">Block XML-RPC/REST API if you don't need</li>
@@ -144,22 +158,22 @@
 				</section>
 
 				<section>
-						<h3>Gold rules for an hacker</h3>
+						<h3>Golden rules for an hacker</h3>
 						<ul>
-							<li>Check version of plugins</li>
-							<li>Create infected warez version of premium plugins/themes</li>
-							<li>Invest a lot of time on <b>admin-ajax.php</b>
+							<li class="fragment">Check version of plugins</li>
+							<li class="fragment">Create infected warez version of premium plugins/themes</li>
+							<li class="fragment">Invest a lot of time on <b>admin-ajax.php</b>
 								<ul>
 									<li>Generate DDOS</li>
 									<li>Actions for logged/non users</li>
 									<li>Missing <b>nonce</b>s or <a href="https://codeseekah.com/2016/01/21/wordpress-nonces-vulnerabilities/">wrongly integrated</a></li>
 								</ul>
 							</li>
-							<li>Look for premium plugins not updated</li>
-							<li>Look around for XSS</li>
-							<li>Check for <a href="https://codeseekah.com/2012/04/09/why-wordpress-authentication-unique-keys-and-salts-are-important/">not defined SALT</a></li>
-							<li>Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
-							<li>Stress test</li>
+							<li class="fragment">Look for premium plugins not updated</li>
+							<li class="fragment">Look around for XSS</li>
+							<li class="fragment">Check for <a href="https://codeseekah.com/2012/04/09/why-wordpress-authentication-unique-keys-and-salts-are-important/">not defined SALT</a></li>
+							<li class="fragment">Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
+							<li class="fragment">Stress test</li>
 						</ul>
 				</section>
 
@@ -266,8 +280,6 @@ if ( !is_wp_error( $user ) )
 					<h2>Fix an hacked website</h2>
 					<ul>
 						<li class="fragment">Download everything locally</li>
-						<li class="fragment">Search for php files in <b>wp-content/uploads/*.php</b></li>
-						<li class="fragment">Search for files with strange dateo of last edit</li>
 						<li class="fragment">Download a clean version of
 							<ul>
 								<li>WordPress</li>
@@ -275,10 +287,12 @@ if ( !is_wp_error( $user ) )
 								<li>Every themes</li>
 							</ul>
 						</li>
+						<li class="fragment">Search for php files in <b>wp-content/uploads/*.php</b></li>
+						<li class="fragment">Search for files with strange date of last edit</li>
 						<li class="fragment">Compare your clean/hacked version with a diff tool
 							<ul>
 								<li>Sometimes there are files renamed like <b>class-ftp-inc.php</b></li>
-								<li>Sometimes there is obfuscated code prepend in few/all the files</li>
+								<li>Sometimes there is obfuscated code prepended in few/all the files</li>
 							</ul>
 						</li>
 					</ul>
