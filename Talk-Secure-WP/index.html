@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Terni</div><div class="hashtag">#wpterni</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Teramo</div><div class="hashtag">@wpteramo</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -48,8 +48,9 @@
 						<ul class="white-black-shadow">
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
-							<li>WordPress Core Contributor/Developer</li>							
-							<li>WordPress Rome meetup and WordCamp Rome 2018</li>
+							<li>WordPress Core Contributor/Developer</li>	
+							<li>ClassicPress Founding Committee</li>						
+							<li>WordPress Rome/Terni meetup</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>Industria Italiana Software Libero Presidente</li>
 						</ul>
@@ -84,7 +85,7 @@
 
 				<section>
 					<h3>Hackers are professionals</h3>
-					<img src="pictures/lamer.gif" class="freeze full">
+					<img src="pictures/lamer.gif" class="full">
 				</section>
 
 				<section>
@@ -127,7 +128,7 @@
 						<h3>Often the bugs are in <b>plugin</b>s</h3>
 						<ul>
 							<li>Missing sanitizations</li>
-							<li>Stuff for logged users available to non-logged</li>
+							<li>Features for logged users available to non-logged</li>
 							<li>Non-standard
 								<ul>
 									<li>UI</li>
@@ -167,13 +168,13 @@
 									<li>Generate DDOS</li>
 									<li>Actions for logged/non users</li>
 									<li>Missing <b>nonce</b>s or <a href="https://codeseekah.com/2016/01/21/wordpress-nonces-vulnerabilities/">wrongly integrated</a></li>
+									<li>Abuse this calls (100000+ installation plugin <a href="https://www.wordfence.com/blog/2018/11/trends-following-vulnerability-in-wp-gdpr-compliance-plugin/">example</a>, <a href="https://blog.sucuri.net/2018/11/hackers-change-wordpress-siteurl-to-pastebin.html">example</a>)</li>
 								</ul>
 							</li>
 							<li class="fragment">Look for premium plugins not updated</li>
 							<li class="fragment">Look around for XSS</li>
 							<li class="fragment">Check for <a href="https://codeseekah.com/2012/04/09/why-wordpress-authentication-unique-keys-and-salts-are-important/">not defined SALT</a></li>
 							<li class="fragment">Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
-							<li class="fragment">Stress test</li>
 						</ul>
 				</section>
 
@@ -222,7 +223,7 @@
 				</section>
 
 				<section>
-					<h2>The first commands to run</h2>
+					<h2>First commands to run</h2>
 					<pre><code data-trim>
 wpscan --url www.example.com
 wpscan --url www.example.com --enumerate
@@ -300,6 +301,25 @@ if ( !is_wp_error( $user ) )
 								<li>Sometimes there is obfuscated code prepended in few/all the files</li>
 							</ul>
 						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why I want to hack your website?</h2>
+					<ul>
+						<li class="fragment">Ransom (data, files, domain, server)</li>
+						<li class="fragment">Scam
+							<ul>
+								<li>Redirects</li>
+								<li>Search Engine Ranking</li>
+							</ul>
+						</li>
+						<li class="fragment">Phishing</li>
+						<li class="fragment">Malware (server, visitors)</li>
+						<li class="fragment">Access to Server Resources (mining)</li>
+						<li class="fragment">SPAM</li>
+						<li class="fragment">Other services in the server/li>
+						<li class="fragment">Fun</li>
 					</ul>
 				</section>
 
