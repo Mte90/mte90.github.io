@@ -128,6 +128,8 @@ wp search-replace http://domain.com https://domain.com
 wp search-replace http://domain.com https://domain.com --network
 ##### OR #####
 wp search-replace http://olddomain.com https://newdomain.com --export=newdb.sql --all-tables
+##### Remove JS code inside post_content
+wp search-replace '<script(.*?)>(.*?)<\/script>' '' --regex --include-columns=post_content --skip-columns=gui --skip-themes --skip-plugins wp_posts --regex-flags='ms'
 					</code></pre>
 				</section>
 
@@ -288,6 +290,24 @@ done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; 
 					</code></pre>
 				</section>
 
+				<section>
+					<h2>Remove tags with 0 posts</h2>
+					<pre><code data-trim>
+wp term list post_tag --format=json > tags.json
+</code></pre>
+<pre><code data-trim>
+#!/usr/bin/python
+import json
+import os
+
+with open('tags.json') as f:
+    tags = json.load(f)
+    for taxonomy in tags:
+        if taxonomy['count'] == 0:
+            os.system("wp term delete post_tag " + str(taxonomy['term_id']))
+					</code></pre>
+				</section>
+				
 				<section>
 					<h2>Create a command</h2>
 					<pre><code data-trim>
