@@ -1,0 +1,86 @@
+.reveal h4 {
+     color: #f6f6ba;
+ }
+
+.reveal h4 span {
+    color: white;
+}
+
+.reveal li {
+    margin-top: 0.3em;
+}
+
+section h4 {
+     margin-top: -1em;
+     text-align:center !important;
+}
+
+table.demography {
+    display: inline-block;
+    margin: 1em !important;
+}
+
+table.demography tr {
+    font-size: 0.5em;
+}
+
+table.demography tbody tr:nth-child(1) th {
+   /* Styles goes here */
+    background-color: black;
+    text-align: center;
+}
+
+table.demography th {
+    background-color: #6FBE4A;
+}
+
+table.demography td {
+    text-align: right;
+}
+
+table.trainmodel {
+    margin-top: 5em;
+}
+
+.nobullet {
+    margin-top: 2em;
+    vertical-align:bottom;
+    list-style: none
+}
+
+.nobullet li {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.nobullet li img {
+    width: 2em;
+    margin-right: 1em;
+}
+
+.nobullet li.apple img,
+.nobullet li.windows img,
+.nobullet li.linux img {
+    height: 2em;
+    color:red;
+}
+
+.nobullet li {
+    text-align: right;
+    font-weight: bold;
+}
+
+.topMargin{
+    margin: 4em !important;
+}
+
+.frontpage footer {
+    color: orange;
+    font-size: 0.7em;
+    margin-top: 3em;
+}
+
+h4.centerText {
+    margin-top: 6em !important;
+}

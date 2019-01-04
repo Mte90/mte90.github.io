@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>How to extend the WordPress Rest API</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Day</div><div class="hashtag">#mozwpdays</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>How to extend the WordPress Rest API</h1>
+					<h3>and do magic stuff</h3>
+					<p>
+						<small>Created by <a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-background="pictures/relatore.jpg">
+				</section>
+
+				<section class="force-bottom" data-background="pictures/adapter.png">
+					<div class="background">
+						<h2 class="white-black-shadow">Rest API</h2>
+						<p class="white-black-shadow">
+							Providing interoperability between a system to another one with internet in a simple way.
+						</p>
+					</div>
+				</section>
+
+				<section class="force-top">
+					<img src="pictures/blow.gif">
+						<p>
+							Interact with your WordPress
+						</p>
+						<p class="fragment">with standardized JSON</p>
+				</section>
+				
+				<section>
+					<img src="pictures/where.jpg">
+				</section>
+
+				<section>
+					<h2>Now imagine</h2>
+					<p>You have your amazing</p>
+					<p class="fragment">custom post type</p>
+					<p class="fragment">with custom fields</p>
+					<p class="fragment">and you need a mobile app</p>
+					<p class="fragment">and access that data also from</p>
+					<p class="fragment">another website</p>
+					<p class="fragment"><b>How can you achieve that stuff?</b></p>
+				</section>
+
+				<section data-background="pictures/rest-api.png">
+				</section>
+				
+				<section class="force-top">
+					<h2>
+						Install WP Rest API 2 plugin on your website!
+					</h2>
+					<img src="pictures/easy.jpg">
+				</section>
+				
+				<section>
+					<img src="pictures/yes.gif">
+					<h2>Do you want an example?</h2>
+				</section>
+				
+				<section>
+					<h2><a href="https://mte90.net/wp-json">mte90.net/wp-json</a></h2>
+					<small>Docs: <a href="https://v2.wp-api.org">v2.wp-api.org</a></small>
+				</section>
+
+				<section>
+					<h2>Add a post type in the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'init', 'my_book_cpt' );
+function my_book_cpt() {
+
+$args = array(
+	'show_in_rest'       => true,
+	/** 'rest_base'          => 'books',
+	'rest_controller_class' => 'WP_REST_Posts_Controller' **/
+);
+
+register_post_type( 'book', $args );
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
+				</section>
+
+				<section>
+					<h2>Add an existing post type in the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'init', 'my_custom_post_type_rest_support', 25 );
+function my_custom_post_type_rest_support() {
+  	global $wp_post_types;
+  
+  	$post_type_name = 'book';
+  	if( isset( $wp_post_types[ $post_type_name ] ) ) {
+  		$wp_post_types[$post_type_name]->show_in_rest = true;
+  		$wp_post_types[$post_type_name]->rest_base = $post_type_name;
+  		$wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
+  	}
+}
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/custom-content-types/">http://v2.wp-api.org/extending/custom-content-types/</a></small>
+				</section>
+				
+				<section>
+					<h2>Add custom field to the Rest API</h2>
+					<pre><code data-trim contenteditable>
+					add_action( 'rest_api_init', 'slug_register_book' );
+function slug_register_starship() {
+    register_rest_field( 'post',
+        'book',
+        array(
+            'get_callback'    => 'slug_get_meta',
+            'update_callback' => 'slug_update_book',
+            'schema'          => null,
+        )
+    );
+}
+
+function slug_get_book( $object, $field_name, $request ) {
+    return get_post_meta( $object[ 'id' ], $field_name );
+}
+
+function slug_update_book( $value, $object, $field_name ) {
+    if ( ! $value || ! is_string( $value ) ) {
+        return;
+    }
+    return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
+}
+
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
+				</section>
+				
+				<section>
+					<h2>Add a custom endpoint</h2>
+					<pre><code data-trim contenteditable>
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'myplugin/v1', '/author/(?P< id>\d+)', array(
+		'methods' => 'GET',
+		'callback' => 'get_last_post_title_of_author',
+	) );
+} );
+function get_last_post_title_of_author( $data ) {
+	$posts = get_posts( array(
+		'author' => $data['id'],
+	) );
+
+	if ( empty( $posts ) ) {
+		return null;
+	}
+
+	return $posts[0]->post_title;
+}
+					</code></pre>
+					<small><a href="http://v2.wp-api.org/extending/modifying/">http://v2.wp-api.org/extending/modifying/</a></small>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="http://v2.wp-api.org/">http://v2.wp-api.org/</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>

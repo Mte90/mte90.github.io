@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>FirefoxOS Boilerplate App</title>
+
+		<meta name="description" content="Proviamo le API con questo boilerplate!">
+		<meta name="author" content="Mte90 alias Daniele Scasciafratte">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/mozilla.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="firefoxos-boilerplate-app" class="level2">
+<h2>FirefoxOS Boilerplate App</h2>
+<figure>
+<img src="./img/logo.png" />
+</figure>
+<p>Programmare con una marcia in più!</p>
+<blockquote>
+<p>Firefox Os WorkShop Bari<br />Relatore: Mte90 alias Daniele Scasciafratte (<span class="citation" data-cites="Mte90Net">@Mte90Net</span>)</p>
+</blockquote>
+</section>
+<section id="chi-sono" class="level2">
+<h2>Chi sono</h2>
+<p>Sono Daniele Scasciafratte conosciuto nel web come <a href="http://www.mte90.net">Mte90</a></p>
+<ul>
+<li>Programmatore amante dell'Open Source e della sua filosofia</li>
+<li>Geek da quando ho iniziato a smontare oggetti elettronici</li>
+<li>Utente Debian (Sid) GNU/Linux dal 2009</li>
+<li>Amante di KDE e delle Qt</li>
+<li>Fan di Mozilla da sempre</li>
+<li>Firefox OS Training Lead per l'Italia</li>
+<li>Programmatore Wordpress tra un accidenti e l'altro</li>
+</ul>
+</section>
+<section id="il-talk" class="level2">
+<h2>Il talk</h2>
+<p>Sarà un talk molto veloce in cui vedremo cos'è il Boilerplate, che API ci sono e quanto ci sarà utile per il workshop</p>
+</section>
+<section id="vincere-facile" class="level2">
+<h2>Vincere facile</h2>
+<p><img src="./img/vincere.jpg" /><br />Codice già pronto per fare foto, aggiungere un contatto in rubrica, inviare un SMS, aprire un video, verificare la batteria, dove siamo, come fare il caffè ecc.</p>
+</section>
+<section id="firefox-os-boilerplate-app" class="level2">
+<h2>Firefox OS Boilerplate App</h2>
+<ul>
+<li>Funziona</li>
+<li>Contiene esempi per la maggior parte delle API</li>
+<li>Il tema grafico è quello di <strong>Gaia</strong></li>
+<li>Multilingua</li>
+<li>Open Web Apps</li>
+</ul>
+</section>
+<section id="vediamo-le-api" class="level2">
+<h2>Vediamo le API</h2>
+<p>Prima di farvi vedere il boilerplate in diretta parliamo un'attimo delle API disponibili</p>
+</section>
+<section id="quante-api-in-giro" class="level2">
+<h2>Quante API in giro</h2>
+<figure>
+<img src="./img/bee.png" />
+</figure>
+<p>Alcune API native di FirefoxOS</p>
+<blockquote>
+<p>WebTelephony, Vibration API, WebSMS, Idle API, Screen Orientation, Settings API, Power manager API, Mobile Connection API, TCP Socket API, Geolocation API, WiFi Information API, Device Storage API, Contacts API, Mouse Lock API, Open WebApps, WebBluetooth, Network Information API, Battery Status API, Alarm API, Browser API, Time/Clock API, Web Activities, Push Notification API, Permission API, WebFM API, FileHandle API, Network Stats API, WebPayment</p>
+</blockquote>
+</section>
+<section id="da-non-dimenticare" class="level2">
+<h2>Da non dimenticare</h2>
+<p>Le API sono presentate al <strong>W3C</strong> come draft, per farle diventare degli standard HTML5</p>
+<p><strong>Alcune API sono disponibili solo per App certificate</strong></p>
+</section>
+<section id="app-a-pagamento" class="level2">
+<h2>App a pagamento</h2>
+<p><img src="./img/paid.jpg" /><br />Mozilla ha realizzato un API in Javascript per i pagamenti<br />Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments">https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments</a><br /><small>Approfondimento: <a href="https://hacks.mozilla.org/2013/10/working-with-receipts-for-paid-apps/">Working with receipts for paid apps</a></small></p>
+</section>
+<section id="javascript-is-everywhere" class="level2">
+<h2>Javascript is everywhere!</h2>
+<p><img src="./img/javascript.jpg" /><br />Per usare tutte queste API si usa JavaScript!</p>
+</section>
+<section id="workflow" class="level2">
+<h2>Workflow</h2>
+<figure>
+<img src="./img/workflow.jpg" />
+</figure>
+</section>
+<section id="workflow-di-sviluppo" class="level2">
+<h2>Workflow di sviluppo</h2>
+<ul>
+<li>Creare un manifest.webapp</li>
+<li>Realizzare la UI</li>
+<li>Sviluppare e provare tramite browser</li>
+<li>Testare sul simulatore/device</li>
+<li>Se Hosted caricare sul proprio server web (anche Github per esempio)</li>
+<li>Se Packaged comprimere tutto in un file zip</li>
+</ul>
+</section>
+<section id="polyfill" class="level2">
+<h2>Polyfill</h2>
+<p><img src="./img/polyfill.jpg" /><br />Esiste una polyfill per usare le MozActivity sul proprio browser, utile per il debug<br />Link: <a href="https://github.com/Mte90/moz-polyfills">https://github.com/Mte90/moz-polyfills</a></p>
+</section>
+<section id="il-boilerplate" class="level2">
+<h2>Il boilerplate</h2>
+<p>Dopo tutta questa teoria vediamo il boilerplate!</p>
+</section>
+<section id="le-cartelle" class="level2">
+<h2>Le cartelle:</h2>
+<ul>
+<li>css - La grafica</li>
+<li>fonts - Il font Fira</li>
+<li>images - Logo e immagini per la grafica</li>
+<li>js - Il codice che ci interessa</li>
+<li>locales - le varie traduzioni</li>
+<li>manifest.appcache - Saltiamolo per oggi</li>
+<li>manifest.webapp - I metadata dell'applicazione</li>
+<li>index.html - Il markup dell'applicazione</li>
+</ul>
+</section>
+<section id="il-codice-javascript" class="level2">
+<h2>Il codice javascript</h2>
+<ul>
+<li>base.js - Installa l'applicazione tramite il manifest</li>
+<li>l10n.js - Libreria per il multilingua (sfrutta dei file ini)</li>
+<li>offline.js - Verifica se siamo connessi</li>
+<li>webapp.js - La magia</li>
+</ul>
+</section>
+<section id="webapp.js" class="level2">
+<h2>Webapp.js</h2>
+<p>Questo file contiene i vari esempi per molte WebActivity ed anche alcune funzionalità HTML5 (quindi standard)<br /><small>PS: Daniele ricordati di aprire l'editor e di fare vedere il boilerplate!</small></p>
+</section>
+<section id="siti-web-di-riferimento" class="level2">
+<h2>Siti web di riferimento</h2>
+<ul>
+<li><a href="https://hacks.mozilla.org/category/firefox-os/">Mozhacks</a> - Il blog di Mozilla dedicato agli sviluppatori</li>
+<li><a href="https://developer.mozilla.org/it/">Mozilla Developer Network</a> - La miglior fonte di informazione per lo sviluppo web</li>
+<li><a href="https://marketplace.firefox.com/developers/">Developers Hub</a> - Portale del Marketplace dedicato agli sviluppatori</li>
+<li><a href="http://buildingfirefoxos.com/">Building FirefoxOS</a> - Esempi, codice e documentazione per gli sviluppatori</li>
+<li><a href="http://www.github.com">Github</a> - Molte applicazioni sono presenti su Github</li>
+<li><a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">https://github.com/robnyman/Firefox-OS-Boilerplate-App</a></li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2></h2>
+<p><img src="./img/question.jpg" /><br />Se avete domande fatele adesso o mai più (scherzo)<br /><br> Link presentazione: <a href="http://goo.gl/I6hZWM">http://goo.gl/I6hZWM</a><br />Presentazione di:<br />Daniele Scasciafratte - http://twitter.com/Mte90Net - <a href="http://www.mte90.net">Mte90.net</a></p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				touch: true,
+				history: true,
+				center: true,
+				loop: true,
+				width:'100%',
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

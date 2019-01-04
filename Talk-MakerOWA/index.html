@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Il web, i maker e le Open Web App</title>
+
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+    <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+    <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" media="print" href="core/print.css">
+
+    <!-- Required Modernizr file -->
+    <script src="modernizr.custom.js"></script>
+</head>
+
+<body>
+    <div class="deck-container">
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+        <section class="slide" id="title">
+            <h1 style="margin-top:-70px">Il web, i maker e le Open Web App</h1>
+            <h6 style="margin-top:130px" class="vcenter">Daniele "Mte90" Scasciafratte - Maker Faire Roma 2014</h6>
+        </section>
+
+        <section class="slide" id="about">
+            <h2>Chi sono</h2>
+            <img src="img/foto.jpg" />
+            <small class="center">Una foto vale più di mille parole</small>
+            <br>
+            <ul>
+                <li>Classe 1990</li>
+                <li>Fanatico Open Source</li>
+                <li>Debian user dal 2009</li>
+                <li>Amante di KDE e delle Qt</li>
+                <li>Wordpress Developer</li>
+                <li>Firefox OS Training Lead per l'Italia</li>
+                <li><strong>Mozillian</strong> - Collaboratore attivo del progetto Mozilla</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="topics">
+            <h2>Facciamoci delle domande</h2>
+            <div class="deck-slide-scaler">
+                <h3>Per gli utenti è più semplice:</h3>
+                <ul>
+                    <li id="q1" class="slide">Scaricare un'app sul proprio smartphone (probabilmente multipiattaforma)?</li>
+                    <li id="q1bis" class="slide"><strong>O</strong></li>
+                    <li id="q2" class="slide">Visitare un sito online?</li>
+                    <li id="q2bis" class="slide"><strong>Ed</strong></li>
+                    <li id="q3" class="slide">Installarlo come se fosse un'app nativa?</li>
+                    <li id="q3bis" class="slide"><strong>Infine</strong></li>
+                    <li id="q4" class="slide">Anche sul proprio computer?</li>
+                    <li id="q4bis" class="slide"><strong>Per non farci mancare niente</strong></li>
+                    <li id="q5" class="slide">Caricarla su un marketplace libero, gratuito ed internazionale?</li>
+                    <li id="q5bis" class="slide"><strong>Per dessert invece</strong></li>
+                    <li id="q6" class="slide">Potremmo farci anche il nostro marketplace!</li>
+                    <li id="q6bis" class="slide"><strong>Oppure il dolce del giorno</strong></li>
+                    <li id="q7" class="slide">Far installare l'app dal nostro sito</li>
+                    <li id="q7bis" class="slide"><strong>Con l'opzione</strong></li>
+                    <li id="q8" class="slide">Dall'interfaccia stessa</li>
+                    <li id="q9bis" class="slide"><strong>Dimentico qualcosa?</strong></li>
+                    <li id="q10" class="slide">Il conto ed il digestivo, grazie</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="slide" id="drum">
+            <h1><img src="img/drum.gif" /></h1>
+        </section>
+
+        <section class="slide" id="owa">
+            <h1>Open Web App</h1>
+        </section>
+
+        <section class="slide" id="owa1">
+            <h2>Perchè Open</h2>
+            <ul>
+                <li id="open1" class="slide">Realizzate con le tecnologie standard open per il web: <b>HTML5, CSS, Javascript</b>
+                </li>
+                <li id="open2" class="slide">Presentate al W3C per una loro <a href="http://www.w3.org/2008/webapps/manifest/">standardizzazione</a>
+                </li>
+            </ul>
+            <h2>Perchè Web</h2>
+            <ul>
+                <li id="web1" class="slide">Sfruttano il browser</li>
+                <li id="web2" class="slide">Compatibili con le tecnologie Mozilla: <b>Firefox, Firefox for Android e Firefox OS</b>
+                </li>
+            </ul>
+            <h2>Perchè App</h2>
+            <ul>
+                <li id="app1" class="slide">Si installano nativamente sul proprio sistema</li>
+                <li id="app2" class="slide">Si comportano come se fossero un vero software</li>
+                <li id="app3" class="slide">Verrà avviata a tutto schermo</li>
+                <li id="app4" class="slide">Può essere sia online che locale</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="requirements">
+            <h2>Requisiti</h2>
+            <h3>Per gli utenti:</h3>
+            <p class="slide" id="r1">Firefox o Firefox for Android o Firefox OS</p>
+            <h3>Per gli sviluppatori:</h3>
+            <p class="slide" id="r2">Firefox per lo sviluppo</p>
+            <p class="slide" id="r3">Firefox o Firefox for Android o Firefox OS (anche il simulatore) per il testing</p>
+            <p class="slide" id="r4">Il proprio editor/IDE preferito</p>
+        </section>
+
+        <section class="slide" id="api">
+            <h2>Ma le API?</h2>
+            <p class="slide" id="api1">Le API richiedono dei privilegi che vanno specificati per una corretta esecuzione.</p>
+            <p class="slide" id="api2">Con JavaScript possiamo accedere alle API standard HTML5 e quelle proprietarie (in standardizzazione) del sistema.</p>
+            <pre class="slide" id="api3">WebTelephony, Vibration API, WebSMS, Idle API, Screen Orientation, Settings API, Power manager API, Mobile Connection API, TCP Socket API, Geolocation API, WiFi Information API, Device Storage API, Contacts API, Mouse Lock API, Open WebApps, WebBluetooth, Network Information API, Battery Status API, Alarm API, Browser API, Time/Clock API, Web Activities, Push Notification API, Permission API, WebFM API, FileHandle API, Network Stats API, WebPayment, IndexedDB, Archive API, Ambient Light Sensor API, Proximity Sensor, SystemXHR, WebNFC etc...</pre>
+            <p class="slide" id="api4">In sviluppo: WebUSB, WebSerial, WebMidi, Background Services, WebPrintAPI, PresentationAPI</p>
+            <a href="https://wiki.mozilla.org/WebAPI">https://wiki.mozilla.org/WebAPI</a>
+        </section>
+
+
+
+        <section class="slide" id="work">
+            <h2>Come funziona a livello tecnico</h2>
+            <ul>
+                <li id="w1" class="slide">File <b>manifest.webapp</b>: La carta d'identità</li>
+                <li id="w2" class="slide">4 righe di Javascript</li>
+            </ul>
+            <h2>Come funziona per l'utente</h2>
+            <ul>
+                <li id="w3" class="slide">Il sistema apre una finestra</li>
+                <li id="w4" class="slide">Chiede se installare</li>
+                <li id="w5" class="slide">Se conferma verrà installata</li>
+                <li id="w6" class="slide">Verrà piazzata l'icona dell'app su Firefox for Android o Firefox OS</li>
+                <li id="w7" class="slide">Verrà piazzato il collegamento nel menu di sistema con Firefox</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="esistente">
+            <h2>I progetti esistenti</h2>
+            <p>Implementare le funzionalità che abbiamo visto è molto semplice!</p>
+            <p>Rune Audio implementa un'Open Web App online (accede al web server) e mostra l'interfaccia web che è responsive e supporta gli eventi touch</p>
+            <p>In questo caso si tratta di un'app online ovvero hosted</p>
+
+            <a class="center" href="https://github.com/RuneAudio/RuneUI/pull/15">support for firefox open web app #15</a>
+        </section>
+
+        <section class="slide" id="rune">
+            <h2>Rune Audio</h2>
+            <img src="img/ra.png" />
+        </section>
+
+        <section class="slide" id="packaged">
+            <h2>App locali?</h2>
+            <p class="slide">Adesso vedremo un'app packaged che sfrutta la Notification API per informare l'utente e che accenda o spenga dei led</p>
+            <p class="slide">Sfruttando un'Arduino Yun con un server REST connesso ad internet.</p>
+            <p class="slide">Andando su http://mte90.github.io/Talk-OWA-App con Firefox verrà avviata l'installazione dell'app.</p>
+        </section>
+        
+        <section class="slide" id="ff_notify">
+            <h2>Firefox con notifiche</h2>
+            <img src="img/ff_notify.png">
+        </section>
+        
+        <section class="slide" id="android_screen">
+            <h2>Android Launcher</h2>
+            <img src="img/android_screen.png">
+        </section>
+        
+        <section class="slide" id="android_launch">
+            <h2>Android con app avviata</h2>
+            <img src="img/android_launch.jpg">
+        </section>
+        
+        <section class="slide" id="android_app">
+            <h2>Android con dimostrazione</h2>
+            <img src="img/android_app.jpg">
+        </section>
+        
+        <section class="slide" id="android_notify">
+            <h2>Android con notifiche</h2>
+            <img src="img/android_notify.png">
+        </section>
+
+        <section class="slide" id="ffos_screen">
+            <h2>Firefox OS Launcher</h2>
+            <img src="img/ffos_screen.png">
+        </section>
+        
+        <section class="slide" id="ffos_app">
+            <h2>Firefox OS con app avviata</h2>
+            <img src="img/ffos_app.png">
+        </section>
+        
+        <section class="slide" id="ffos_notify">
+            <h2>Firefox OS con notifiche</h2>
+            <img src="img/ffos_notify.png">
+        </section>
+        
+        <section class="slide" id="js_switch">
+            <h2>Codice JS per lo switch dei led</h2>
+            <pre><code>
+            url_green_analog = 'http://' + $('.ip').val() + '/arduino/analog/6/';
+            $.get( url_green_digital, function( data ) { 
+                $('.led-green').attr('checked', check_bool(data));
+                    $('.led-green').click(function() {
+                        if($(this).is(':checked'))  {
+                            url_green_ = url_green_analog + '200';
+                        } else {
+                            url_green_ = url_green_analog + '0';
+                        }
+                        $.get( url_green_, function( data ) {  });
+                    });
+            });
+            </code></pre>
+        </section>
+        
+        <section class="slide" id="js_notify">
+            <h2>Codice JS per mostrare la notifica</h2>
+            <pre><code>
+            url_green_digital = 'http://' + $('.ip').val() + '/arduino/digital/6/';
+            $.get( url_green_digital, function( data ) { 
+                if (Notification.permission !== 'denied') {
+                    Notification.requestPermission(function (permission) {
+                        if(!('permission' in Notification)) {
+                            Notification.permission = permission;
+                        }
+                    });
+                }
+                if (Notification.permission === 'granted') {
+                    new Notification('Pin 6 Green Led', {
+                        body : 'Pin state: ' + data
+                    });
+                }
+            });
+            </code></pre>
+        </section>
+
+        <section class="slide" id="wffos">
+            <h2>Cos'è Firefox OS</h2>
+            <ul>
+                <li id="wffos1" class="slide">Sistema operativo mobile completamente open source</li>
+                <li id="wffos2" class="slide">Kernel basato su Linux ed Android chiamato Gonk</li>
+                <li id="wffos3" class="slide">Motore grafico Gecko che elabora HTML5 CSS e Javascript</li>
+                <li id="wffos4" class="slide">Interfaccia grafica chiamata Gaia completamente in HTML5 CSS e Javascript</li>
+                <li id="wffos5" class="slide">Pensato per portare il web mobile a tutti</li>
+                <li id="wffos6" class="slide">Device a basso costo</li>
+                <li id="wffos7" class="slide">Intuitivo con alto controllo della privacy</li>
+                <li id="wffos8" class="slide">In vendita ufficiale in oltre 30 paesi</li>
+            </ul>
+        </section>
+
+        <section class="slide" id="ffos">
+            <h2>Firefox OS è disponibile per:</h2>
+            <ul>
+                <li id="ffos2" class="slide">Pandaboard</li>
+                <li id="ffos1" class="slide">Raspberry</li>
+                <li id="ffos3" class="slide">APC Rock</li>
+                <li id="ffos4" class="slide">Matchstick - https://hacks.mozilla.org/2014/09/matchstick-brings-firefox-os-to-your-hdtv-be-the-first-to-get-a-developer-stick/</li>
+            </ul>
+            <p class="slide" id="ffos4">In modo ufficiale, quindi supporto e documentazione da Mozilla.</p>
+            <p class="slide" id="ffos5">Come riciclare un dispositivo Firefox OS <a href="http://www.slideshare.net/janjongboom/jsconf-eu-2014-abusing-phones-to-make-the-internet-of-things">http://www.slideshare.net/janjongboom/jsconf-eu-2014-abusing-phones-to-make-the-internet-of-things</a>
+            </p>
+        </section>
+        
+        <section class="slide" id="domande">
+            <h2>Domande</h2>
+            <img src="img/question.jpg">
+            <p>Presentazione: <a href="http://mte90.github.io/Talk-MakerOWA/">http://mte90.github.io/Talk-MakerOWA/</a><br>
+            Talk di Daniele Mte90 Scasciafratte - @Mte90net</p>
+        </section>
+        
+        <div aria-role="navigation">
+            <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+            <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+        </div>
+
+    </div>
+
+    <!-- Required JS files. -->
+    <script src="jquery.min.js"></script>
+    <script src="core/deck.core.js"></script>
+
+    <!-- Extension JS files. Add or remove as needed. -->
+    <script src="extensions/menu/deck.menu.js"></script>
+    <script src="extensions/navigation/deck.navigation.js"></script>
+    <script src="extensions/scale/deck.scale.js"></script>
+
+    <!-- Initialize the deck. You can put this in an external file if desired. -->
+    <script>
+        $(function () {
+            $.deck('.slide');
+        });
+    </script>
+</body>
+
+</html>

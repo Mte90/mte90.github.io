@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Come fare una patch per WordPress</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordCamp Torino </div><div class="hashtag">#wctrn</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Come fare una patch per WordPress</h1>
+					<h3>Divertiamoci un po'!</h3>
+					<p>
+						<small>Created by <a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder Codeat - Full Stack Developer</li>
+							<li>Mozillian & Mozilla Reps & Participation Leader</li>
+							<li>Articolista per AndMore, ChimeraRevo e TechEconomy</li>
+							<li>Utente Debian Linux dal 2009</li>
+							<li>WordPress Contributor/Developer/Translator</li>
+							<li>Open Source Addicted</li>
+							<li>Industria Italiana Software Libero Vice President</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<img src="pictures/contribute.jpg">
+				</section>
+				
+				<section data-background="pictures/start.gif">
+					<div class="fragment background">
+						<ul class="white-black-shadow">
+							<li class="fragment">Ticket</li>
+							<li class="fragment">Ambiente di lavoro</li>
+							<li class="fragment">Keywords</li>
+							<li class="fragment">Facciamo una patch</li>
+							<li class="fragment">Carichiamo la patch</li>
+							<li class="fragment">Materiale</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="force-top" data-background="pictures/noob.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Good First Bugs</h2>
+						<p>
+							<a class="white-black-shadow" target="_blank" href="https://core.trac.wordpress.org/tickets/good-first-bugs">https://core.trac.wordpress.org/tickets/good-first-bugs</a>
+						</p>
+					</div>
+				</section>
+				
+				<section class="force-bottom" data-background="pictures/credere.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Needs refresh</h2>
+						<p>
+							<a class="white-black-shadow" target="_blank" href="https://core.trac.wordpress.org/query?status=!closed&keywords=~needs-refresh">https://core.trac.wordpress.org/query?status=!closed&keywords=~needs-refresh</a>
+						</p>
+					</div>
+				</section>
+
+				<section class="force-bottom" data-background="pictures/excellent.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">No Patch</h2>
+						<p>
+							<a class="white-black-shadow" target="_blank" href="https://core.trac.wordpress.org/tickets/no-patch">https://core.trac.wordpress.org/tickets/no-patch</a>
+						</p>
+					</div>
+				</section>
+				
+				<section class="force-bottom" data-background="pictures/office.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Ambiente di lavoro</h2>
+					</div>
+				</section>
+				
+				<section class="force-top">
+					<h3>Varying Vagrant Vagrants</h3>
+					<div>
+					<ul>
+						<li class="fragment">Nginx, MySQL, OpCache, Memcache, xDebug</li>
+						<li class="fragment">PHPMyAdmin, PHPMemcachedAdmin, WebGrind, MailCatcher</li>
+						<li class="fragment">PHPUnit, WP-CLI, PHPCodeSniffer, Composer</li>
+						<li class="fragment">WP Stable, WP Trunk, WP Trunk with dev files, WP Trunk build files</li>
+						<li class="fragment">Super Powerful Dashboard</li>
+						<li class="fragment">Ogni sito ha un suo file di log</li>
+					</ul>
+					</div>
+					<p class="fragment">Vediamolo in azione!</p>
+				</section>
+
+				<section class="force-top">
+					<h2>Varying Vagrant Vagrants</h2>
+					<div>
+					<ul>
+						<li><a target="_blank" href="https://github.com/Varying-Vagrant-Vagrants/VVV">https://github.com/Varying-Vagrant-Vagrants/VVV</a></li>
+						<li class="fragment">Alla scoperta di Vagrant e VVV per lo sviluppo WordPress - <a target="_blank" href="http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/">http://wpandmore.info/sviluppo-wordpress-vagrant-vvv/</a></li>
+						<li class="fragment">Scopri come creare Ambienti di Sviluppo adatti a tutte le Situazioni! - <a target="_blank" href="https://www.youtube.com/watch?v=3wVX-TKKoU8">https://www.youtube.com/watch?v=3wVX-TKKoU8</a></li>
+					</ul>
+					</div>
+				</section>
+				
+				<section class="force-top" data-background="pictures/standard.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">WordPress Coding Standards</h2>
+						<p><a class="white-black-shadow" href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/" target="_blank">https://make.wordpress.org/core/handbook/best-practices/coding-standards/</a></p>
+					</div>
+				</section>
+				
+				<section data-transition="slide" data-background-transition="concave" data-background="pictures/many.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Keywords</h2>
+					</div>
+				</section>
+				
+				<section>
+						<ul>
+							<li>needs-patch/has-patch</li>
+							<li class="fragment">dev-feedback</li>
+							<li class="fragment">needs-testing</li>
+							<li class="fragment">needs-unit-tests</li>
+							<li class="fragment">needs-docs</li>
+							<li class="fragment">needs-codex</li>
+						</ul>
+				</section>
+
+				<section id="fragments">
+					<h2>Proviamo un ticket</h2>
+					<p class="fragment">Quale?</p>
+					<p class="fragment"><a href="http://mte90.net/wp-ticket" target="_blank">http://mte90.net/wp-ticket</a></p>
+					<p class="fragment">Sporchiamoci le mani!</p>
+				</section>
+				
+				<section class="force-bottom" data-background="pictures/create-patch.png">
+					<div class="background">
+						<h2 class="white-black-shadow">Creiamo la patch</h2>
+						<div>
+							<pre><code>svn diff > [# ticket].[# patch].patch</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Inviamo la patch</h2>
+					<p class="fragment roll-in">Spieghiamo la differenza rispetto la patch precedente</p>
+					<p class="fragment roll-in">Aggiorniamo le varie keyword</p>
+					<p class="fragment roll-in">Aspettiamo</p>
+					<p class="fragment roll-in">Aspettiamo..</p>
+					<p class="fragment roll-in">Partecipiamo nel ticket</p>
+					<p class="fragment roll-in">Aspettiamo...</p>
+				</section>
+				
+				<section>
+					<h2>WordPress Release Notes with contributor's names</h2>
+					<img src="pictures/contributor.png">
+				</section>
+
+				<section>
+					<img src="pictures/profilo.png" alt="" style="max-width: 900px;">
+				</section>
+
+				<section class="force-bottom" data-background="pictures/mindblown.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Manuale</h2>
+						<p>
+							<a class="white-black-shadow" href="https://make.wordpress.org/core/handbook/" target="_blank">https://make.wordpress.org/core/handbook/</a>
+						</p>
+					</div>
+				</section>
+
+				<section class="force-bottom" data-background="pictures/awesome.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Awesome WordPress Developer Tips</h2>
+						<p>
+							<a class="white-black-shadow" href="https://github.com/Mte90/awesome-wordpress-developer-tips" target="_blank">https://github.com/Mte90/awesome-wordpress-developer-tips</a>
+						</p>
+					</div>
+				</section>
+				
+				<section>
+					<h2>Partecipa</h2>
+					<p>
+						<a href="https://make.wordpress.org/core/" target="_blank">https://make.wordpress.org/core/</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Talk Ispirato da</h2>
+					<p>
+						<a href="https://deliciousbrains.com/developers-guide-contributing-wordpress-core/" target="_blank">https://deliciousbrains.com/developers-guide-contributing-wordpress-core/</a>
+					</p>
+				</section>
+
+				<section>
+					<img src="pictures/question.gif" alt="" style="max-width: 900px;">
+					<a href="http://mte90.github.io/Presentazione-WP-Patch/">http://mte90.github.io/Presentazione-WP-Patch/</a><br>
+					<a href="http://twitter.com/Mte90Net">@Mte90Net</a> 
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>

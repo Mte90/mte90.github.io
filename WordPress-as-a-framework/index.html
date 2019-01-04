@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WordPress as a Framework 2.0</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte @Mte90Net - WordCamp Bologna</div><div class="hashtag">#wcbol</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>WordPress as a Framework 2.0</h1>
+					<h4>no longer only blog cms</h4>
+					<p>
+     <small>By <a href="http://daniele.tech">Daniele Scasciafratte</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
+					<div class="background">
+     <h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+     <ul class="white-black-shadow">
+     	<li>Co Founder Codeat - Full Stack Developer</li>
+     	<li>Mozilla Reps & Mozilla TechSpeaker</li>
+     	<li>WordPress Contributor/Developer/Translator</li>
+     	<li>Open Source Addicted</li>
+     	<li>Industria Italiana Software Libero President</li>
+     </ul>
+					</div>
+				</section>
+
+				<section class="force-bottom" data-transition="slide" data-background-transition="convex" data-background="img/forget.gif">
+					<div class="background">
+     <h2 class="white-black-shadow">forget what you know about wordpress</h2>
+					</div>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave">
+					<img src="img/cms.png">
+				</section>
+
+				<section>
+     <h2>Web Application Framework</h2>
+
+     <p>A software framework is designed to support the development of dynamic websites, web applications, web services and web resources. The framework aims to alleviate the overhead associated with common activities performed in web development. For example, many frameworks provide libraries for database access, templating frameworks and session management, and they often promote code reuse.</p>
+
+     <small>Cit: http://en.wikipedia.org/wiki/Web_application_framework</small>
+				</section>
+
+				<section>
+					<img src="img/loc.png">
+				</section>
+
+				<section>
+<h2>Really a Framework?</h2>
+<ul>
+<li><b>Web Application</b>: <span class="fragment">CRUD <i><i>&#10003;</i></i></span></li>
+<li><b>Web Services</b>: <span class="fragment">XML-RPC <i>&#10003;</i>,</span> <span class="fragment">JSON REST API <i>&#10003;</i></span></li>
+<li><b>Database</b>: <span class="fragment">MySQL & derivated <i>&#10003;</i>,</span> <span class="fragment">PosteGreSQL (partially) <i>&#10003;</i></span></li>
+<li><b>Template System</b>: <span class="fragment">Template Hierarchy <i>&#10003;</i>,</span> <span class="fragment">Your Favorite <i>&#10003;</i></span></li>
+<li><b>User Management</b>: <span class="fragment">Multiple User Roles <i>&#10003;</i>,</span> <span class="fragment">Capabilities <i>&#10003;</i></span></li>
+<li><b>Expandable</b>: <span class="fragment">Free Plugins <i>&#10003;</i>, </span> <span class="fragment">Premium Plugins <i>&#10003;</i></span></li>
+<li><b>Meta</b>: <span class="fragment">Custom Meta <i>&#10003;</i>, </span> <span class="fragment">Custom Tables <i>&#10003;</i></span></li>
+<li><b>Update</b>: <span class="fragment">Auto Update <i>&#10003;</i></span></li>
+<li><b>Backend UI</b>: <span class="fragment">Standard Theme <i>&#10003;</i>,</span> <span class="fragment">Custom Theme <i>&#10003;</i></span></li>
+<li><b>URL Rewrite</b>: <span class="fragment">Native system <i>&#10003;</i></span></li>
+<li><b>AJAX</b>: <span class="fragment">Native system <i>&#10003;</i></span></li>
+<li><b>Multisite</b>: <span class="fragment">Native system <i>&#10003;</i></span></li>
+<li><b>Cache</b>: <span class="fragment">Native system <i>&#10003;</i>,</span><span class="fragment">Expandable <i>&#10003;</i></span></li>
+</ul>
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex">
+                    <img src="img/hook.png" style="margin-top: -15px;">
+                </section>
+
+                <section data-transition="slide">
+					<h2>Examples of reimplementation</h2>
+                    <img src="img/similar-hooks.png" style="margin-top: -15px;">
+                </section>
+
+				<section>
+                    <h2>Filter Hook</h2>
+                    <pre><code data-trim contenteditable>
+function custom_excerpt_length( $length ) {
+    return 30;
+}
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+                    </code></pre>
+                    <h2>Action Hook</h2>
+					<pre><code data-trim contenteditable>
+function modify_post_type_supports() {
+    remove_post_type_support( 'pages', 'comments' );
+}
+                    
+add_action( 'init', 'modify_post_type_supports', 11 ); 
+                    </code></pre>
+				</section>
+
+				<section data-transition="slide" data-background-transition="convex" data-background="img/bang.gif" class="force-bottom">
+                    <div class="background">
+                        <h2 class="white-black-shadow">we just started!</h2>
+                    </div>
+				</section>
+
+				<section data-transition="slide" data-background-transition="convex" data-background="img/backend.png" class="fullcover">
+                    <h2 class="black-shadow">Custom Post type</h2>
+				</section>
+
+                <section>
+                    <h2>Custom post type</h2>
+                    <pre style="height:550px"><code style="max-height:550px" data-trim contenteditable>
+function show() {
+    $labels = array(
+        'name'                => _x( 'Shows', 'Post Type General Name', 'file_language' ),
+        'singular_name'       => _x( 'Show', 'Post Type Singular Name', 'file_language' ),
+        'menu_name'           => __( 'Show', 'file_language' ),
+        'name_admin_bar'      => __( 'Show', 'file_language' ),
+        'parent_item_colon'   => __( 'Parent Item:', 'file_language' ),
+        'all_items'           => __( 'All Items', 'file_language' ),
+        'add_new_item'        => __( 'Add New Item', 'file_language' ),
+        'add_new'             => __( 'Add New', 'file_language' ),
+        'new_item'            => __( 'New Item', 'file_language' ),
+        'edit_item'           => __( 'Edit Item', 'file_language' ),
+        'update_item'         => __( 'Update Item', 'file_language' ),
+        'view_item'           => __( 'View Item', 'file_language' ),
+        'search_items'        => __( 'Search Item', 'file_language' ),
+        'not_found'           => __( 'Not found', 'file_language' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'file_language' ),
+        );
+    $args = array(
+        'label'               => __( 'show', 'file_language' ),
+        'description'         => __( 'Show Description', 'file_language' ),
+        'labels'              => $labels,
+        'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', ),
+        'taxonomies'          => array( 'portfolio_category' ),
+        'hierarchical'        => false,
+        'public'              => true,
+		'show_in_rest'        => true, // Support for rest
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_position'       => 5,
+        'show_in_admin_bar'   => true,
+        'show_in_nav_menus'   => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'page',
+        );
+    register_post_type( 'show', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'show', 0 );
+                    </code></pre>
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex" data-background="img/omg.gif">
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex" data-background="img/media.png" class="fullcover">
+                    <h2 class="black-shadow">Media manager</h2>
+				</section>
+
+				<section>
+					<h2>External Libraries Integrated</h2>
+
+					<ul>
+     <li>jQuery</li>
+     <li>jQuery UI </li>
+     <li>Backbone.JS </li>
+     <li>Underscore.JS </li>
+     <li>TinyMCE</li>
+     <li>MediaElement.JS</li>
+     <li>Thickbox</li>
+     <li>SimplePIE</li>
+     <li>PHP Mailer</li>
+     <li>Requests</li>
+					</ul>
+				</section>
+
+                <section>
+                    <h2>Native API Integrated</h2>
+					<ul>                        
+     <li class="fragment">Widgets</li>
+     <li class="fragment">Options/Settings</li>
+     <li class="fragment">Shortcode</li>
+     <li class="fragment">Transients</li>
+     <li class="fragment">Metadata</li>
+     <li class="fragment">oEmbed</li>
+     <li class="fragment">Cron</li>
+     <li class="fragment">Rewrite</li>
+     <li class="fragment">Pointer</li>
+     <li class="fragment">Heartbeat</li>
+     <li class="fragment">Multisite</li>
+     <li class="fragment">REST</li>
+     <li class="fragment">.po, .mo support</li>
+     <li class="fragment">Over 8000+ tests</li>
+					</ul>
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex" data-background="img/fantastic.gif" class="fullcover">
+
+                </section>
+
+                <section data-transition="slide">
+                    <h2>PHP support</h2>
+					<ul>                        
+     <li class="fragment">Minimum Requirement: PHP 5.2, MariaDB 10, MySQL 5.6</li>
+     <li class="fragment">Recommend Requirement: PHP 7.2, MariaDB 10, MySQL 5.6</li>
+     <li class="fragment">Requires PHP for plugin: Maybe 4.9.7</li>
+					</ul>
+                </section>
+
+                <section data-transition="slide">
+                    <h2>WP CLI</h2>
+					<ul> 
+     <li class="fragment">Easy to install</li>
+     <li class="fragment">Easy to expand by plugins or packages</li>
+     <li class="fragment">Command for profiling</li>
+     <li class="fragment">No login required</li>
+     <li class="fragment">Same features of WordPress</li>
+     <li class="fragment">More features of WordPress</li>
+     <li class="fragment">No webserver limits</li>
+					</ul>
+                </section>
+
+                <section data-transition="slide" data-background-transition="convex" data-background="img/speed.png">
+                    <div class="background">
+                        <h2 class="white-black-shadow">Percona DB, MariaDB, MemCache, Varnish, Nginx, CDN, PageSpeed</h2>
+                    </div>
+                </section>
+
+                <section data-transition="slide">
+                    <h2>Composer</h2>
+					<ul> 
+     <li class="fragment">A lot of plugins or libraries easy to integrate in your project/plugin</li>
+     <li class="fragment">https://github.com/CMB2/CMB2</li>
+     <li class="fragment">https://github.com/wpbp/cronplus</li>
+     <li class="fragment">https://github.com/lucatume/wp-browser</li>
+     <li class="fragment">https://github.com/wpackagist-plugin/posts-to-posts</li>
+     <li class="fragment">https://github.com/corcel/corcel</li>
+					</ul>
+                </section>
+
+                <section data-transition="slide">
+                    <h2>Other resources</h2>
+					<ul> 
+     <li class="fragment">https://github.com/Mte90/awesome-wordpress-developer-tips</li>
+     <li class="fragment">https://make.wordpress.org/core/2018/05/16/preparing-wordpress-for-a-javascript-future-part-1-build-step-and-folder-reorganization/</li>
+     <li class="fragment">https://make.wordpress.org/core/2018/05/01/javascript-internationalization-the-missing-pieces/</li>
+					</ul>
+                </section>
+
+                <section>
+                    <img src="img/commitstrip.jpg" style="max-width: 470px;">
+                </section>
+
+				<section data-transition="slide" data-background-transition="convex" data-background="img/end.gif">
+                    <h2 class="white-black-shadow">The end</h2>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+			  controls: false,
+			  progress: true,
+			  history: true,
+			  center: true,
+			  touch: true,
+			  overview: false,
+			  transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+			  dependencies: [
+				{src: 'lib/js/classList.js', condition: function () {
+					return !document.body.classList;
+				  }},
+				{src: 'plugin/markdown/marked.js', condition: function () {
+					return !!document.querySelector('[data-markdown]');
+				  }},
+				{src: 'plugin/markdown/markdown.js', condition: function () {
+					return !!document.querySelector('[data-markdown]');
+				  }},
+				{src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+					return !!document.querySelector('pre code');
+				  }, callback: function () {
+					hljs.initHighlightingOnLoad();
+				  }},
+			  ]
+			});
+
+			document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>

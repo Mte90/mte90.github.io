@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Firefox OS per Utenti e Sviluppatori</title>
+
+		<meta name="description" content="Scopriamo le novità per gli utenti e per gli sviluppatori del SO mobile di Mozilla">
+		<meta name="author" content="Mte90 alias Daniele Scasciafratte">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/mozilla.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section id="firefox-os-per-utenti-e-sviluppatori" class="level2">
+<h2>Firefox OS per utenti e sviluppatori</h2>
+<figure>
+<img src="./img/logo.png" />
+</figure>
+<p>Scopriamo le sue caratteristiche!</p>
+<blockquote>
+<p>Debian/Ubuntu Community Conference<br />Relatore: Daniele Mte90 Scasciafratte (<span class="citation" data-cites="Mte90Net">@Mte90Net</span>)</p>
+</blockquote>
+</section>
+<section id="chi-sono" class="level2">
+<h2>Chi sono</h2>
+<p>Sono Daniele Scasciafratte conosciuto nel web come <a href="http://www.mte90.net">Mte90</a></p>
+<ul>
+<li>Co-Founder Codeat</li>
+<li>Open Source Developer/Translator/Evangelist</li>
+<li>WordPress Italia Community Member/Translator/Developer</li>
+<li>Industria Italiana del Software Libero Admin</li>
+<li>Debian (sid) user since 2009</li>
+<li>Writer for Italian sites: AndMore's network, ChimeraRevo and TechEconomy</li>
+<li><strong>Mozillian &amp; Mozilla Reps &amp; Participation Leader</strong></li>
+</ul>
+</section>
+<section id="cosè-firefox-os" class="level2">
+<h2>Cos'è Firefox OS</h2>
+<p><img src="./img/fox.png" /><br />Firefox OS <strong>nome in codice Boot to Gecko</strong> è un sistema operativo basato su <strong>Linux</strong> ed <strong>Android</strong>, utilizza standard completamente aperti e il suo codice è disponibile durante lo sviluppo delle varie versioni (Android mi leggi?)</p>
+<p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS" class="uri">https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS</a></p>
+</section>
+<section id="screenshot" class="level2">
+<h2>Screenshot</h2>
+<p><img src="./img/ffos-addons.png" /> <img src="./img/ffos-lock.jpg" /></p>
+</section>
+<section id="screenshot-1" class="level2">
+<h2>Screenshot</h2>
+<p><img src="./img/FirefoxOS_Search.png" /> <img src="./img/FirefoxOS_Marketplace.png" /></p>
+</section>
+<section id="screenshot-2" class="level2">
+<h2>Screenshot</h2>
+<p><img src="./img/FirefoxOS_Contacts.png" /> <img src="./img/FirefoxOS_Music.png" /></p>
+</section>
+<section id="screenshot-3" class="level2">
+<h2>Screenshot</h2>
+<p><img src="./img/FirefoxOS_Call.png" /> <img src="./img/FirefoxOS_Browser.png" /></p>
+</section>
+<section id="perchè-solo-dispositivi-economici" class="level2">
+<h2>Perchè solo dispositivi economici?</h2>
+<figure>
+<img src="./img/shut-up-and-take-my-money.jpg" />
+</figure>
+<ul>
+<li>Mozilla propone <strong>standard aperti</strong></li>
+<li>Non lucra sul suo sistema</li>
+<li>Realizzato per portare il web mobile a tutti</li>
+<li>Componenti non molto costosi (qualcuno ha detto lo smartphone da 25$?)</li>
+<li>Sistema fluido e funzionale senza grandi esigenze</li>
+<li><a href="firefoxosdevices.org">http://firefoxosdevices.org</a></li>
+</ul>
+</section>
+<section id="gonk-gecko-e-gaia" class="level2">
+<h2>Gonk, Gecko e Gaia</h2>
+<p><img src="./img/three-rings.jpg" /><br />Un sistema Firefox OS è diviso in tre layer o livelli:</p>
+<ul>
+<li>Gonk - Il livello più basso, Kernel Linux e driver open source</li>
+<li>Gecko - Il motore grafico e le virtual machine Javascript</li>
+<li>Gaia - L'interfaccia utente in HTML5</li>
+</ul>
+<p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Architecture" class="uri">https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Architecture</a></p>
+</section>
+<section id="gecki-dappertutto" class="level2">
+<h2>Gecki dappertutto</h2>
+<p><img src="./img/gecko.jpg" /><br />L'interfaccia non è altro che un browser che sfrutta il motore grafico <strong>Gecko</strong> per mostrare le varie applicazioni</p>
+<p>Tutte le applicazioni sono realizzate con i tre Assassini ovvero <strong>HTML/CSS/JS</strong></p>
+<p><small>Il sistema è integrato pesantemente con Gecko quindi non si può sostituire con WebKit!</small></p>
+</section>
+<section id="la-leggenda-delle-web-app-lente" class="level2">
+<h2>La leggenda delle Web App lente</h2>
+<p><img src="./img/firefox-starting-up.jpg" /><br />I browser hanno fatto passi da gigante negli ultimi anni in termini di performance!<br />Specialmente in ambito mobile dove un app fatta bene é irriconoscibile da una nativa.</p>
+</section>
+<section id="web-app-è-fico" class="level2">
+<h2>Web App è fico</h2>
+<p>In <strong>Firefox OS</strong> si possono ottenere app con le stesse performance di una nativa</p>
+<p>Alcuni esempi di tool/librerie/linguaggi:</p>
+<ul>
+<li>jQuery 2.* invece di jQuery 1.x</li>
+<li>Zepto invece di jQuery</li>
+<li>Mini Framework Javascript</li>
+<li>Framework CSS Responsive</li>
+<li>ReactJS</li>
+<li>AngularJS</li>
+<li>PolymerJS</li>
+<li>PhoneGap</li>
+<li>Dart</li>
+</ul>
+</section>
+<section id="web-app-hosted-vs-packaged" class="level2">
+<h2>Web App Hosted vs Packaged</h2>
+<p>Firefox OS ha due tipi di applicazioni che si <strong>differenziano dai permessi</strong> che hanno sul dispositivo e se <strong>si scaricano fisicamente sul dispositivo</strong></p>
+</section>
+<section id="i-permessi" class="level2">
+<h2>I permessi</h2>
+<p>Firefox OS <strong>specifica i permessi</strong> di ogni app nel suo manifest e <strong>se permesso dall'utente</strong> verranno eseguiti.</p>
+<p>I <strong>permessi di root servono</strong> solo agli sviluppatori: per il flash semplificato delle rom e si attivano solo con un kernel compilato con l'opzione abilitata</p>
+<p>Fonte:<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security" class="uri">https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Security</a>, <a href="https://developer.mozilla.org/en-US/Apps/CSP">Apps CSP</a></p>
+</section>
+<section id="hosted" class="level2">
+<h2>Hosted</h2>
+<ul>
+<li>Con AppCache si possono cachare dei file per uso offline</li>
+<li>Le app sono online quindi su siti web</li>
+<li>Permessi limitati su alcune API (slide successiva)</li>
+<li>Offline sono limitate</li>
+</ul>
+<p><br><br> App di esempio:</p>
+<ul>
+<li>Facebook</li>
+<li>Twitter</li>
+</ul>
+</section>
+<section id="privilegi-per-app-hosted" class="level2">
+<h2>Privilegi per app Hosted</h2>
+<p><strong>Privilegi non critici</strong></p>
+<ul>
+<li>Geolocazione</li>
+<li>Storage (es: localStorage/sessionStorage/Appcache)</li>
+<li>Sveglia</li>
+<li>Radio</li>
+<li>Notifiche</li>
+</ul>
+<p><br> Fonte: <a href="https://developer.mozilla.org/en-US/docs/WebAPI/Permissions" class="uri">https://developer.mozilla.org/en-US/docs/WebAPI/Permissions</a></p>
+</section>
+<section id="packaged" class="level2">
+<h2>Packaged</h2>
+<ul>
+<li>Accesso in scrittura e lettura sul telefono</li>
+<li>Possono lavorare anche offline</li>
+<li>Accesso a tutte le API</li>
+<li>Pacchettizate in uno zip</li>
+</ul>
+<p><br><br> App di esempio:</p>
+<ul>
+<li>Tutte quelle presenti di base</li>
+<li>RingTone Picker (oltre 50000 download :-D)</li>
+</ul>
+<p><br> Fonte: <a href="https://developer.mozilla.org/en-US/Apps/Developing/Packaged_apps" class="uri">https://developer.mozilla.org/en-US/Apps/Developing/Packaged_apps</a></p>
+</section>
+<section id="quante-api-in-giro" class="level2">
+<h2>Quante API in giro</h2>
+<p><img src="./img/bee.png" /><br />Le API sono presentate al <strong>W3C</strong> come draft!<br />Alcune API native di Firefox OS</p>
+<blockquote>
+<p>WebTelephony, Vibration API, WebSMS, Idle API, Screen Orientation, Settings API, Power manager API, Mobile Connection API, TCP Socket API, Geolocation API, WiFi Information API, Device Storage API, Contacts API, Mouse Lock API, Open WebApps, WebBluetooth, Network Information API, Battery Status API, Alarm API, Browser API, Time/Clock API, Web Activities, Push Notification API, Permission API, WebFM API, FileHandle API, Network Stats API, WebPayment</p>
+</blockquote>
+<p><strong>Alcune API sono disponibili solo per App certificate</strong></p>
+</section>
+<section id="app-a-pagamento" class="level2">
+<h2>App a pagamento</h2>
+<p><img src="./img/paid.jpg" /><br />Mozilla ha realizzato un API in JavaScript per i pagamenti<br /><br> Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments" class="uri">https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments</a><br /><small>Approfondimento: <a href="https://hacks.mozilla.org/2013/10/working-with-receipts-for-paid-apps/">Working with receipts for paid apps</a></small></p>
+</section>
+<section id="il-boilerplate" class="level2">
+<h2>Il boilerplate</h2>
+<p><strong>Pubblicità!</strong><br /><a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">Firefox OS Boilerplate App</a> è uno strumento che vi permetterà di provare sul campo la maggior parte delle API e la gestione multilingua senza grandi difficoltà per scoprire il codice &quot;semplice&quot; che contiene</p>
+</section>
+<section id="cosè-il-manifest" class="level2">
+<h2>Cos'è il Manifest</h2>
+<p>Il file <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Manifest">manifest.webapp</a> è un file JSON contenente le informazioni sull'applicazione</p>
+<ul>
+<li>Nome, descrizione, lingue supportate e dati sullo sviluppatore</li>
+<li>Orientamento richiesto</li>
+<li>Il percorso di lancio dell'applicazione e le icone</li>
+<li>I permessi richiesti <br><br> Questo file è <strong>obbligatorio</strong> perchè informa come avviare/usare/richieste l'applicazione<br /><br><br><small>PS: Ha un Content-Type specifico <em>application/x-web-app-manifest+json</em> quindi bisogna mandare degli header specifici per questo file tramite il web server </small></li>
+</ul>
+</section>
+<section id="marketplace" class="level2">
+<h2>Marketplace</h2>
+<p><img src="./img/marketplace.png" /><br />Il Marketplace è gratuito, semplice ed intuitivo e multipiattaforma</p>
+<p><strong>Tutte le app vengono analizzate da tool automatici e successivamente testate da volontari (con dispositivi fisici) per controllare i requisiti e se funziona!</strong><br /><br> Fonte: <a href="https://marketplace.firefox.com/developers/" class="uri">https://marketplace.firefox.com/developers/</a></p>
+</section>
+<section id="requisiti-per-lo-store-ufficiale" class="level2">
+<h2>Requisiti per lo store ufficiale</h2>
+<ul>
+<li>I privilegi (i permessi) devono essere documentati</li>
+<li>Niente iframe per caricare i contenuti dell'app</li>
+<li>Screenshot obbligatorio</li>
+<li>Le lingue specificate devono essere presenti</li>
+<li>Non compromettere il sistema</li>
+<li>Non usare tasti fisici per la navigazione perchè non presenti</li>
+<li>I pulsanti o link devono essere cliccabili/tappabili facilmente</li>
+<li>Regole di buon senso (niente spam, phishing o contenuto illegale)</li>
+</ul>
+<p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/Marketplace_review_criteria" class="uri">https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/Marketplace_review_criteria</a></p>
+</section>
+<section id="cosa-consiglio" class="level2">
+<h2>Cosa consiglio</h2>
+<ul>
+<li>La descrizione dell'applicazione deve essere esaustiva</li>
+<li>Se è un gioco deve contenere le istruzioni e non la partita già avviata</li>
+<li>L'interazione deve essere semplice per le varie interfacce (desktop, mobile, tablet)</li>
+<li>Specificare se per Desktop, Mobile, Tablet o per Firefox for Android</li>
+<li>Controllare il file manifest se è corretto tramite il <a href="https://marketplace.firefox.com/developers/validator">validatore</a></li>
+<li>Snippet: <a href="https://gist.github.com/Mte90/11087561">FFOS check</a> e <a href="https://gist.github.com/Mte90/11087393">ff-check</a></li>
+</ul>
+</section>
+<section id="il-tuo-marketplace" class="level2">
+<h2>Il tuo Marketplace</h2>
+<p>Con le Open Web App, uno standard per l'installazione delle web app ed accesso ad alcuni API del browser più avanzate, è possibile far installare le app dal proprio sito<br /><br><br> Un esempio?<br /><br><br> <a href="http://wordpress.org/plugins/firefox-os-bookmark/">Firefox OS Bookmark for Wordpress</a><br />Permette di installare il proprio sito come app e di caricarla sul marketplace<br /><br><br> Poche righe di codice ed un manifest!</p>
+</section>
+<section id="come-testare-la-propria-applicazione" class="level2">
+<h2>Come testare la propria applicazione</h2>
+<p>Esiste il simulatore di Firefox OS che è una estensione per Firefox disponibile per <a href="https://ftp.mozilla.org/pub/mozilla.org/labs/fxos-simulator/">Windows, Mac e Linux</a></p>
+<p>Le versioni disponibili attualmente sono 1.3-1.4-2.0-2.1-2.2-3.0 insieme ad ADB Helper per il debug remoto.</p>
+</section>
+<section id="differenze-tra-simulatore-e-device-fisici" class="level2">
+<h2>Differenze tra simulatore e device fisici</h2>
+<p><img src="./img/firefox-phone.png" /><br />Il simulatore sfrutta l'hardware del computer e la versione Gecko di Firefox usata!<br /><br><small>Alcune API non sono supportate<br> Fonte: <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Feature_support_chart" class="uri">https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Platform/Feature_support_chart</a></small></p>
+</section>
+<section id="cosa-sono-le-web-activity" class="level2">
+<h2>Cosa sono le Web Activity</h2>
+<p><strong>Pubblicità</strong><br />Permettono di interfacciare le applicazioni tra di loro (esempio scattare una foto e caricarla su Facebook con l'app ufficiale), per gli sviluppatori Android ricordano gli Android Intents</p>
+<p>Fonte: <a href="https://hacks.mozilla.org/2013/01/introducing-web-activities/" class="uri">https://hacks.mozilla.org/2013/01/introducing-web-activities/</a></p>
+</section>
+<section id="debugging-remoto" class="level2">
+<h2>Debugging remoto</h2>
+<p>Tramite Firefox e un dispositivo con Firefox OS o Firefox for Android collegato al pc è possibile farlo</p>
+<p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging" class="uri">https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging</a></p>
+</section>
+<section id="web-components" class="level2">
+<h2>Web Components</h2>
+<p><strong>Pubblicità</strong><br />Sono in <a href="http://www.w3.org/TR/2013/WD-components-intro-20130606/">Working Draft</a> dal W3C e supportati da Chrome e Firefox.<br />Si trattano di nuovi elementi (i widget in poche parole) con tag HTML personalizzati<br />Le librerie <a href="http://www.polymer-project.org/">Polymer</a> di Google e <a href="https://github.com/gaia-components">Gaia Componenets</a> di Mozilla ne includono già pronte come un calendario o la barra di stato.<br /><br> Fonti: <a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">HTML5Rocks</a>, <a href="https://github.com/gaia-components">Web Components in Firefox OS</a></p>
+</section>
+<section id="come-fare-unopen-web-app" class="level2">
+<h2>Come fare un'Open Web App</h2>
+<ul>
+<li>Pensa ad un sito web pensato per più interfacce (Desktop, Smartphone e Tablet)</li>
+<li>Scarica il <a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">boilerplate ufficiale</a></li>
+<li>Libera la fantasia <br><br> Se conosci HTML/CSS/JS ti basta sapere questo!! <br><br> La documentazione di riferimento è il portale dedicato sul <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS">Mozilla Developer Network</a></li>
+</ul>
+</section>
+<section id="quante-volpi" class="level2">
+<h2>Quante volpi</h2>
+<p><img src="./img/firefox.jpg" /><br />Le app presenti sul Marketplace sono per quattro tipi diversi di interfacce/dispositivi</p>
+<ul>
+<li>Firefox Desktop</li>
+<li>Firefox for Android</li>
+<li>Firefox OS per smartphone</li>
+<li>Firefox OS per tablet</li>
+</ul>
+</section>
+<section id="le-differenze-tra-firefox" class="level2">
+<h2>Le differenze tra Firefox</h2>
+<p>Il marketplace è disponibile per questi <strong>quattro ambienti</strong> ma la differenza principale è l'<strong>API che supportano</strong> (es: la versione desktop non ha l'Orientation API) e la risoluzione</p>
+<p>Se installate un'app su desktop creerà una icona nel menu del sistema, su mobile invece nello screen o nel menu</p>
+</section>
+<section id="workflow-di-sviluppo" class="level2">
+<h2>Workflow di sviluppo</h2>
+<ul>
+<li>Creare un manifest.webapp</li>
+<li>Realizzare la UI</li>
+<li>Sviluppare e provare tramite browser/simulatore/device</li>
+<li>Se Hosted caricare sul proprio server web (anche Github per esempio)</li>
+<li>Se Packaged comprimere tutto in un file zip</li>
+<li>Inviare l'app sul Marketplace per la recensione</li>
+</ul>
+</section>
+<section id="varie" class="level2">
+<h2>Varie</h2>
+<p><img src="./img/varie.jpg" /><br />Quei dettagli che fanno la differenza ma che non sapevo dove mettere</p>
+</section>
+<section id="i-crash" class="level2">
+<h2>I crash</h2>
+<p><img src="./img/crash.jpg" /><br />Le applicazioni sono sotto <strong>sandbox</strong>!</p>
+<p>Ogni file Javascript ha un suo processo, quindi isolamento dei crash (il file và in crash non l'applicazione o il sistema) con un facile debug</p>
+</section>
+<section id="niente-account" class="level2">
+<h2>Niente Account</h2>
+<p>Per usare il telefono non è necessario avere un account impostato sul dispositivo</p>
+</section>
+<section id="giochi" class="level2">
+<h2>Giochi</h2>
+<p><img src="./img/pong.jpg" /><br />La Disney realizza giochi per Firefox OS, c'è anche Cut the rope<br /><a href="https://marketplace.firefox.com/app/quake-benchmark">Quake Benchmark</a> è un esempio WebGL!</p>
+<p>Sul marketplace ce ne sono 2000 (un terzo): <a href="https://marketplace.firefox.com/category/games" class="uri">https://marketplace.firefox.com/category/games</a></p>
+<p><small>Approfondimento: <a href="https://hacks.mozilla.org/2013/05/optimizing-your-javascript-game-for-firefox-os/">Optimizing your JavaScript game for Firefox OS</a>,<a href="http://www.amazon.it/Beginning-Firefox-HTML5-Game-Programming-ebook/dp/B00IZUYIGO/ref=sr_1_7?ie=UTF8&amp;qid=1398181859&amp;sr=8-7&amp;keywords=firefox+os">E-Book</a></small></p>
+</section>
+<section id="firefox-os-multi-dispositivo" class="level2">
+<h2>Firefox OS multi dispositivo</h2>
+<p>Firefox OS è scaricabile e compilabile tramite la guida per molti dispositivi ma pochi sono supportati ufficialmente, si trovano ROM giá pronte su <a href="http://firefoxos.mozilla.community/">firefoxos.mozilla.community</a> <br><br> La pagina su <a href="http://forum.xda-developers.com/tags.php?tag=firefox+os">XDA Developers</a> contiene diversi esperimenti di porting<br />I requisiti per la <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Firefox_OS_build_prerequisites">compilazione</a>, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Preparing_for_your_first_B2G_build">ambiente per la compilazione</a>, come fare un <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Porting">porting</a> e la guida per la <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS/Building">compilazione</a> si trovano su MDN</p>
+</section>
+<section id="durata-della-batteria" class="level2">
+<h2>Durata della batteria</h2>
+<p>La batteria dura molto, per esempio una settimana con wifi (me lo ero scordato acceso più di una volta)</p>
+</section>
+<section id="italiano" class="level2">
+<h2>Italiano</h2>
+<p><img src="./img/italia.jpg" /><br />Firefox OS è tradotto in italiano!<br />Per chi vuole approfondire c'è la community <a href="https://mozillaitalia.org">Mozilla Italia</a></p>
+</section>
+<section id="mozilla-italia-cerca-te" class="level2">
+<h2>Mozilla Italia cerca te!</h2>
+<p><img src="./img/mozilla-italia.png" /><br />Cerchiamo traduttori, grafici, volontari, markettari, sviluppatori, amanti dell'Open Source.<br />Cerchiamo anche un grafico per la realizzazione vettoriale del logo!</p>
+<p><a href="http://whatcanidoformozilla.org/" class="uri">http://whatcanidoformozilla.org/</a><br /><a href="http://codefirefox.com/" class="uri">http://codefirefox.com/</a></p>
+</section>
+<section id="siti-web-di-riferimento" class="level2">
+<h2>Siti web di riferimento</h2>
+<ul>
+<li><a href="https://hacks.mozilla.org/category/firefox-os/">Mozhacks</a> - il blog di Mozilla dedicato agli sviluppatori</li>
+<li><a href="https://developer.mozilla.org/it/">Mozilla Developer Network</a> - La miglior fonte di informazione per lo sviluppo web</li>
+<li><a href="https://marketplace.firefox.com/developers/">Developers Hub</a> - portale del Marketplace dedicato agli sviluppatori</li>
+<li><a href="https://github.com/MozillaItalia/firefoxos-quick-guide">Firefox OS Quick Guide</a> - Guida veloce in Italiano con nuovo materiale</li>
+<li><a href="http://www.github.com">Github</a> - Molte applicazione e i prodotti Mozilla sono qui</li>
+<li><a href="https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_app_tools">Firefox OS app tools</a></li>
+</ul>
+</section>
+<section id="applicazioni-di-esempio" class="level2">
+<h2>Applicazioni di esempio</h2>
+<ul>
+<li><a href="https://hacks.mozilla.org/2014/02/building-cordova-apps-for-firefox-os/">Building Cordova apps for Firefox OS</a></li>
+<li><a href="https://blog.stackmob.com/2013/10/building-a-photo-sharing-app-for-firefox-os/">Building a Photo Sharing app for Firefox OS</a></li>
+<li><a href="https://hacks.mozilla.org/2013/10/building-a-firefoxos-app-for-my-favorite-internet-radio-station/">Building a Firefox OS App for my favorite Internet radio station</a></li>
+<li><a href="https://github.com/robnyman/Firefox-OS-Boilerplate-App">Firefox OS Boilerplate App</a></li>
+<li><a href="https://github.com/nag-motherfuckers/TrovaTreno">TrovaTreno</a></li>
+<li><a href="https://github.com/giammyjet/Keefox">KeeFox</a></li>
+<li><a href="https://github.com/firefoxosedu">Firefox OS Edu</a> - Presentazioni ed esempi</li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2></h2>
+<p><img src="./img/question.jpg" /><br />Se avete domande fatele adesso o mai più (scherzo)<br /><br> Link presentazione: <a href="http://mte90.github.io/Presentazione-FirefoxOS" class="uri">http://mte90.github.io/Presentazione-FirefoxOS</a><br />Presentazione di:<br />Daniele Scasciafratte - <span class="citation" data-cites="Mte90Net">[@Mte90Net]</span>(http://twitter.com/Mte90Net) - <a href="http://www.mte90.net">Mte90.net</a></p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				touch: true,
+				history: true,
+				center: true,
+				loop: true,
+				width:'100%',
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

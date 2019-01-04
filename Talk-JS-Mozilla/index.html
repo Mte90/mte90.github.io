@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>JS libraries by Mozilla for you</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=792, user-scalable=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+		<link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
+	</head>
+	<body class="list">
+		<header class="caption">
+			<h1>JS libraries by Mozilla for you</h1>
+			<p>Mozilla created in the last years many JavaScript libraries that can help you on your dev life and maybe you don't know them.</p>
+		</header>
+		<section class="slide cover" id="Cover"><div>
+				<h2>JS libraries by Mozilla for you</h2>
+				<p>By <a href="http://mte90.net">Daniele Scasciafratte</a></p>
+				<img src="pictures/cover.jpg" alt="">
+			</div></section>
+		<section class="slide">
+            <div>
+                <h2>It's me, Mario ehm Daniele!</h2>
+                <img src="pictures/me.png" class="right" alt="Me">
+                <ul>
+                    <li>Co-Founder Codeat</li>
+                    <li>Open Source Developer/Translator/Evangelist</li>
+                    <li>WordPress Italia Community<br> Member/Translator/Developer</li>
+                    <li>Industria Italiana del Software Libero</li>
+                    <li>Debian (sid) user since 2009</li>
+                    <li>Writer for Italian sites: AndMore's network,<br> ChimeraRevo and TechEconomy</li>
+                    <li><b>Mozillian & Mozilla Reps & Participation Leader</b></li>
+                </ul> 
+            </div>
+        </section>
+		<section class="slide shout gradient-nightly"><div>
+				<h2>Mozilla and JavaScript</h2>
+			</div></section>
+		<section class="slide"><div>
+				<h2>LocalForage</h2>
+				<ol>
+					<li class="color-blue">Fast and simple storage library</li>
+					<li class="color-blue">Improve offline experience</li>
+					<li class="color-blue">Wrapper for asynchronous web storage</li>
+					<li class="color-blue">Storing blobs, array, JS objects</li>
+					<li class="color-blue">Use localStorage or IndexedDB or WebSQL</li>
+					<li class="color-orange">Custom drivers: sessionStorage, Cordova SQLlite</li>
+					<li class="color-orange">Extensions</li>
+					<li class="color-blue">Promises</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/localforage</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>localForage Example</h2>
+				<pre>
+			<code>localforage.setItem(key, value, function() {</code>
+			<code>  console.log('Saved: ' + value);</code>
+			<code>});</code>
+			<code> </code>
+			<code>localforage.getItem(key, function(err, readValue) {</code>
+			<code>  console.log('Read: ', readValue);</code>
+			<code>});</code>
+				</pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>fxPay</h2>
+				<ol>
+					<li class="color-blue">Wrapper for mozPay</li>
+					<li class="color-blue">Support Firefox Marketplace in a web application</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/fxpay</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>nunjucks</h2>
+				<ol>
+					<li class="color-blue">Template engine</li>
+					<li class="color-blue">Asynchronous template loading</li>
+					<li class="color-blue">Template inheritance</li>
+					<li class="color-blue">Jinja2 port in JavaScript</li>
+					<li class="color-orange">Django existing templates supported</li>
+					<li class="color-orange">Works in NodeJS</li>
+					<li class="color-nightlyblue">Used in: Firefox Marketplace, WebMaker, Backbeam, Apostrophe CMS</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/nunjucks</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>nunjucks Examples</h2>
+				<pre>
+			<code>{% extends "base.html" %}</code>
+			<code>{% asyncAll item in items %}</code>
+			<code>  &lt;li&gt;{{ item.id | lookup }}&lt;/li&gt;</code>
+			<code>{% endall %}</code>
+			<code>{% block content %}</code>
+			<code>  {{ page.content }}</code>
+			<code>{% endblock %}</code>
+				</pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>MetricsGraphics.js</h2>
+				<ol>
+					<li class="color-blue">Built on top of D3</li>
+					<li class="color-blue">Line charts, scatterplots, histograms, bar charts, data tables</li>
+					<li class="color-blue">JSON objects supported</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/metrics-graphics</p>
+			</div></section>
+		<section class="slide"><div>
+				<p class="center"><img src="pictures/metricgraphics.png"></p>
+				<p class="note">http://metricsgraphicsjs.org/examples.htm</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>PDF.js</h2>
+				<ol>
+					<li class="color-blue">PDF viewer in HTML5</li>
+					<li class="color-blue">Integrated in Firefox and ownCloud</li>
+					<li class="color-orange">Inspired ViewerJS - Viewer for Open Document format (ODT)</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/pdf.js</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>A-Frame</h2>
+				<ol>
+					<li class="color-blue">Virtual Reality experiences in the Web</li>
+					<li class="color-blue">Cardboard and Oculus Rift support</li>
+					<li class="color-orange">Many components for the 3D scenes</li>
+				</ol>
+				<p class="note">https://aframe.io/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>A-Frame Examples</h2>
+				<pre>
+			<code>&lt;a-scene&gt;</code>
+			<code>&lt;/a-scene&gt;</code>
+				</pre>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Sweet.js</h2>
+				<ol>
+					<li class="color-blue">Macro syntax like Scheme and Rust</li>
+					<li class="color-blue">Before ES6 macro</li>
+				</ol>
+				<p class="note">http://sweetjs.org/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>VTT.js</h2>
+				<ol>
+					<li class="color-blue">WebVTT implementation</li>
+					<li class="color-blue">Integrated in Firefox</li>
+				</ol>
+				<p class="note">https://github.com/mozilla/vtt.js</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Popcorn.js</h2>
+				<ol>
+					<li class="color-blue">Framework for interactive timeline</li>
+					<li class="color-blue">Support for YouTube, Vimeo, &lt;video&gt;</li>
+					<li class="color-blue">Plugin for: Google Maps, Facebook, Flickr, Feed, Lastfm, Linkedin, Lowerthird, Open Street Map, Twitter</li>
+				</ol>
+				<p class="note">http://popcornjs.org/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>L20n.js</h2>
+				<ol>
+					<li class="color-blue">Localization framework</li>
+				</ol>
+				<p class="note">http://l20n.org/</p>
+			</div></section>
+		<section class="slide"><div>
+				<p class="center"><img src="pictures/l20n.png"></p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Together.js</h2>
+				<ol>
+					<li class="color-blue">Real Time Collaboration</li>
+					<li class="color-blue">Chat and Microphone with WebRTC</li>
+					<li class="color-blue">Public server or custom server</li>
+					<li class="color-blue">Show cursor pointer of other people on the same page</li>
+				</ol>
+				<p class="note">https://togetherjs.com/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Exif Parser</h2>
+				<ol>
+					<li class="color-blue">Read & Write Exif metadata</li>
+					<li class="color-blue">Integrated on Firefox OS</li>
+				</ol>
+				<p class="note">https://github.com/mozilla-b2g/exif-parser</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Shumway</h2>
+				<ol>
+					<li class="color-blue">Flash in HTML5</li>
+					<li class="color-blue">Integrated on Firefox OS</li>
+				</ol>
+				<p class="note">http://mozilla.github.io/shumway/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Emscripten</h2>
+				<ol>
+					<li class="color-blue">LLVM(C/C++)-to-JavaScript Compiler</li>
+					<li class="color-blue">Any language that translated into LLVM bytecode</li>
+					<li class="color-blue">Unity 3D, Unreal Engine export to HTML5</li>
+					<li class="color-blue">Default output is for asm.js</li>
+				</ol>
+				<p class="note">
+					http://emscripten.org/<br>
+					https://github.com/kripken/emscripten/wiki/Porting-Examples-and-Demos
+				</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Firefox Platform Status</h2>
+				<ol>
+					<li class="color-blue">Roadmap for browser features</li>
+					<li class="color-blue">Browser Table comparison</li>
+					<li class="color-blue">Resources</li>
+				</ol>
+				<p class="note">https://platform-status.mozilla.org/</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>CSS:fixme</h2>
+				<ol>
+					<li class="color-blue">From non-standard CSS</li>
+					<li class="color-blue">Add standard CSS</li>
+				</ol>
+				<p class="note">https://github.com/webcompat/css-fixme</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>FuzzManager, DOMFuzz, FunFuzz</h2>
+				<ol>
+					<li class="color-blue">Fuzzer</li>
+					<li class="color-blue">JavaScript fuzzer</li>
+					<li class="color-blue">DOM fuzzer</li>
+					<li class="color-blue">Used in Firefox</li>
+				</ol>
+				<p class="note">
+					https://github.com/MozillaSecurity/FuzzManager<br>
+					https://github.com/MozillaSecurity/funfuzz<br>
+					https://github.com/MozillaSecurity/funfuzz/tree/master/dom<br>
+					https://github.com/MozillaSecurity/funfuzz/tree/master/js/jsfunfuzz</p>
+			</div></section>
+		<section class="slide"><div>
+				<h2>Question?</h2>
+				<figure class="frame place swing">
+					<img src="pictures/redpanda.jpg" alt="Red panda (Firefox)">
+				</figure>
+				<div class="bottom">
+                    Daniele Scasciafratte | <a href="http://twitter.com/Mte90Net">@Mte90Net</a> | <strong>Slides</strong>: mte90.github.io/Talk-JS-Mozilla/
+                </div>
+			</div></section>
+
+		<div class="progress"><div></div></div>
+		<script src="shower/scripts.js"></script>
+	</body>
+</html>
