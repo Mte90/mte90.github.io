@@ -1,0 +1,221 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit !important;
+}
+
+body {
+	font-family: 'Raleway', sans-serif !important;
+}
+
+a {
+	color: #5a5a5a !important;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000 !important;
+}
+
+a.video {
+    color: #337AB7 !important;
+}
+
+li a {
+    color: #6E3238 !important
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif !important;
+	margin-top:5px !important;
+	margin-bottom:5px !important;
+}
+
+h2 {
+    margin-top:0 !important;
+}
+
+span, a, li,h4 {
+	font-family: 'Raleway', sans-serif !important;
+	font-size: 16px !important;
+}
+
+h4 a {
+    font-weight:bold;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 20px;
+}
+
+li {
+	margin-left: 0;
+	padding-bottom: 8px;
+}
+
+._1 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+._2 {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+._3 {
+    -webkit-animation-delay: 1.2000000000000002s;
+    animation-delay: 1.2000000000000002s;
+}
+._4 {
+    -webkit-animation-delay: 1.6s;
+    -ms-animation-delay: 1.6s;
+    -o-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+}
+
+hr {
+	margin:5px !important;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.social {
+	vertical-align: middle;
+	text-align: right;
+}
+
+.my-name {
+	font-weight: 900;
+	margin-bottom: 0px;
+}
+
+.container, body {
+	padding:0 !important;
+}
+
+.section-header {
+	border-bottom: 1px solid black;
+	position: relative;
+}
+
+.header {
+	padding:0 !important;
+}
+
+.contact {
+	font-family: 'Raleway', sans-serif;
+	margin-top: 18px;
+	font-size: 16px;
+}
+
+.icon {
+	font-size: 25px;
+	display: inline-block;
+	width: 16px;
+	vertical-align: middle;
+	margin-left:15px;
+}
+
+.left-column {
+	width: 400px;
+	padding-right: 35px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.right-column {
+	width: 225px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.qrcode {
+	width:250px;
+	height:250px;
+	margin:0 auto;
+}
+
+.bar {
+	border-top: 1px solid rgba(128, 128, 128, 0.2);
+	border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+	padding-top:3px;
+	padding-bottom:3px;
+	margin:0;
+	text-align:center;
+}
+
+li.old-talk {
+	cursor:pointer;
+}
+
+li .abstract {
+	float:right;
+	font-weight:bold;
+	cursor:pointer;
+	text-align:right;
+}
+
+li .abstract div {
+	font-weight:initial;
+	cursor:auto;
+	margin: 4px;
+}
+
+/* Media Queries */
+@media all and (max-width: 421px) {
+	.only-small {
+		display: block;
+	}
+	
+	.abstract,.only-big {
+		display:none;
+	}
+}
+
+@media all and (min-width: 800px) {
+	.only-big,.abstract {
+		display: block;
+	}
+}
+@media all and (max-width: 700px) {
+	.my-name {
+		font-size: 40px;
+	}
+
+	.my-credentials {
+		font-size: 20px;
+	}
+	.contact {
+		margin-top: -10px;
+		position: static;
+		font-size: 16px;
+	}
+
+	body {
+		padding: 0px 15px;
+	}
+
+	.left-column {
+		width: 100%;
+		display: block;
+		padding-right: 0;
+	}
+
+	.container {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.right-column {
+		width: 100%;
+		display: block;
+	}
+}
+.col-md-8, .col-md-4 {
+    padding:0 !important;
+}

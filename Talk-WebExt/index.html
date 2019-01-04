@@ -1,0 +1,477 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=792, user-scalable=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+		<link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
+		<title>WebExtension status after Firefox 57</title>
+
+		<style>
+			.mosaic div, .mosaic span {
+				position:relative;
+			}
+			.mosaic span {
+				display:block;
+			}
+		</style>
+	</head>
+
+	<body class="list">
+		<header class="caption">
+			<h1>WebExtension status after Firefox 57!</h1>
+			<p>Discover the new APIs to create browser extensions</p>
+		</header>
+
+		<section class="slide cover" id="Cover">
+			<div>
+				<h2 style="margin-top:-30px">WebExtension status after Firefox 57</h2>
+				<img src="pictures/cover.jpg" alt="">
+				<p style="left: 39%;bottom: 20px;position: absolute;"><a href="http://mte90.net">Daniele Scasciafratte</a></p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<h2>It's me, Mario ehm Daniele!</h2>
+				<img src="pictures/me.png" class="right" alt="Me">
+				<ul>
+					<li>Co-Founder Codeat</li>
+					<li>Open Source MultiVersal</li>
+					<li>WordPress 🇮🇹 Community<br> Translator/Developer</li>
+					<li>WordPress Core Contributor</li>
+					<li>Industria Italiana del Software Libero</li>
+					<li>Mozilla 🇮🇹</li>
+					<li><b>Mozillian & Mozilla Reps<br>(part of the Reps Council)<br> & Mozilla TechSpeakers<br></li>
+				</ul> 
+			</div>
+		</section>
+
+		<section class="slide mosaic">
+			<div>
+				<div>
+					<img src="pictures/firebug.png"><span style="top: -122px !important;left: 201px !important;">Firebug > DevTools</span>
+				</div>
+				<div style="left: 422px !important;top: -190px !important;">
+					<img src="pictures/foxmarks.png"><span style="top: -122px !important;left: 206px !important;">Foxmarks > <br> Bookmark Syncing</span>
+				</div>
+				<div style="top: -227px !important;left: -25px !important;">
+					<img src="pictures/pinning.png"><span style="top: -92px !important;left: 172px !important;">Faviconize Tab ><br> Tab Pinning</span>
+				</div>
+				<div style="left: 471px !important;top: -402px !important;">
+					<img src="pictures/tab.png"><br><span>Multizilla > Tab Browsing</span>
+				</div>
+				<div style="top: -360px;left: -16px !important;"><img src="pictures/session.png">
+					<span>Session Manager > Session Restore</span>
+				</div>
+				<div style="top: -476px;left: 485px !important;">
+					<img src="pictures/testpilot.png"><span>Test Pilot</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<h2>Add-ons are important in Firefox</h2>
+				<p>System addons and <a href="http://testpilot.firefox.com">Test Pilot</a> (http://testpilot.firefox.com).</p>
+				<p>DevTools can be developed today as an extension inside Firefox (and extended too).</p>
+				<h2>Addons Marketplace or AMO</h2>
+				<p class="next"><b>2017 Stats of Addons.Mozilla.org</b></p>
+				<p class="next">roughly 50% of users have add-ons</p>
+				<p class="next">26000 add-ons</p>
+				<p class="next">19000 extension developers</p>
+				<p class="next">12 million monthly users on AMO</p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<img class="center" src="pictures/stats.png" style="margin-top: -36px;">
+			</div>
+		</section>
+
+		<section class="slide shout gradient-nightly">
+			<div>
+				<h2 style="top:50%">Firefox still the most customizable browser (?)</h2>
+			</div>
+		</section>
+
+		<section class="slide blue shout">
+			<div>
+				<h2>Bye Bye<br>XUL/XPCOM</h2>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Today WebExtensions 1.0</h2>
+				<ul>
+					<li>Standard HTML, CSS and JavaScript</li>
+					<li>Stability because is a different API respect to XUL/XPCOM</li>
+					<li>Parity with Chrome Extensions API</li>
+					<li>On Windows the extension have their own process (from Firefox 56)</li>
+					<li>Multiprocess compatible out-the-box</li>
+					<li>Support for Firefox for Android</li>
+					<li>Sandboxing</li>
+					<li>Chrome, Opera, Edge supported!</li>
+					<li><img src="pictures/oneapi.jpg"></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<img src="pictures/api.png" class="center" style="margin-top: -30px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Container API</h2>
+				<ul>
+					<li class="next">Firefox Test Pilot</li>
+					<li class="next">Firefox 57 included</li>
+				</ul>
+				<blockquote class="next">Containers is a feature that lets you separate your work, shopping or personal browsing without having to clear your history, log in and out, or use multiple browsers.<br>
+					Container tabs are like normal tabs except the sites you visit will have access to a separate slice of the browser's storage. This means your site preferences, logged in sessions, and advertising tracking data won't carry over to the new container. Likewise, any browsing you do within the new container will not affect your logged in sessions, or tracking data of your other containers. </blockquote>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>PageAction API</h2>
+				<blockquote>You can listen for clicks on the icon, or specify a popup that will open when the icon is clicked.</blockquote>
+				<img src="pictures/page-action.png" class="center">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Example PageAction API</h2>
+				<blockquote>https://addons.mozilla.org/it/firefox/addon/share-backported/</blockquote><br>
+				<img src="pictures/share-backported.png" class="center">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Communicate between extensions</h2>
+				<img src="pictures/sendmessage.png" class="center" style="margin-left: -40px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>About:newtab customizable</h2>
+				<pre>
+					<code>"chrome_url_overrides" : {</code>
+					<code>  "newtab": "my-new-tab.html"</code>
+					<code>}</code>
+				</pre>
+				Actually Chrome API support also <code>bookmarks</code> and <code>history</code>.
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>oAuth</h2>
+				<img src="pictures/identity.png" class="center" style="margin-top: -25px;margin-left: -40px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Example OAuth</h2>
+				<img src="pictures/advanced-github-notifier.png" class="center" style="margin-top: -30px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Native Messaging</h2>
+				<img src="pictures/native-messaging.png" class="center" style="margin-top: -30px;">
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>My_native_app.json</h2>
+				<pre>
+					<code>{</code>
+					<code>  "name": "ping_pong",</code>
+					<code>  "description": "Example host for native messaging",</code>
+					<code>  "path": "/path/to/native-messaging/app/ping_pong.py",</code>
+					<code>  "type": "stdio",</code>
+					<code>  "allowed_extensions": [ "ping_pong@example.org" ]</code>
+					<code>}</code>
+				</pre>
+				<h2>JS code</h2>
+				<pre>
+					<code>var port = browser.runtime.connectNative("ping_pong");</code>
+					<code>port.onMessage.addListener((response) => {</code>
+					<code>  console.log("Received: " + response);</code>
+					<code>});</code>
+					<code>browser.browserAction.onClicked.addListener(() => {</code>
+					<code>  console.log("Sending:  ping");</code>
+					<code>  port.postMessage("ping");</code>
+					<code>});</code>
+				</pre>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Example Native Messaging</h2>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/kde_connect/</blockquote><br>
+				<img src="pictures/kde-connect.png" class="center" style="margin-top: -30px;">
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/midi-input-provider/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/withexeditor/</blockquote><br>
+				<blockquote>https://addons.mozilla.org/en-US/firefox/addon/web2mp3/</blockquote><br>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Print Preview</h2>
+				<code>tabs.print()</code> to open the Print Window and <code>tabs.printPreview()</code> to open the preview of the actual tab for printing.<br>
+				<code>tabs.saveAsPDF()</code>, well ehm, this API save the tab as PDF!<br><br>
+				<h2>Reader Mode</h2>
+				<code>tabs.toggleReaderMode()</code> to open the tab specified in the Reader Mode/View.
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Tabs API</h2>
+				<img class="center" src="pictures/tab-invaders.png" alt="">
+				<a href="https://addons.mozilla.org/firefox/addon/tab-invaders/">https://addons.mozilla.org/firefox/addon/tab-invaders/</a>
+			</div>
+		</section>
+
+		<section class="slide gray"><div>
+				<img class="center" src="pictures/webextension-anatomy.png" height="600px" width="580px" alt="">
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<h2>manifest.json</h2>
+				<pre>
+					<code>{</code>
+					<code>"manifest_version": 2,</code>
+					<code>"name": "Borderify",</code>
+					<code>"version": "1.0",</code>
+					<code>"description": "Adds a solid red [...]",</code>
+					<code>"icons": { [...] }</code>
+					<code>"content_scripts": [ {</code>
+					<code>   "matches": ["*://*.mozilla.org/*"],</code>
+					<code>   "js": ["borderify.js"]</code>
+					<code>} ]</code>
+					<code>}</code>
+				</pre>
+				This is the ID card of an extension and the data are the same also of a Greasemonkey script because they are Content Scripts (in this example)!
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Background scripts</h2>
+				<figure>
+					<blockquote>
+						<p>WebExtensions often need to maintain long-term state, or perform long-term operations, independently of the lifetime of any particular web pages or browser windows. That's what background scripts are for.</p>
+						<p>Background scripts are loaded as soon as the extension is loaded and stay loaded until the extension is disabled or uninstalled. You can use any of the <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API">WebExtension APIs</a> in the script, as long as you have requested the necessary <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions">permissions</a>.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Content scripts</h2>
+				<figure>
+					<blockquote>
+						<p>Use content scripts to access and manipulate web pages. Content scripts are loaded into web pages and run in the context of that particular page.</p>
+						<p>Content scripts can see and manipulate the page's DOM, just like normal scripts loaded by the page.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Browser actions</h2>
+				<figure>
+					<blockquote>
+						<p>A browser action is a button you can add to the browser toolbar. Users can click the button to interact with your extension.</p>
+						<p>You can optionally define a popup for the button using HTML, CSS, and JavaScript.</p>
+						<p><img src="pictures/browser-action.png"></p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div>
+		</section>
+
+		<section class="slide gray">
+			<div>
+				<h2>Web accessible resources</h2>
+				<figure>
+					<blockquote>
+						<p>Web accessible resources are resources such as images, HTML, CSS, JavaScript, that you include in the extension and want to make accessible to content scripts and page scripts. Resources which are made web-accessible can be referenced by page scripts and content scripts using a special URI scheme.</p>
+					</blockquote>
+					<figcaption>Mozilla Developer Network</figcaption>
+				</figure>
+				<small>Define on manifest.json</small>
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<h2>Review on AMO</h2>
+				<p>Today they are automatical (there will be a manual review after the approval), so release an extension is <b>FAST</b> like Quantum!</p>
+				<p style="font-size:40px">Say Bye Bye too long review time of weeks!</p>
+			</div>
+		</section>
+
+		<section class="slide red">
+			<div>
+				<h2>Roadmap 2018</h2>
+				<ul>
+					<li><code>createSidebarPanel</code> for Developer Tools in Firefox 57.</li>
+					<li><code>find</code> to search in all the pages in Firefox 57.</li>
+					<li>Privacy API with more options for extensions on Firefox 57/58.</li>
+					<li>Theme API in Firefox 58 with more options on 59!</li>
+					<li>Improved XHR/Fetch requests to use a sessions/headers of a specific frame in Firefox 58!</li>
+					<li>Better permission management in Firefox for Android 58!</li>
+					<li>Tab hiding is back on Firefox 59!</li>
+					<li>Register Content Scripts at runtime in Firefox 59!</li>
+					<li>Override of proxy settings by API in Firefox 59.</li>
+					<li>Pageactions can be shown/hidden automatically by url pattern on manifest.json in Firefox 59.</li>
+					<li><code>browserSettings</code> is becoming better at every new release :-D</li>
+					<li>WebExt experiments bundled in the same extension (missing docs).</li>
+					<li>More performance and improving!</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<h2>We want examples!</h2>
+				<ol>
+					<li><a href='https://github.com/mdn/webextensions-examples'>https://github.com/mdn/webextensions-examples</a></li>
+					<li>or</li>
+					<li>git clone git@github.com:mdn/webextensions-examples.git</li>
+					<li>Look all the 45 examples for different APIs!</li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<h2>Try it!</h2>
+				<p><img class="center" src="pictures/debugging.png"></p>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<h2>Web-ext</h2>
+				<p>
+					https://github.com/mozilla/web-ext
+				</p>
+				<p>
+					Command line tool to help build, run, watcher, and test web extensions.
+				</p>
+				<p>
+					Run an extension from cli, linting, signing, validation and packaging.
+				</p>
+				<pre><code>web-ext run -s /path/extension/ --firefox-binary=/path/firefox</code></pre>
+				<pre><code>web-ext build -s /path/extension/</code></pre>
+			</div>
+		</section>
+
+		<section class="slide"><div>
+				<h2>ExtStoreStats</h2>
+				<p>
+					https://github.com/Mte90/ExtStoreStats
+				</p>
+				<p>
+					Cross the download stats between browser extension marketplace!
+				</p>
+				<pre><code>https://mte90.github.io/ExtStoreStats/</code></pre>
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<img class="center" src="pictures/hub.png" style="margin-top:-20px" height="600px" alt="">
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<img class="center" src="pictures/New-AMO.png" style="margin-top:-20px" height="600px" alt="">
+			</div>
+		</section>
+
+		<section class="slide blue">
+			<div>
+				<img class="center" src="pictures/ext-tester.png" style="margin-top:-20px" alt="">
+				<center><small>https://www.extensiontest.com/</small></center>
+			</div>
+		</section>
+
+		<section class="slide shout gradient-nightly">
+			<div>
+				<h2>W3C standard still in progress!</h2><br>
+				<center><small>https://browserext.github.io/</small></center>
+			</div>
+		</section>
+
+		<section class="slide red">
+			<div>
+				<h2>News from W3C</h2>
+				<ul>
+					<li>Browser Extensions last update as draft 23 July 2017</li>
+					<li>Native Messaging for Browser Extensions as draft 17 October 2016.</li>
+					<li>After Firefox Quantum the definition of standard will start again</li>
+					<li><a href="https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421">https://discourse.mozilla.org/t/w3c-and-webextensions-apis/20421</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide red">
+			<div>
+				<h2>Link</h2>
+				<ul>
+					<li><a href="https://blog.mozilla.org/addons/">Everything you need to know to be updated is the Addons blog</a></li>
+					<li><a href="https://discourse.mozilla.org/c/add-ons">You need help? Check the Discourse Addons category!</a></li>
+					<li><a href="https://github.com/bfred-it/Awesome-WebExtensions">https://github.com/bfred-it/Awesome-WebExtensions</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">WebExtensions Docs on MDN</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs">WebExtensions APIs</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide">
+			<div>
+				<h2>Questions?</h2>
+				<figure class="frame place swing">
+					<img src="pictures/redpanda.jpg" alt="Red panda (Firefox)">
+				</figure>
+				<div class="bottom">
+					Daniele Scasciafratte | <a href="http://twitter.com/Mte90Net">@Mte90Net</a> | <strong>Slides</strong>: mte90.github.io/Talk-WebExt/
+				</div>
+			</div>
+		</section>
+
+		<div class="progress"><div></div></div>
+		<script src="shower/scripts.js"></script>
+	</body>
+</html>

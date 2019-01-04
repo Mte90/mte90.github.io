@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Development on Firefox OS for newbie</title>
+
+		<meta name="author" content="Mte90 alias Daniele Scasciafratte">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/mozilla.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="firefox-os-development-for-newbie" class="level2">
+<h2>Firefox OS development for newbie</h2>
+<figure>
+<img src="./img/logo.png" />
+</figure>
+<p>Develop an app has never been easier</p>
+<blockquote>
+<p>HTML5 Codeshow Roma - Mozilla Codeshow<br />Speaker: Daniele &quot;Mte90&quot; Scasciafratte (<span class="citation" data-cites="Mte90Net">@Mte90Net</span>)</p>
+</blockquote>
+</section>
+<section id="its-me-mario-ehm-daniele" class="level2">
+<h2>It's Me Mario Ehm Daniele</h2>
+<p>Daniele Scasciafratte aka <a href="http://www.mte90.net">Mte90</a></p>
+<ul>
+<li>Co-Founder Codeat</li>
+<li>Open Source Developer/Translator/Evangelist</li>
+<li>WordPress Italia Community Member/Translator/Developer</li>
+<li>Industria Italiana del Software Libero Admin</li>
+<li>Debian (sid) user since 2009</li>
+<li>Writer for Italian sites: AndMore's network, ChimeraRevo and TechEconomy</li>
+<li><strong>Mozillian &amp; Mozilla Reps &amp; Participation Leader</strong></li>
+</ul>
+</section>
+<section id="firefox-os" class="level2">
+<h2>Firefox OS</h2>
+<figure>
+<img src="./img/firefoxos.jpg" />
+</figure>
+<p>Firefox OS is a <strong>mobile operative system</strong> based on <strong>Linux</strong> and <strong>Android</strong>, divided in three layers:<br /><strong>Gonk</strong> (the kernel), <strong>Gecko</strong> (browser engine) and <strong>Gaia</strong> (HTML5 UI)</p>
+</section>
+<section id="you-like-to-win-easily-dont-you" class="level2">
+<h2>You like to win easily, don't you?</h2>
+<p><img src="./img/vincere.jpg" /><br />Firefox OS is <strong>very simple</strong> for a HTML5 <strong>Developer</strong>, Web <strong>Developer</strong>, Lazy <strong>Developer</strong>, Javascript <strong>Developer</strong>, Apps <strong>Developer</strong>, Bored <strong>Developer</strong> etc.</p>
+</section>
+<section id="standard-w3c-apis" class="level2">
+<h2>Standard W3C APIs</h2>
+<p><img src="./img/stop-changing-the-api-i-know-where-you-live-thumb.jpg" /><br />Firefox OS use <strong>Gecko</strong>, that <strong>follows the W3C guidelines</strong> for the APIs<br />Furthermore many of these API <strong>was born on Firefox OS</strong> like Vibration API or Battery API</p>
+</section>
+<section id="vendor-apis" class="level2">
+<h2>Vendor APIs</h2>
+<p><img src="./img/what.jpg" /><br />Firefox OS have <strong>vendor APIs</strong> (often they're privileged) for access to SO features like the Alarm</p>
+</section>
+<section id="webactivity-apis" class="level2">
+<h2>WebActivity APIs</h2>
+<p><img src="./img/communicate.jpg" /><br />WebActivity is the solution for <strong>exchange data/communicate/launch</strong> other app/etc between an app and the other one</p>
+</section>
+<section id="i-choose-you" class="level2">
+<h2>I choose you</h2>
+<figure>
+<img src="./img/chosen.jpg" />
+</figure>
+<blockquote>
+<p>WebTelephony, Vibration API, WebSMS, Idle API, Screen Orientation, Settings API, Power manager API, Mobile Connection API, TCP Socket API, Geolocation API, WiFi Information API, Device Storage API, Contacts API, Mouse Lock API, Open WebApps, WebBluetooth, Network Information API, Battery Status API, Alarm API, Browser API, Time/Clock API, Web Activities, Push Notification API, Permission API, WebFM API, FileHandle API, Network Stats API, WebPayment, IndexedDB, Archive API, Ambient Light Sensor API, Proximity Sensor, SystemXHR, WebNFC etc...</p>
+</blockquote>
+<p><small>Source: <a href="https://wiki.mozilla.org/WebAPI" class="uri">https://wiki.mozilla.org/WebAPI</a></small></p>
+</section>
+<section id="make-money" class="level2">
+<h2>Make money!</h2>
+<p><img src="./img/money.png" /><br />Mozilla has created an API for Web Payment<br /><small>Source: <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments" class="uri">https://developer.mozilla.org/en-US/docs/Web/Apps/Publishing/In-app_payments</a><br />Library: <a href="https://hacks.mozilla.org/2014/09/introducing-fxpay-for-in-app-payments/" class="uri">https://hacks.mozilla.org/2014/09/introducing-fxpay-for-in-app-payments/</a><br /><a href="https://hacks.mozilla.org/2013/10/working-with-receipts-for-paid-apps/">Working with receipts for paid apps</a></small></p>
+</section>
+<section id="we-want-the-code" class="level2">
+<h2>We want the code!</h2>
+<p><img src="./img/javascript.jpg" /><br />Let's talk about some <strong>useful resources</strong> for the <strong>newbie developer</strong> and the Firefox OS Developer</p>
+</section>
+<section id="open-web-apps" class="level2">
+<h2>Open Web Apps</h2>
+<figure>
+<img src="./img/openwebapps.jpg" />
+</figure>
+<ul>
+<li>Web app packaged (local without web server) or hosted (online)</li>
+<li>Installable on (Windows, OSX, Linux, Android, Firefox OS)</li>
+<li><strong>Pure HTML5, CSS and JavaScript</strong></li>
+<li>Opened in a window/fullscreen</li>
+<li>In the start menu/launcher</li>
+<li><em>In Android a real .apk!</em></li>
+</ul>
+</section>
+<section id="firefox-os-boilerplate-app" class="level2">
+<h2>Firefox OS Boilerplate App</h2>
+<p>Let's start with an interactive example!</p>
+<ul>
+<li>HTML5 API examples like vibration, ambient light, notification etc</li>
+<li>Web Activity examples like send sms, pick image etc</li>
+<li>Privileged API examples like Cross Domain XHR</li>
+<li>Style of <strong>Gaia</strong> (based on Firefox OS Building Blocks)</li>
+<li>Multilanguage with l10n.js (used in Gaia)</li>
+<li>Open Web Apps full support</li>
+</ul>
+<p><br><small><a href="http://robnyman.github.io/Firefox-OS-Boilerplate-App/" class="uri">http://robnyman.github.io/Firefox-OS-Boilerplate-App/</a></small></p>
+</section>
+<section id="gaia-components" class="level2">
+<h2>Gaia Components</h2>
+<p>JavaScript framework of Gaia with documentation</p>
+<ul>
+<li>Each component has its own repo</li>
+<li>Easily Installable</li>
+<li>Versioned separately</li>
+<li>Tested separately</li>
+<li>CSS Variables</li>
+<li>Native UI</li>
+<li>Unit test</li>
+</ul>
+<p><br> Demos: <a href="http://wilsonpage.github.io/presentations/web-components-in-production" class="uri">http://wilsonpage.github.io/presentations/web-components-in-production</a> , <a href="http://github.com/gaia-components" class="uri">http://github.com/gaia-components</a></p>
+</section>
+<section id="l10n.js" class="level2">
+<h2>l10n.js</h2>
+<ul>
+<li>Multibrowser</li>
+<li>Language files are ini files</li>
+<li>Use <code>data-l10n</code> attribute for the string references</li>
+<li>Transifex support</li>
+<li>Require a <code>&lt;link&gt;</code> declaration in the <code>&lt;head&gt;</code> for config <br> See the boilerplate for example!</li>
+</ul>
+</section>
+<section id="mozpolyfill.js" class="level2">
+<h2>mozPolyfill.js</h2>
+<p><img src="./img/polyfill.jpg" /><br />Simple way for adding the missing APIs in the other browsers</p>
+<ul>
+<li>Multibrowser support</li>
+<li>WebActivity support</li>
+<li>Useful for debug</li>
+<li>Alert or Console.log message (on send sms, open contact etc...)</li>
+</ul>
+<p><a href="http://mte90.github.io/moz-polyfills/" class="uri">http://mte90.github.io/moz-polyfills/</a></p>
+</section>
+<section id="official-support" class="level2">
+<h2>Official support</h2>
+<figure>
+<img src="./img/framework.jpg" />
+</figure>
+</section>
+<section id="framework-with-firefox-os-support" class="level2">
+<h2>Framework with Firefox OS support</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/Apps/Tools_and_frameworks/Cordova_support_for_Firefox_OS">Cordova</a></li>
+<li><a href="https://hacks.mozilla.org/2013/03/firefox-os-support-lands-in-enyojs-2-2/">EnyoJS</a></li>
+<li><a href="https://hacks.mozilla.org/2014/03/flambe-provides-support-for-firefox-os/">Flambe</a></li>
+<li><a href="https://hacks.mozilla.org/2014/05/app-framework-and-firefox-os/">Intel App Framework</a></li>
+<li>Marmelade SDK</li>
+<li>mGWT - In progress</li>
+</ul>
+<p><small><a href="https://github.com/claudiodangelis/dart-FirefoxOS-Boilerplate-App">Dart Firefox OS Boilerplate App</a></small></p>
+</section>
+<section id="testing" class="level2">
+<h2>Testing</h2>
+<figure>
+<img src="./img/testing.jpg" />
+</figure>
+<ul>
+<li>Firefox Developer Edition</li>
+<li>WebIDE integrated in Firefox</li>
+<li>Firefox OS Simulator (1.3, 1.4, 2.0, 2.1, 2.2, 3.0) an extension for Firefox<br /></li>
+<li>Devices and Simulator work with WebIDE</li>
+<li>Use ADB to communicate with Firefox OS devices</li>
+</ul>
+</section>
+<section id="cross-origin-request" class="level2">
+<h2>Cross Origin Request</h2>
+<p><img src="./img/bug.jpg" /><br />The principal debug problem in the Open Web Apps is the <em><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a></em><br />The flag <code>mozSystem: true</code> in the AJAX request disable the block of the browser</p>
+</section>
+<section id="cli" class="level2">
+<h2>CLI</h2>
+<figure>
+<img src="./img/bash.jpg" />
+</figure>
+</section>
+<section id="node-fxosnode-firefox" class="level2">
+<h2>Node-fxos/Node-firefox</h2>
+<p><img src="./img/automate.jpg" /><br />Node tools for Firefox OS (gulp and grunt support)<br /><em>Ex: fxos-deploy, fxos-start, x-ports, fxos-reloadcss</em><br /><a href="http://nicola.github.io/node-fxos/#examples">http://nicola.github.io/node-fxos/</a><br /><a href="https://github.com/mozilla/node-firefox" class="uri">https://github.com/mozilla/node-firefox</a>, <a href="https://hacks.mozilla.org/2015/02/introducing-node-firefox/">Introducing node-firefox</a></p>
+</section>
+<section id="documentation" class="level2">
+<h2>Documentation</h2>
+<figure>
+<img src="./img/documentation.jpg" />
+</figure>
+</section>
+<section id="mdn" class="level2">
+<h2>MDN</h2>
+<figure>
+<img src="./img/mdn.png" />
+</figure>
+<ul>
+<li>The first wiki for web developer!<br /></li>
+<li>HTML5, CSS3, Javascript/Ecmascript6, Firefox Extension, Firefox OS documentation</li>
+<li>References about browser support</li>
+<li>Examples</li>
+<li>Italian translation in progress!</li>
+</ul>
+<p><br> <a href="https://developer.mozilla.org/" class="uri">https://developer.mozilla.org/</a></p>
+</section>
+<section id="developing-for-firefox-os" class="level2">
+<h2>Developing for Firefox OS</h2>
+<figure>
+<img src="./img/guide.png" />
+</figure>
+<ul>
+<li>Free Ebook in different format (PDF, Mobi, Epub)</li>
+<li>Italian version in <strong>public beta mode</strong> with new topics (backport in the English version soon)</li>
+<li>Italian, German and Portuguese translation</li>
+</ul>
+<p><br> <a href="https://leanpub.com/quickguidefirefoxosdevelopment" class="uri">https://leanpub.com/quickguidefirefoxosdevelopment</a><br /><a href="https://leanpub.com/guidavelocesviluppofirefoxos" class="uri">https://leanpub.com/guidavelocesviluppofirefoxos</a></p>
+</section>
+<section id="workflow" class="level2">
+<h2>Workflow</h2>
+<figure>
+<img src="./img/workflow.png" />
+</figure>
+</section>
+<section id="development-workflow" class="level2">
+<h2>Development Workflow</h2>
+<ul>
+<li>Create a manifest.webapp</li>
+<li>Create the UI</li>
+<li>Develop/test in the browser</li>
+<li>Test on simulator/device</li>
+<li>If Hosted upload on your web server (Github is good)</li>
+<li>If Packaged create a zip file</li>
+</ul>
+</section>
+<section id="manifest-validator" class="level2">
+<h2>Manifest validator</h2>
+<figure>
+<img src="./img/validate.jpg" />
+</figure>
+<p>Simple validator that check your manifest and other little things</p>
+<p><a href="https://marketplace.firefox.com/developers/validator" class="uri">https://marketplace.firefox.com/developers/validator</a></p>
+</section>
+<section id="marketplace" class="level2">
+<h2>Marketplace</h2>
+<figure>
+<img src="./img/statistics.png" />
+</figure>
+<ul>
+<li>Upload your app on the marketplace</li>
+<li>Wait the approval</li>
+<li>Fix the problem reported (if exist)</li>
+<li>Look the statistics!</li>
+</ul>
+</section>
+<section id="web-site-reference" class="level2">
+<h2>Web Site Reference</h2>
+<ul>
+<li><a href="https://hacks.mozilla.org/category/firefox-os/">Mozhacks</a> - Mozilla blog for web developer</li>
+<li><a href="https://developer.mozilla.org/it/">Mozilla Developer Network</a></li>
+<li><a href="https://developer.mozilla.org/en-US/Apps/Reference/Firefox_OS_app_tools"><strong>Firefox OS App Tools</strong></a></li>
+<li><a href="http://www.mte90.net/en/2014/06/firefox-developer-tool-vs-firebug/">Firefox Developer Tool vs Firebug</a></li>
+<li><a href="https://marketplace.firefox.com/developers/">Developers Hub</a> - Marketplace Portal for developers</li>
+<li><a href="http://www.github.com">Github</a> - Many app are on Github</li>
+<li><a href="http://forum.mozillaitalia.org/">Mozilla Italia Forum</a></li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2></h2>
+<p><img src="./img/question.jpg" /><br /><br> Link talk: <a href="http://goo.gl/B79Efy" class="uri">http://goo.gl/B79Efy</a><br />Talk by:<br />Daniele Scasciafratte - <span class="citation" data-cites="Mte90Net">@Mte90Net</span> - <a href="http://www.mte90.net">Mte90.net</a></p>
+</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				touch: true,
+				history: true,
+				center: true,
+				loop: true,
+				slideNumber: true,
+				width:'100%',
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'zoom',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				]
+			});
+		</script>
+
+	</body>
+</html>

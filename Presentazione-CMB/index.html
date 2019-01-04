@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Come aggiungere dei custom field al tuo tema</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Roma</div><div class="hashtag">#wproma</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Proviamo CMB2</h1>
+					<h3>Come aggiungere dei custom field al tuo tema</h3>
+					<p>
+						<small>By <a href="http://mte90.net">Daniele Scasciafratte</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background-transition="concave" data-background="img/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder Codeat - Full Stack Developer</li>
+							<li>Mozillian&Mozilla Reps</li>
+							<li>Redattore per il network AndMore, ChimeraRevo, TechEconomy</li>
+							<li>Utente Debian Linux dal 2009</li>
+							<li>WordPress Contributor/Developer/Translator</li>
+							<li>Open Source Addicted</li>
+							<li>Industria Italiana Software Libero Admin</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h4 class="fragment roll-in">Hai mai modificato un tema di altri?</h4>
+					<h4 class="fragment roll-in">Hai mai scritto un tema da zero?</h4>
+				</section>
+
+				<section data-background="img/cmb2.png">
+					<div class="fragment">
+						<p><a target="_blank" href="https://wordpress.org/plugins/cmb2/">wordpress.org/plugins/cmb2/</a></p>
+						<p class="fragment"><a target="_blank" href="https://github.com/WebDevStudios/CMB2">github.com/WebDevStudios/CMB2</a></p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Feature</h2>
+					<p class="fragment roll-in">Multilingua</p>
+					<p class="fragment roll-in">Utilizzabile nelle pagine opzioni</p>
+					<p class="fragment roll-in">Nei post type anche da frontend</p>
+					<p class="fragment roll-in">Anche per i plugin</p>
+					<p class="fragment roll-in">Millemila parametri</p>
+					<p class="fragment roll-in">Moduli aggiuntivi</p>
+					<p class="fragment roll-in">Wiki: <a target="_blank" href="https://github.com/WebDevStudios/CMB2/wiki">github.com/WebDevStudios/CMB2/wiki</a></p>
+					<p class="fragment roll-in">Snippets: <a target="_blank" href="https://github.com/WebDevStudios/CMB2-Snippet-Library">github.com/WebDevStudios/CMB2-Snippet-Library</a></p>
+					<p class="fragment roll-in"><a target="_blank" href="http://wpandmore.info/crea-meta-box-senza-problemi/">wpandmore.info/crea-meta-box-senza-problemi/</a></p>					
+				</section>
+
+				<section data-transition="fade" data-background-transition="convex">
+					<img src="img/fregatura.jpg">
+				</section>
+
+				<section data-transition="fade" data-background-transition="convex">
+					<img src="img/opensource.jpg">
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Apriamo il file functions.php</h2>
+					<p>
+						<small><a target="_blank" href="https://github.com/WebDevStudios/CMB2/wiki/Field-Types">github.com/WebDevStudios/CMB2/wiki/Field-Types</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Inseriamo il codice di esempio</h2>
+				</section>
+
+				<section>
+					<pre><code data-trim class="php" style="max-height: 630px;">
+// Hook di inizializzazione
+add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
+function cmb2_sample_metaboxes() {
+
+    // Un _ all'inizio fá in modo che dal backend nel box per i campi personalizzati non venga visualizzato
+    $prefix = '_yourprefix_';
+
+    // Creiamo il box
+    $cmb = new_cmb2_box( array(
+        'id'            => 'test_metabox', // ID di riferimento, deve essere univoco
+        'title'         => __( 'Test Metabox', 'cmb2' ), // Il titolo del box
+        'object_types'  => array( 'page', 'post', 'iltuocpt', 'user' ), // I Post type
+        'context'       => 'normal', // Indica la posizione se centrale o laterale
+        'priority'      => 'high', // Indica l'ordine
+        'show_names'    => true, // Mostra il titolo del campo
+        // 'closed'     => true, // Box chiuso di default
+    ) );
+
+    // Classico campo di testo
+    $cmb->add_field( array(
+        'name'       => __( 'Test Text', 'cmb2' ), // Titolo del campo
+        'desc'       => __( 'field description (optional)', 'cmb2' ), // Descrizione del campo
+        'id'         => $prefix . 'text', // ID di riferimento del valore e del box, meglio univoco
+        'type'       => 'text', // Il tipo di campo
+        // 'show_on_cb'      => 'cmb2_hide_if_no_cats', // Callback per mostrare il campo tramite del nostro codice
+        // 'sanitization_cb' => 'my_custom_sanitization', // Validazione del valore del campo tramite del nostro codice
+        // 'on_front'        => false, // Visualizzarlo da frontend
+        // 'repeatable'      => true, // Campo ripetuto
+    ) );
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Modifichiamo una pagina e salviamo</h2>
+				</section>
+
+				<section>
+					<h2>Modifichiamo il file page.php</h2>
+					<small><a target="_blank" href="https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage">github.com/WebDevStudios/CMB2/wiki/Basic-Usage</a></small>
+				</section>
+
+				<section data-transition="fade" data-background-transition="convex">
+					<img src="img/amazing.jpg">
+				</section>
+
+				<section>
+					<img src="img/question.jpg" />
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>

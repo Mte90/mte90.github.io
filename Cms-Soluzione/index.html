@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>I CMS Open Source sono veramente la soluzione?</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
+		<link rel="Shortcut Icon" href="http://codeat.it/wp-content/themes/agency-pro/images/favicon.ico" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Primo forum Industria Italiana del Software Libero</div><div class="hashtag">#industriasl</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+                    <h1>I CMS Open Source sono veramente la  soluzione?</h1>
+				</section>
+                
+                <section>
+                    <h2>Ieri</h2>
+                </section>
+                
+				<section class="force-bottom" data-background="img/file.gif">
+                    <div class="background">
+                        <h2 class="white-black-shadow">I file sono dentro al computer!</h2>
+                    </div>
+				</section>
+				
+				<section>
+                    <h2>Oggi</h2>
+				</section>
+				
+                <section class="fullcover" data-background="img/oggi.jpg">
+                </section>
+                
+                <section class="fullcover force-bottom" data-background="img/cms.jpg">
+                    <div class="background">
+                        <h2 class="white-black-shadow">L'Open Source è ovunque</h2>
+                    </div>
+                </section>
+                
+                <section class="fullcover" data-background="img/commitstrip.jpg">
+                </section>
+
+				<section>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>Proprietario</td>
+                            <td>Open Source</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Estendibile</td>
+                            <td>Richiede molto tempo</td>
+                            <td>Plugin per ogni cosa</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Design</td>
+                            <td>Bloccati dalla struttura</td>
+                            <td>Sistema avanzato</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Aggiornamenti</td>
+                            <td>Improbabili</td>
+                            <td>Gratuiti</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Gestione del contenuto</td>
+                            <td>Complicata</td>
+                            <td>Facile ed indipendente</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Community</td>
+                            <td>Forse</td>
+                            <td>Anche a livello nazionale</td>
+                        </tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>In soldoni</h2>
+					<p>
+						Veloci da realizzare, abbattono i costi di realizzazione e di gestione, rendono anche indipendente l'utilizzatore, veloci da estendere, mantenibili nel tempo.
+					</p>
+				</section>
+
+				<section>
+					<img src="img/question.jpg" />
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
