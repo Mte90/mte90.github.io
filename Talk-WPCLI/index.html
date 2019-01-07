@@ -129,7 +129,9 @@ wp search-replace http://domain.com https://domain.com --network
 ##### OR #####
 wp search-replace http://olddomain.com https://newdomain.com --export=newdb.sql --all-tables
 ##### Remove JS code inside post_content
-wp search-replace '<script(.*?)>(.*?)<\/script>' '' --regex --include-columns=post_content --skip-columns=gui --skip-themes --skip-plugins wp_posts --regex-flags='ms'
+wp search-replace '&#60;script(.*?)&#62;(.*?)&#60;\/script&#62;' '' --regex 
+ \ --include-columns=post_content --skip-columns=gui 
+ \ --skip-themes --skip-plugins wp_posts --regex-flags='ms'
 					</code></pre>
 				</section>
 
