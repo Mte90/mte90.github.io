@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Firefox is your Marionette</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/mozilla/styles/style.css">
+</head>
+<body class="list">
+	<header class="caption">
+        <h1>Firefox is your Marionette</h1>
+		<p>Get fun using the unit test system to control Firefox</p>
+	</header>
+	<section class="slide cover"><div>
+        <h2>Firefox is your Marionette</h2>
+		<p><a href="https://daniele.tech">Daniele Scasciafratte</a></p>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Daniele</h2>
+		<ul style="float: left;">
+			<li>Co Founder/CTO Codeat</li>
+			<li>Open Source Addicted</li>
+			<li>Mozillian & Mozilla Reps<br> & Mozilla TechSpeaker</li>
+			<li>WordPress Core Contributor/Developer</li>	
+			<li>ClassicPress Founding Committee</li>						
+			<li>WordPress Rome/Terni meetup</li>
+			<li>Project Translation Editor<br> in WordPress Italia</li>
+			<li>Industria Italiana Software Libero<br> Vice Presidente</li>
+		</ul>
+		<img src="pictures/film.jpg" style="float: right;" />
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/automate-job.png" />
+	</div></section>
+	<section class="slide lightblue"><div>
+		<h2>My personal rules of automation</h2>
+		<ul>
+			<li class="next">If you do a process more then 3 times</li>
+			<li class="next">That is always the same</li>
+			<li class="next">On the computer</li>
+			<li class="next">That you can replicate with scripting</li>
+			<li class="next">And that you want to relax more</li>
+			<li class="next"><h3 style="display: inline;font-size: 34px;">That is boring</h3></li>
+			<li class="next"><h2 style="display: inline;font-size: 38px;">That a missing step create issues</h2></li>
+			<li class="next"><h1 style="display: inline;font-size: 50px;">It is time to do a script!</h1></li>
+		</ul>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/scriptingtime.png" />
+	</div></section>
+	<section class="slide blue"><div>
+		<h1>Browsers and scripting</h1><br>
+		<ol>
+			<li class="next"><h2 style="display: inline;">WebExtensions</h2></li>
+			<li class="next"><h2 style="display: inline;">Scripting with CLI commands</h2></li>
+			<li class="next"><h2 style="display: inline;">Unit Test/DevTools protocol</h2></li>
+		</ol>
+		<p class="note next" style="color:#fff;">What do you think that is most fun and powerful?</p>
+	</div></section>
+	<section class="slide blue"><div>
+		<h2>WebExtensions</h2>
+		<img src="pictures/webext.jpg" style="float: left;" />
+		<ol style="float: left;margin-left: 40px;">
+			<li class="next">Cross Browser compatibility</li>
+			<li class="next">API stable between various releases</li>
+			<li class="next">More API only on Firefox</li>
+			<li class="next">Huge marketplace</li>
+			<li class="next">Useful for specific kind of tasks</li>
+		</ol>
+		<div style="clear:both"></div>
+		<h2>Shell scripting</h2>
+		<ol style="float: left;">
+			<li class="next">Missing Cross Browser compatibility</li>
+			<li class="next">Only specific features availabl like screenshot</li>
+			<li class="next">Very highly skilled users</li>
+			<li class="next">Useful for specific kind of tasks</li>
+		</ol>
+		<img src="pictures/shell.png" style="float: right;margin-left: 40px;" />
+	</div></section>
+	<section class="slide lightblue"><div>
+		<h2>Unit Test/DevTools protocol</h2>
+		<ul>
+			<li class="next">Puppeteer for Chrom*, NodeJS</li>
+			<li class="next">Selenium, Java with bindings for other languages
+				<ul>
+					<li class="next">Firefox 55 maximum supported</li>
+				</ul>
+			</li>
+			<li class="next">Selenium IDE as Firefox/Chrome extension</li>
+			<li class="next">Puppeteer for Firefox, NodeJS (experimental)</li>
+			<li class="next">Marionette for Firefox, Python</li>
+		</ul>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/pinocchio.png" />
+	</div></section>
+	<section class="slide red"><div>
+		<h2>The Marionette in IT world</h2>
+		<p>Marionette is the remote protocol that lets out-of-process programs communicate with, instrument, and control Gecko-based browsers.<br><br>
+It provides interfaces for interacting with both the internal JavaScript runtime and UI elements of Gecko-based browsers, such as Firefox and Fennec. It can control both the chrome- and content documents, giving a high level of control and ability to replicate, or emulate, user interaction.</p>
+		<p class="note" style="color:#fff;"><a href="https://firefox-source-docs.mozilla.org/testing/marionette/marionette/">https://firefox-source-docs.mozilla.org/testing/marionette/marionette/</a></p>
+	</div></section>
+	<section class="slide shout gradient-nightly"><div>
+		<h2>How to use it?</h2>
+	</div></section>
+	<section class="slide red"><div>
+		<h2>Enable Marionette</h2>
+		<ol>
+			<li class="next">Download Firefox for Developer build</li>
+			<li class="next"><code>pip/pip3 install marionette_driver</code></li>
+			<li class="next">Change settings in about:config:<br>
+				<code>marionette.enabled -> true</code><br>
+				<code>marionette.port -> 2828</code>
+			</li>
+			<li class="next">Execute Firefox in Marionette mode <code>./firefox -marionette</code></li>
+		</ol>
+	</div></section>
+	<section class="slide orange"><div>
+		<h2>BulkRejectGP</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+	</div></section>
+	<section class="slide blue"><div>
+		<h2>All Kind of Lists</h2>
+		<ol>
+			<li>Simple lists are marked with bullets</li>
+			<li>Ordered lists begin with a number</li>
+			<li>You can even nest lists one inside another
+				<ul>
+					<li>Or mix their types</li>
+					<li>But do not go too far</li>
+					<li>Otherwise audience will be bored</li>
+				</ul>
+			</li>
+			<li>Look, seven rows exactly!</li>
+		</ol>
+	</div></section>
+	<section class="slide darkgray"><div>
+		<h2>Serious Citations</h2>
+		<figure>
+			<blockquote>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+			</blockquote>
+			<figcaption>Marcus Tullius Cicero</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Code Samples</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code>&lt;html lang="en"&gt;</code>
+			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
+			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide shout gradient-nightly"><div>
+		<h2>You can even shout this way</h2>
+	</div></section>
+	<section class="slide"><div>
+        <h2>Question?</h2>
+        <figure class="frame place swing">
+        <img src="pictures/redpanda.jpg" alt="Red panda (Firefox)">
+        </figure>
+    </div></section>
+    
+	<div class="progress"><div></div></div>
+	<script src="shower/scripts.js"></script>
+</body>
+</html>
