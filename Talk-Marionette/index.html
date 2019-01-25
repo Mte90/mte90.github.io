@@ -93,6 +93,13 @@
 			<li class="next">Marionette for Firefox, Python</li>
 		</ul>
 	</div></section>
+	<section class="slide red"><div>
+		<h2>Why not use Puppeteer?</h2>
+		<p>Puppeteer require NodeJS and you need to write in JavaScript only for Chrom*.<br>
+		Marionette require Python and is only for Firefox.</p>
+		<h2>Why not use Selenium?</h2>
+		<p>Selenium is in Java and not works with Firefox. Instead is better to use Selenium IDE that is a browser extension.</p>
+	</div></section>
 	<section class="slide cover"><div>
 		<img src="pictures/pinocchio.png" />
 	</div></section>
@@ -109,13 +116,22 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 		<h2>Enable Marionette</h2>
 		<ol>
 			<li class="next">Download Firefox for Developer build</li>
-			<li class="next"><code>pip/pip3 install marionette_driver</code></li>
+			<li class="next"><code>pip install marionette_driver</code></li>
 			<li class="next">Change settings in about:config:<br>
 				<code>marionette.enabled -> true</code><br>
 				<code>marionette.port -> 2828</code>
 			</li>
+			<li class="next">Verify to have the latest version of marionette</li>
 			<li class="next">Execute Firefox in Marionette mode <code>./firefox -marionette</code></li>
 		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>How works</h2>
+		<p>Marionette is a bridge that use sockets internally to communicate with Firefox and require a specific Firefox build.<br><br>
+		Offers a full control of Firefox also of other stuff that are not included in DevTools protocol because it is used in Firefox for testing.<br><br>
+		Also it is the same technology used on the various Firefox version like Firefox for Android.<br><br>
+		Marionette is an implementation of the WebDriver standard but wrapped in this "framework" that is stable, require only a supported Firefox version.
+		</p>
 	</div></section>
 	<section class="slide orange"><div>
 		<img src="pictures/bulkrejectwp.png" style="margin-left: -55px;margin-top:-40px" />
@@ -128,41 +144,64 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 	<section class="slide shout gradient-nightly"><div>
 		<h2>Demo time</h2>
 	</div></section>
-	<section class="slide blue"><div>
-		<h2>All Kind of Lists</h2>
+	<section class="slide"><div>
+		<h2>How works quickly</h2>
+		<pre>
+			<code>from marionette_driver.marionette import Marionette</code>
+			<code>from marionette_driver import By, Actions</code>
+			<code># Connect to Firefox</code>
+			<code>client = Marionette(host='localhost', port=<mark class="important">2828</mark>)</code>
+			<code><mark class="important">client.start_session()</mark></code>
+			<code>[...]</code>
+			<code>posts = client.find_elements(<mark class="important">By.CSS_SELECTOR</mark>, 'td.title a.row-title')</code>
+			<code>for post in posts:</code>
+			<code>Actions(client).<mark class="important">middle_click</mark>(post).perform()</code>
+			<code>[...]</code>
+			<code>client.switch_to_window(client.window_handles[-1])</code>
+			<code>[...]</code>
+			<code>export.write(<mark class="important">client.page_source</mark>.encode('utf-8'))</code>
+		</pre>
+		<p class="note">You can also inject JavaScript, switch between tabs to change the focus, autofill username/password etc.</p>
+	</div></section>
+	<section class="slide orange"><div>
+		<h2>Another future example project</h2>
 		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
+			<li class="next">We need to export 170000~ url from Google Analytics</li>
+			<li class="next">The web interface support only 5000 for page</li>
+			<li class="next">The API require a license</li>
+			<li class="next">Our idea to let reuse that script</li>
+			<li class="next">Using Firefox to auto click the Download button</li>
+			<li class="next">That automatically switch to the next page with other 5000 urls</li>
+			<li class="next">Later with other script we will compare that list</li>
+			<li class="next">And remove the pages that are not in the list from our customer that are 15000~</li>
 		</ol>
 	</div></section>
-	<section class="slide darkgray"><div>
-		<h2>Serious Citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+	<section class="slide blue"><div>
+		<h2>My usual dev workflow</h2>
+		<ol>
+			<li>Analyze the page, if
+				<ul>
+					<li>I need to parse in realtime because of other steps</li>
+					<li>I can do the parse later of what I am looking for</li>
+				</ul>
+			</li>
+			<li>Analyze the flow, If
+				<ul>
+					<li>the tool require different parameters, add a config file</li>
+					<li>I can open manually the url to script</li>
+				</ul>
+			</li>
+			<li>Write in the readme, always the settings to change in Firefox</li>
+			<li>Evaluate if I need the <code>headless</code> mode</li>
+		</ol>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Code Samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code>&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
+	<section class="slide blue"><div>
+		<h2>Resources</h2>
+		<ol>
+			<li>Marionette, Act <a href="http://vakila.github.io/blog/marionette-act-i-automation/">1</a>-<a href="http://vakila.github.io/blog/marionette-act-ii-testing/">2</a> by Anjana Sofia Vakil</li>
+			<li><a href="https://firefox-source-docs.mozilla.org/testing/marionette/marionette/">https://firefox-source-docs.mozilla.org/testing/marionette/marionette/</a></li>
+			<li><a href="https://marionette-client.readthedocs.io/en/master/">https://marionette-client.readthedocs.io/en/master/</a></li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
         <h2>Question?</h2>
