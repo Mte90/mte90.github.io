@@ -10,7 +10,7 @@
 <body class="list">
 	<header class="caption">
         <h1>Firefox is your Marionette</h1>
-		<p>Get fun using the unit test system to control Firefox</p>
+		<p>Get fun using the Firefox unit test system</p>
 	</header>
 	<section class="slide cover"><div>
         <h2>Firefox is your Marionette</h2>
@@ -68,6 +68,7 @@
 			<li class="next">More API only on Firefox</li>
 			<li class="next">Huge marketplace</li>
 			<li class="next">Useful for specific kind of tasks</li>
+			<li>Previous Fosdem's Talk: <a href="https://archive.fosdem.org/2017/schedule/event/mozilla_firefox_and_webextensions/">2017</a>, <a href="https://archive.fosdem.org/2018/schedule/event/mozilla_webextensions_api_status_fx57/">2018</a></li>
 		</ol>
 		<div style="clear:both"></div>
 		<h2>Shell scripting</h2>
@@ -76,8 +77,9 @@
 			<li class="next">Only specific features available like screenshot</li>
 			<li class="next">Very highly skilled users</li>
 			<li class="next">Useful for specific kind of tasks</li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options">Command Line Options</a></li>
 		</ol>
-		<img src="pictures/shell.png" style="float: right;" />
+		<img src="pictures/shell.png" style="float: right;margin-top: -40px;" />
 	</div></section>
 	<section class="slide lightblue"><div>
 		<h2>Unit Test/DevTools protocol</h2>
@@ -90,15 +92,8 @@
 			</li>
 			<li class="next">Selenium IDE as Firefox/Chrome extension</li>
 			<li class="next">Puppeteer for Firefox, NodeJS (experimental)</li>
-			<li class="next">Marionette for Firefox, Python</li>
+			<li class="next">Marionette for Firefox (and Firefox for Android), Python</li>
 		</ul>
-	</div></section>
-	<section class="slide red"><div>
-		<h2>Why not use Puppeteer?</h2>
-		<p>Puppeteer require NodeJS and you need to write in JavaScript only for Chrom*.<br>
-		Marionette require Python and is only for Firefox.</p>
-		<h2>Why not use Selenium?</h2>
-		<p>Selenium is in Java and not works with Firefox. Instead is better to use Selenium IDE that is a browser extension.</p>
 	</div></section>
 	<section class="slide cover"><div>
 		<img src="pictures/pinocchio.png" />
@@ -122,7 +117,7 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 				<code>marionette.port -> 2828</code>
 			</li>
 			<li class="next">Verify to have the latest version of marionette</li>
-			<li class="next">Execute Firefox in Marionette mode <code>./firefox -marionette</code></li>
+			<li class="next">(Optional) Execute Firefox in Marionette mode <code>./firefox -marionette</code></li>
 		</ol>
 	</div></section>
 	<section class="slide"><div>
@@ -132,6 +127,13 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 		Also it is the same technology used on the various Firefox version like Firefox for Android.<br><br>
 		Marionette is an implementation of the WebDriver standard but wrapped in this "framework" that is stable, require only a supported Firefox version.
 		</p>
+	</div></section>	
+	<section class="slide red"><div>
+		<h2>My story</h2>
+		<p>As Mozillian (and many other in this room) we prefer to use Mozilla technologies like Firefox DevTools.<br>
+		I try to do the same also on my daily job in my (little) company.<br><br>
+		<b>How many of you evangelism about Mozilla technologies during your daily tasks?</b><br>
+		<p>Let's see different tools that I did for my job but also to help other OpenSource communities with Marionette.</p>
 	</div></section>
 	<section class="slide orange"><div>
 		<img src="pictures/bulkrejectwp.png" style="margin-left: -55px;margin-top:-40px" />
@@ -191,6 +193,7 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 					<li>I can open manually the url to script</li>
 				</ul>
 			</li>
+			<li>If will be used by others, avoid hardcoded stuff</li>
 			<li>Write in the readme, always the settings to change in Firefox</li>
 			<li>Evaluate if I need the <code>headless</code> mode</li>
 		</ol>
