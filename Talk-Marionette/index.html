@@ -27,7 +27,7 @@
 			<li>ClassicPress Founding Committee</li>						
 			<li>WordPress Rome/Terni meetup</li>
 			<li>Project Translation Editor<br> in WordPress Italia</li>
-			<li>Industria Italiana Software Libero<br> Vice Presidente</li>
+			<li>Industria Italiana Software Libero<br> President</li>
 		</ul>
 		<img src="pictures/film.jpg" style="float: right;" />
 	</div></section>
@@ -112,11 +112,11 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 		<ol>
 			<li class="next">Download Firefox for Developer build</li>
 			<li class="next"><code>pip install marionette_driver</code></li>
+			<li class="next">Verify to have the latest version of marionette</li>
 			<li class="next">Change settings in about:config:<br>
 				<code>marionette.enabled -> true</code><br>
 				<code>marionette.port -> 2828</code>
 			</li>
-			<li class="next">Verify to have the latest version of marionette</li>
 			<li class="next">(Optional) Execute Firefox in Marionette mode <code>./firefox -marionette</code></li>
 		</ol>
 	</div></section>
@@ -150,9 +150,9 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 					<li>I can open manually the url to script</li>
 				</ul>
 			</li>
+			<li>Evaluate if I need the <code>headless</code> mode</li>
 			<li>If will be used by others, avoid hardcoded stuff</li>
 			<li>Write in the readme always the settings to change in Firefox</li>
-			<li>Evaluate if I need the <code>headless</code> mode</li>
 		</ol>
 	</div></section>
 	<section class="slide orange"><div>
@@ -184,9 +184,9 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 			<code>for post in posts:</code>
 			<code>Actions(client).<mark class="important">middle_click</mark>(post).perform()</code>
 			<code>[...]</code>
-			<code>client.switch_to_window(client.window_handles[-1])</code>
-			<code>[...]</code>
 			<code>export.write(<mark class="important">client.page_source</mark>.encode('utf-8'))</code>
+			<code>[...]</code>
+			<code>client.switch_to_window(client.window_handles[-1])</code>
 		</pre>
 		<p class="note">You can also inject JavaScript, switch between tabs to change the focus, autofill username/password etc.</p>
 	</div></section>
@@ -199,7 +199,7 @@ It provides interfaces for interacting with both the internal JavaScript runtime
 			<li class="next">Our idea to let reuse that script</li>
 			<li class="next">Using Firefox to auto click the Download button</li>
 			<li class="next">That automatically switch to the next page with other 5000 urls</li>
-			<li class="next">Later with other script we will compare that list</li>
+			<li class="next">Later with other scripts we will compare that list</li>
 			<li class="next">And remove the pages that are not in the list from our customer that are 15000~</li>
 		</ol>
 	</div></section>
