@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordPress Meetup Roma</div><div class="hashtag">#wproma</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordPress Meetup Terni</div><div class="hashtag">#wpterni</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -50,8 +50,9 @@
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>WordPress Core Contributor/Developer</li>
+							<li>ClassicPress - i18n team lead & Founding Committee Member</li>
 							<li>Project Translation Editor in WordPress Italia</li>
-							<li>Industria Italiana Software Libero Vice Presidente</li>
+							<li>Industria Italiana Software Libero Presidente</li>
 						</ul>
 					</div>
 				</section>
@@ -122,6 +123,16 @@ wp core install --prompt
 				</section>
 				
 				<section>
+					<h2>Migrate Taxonomy term between taxonomies</h2>
+					<pre><code data-trim>wp term migrate apple --by=slug --from=category --to=post_tag</code></pre>
+				</section>
+				
+				<section>
+					<h2>Generate Pot files (with JS support)</h2>
+					<pre><code data-trim>wp i18n make-pot/make-json</code></pre>
+				</section>
+				
+				<section>
 					<h2>Search & Replace</h2>
 					<pre><code data-trim>
 wp search-replace http://domain.com https://domain.com
@@ -164,9 +175,10 @@ disabled_commands:
 wp db query "show tables;"
 wp db export
 wp db reset --yes # Yes reset the DB!
+wp db clean --yes # Only the WP tables will be dropped
 wp db import ~/db-export.sql
 wp db search 'http:\/\/' --regex --stats
-wp db size --tables
+wp db size --tables --human-readable
 					</code></pre>
 				</section>
 
@@ -197,7 +209,11 @@ wp option delete option-name
 wp transient delete --expired
 wp cache flush # Redis Memcached or PHP-APCu
 wp media regenerate 
-vim $(wp config path)
+wp transient list
+wp config shuffle-salts
+wp site meta get 123 bio # Website id and field
+wp user check-password admin adminpass # Check if the password of an user is right
+EDITOR=vim wp config edit
 					</code></pre>
 				</section>
 
@@ -351,6 +367,13 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					<h2>WP CLI GUI</h2>
 					<p>
 						<a href="https://wpcligui.com/">wpcligui.com</a>
+					</p>
+				</section>
+				
+				<section>
+					<h2>Contribute to WP CLI with VVV</h2>
+					<p>
+						<a href="https://github.com/Mte90/template-wp-cli-develop">https://github.com/Mte90/template-wp-cli-develop</a>
 					</p>
 				</section>
 
