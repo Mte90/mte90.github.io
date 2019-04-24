@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordPress Meetup Terni</div><div class="hashtag">#wpterni</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordCamp Bari</div><div class="hashtag">#wcbari</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -45,26 +45,23 @@
 				<section data-transition="slide" data-background="pictures/hello.gif">
 					<div class="background">
 						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
-						<ul class="white-black-shadow">
+						<ul class="white-black-shadow" style="margin-left: 40px;">
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>WordPress Core Contributor/Developer</li>
 							<li>ClassicPress - i18n team lead & Founding Committee Member</li>
 							<li>Project Translation Editor in WordPress Italia</li>
-							<li>Industria Italiana Software Libero Presidente</li>
 						</ul>
 					</div>
 				</section>
 
 				<section>
 					<h2>Few info</h2>
-					<p class="fragment">PHP 5.3+</p>
-					<p class="fragment">WordPress 3.7 or later</p>
+					<p>WordPress 3.7 or later</p>
 					<p class="fragment roll-in">No root privileges required</p>
 					<p class="fragment roll-in">SSH support (<a href="https://make.wordpress.org/cli/handbook/running-commands-remotely/">make.wordpress.org/cli/handbook/running-commands-remotely/</a>)</p>
 					<p class="fragment">Official project since December 2016</p>
-					<p class="fragment">Already included on VVV</p>
 					<p class="fragment">Extendable by plugin or packages</p>
 					<p class="fragment">No login required</p>
 					<p class="fragment"><b>FAST</b></p>
@@ -100,18 +97,81 @@ wp core install --prompt
 					</code></pre>
 					<p>By <a href="https://developer.wordpress.org/cli/commands/core/install/">developer.wordpress.org/cli/commands/core/install/</a></p>
 				</section>
+				
+				<section>
+					<h2>Why</h2>
+					<pre><code data-trim>
+$ wp post list --post_type='page' --format=ids
+1164 1186
+					</code></pre>
+					<pre class="fragment"><code data-trim>
+$ wp post delete $(wp post list --post_type='page' --format=ids)
+Success: Trashed post 1164.
+Success: Trashed post 1186.
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>Shell Alias</h2>
+					<pre><code data-trim>
+$ alias wp-check-all='wp core check-update && wp plugin list --update=available && wp theme list --update=available'
+$ check-all
++-----------------+-------------+-----------------------------------------------------------+
+| version         | update_type | package_url                                               |
++-----------------+-------------+-----------------------------------------------------------+
+| 4.7-beta4-39322 | minor       | https://wordpress.org/nightly-builds/wordpress-latest.zip |
++-----------------+-------------+-----------------------------------------------------------+
++-------------------------+----------+-----------+--------------+
+| name                    | status   | update    | version      |
++-------------------------+----------+-----------+--------------+
+| akismet                 | inactive | available | 3.1.8        |
+| co-authors-plus         | inactive | available | 3.1.1        |
+| rest-api                | active   | available | 2.0-beta13.1 |
++-------------------------+----------+-----------+--------------+
++----------------------+----------+-----------+---------+
+| name                 | status   | update    | version |
++----------------------+----------+-----------+---------+
+| p2                   | inactive | available | 1.4.2   |
++----------------------+----------+-----------+---------+
+					</code></pre>
+					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
+				</section>
 
 				<section class="force-bottom" data-background="pictures/yes.gif">
 					<div class="background">
 						<h2 class="white-black-shadow">Real examples!</h2>
 					</div>
 				</section>
+				
+				<section>
+					<h2>List all image URL-s in posts</h2>
+					<pre><code data-trim>
+wp post list --field=ID|xargs -I % wp post get % --field=post_content|sed -ne 's;.*\(https\?\S\+\(jpe\?g\|png\|gif\)\).*;\1;gp'
+					</code></pre>
+					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
+				</section>
+				
+				<section>
+					<h2>Create a page from a file and flag it with the file name</h2>
+					<pre><code data-trim>
+wp post create new_page.html --post_type=page --post_title="New Page" --porcelain | xargs -I % wp post meta add % imported_from new_page.html
+					</code></pre>
+					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
+				</section>
 
 				<section>
 					<h2>Change a constant on wp-config.php</h2>
-					<pre><code data-trim>wp config set WP_DEBUG true --type=constant --raw</code></pre>
+					<pre><code data-trim>
+wp config set WP_DEBUG true --type=constant --raw
+wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
+</code></pre>
 				</section>
 
+				<section>
+					<h2>Create posts with dummy content</h2>
+					<pre><code data-trim>wp post generate --count=10</code></pre>
+				</section>
+				
 				<section>
 					<h2>Load PHP file before running the command</h2>
 					<pre><code data-trim>--require=fixer.php</code></pre>
@@ -138,7 +198,8 @@ wp core install --prompt
 wp search-replace http://domain.com https://domain.com
 wp search-replace http://domain.com https://domain.com --network
 ##### OR #####
-wp search-replace http://olddomain.com https://newdomain.com --export=newdb.sql --all-tables
+wp search-replace http://olddomain.com https://newdomain.com 
+ \ --export=newdb.sql --all-tables
 ##### Remove JS code inside post_content
 wp search-replace '&#60;script(.*?)&#62;(.*?)&#60;\/script&#62;' '' --regex 
  \ --include-columns=post_content --skip-columns=gui 
@@ -161,12 +222,13 @@ done
 				</section>
 
 				<section>
-					<h2>Disable commands for a site with `wp-cli.yml`</h2>
+					<h2>Disable commands for a site with <i>wp-cli.yml</i></h2>
 					<pre><code data-trim>
 disabled_commands:
     - db drop
     - search-replace
 					</code></pre>
+					<p>By <a href="https://make.wordpress.org/cli/handbook/config/">make.wordpress.org/cli/handbook/config/</a></p>
 				</section>
 
 				<section>
@@ -200,6 +262,9 @@ wp plugin list
 wp option get option-name
 wp option add option-name
 wp option delete option-name
+wp option pluck plugin_with_serialized_values parameter sub-parameter
+wp option patch update plugin_with_serialized_values parameter sub-parameter
+wp option get plugin_with_serialized_values --format=yaml
 					</code></pre>
 				</section>
 
@@ -212,9 +277,17 @@ wp media regenerate
 wp transient list
 wp config shuffle-salts
 wp site meta get 123 bio # Website id and field
-wp user check-password admin adminpass # Check if the password of an user is right
+wp user check-password admin adminpass # Check if the password of user is ok
 EDITOR=vim wp config edit
 					</code></pre>
+				</section>
+				
+				<section>
+					<h2>List of WooCommerce's orders</h2>
+					<pre><code data-trim>
+wp wc shop_order list --customer=1 --user=1 --fields=id,status
+					</code></pre>
+					<p>By <a href="https://robotninja.com/blog/wp-cli-woocommerce-development/">robotninja.com/blog/wp-cli-woocommerce-development/</a></p>
 				</section>
 
 				<section>
@@ -224,38 +297,11 @@ wp package install wp-cli/profile-command
 wp profile stage --allow-root --all
 +--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
 | hook                     | callback_count | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
-+--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
-| muplugins_loaded:before  |                | 0.178s  | 0.0009s    | 1           | 25%         | 1          | 3            | 0s           | 0             |
-| muplugins_loaded         | 2              | 0.0003s | 0s         | 0           | 50%         | 1          | 1            | 0s           | 0             |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+      |
 | plugins_loaded:before    |                | 0.2855s | 0.0041s    | 19          | 83.95%      | 136        | 26           | 0s           | 0             |
 | plugins_loaded           | 34             | 0.2442s | 0.0009s    | 3           | 98.31%      | 116        | 2            | 0s           | 0             |
 | setup_theme:before       |                | 0.0005s | 0s         | 0           | 100%        | 4          | 0            | 0s           | 0             |
 | setup_theme              | 1              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| after_setup_theme:before |                | 0.2653s | 0.0011s    | 3           | 99.68%      | 615        | 2            | 0s           | 0             |
-| after_setup_theme        | 17             | 0.0241s | 0.0002s    | 1           | 98.8%       | 82         | 1            | 0s           | 0             |
-| init:before              |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| init                     | 82             | 0.261s  | 0.0016s    | 9           | 98.74%      | 703        | 9            | 0s           | 0             |
-| wp_loaded:before         |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| wp_loaded                | 7              | 0.0012s | 0s         | 0           | 100%        | 6          | 0            | 0s           | 0             |
-| parse_request:before     |                | 0.0192s | 0s         | 0           | 100%        | 14         | 0            | 0s           | 0             |
-| parse_request            | 2              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| send_headers:before      |                | 0.0001s | 0s         | 0           | 100%        | 4          | 0            | 0s           | 0             |
-| send_headers             | 0              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| pre_get_posts:before     |                | 0.0003s | 0s         | 0           | 100%        | 10         | 0            | 0s           | 0             |
-| pre_get_posts            | 8              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| the_posts:before         |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| the_posts                | 2              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| wp:before                |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| wp                       | 10             | 0.068s  | 0.0148s    | 30          | 97.3%       | 756        | 21           | 0s           | 0             |
-| template_redirect:before |                | 0.0005s | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| template_redirect        | 20             | 0.0098s | 0.0005s    | 1           | 99.06%      | 105        | 1            | 0s           | 0             |
-| template_include:before  |                | 0.0004s | 0s         | 0           | 100%        | 9          | 0            | 0s           | 0             |
-| template_include         | 1              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| wp_head:before           |                | 0.0028s | 0.0003s    | 2           | 85.71%      | 18         | 3            | 0s           | 0             |
-| wp_head                  | 42             | 0.0887s | 0.004s     | 9           | 97.85%      | 682        | 15           | 0s           | 0             |
-| loop_start:before        |                | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
-| wp_footer                | 14             | 0.0068s | 0s         | 0           | 100%        | 61         | 0            | 0s           | 0             |
-| wp_footer:after          |                | 0.0002s | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
 +--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
 | total (31)               | 242            | 1.4571s | 0.0284s    | 78          | 90.8%       | 3323       | 84           | 0s           | 0             |
 +--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
@@ -264,12 +310,8 @@ wp profile hook --all --spotlight --url=https://yourdomain.com --allow-root
 | callback                                     | location                                            | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
 +----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
 | wpseo_init()                                 | wordpress-seo/wp-seo-main.php:252                   | 0.0136s | 0s         | 0           | 100%        | 34         | 0            | 0s           | 0             |
-| wpto_Public->wpto_remove_yoast_information() | wp-theme-optimizer/public/class-wpto-public.php:187 | 0.0151s | 0s         | 0           | 100%        | 18         | 0            | 0s           | 0             |
 | wp_enqueue_scripts()                         | wp-includes/script-loader.php:1294                  | 0.015s  | 0s         | 0           | 100%        | 348        | 0            | 0s           | 0             |
-| generate_construct_header()                  | generatepress/inc/template-tags.php:514             | 0.0041s | 0.0002s    | 2           | 100%        | 93         | 0            | 0s           | 0             |
-| generate_add_navigation_after_header()       | generatepress/inc/navigation.php:23                 | 0.0132s | 0.0003s    | 3           | 100%        | 367        | 0            | 0s           | 0             |
 | wp_trim_excerpt()                            | wp-includes/formatting.php:3289                     | 0.0186s | 0s         | 0           | 100%        | 16         | 0            | 0s           | 0             |
-| generate_construct_sidebars()                | generatepress/functions.php:434                     | 0.0129s | 0.0001s    | 1           | 100%        | 178        | 0            | 0s           | 0             |
 +----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
 | total (7)                                    |                                                     | 0.0927s | 0.0006s    | 6           | 100%        | 1054       | 0            | 0s           | 0             |
 +----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
@@ -355,19 +397,15 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 				</section>
 
 				<section>
-					<h2>Cool package to discover for you</h2>
-					<p class="fragment"><a href="https://github.com/CodeAtCode/wp-cli-getbyurl">https://github.com/CodeAtCode/wp-cli-getbyurl</a></p>
-					<p class="fragment"><a href="https://github.com/markri/wp-sec">https://github.com/markri/wp-sec</a></p>
-					<p class="fragment"><a href="https://github.com/mikedance/wp-cli-favorite-plugins">https://github.com/mikedance/wp-cli-favorite-plugins</a></p>
-					<p class="fragment"><a href="https://github.com/petenelson/wp-cli-size">https://github.com/petenelson/wp-cli-size</a></p>
-					<p class="fragment"><a href="https://github.com/wp-cli/doctor-command">https://github.com/wp-cli/doctor-command</a></p>
-				</section>
-
-				<section>
-					<h2>WP CLI GUI</h2>
-					<p>
-						<a href="https://wpcligui.com/">wpcligui.com</a>
-					</p>
+					<h2>Cool packages to discover for you</h2>
+					<ul>
+					<li><a href="https://github.com/CodeAtCode/wp-cli-getbyurl">https://github.com/CodeAtCode/wp-cli-getbyurl</a></li>
+					<li><a href="https://github.com/markri/wp-sec">https://github.com/markri/wp-sec</a></li>
+					<li><a href="https://github.com/mikedance/wp-cli-favorite-plugins">https://github.com/mikedance/wp-cli-favorite-plugins</a></li>
+					<li><a href="https://github.com/petenelson/wp-cli-size">https://github.com/petenelson/wp-cli-size</a></li>
+					<li><a href="https://github.com/wp-cli/doctor-command">https://github.com/wp-cli/doctor-command</a></li>
+					<li><a href="https://github.com/binarygary/db-checkpoint">https://github.com/binarygary/db-checkpoint</a></li>
+					</ul>
 				</section>
 				
 				<section>
@@ -380,7 +418,8 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="https://wp-cli.org/">https://wp-cli.org/</a>
+						- <a href="https://wp-cli.org/">https://wp-cli.org/</a><br>
+						- <a href="https://guides.wp-bullet.com/category/wp-cli/">https://guides.wp-bullet.com/category/wp-cli/</a>
 					</p>
 				</section>
 
