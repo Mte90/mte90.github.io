@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress 4.9 - Le novitá</title>
+		<title>WordPress 5.2 - Le novitá</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.css" id="theme">
@@ -29,16 +29,16 @@
 
 	<body style="background: url(./img/wproma.png) no-repeat bottom right,-webkit-radial-gradient(center,circle cover,#f7fbfc 0,#4d4d4d80 100%)">
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Roma Meetup</div><div class="hashtag">#wproma</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Terni Meetup</div><div class="hashtag">#wpterni</div></div>
 		<div class="reveal">
 
 			<div class="slides">
 				<section>
-					<h1>WordPress 4.9</h1>
+					<h1>WordPress 5.2</h1>
 					<h3>Le novitá</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a><br><br>
-							Source: <a href="https://wordpress.org/news/2017/10/wordpress-4-9-beta-1/">wordpress.org/news/2017/10/wordpress-4-9-beta-1/</a>, <a href="http://www.wpbeginner.com/news/whats-coming-in-wordpress-4-9-features-and-screenshots/">www.wpbeginner.com/news/whats-coming-in-wordpress-4-9-features-and-screenshots/</a></small>
+							Source: <a href="https://wordpress.org/news/2019/05/jaco/">wordpress.org/news/2019/05/jaco/</a>, <a href="https://kinsta.com/it/blog/wordpress-5-2/">kinsta.com/it/blog/wordpress-5-2/</a></small>
 					</p>
 				</section>
 
@@ -50,97 +50,110 @@
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
 							<li>WordPress Core Contributor/Developer</li>
+							<li>ClassicPress - i18n team lead & Founding Committee Member</li>
 							<li>Project Translation Editor in WordPress Italia</li>
-							<li>Industria Italiana Software Libero Vice Presidente</li>
 						</ul>
 					</div>
 				</section>
 				
 				<section>
-					<h2>WordPress 4.9 - 14 Novembre</h2>
-					<h3><s>482 contributor, con 205 per la prima volta</s></h3>
+					<h2>WordPress 5.2 - 14 Novembre</h2>
+					<h3>327 contributor, 310 tickets</h3>
 				</section>
 				
 				<section data-background-transition="zoom">
-					<h2>Sala come Bozza sul Customizer</h2>
-					<img src="img/savethemedraft.png">
+					<h2>Site Health</h2>
+					<img src="img/WordPressSiteHealthChecks.png">
+				</section>
+				
+				<section data-background-transition="zoom">
+					<h2>Site Health</h2>
+					<img src="img/site-health-wordpress.png">
+				</section>
+				
+				<section data-background-transition="zoom">
+					<h2>Site Health</h2>
+					<img src="img/sitehealthrecap.png">
 				</section>
 
 				<section>
-					<h2>Customizer - Programma le modifiche con link di anteprima</h2>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Q2-n1LCOnbg" frameborder="0" allowfullscreen></iframe>
+					<h2>Plugin Compatibility checks</h2>
+					<blockquote>WordPress will now automatically determine if your site’s version of PHP is compatible with installed plugins. If the plugin requires a higher version of PHP than your site currently uses, WordPress will not allow you to activate it, preventing potential compatibility errors.</blockquote>
 				</section>
 
 				<section>
-					<h2>Gallery widget</h2>
-					<img src="img/gallerywidget.jpg">
+					<h2>PHP Version bump</h2>
+					<blockquote>The minimum supported PHP version is now 5.6.20.</blockquote>
 				</section>
 
 				<section>
-					<h2>Aggiungi Media nel Widget di testo</h2>
-					<img src="img/addmediatxtwidget.jpg">
-				</section>
-
-				<section>
-					<h2>Syntax Highlighting con CodeMirror</h2>
-					<img src="img/error-highlighting.png">
-				</section>
-
-				<section>
-					<h2>Disabilita Syntax Highlighting</h2>
-					<img src="img/disablesyntaxhighlighting.png">
-				</section>
-				
-				<section>
-					<h2>L'Editor di codice mostra ora tutti i file!</h2>
-				</section>
-				
-				<section>
-					<h2>Sandbox nell'Editor di codice</h2>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/xAWYaeMUaRA" frameborder="0" allowfullscreen></iframe>
-				</section>
-				
-				<section>
-					<h2>Oembed e shortcode abilitati nel widget di testo!</h2>
-				</section>
-				
-				<section>
-					<h2>Ciaone alla libreria SWFUpload</h2>
-				</section>
-				
-				<section>
-					<h2>WP-JS-Hooks</h2>
+					<h2>PHP Error Protection</h2>
+					<img src="img/php-error-protection.png">
 					<pre><code data-trim>
-addAction( 'hook', 'vendor/plugin/function', callback, priority )
-addFilter( 'hook', 'vendor/plugin/function', callback, priority )
-removeAction( 'hook', 'vendor/plugin/function' )
-removeFilter( 'hook', 'vendor/plugin/function' )
-removeAllActions( 'hook' )
-removeAllFilters( 'hook' )
-doAction( 'hook', arg1, arg2, moreArgs, finalArg )
-applyFilters( 'hook', content, arg1, arg2, moreArgs, finalArg )
-doingAction( 'hook' )
-doingFilter( 'hook' )
-didAction( 'hook' )
-didFilter( 'hook' )
-hasAction( 'hook' )
-hasFilter( 'hook' )
+<?php
+define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );
+?>
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>wp_body_open</h2>
+					<pre><code data-trim>
+<body <?php body_class(); ?>>
+<?php 
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
+wp_body_open(); ?>
 					</code></pre>
 					<small><a href="https://www.npmjs.com/package/@wordpress/hooks">npm i @wordpress/hooks</a></small>
 				</section>
+
+				<section>
+					<h2>Gutenberg performance</h2>
+					<img src="img/block-editor-performance.png">
+				</section>
 				
 				<section>
-					<h3>Migliorie interne</h3>
-					<ul>
-						<li class="fragment"><i>get_site_by()</i> Sostituisce get_blog_details()</li>
-						<li class="fragment"><i>wp_unschedule_hook()</i> Rimuovi tutti gli eventi di un hook</li>
-						<li class="fragment">wp_is_mobile - Filtro per la regex che determina se l'utente è da mobile</li>
-						<li class="fragment">username_exists - Filtro per poter creare nomi utente riservati</li>
-						<li class="fragment">pre_move_uploaded_file - Per preprocessare i file prima del caricamento</li>
-						<li class="fragment">wp_pre_insert_user_data - Per processare i nuovi utenti prima del salvataggio</li>
-						<li class="fragment">PHP 7.2 ufficialmente supportato</li>
-						<li class="fragment">Migliorata la documentazione in diversi punti</li>
-					</ul>
+					<h2>Privacy updates</h2>
+					<img src="img/privacy-updates.png.png">
+				</section>
+				
+				<section>
+					<h2>Security Enhancements</h2>
+					<blockquote>Ticket #39309 was opened in 2017 describing a security issue with the WordPress infrastructure. Basically, if someone was able to compromise api.wordpress.org, they could issue fake updates and take control of user’s WordPress sites.
+
+Therefore, as of WordPress 5.2, it now checks for the existence of a x-content-signature header. If one isn’t found, it falls back to a signature file. Regardless of the method, the update packages are now digitally signed using Ed25519 and are base64-encoded.</blockquote>
+				</section>
+				
+				<section>
+					<h2>Custom Error log path</h2>
+					<pre><code data-trim>
+<?php
+define( 'WP_DEBUG_LOG', 'path/to/log/file' );
+?>
+					</code></pre>
+				</section>
+				
+				<section>
+					<h2>Short circuit filter</h2>
+					<blockquote>WordPress 5.2 introduces new short circuit filters to WP_Site_Query and WP_Network_Query.</blockquote>
+					<pre><code data-trim>
+					function myplugin_do_external_site_query( $sites, $site_query ) {
+	$response = wp_remote_get( 'https://my-remote-data-store/foo/bar' );
+
+	if ( 200 === wp_remote_response_code( $response ) ) {
+		$response           = json_decode( wp_remote_retrieve_body( $response ) );
+		$sites              = array_map( 'intval', $response->site_ids );
+		$query->found_sites = (int) $response->found_sites;
+	}
+
+	return $sites;
+}
+add_filter( 'sites_pre_query', 'myplugin_do_external_site_query', 10, 2 );
+				</code></pre>
 				</section>
 				
 				<section>
