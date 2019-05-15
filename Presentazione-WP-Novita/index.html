@@ -99,7 +99,7 @@ define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );
 				<section>
 					<h2>wp_body_open</h2>
 					<pre><code data-trim>
-<body <?php body_class(); ?>>
+< body <?php body_class(); ?>>
 <?php 
 if ( ! function_exists( 'wp_body_open' ) ) {
     function wp_body_open() {
@@ -108,7 +108,6 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 }
 wp_body_open(); ?>
 					</code></pre>
-					<small><a href="https://www.npmjs.com/package/@wordpress/hooks">npm i @wordpress/hooks</a></small>
 				</section>
 
 				<section>
@@ -118,7 +117,7 @@ wp_body_open(); ?>
 				
 				<section>
 					<h2>Privacy updates</h2>
-					<img src="img/privacy-updates.png.png">
+					<img src="img/privacy-updates.png">
 				</section>
 				
 				<section>
@@ -131,9 +130,7 @@ Therefore, as of WordPress 5.2, it now checks for the existence of a x-content-s
 				<section>
 					<h2>Custom Error log path</h2>
 					<pre><code data-trim>
-<?php
 define( 'WP_DEBUG_LOG', 'path/to/log/file' );
-?>
 					</code></pre>
 				</section>
 				
