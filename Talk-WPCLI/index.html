@@ -369,6 +369,22 @@ with open('tags.json') as f:
 				</section>
 				
 				<section>
+					<h2>List all the URLs with content empty</h2>
+					<pre><code data-trim>
+#!/bin/sh
+
+site=$(wp option get home)
+ids=$(wp db query "SELECT ID FROM $(wp db prefix)posts WHERE post_content='' AND post_status!='auto-draft' AND post_status!='draft' AND post_status!='trash' AND (post_type='post' OR post_type='page')" | tr '\r\n' ' ')
+
+for id in $ids
+do
+    slug=$(wp post get "$id" --field=post_name)
+    echo $site/$slug
+done
+					</code></pre>
+				</section>
+				
+				<section>
 					<h2>Create a command</h2>
 					<pre><code data-trim>
 # Register a custom 'foo' command to output a supplied positional param.
