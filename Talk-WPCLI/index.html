@@ -188,8 +188,8 @@ wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
 				</section>
 				
 				<section>
-					<h2>Generate Pot files (with JS support)</h2>
-					<pre><code data-trim>wp i18n make-pot/make-json</code></pre>
+					<h2>Generate WXR file from a list of IDs</h2>
+					<pre><code data-trim>wp export --post__in=$(cat id_export.txt | tr '\n' ',') --with_attachments</code></pre>
 				</section>
 				
 				<section>
