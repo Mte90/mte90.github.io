@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The bad, the ugly and Query Monitor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordCamp Catania</div><div class="hashtag">#wccta</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>The bad, the ugly and Query Monitor</h1>
+					<h3>The right way to debug in WordPress</h3>
+					<p>
+						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-background-transition="slide" data-background-image="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow" style="margin-left: 40px;">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>ClassicPress - i18n team lead & Founding Committee</li>
+							<li>Project Translation Editor in WordPress Italia</li>
+							<li>Old school developer</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="force-bottom">
+					<img src="pictures/movie.jpg">
+					<div class="background">
+						<h2 class="white-black-shadow">Choose one</h2>
+						<p>
+							Remember in this world there are two kinds of people, my friend: Those with tools and those who have only errors. <br>You have only errors.
+						</p>
+					</div>
+				</section>
+
+				<section data-markdown class="force-top">
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+
+						```
+						<section data-markdown>
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						</section>
+						```
+					</script>
+				</section>
+
+				<section id="fragments">
+					<h2>Fragments</h2>
+					<p>Hit the next arrow...</p>
+					<p class="fragment">... to step through ...</p>
+					<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+					<aside class="notes">
+						This slide has fragments which are also stepped through in the notes window.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Fragment Styles</h2>
+					<p>There's different types of fragments, like:</p>
+					<p class="fragment grow">grow</p>
+					<p class="fragment shrink">shrink</p>
+					<p class="fragment roll-in">roll-in</p>
+					<p class="fragment fade-out">fade-out</p>
+					<p class="fragment current-visible">current-visible</p>
+					<p class="fragment highlight-red">highlight-red</p>
+					<p class="fragment highlight-blue">highlight-blue</p>
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Slide Backgrounds</h2>
+					<p>
+						Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+					</p>
+				</section>
+				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+					<h2>Image Backgrounds</h2>
+					<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+				</section>
+				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+					<h2>Tiled Backgrounds</h2>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+				</section>
+
+				<section data-background-transition="slide" data-background="#4d7e65" data-background-transition="convex">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "convex".
+					</p>
+					<pre><code>Reveal.configure({ backgroundTransition: 'convex' })</code></pre>
+				</section>
+
+				<section data-background-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+							&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'linear', // none/fade/slide/convex/concave/zoom
+              dependencies: [
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+		</script>
+
+	</body>
+</html>
