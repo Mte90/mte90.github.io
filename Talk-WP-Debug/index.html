@@ -104,9 +104,14 @@
 			}
 			.reveal a {
 				color: #D0D0D0;
+				text-decoration: underline;
 			}
 			.reveal a:hover {
 				color: #FFF;
+			}
+			.reveal blockquote {
+				width:100%;
+				margin-left: -5px;
 			}
 		</style>
 	</head>
@@ -146,87 +151,281 @@
 					<img src="pictures/movie.jpg">
 					<div class="background">
 						<h2 class="white-black-shadow">Choose one</h2>
-						<p>
+						<blockquote>
 							Remember in this world there are two kinds of people, my friend: Those with tools and those who have only errors. <br>You have only errors.
+						</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Art of debugging</h2>
+						<blockquote cite="http://www.softpanorama.org/Lang/debugging.shtml">
+							&ldquo;While the meaning of the verb to debug is to remove errors, in reality it is more about  seeing step by step execution of a program. As well as examining it against some specification of how program should behave. A programmer who has no access to high quality debugger is like a shortsighted person. He can function but he can miss some dangerous things in the environment very easily. &rdquo;
+						</blockquote>
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">3 phases of debugging</h2>
+						<h3>DOH</h3>
+						<p>
+							<video autoplay loop muted>
+								<source  src="pictures/1phase.webm">
+							</video>
 						</p>
 					</div>
 				</section>
 
 				<section>
-					<h2>The Bad way</h2>
 					<div class="background">
-						<pre><code>echo $var;</code></pre>
-						<pre><code>print_r( $var );</code></pre>
-						<pre><code>var_dump( $var );</code></pre>
+						<h2 class="white-black-shadow">3 phases of debugging</h2>
+						<h3>Understand the taste</h3>
+							<p>
+								<img src="pictures/2phase.gif">
+							</p>
 					</div>
 				</section>
 
-				<section id="fragments">
-					<h2>Fragments</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">3 phases of debugging</h2>
+						<h3>Release the hot patch</h3>
+						<p>
+							<img src="pictures/3phase.gif">
+						</p>
+					</div>
+				</section>
 
-					<aside class="notes">
-						This slide has fragments which are also stepped through in the notes window.
-					</aside>
+				<section data-background-image="pictures/3.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">The real 3 phases</h2>
+						<ul class="white-black-shadow">
+							<li class="fragment">Replicate the bug</li>
+							<li class="fragment">Isolate and understand the bug</li>
+							<li class="fragment">Do the magic killer patch</li>
+						</ul>
+					</div>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+					<div class="background">
+						<h2 class="white-black-shadow">In this talk we will focus on phase 2</h2>
+						<p>
+							<img src="pictures/ok.gif">
+						</p>
+					</div>
+				</section>
 
-    var nodes = document.querySelectorAll( selector );
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">User (classic) case</h2>
+						
+						<ul>
+							<li>User open a form: "Riscuotere la taglia"</li>
+							<li>User input some data: "Nome: El gringo"</li>
+							<li>User get output: "Taglia incassata, 200 Wapuu $"</li>
+							<li>Data should be sanitized: "Non si lava da mesi"</li>
+							<li>Data should be parsed: "Scappato con un buco nel muro"</li>
+						</ul>
+					</div>
+				</section>
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Let's inspect the data</h2>
+						<p>
+							<img src="pictures/fakedata.gif">
+						</p>
+					</div>
+				</section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">The Bad way</h2>
+						<pre><code>echo $var;</code></pre>
+						<pre><code>print_r( $var );</code></pre>
+						<pre><code>var_dump( $var );</code></pre>
+						<pre><code>var_dump( $var ); die();</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<img src="pictures/bad.png">
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">The ugly way</h2>
+						<h3>Custom Error log path in WP 5.2</h3>
+						<pre><code>define( 'WP_DEBUG_LOG', 'path/to/log/file' );</code></pre>
+						<h3>Print what you want in the log of your web server</h3>
+						<pre><code>error_log( print_r( $var, true ) );</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<img src="pictures/ugly.png">
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">The ugly old school way</h2>
+						<pre><code>function vvv-debug(){
+    log="/var/www/VVV/www/$1/htdocs/wp-content/debug.log"
+    if [ ! -f $log ]; then
+        log="/var/www/VVV/www/$1/public_html/wp-content/debug.log"
+    fi
+    
+    if [ -f $log ]; then
+        actualsize=$(du -k $log | cut -f 1)
+        if [ $actualsize -ge 300 ]; then
+            rm $log;
+        fi
+        echo "" > $log
+        multitail -cS php -m 600 $log;
+    else
+        echo "Log not found"
+    fi
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+# Open the log in a terminal of a specific site in VVV
+$ vvv-debug demo</code></pre>
+					</div>
 				</section>
 
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+					<div class="background">
+						<h2 class="white-black-shadow">The ugly old school way</h2>
+						<pre><code>(
+    [error] => Notice
+    [file] => /home/domain/wp-content/plugins/lifterlms/vendor/ericmann/wp-session-manager/includes/class-wp-session.php
+    [line] => 77
+    [context] => Array
+        (
+            [cookie] => cxxxxxxxxxxx
+            [cookie_crumbs] => Array
+                (
+                    [0] => cxxxxxxxxxxx
+                )
+
+        )
+
+    [url] => https://domain/author/daniele/feed/
+    [filter] => plugins_loaded
+    [path] => /home/domain/wp-content/plugins/lifterlms/vendor/ericmann/wp-session-manager/includes/class-wp-session.php
+    [message] => Notice (8): Undefined offset: 1 in [/home/domain/wp-content/plugins/lifterlms/vendor/ericmann/wp-session-manager/includes/class-wp-session.php, line 77]
+)</code></pre>
+						<p><a href="https://gist.github.com/Mte90/e09a84a4e1c61690e55b3a6e0c67ef94">Drop-in mu-plugin by Me</a> (Query monitor supported).</p>
+						
+					</div>
 				</section>
 
 				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-							&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
+					<div class="background">
+						<h2 class="white-black-shadow">The Query Monitor way</h2>
+						<img src="pictures/blow.gif">
+							<p>The spaghetti western way of Blow your mind.</p>
+					</div>
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+					<img src="pictures/1.png">
+				</section>
+
+				<section>
+					<img src="pictures/2.png">
+				</section>
+
+				<section>
+					<img src="pictures/3.png">
+				</section>
+
+				<section>
+					<img src="pictures/4.png">
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">In your wp-config.php</h2>
+						<pre><code>define( 'QM_HIDE_SELF', true );
+define( 'QM_HIDE_CORE_HOOKS', true );</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Integrate in your plugin</h2>
+						<blockquote>
+    Create a custom alternative panel for log stuff inside Query Monitor<br>
+    Add a timer method that use the Query Monitor internals<br>
+    Add a method to print in the internal log panel of Query Monitor
+						</blockquote>
+						<pre><code>$debug = new WPBP_Debug( __( 'Name of the panel', 'your-textdomain' ) );
+$debug->log( __( 'Plugin Loaded', 'your-textdomain' ) );
+$debug->qm_log( __( 'Error inside the log panel of Query Monitor', 'your-textdomain' ), 'error' );
+$debug->qm_timer( 'profile_that_callback', function () { echo 'I need to be profiled!'; } );</code></pre>
+						<p><a href="https://github.com/WPBP/Debug">https://github.com/WPBP/Debug</a></p>
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Other useful features</h2>
+						
+						<ul>
+							<li class="fragment"><a href="https://querymonitor.com/blog/2018/07/silencing-errors-from-plugins-and-themes/">Silencing Errors from Certain Plugins and Themes</a></li>
+							<li class="fragment"><a href="https://querymonitor.com/blog/2019/02/clickable-stack-traces-and-function-names-in-query-monitor/">Clickable Stack Traces and Function Names</a></li>
+							<li class="fragment"><a href="https://querymonitor.com/blog/2018/07/profiling-and-logging/">Profiling and Logging</a></li>
+							<li class="fragment"><a href="https://querymonitor.com/blog/2019/02/new-features-in-query-monitor-3-3/">New Features in Query Monitor 3.3</a></li>
+							<li class="fragment">Supports all the Debug Bar plugins natively</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Companions</h2>
+						<img src="pictures/team.jpg" style="margin-top:-10px">
+					</div>
+				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">xDebug</h2>
+						<img src="pictures/xdebug.gif">
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Debug Toolkit</h2>
+						<img src="pictures/debug-toolkit.png" style="margin-top:-10px">
+						<p><a href="https://wordpress.org/plugins/debug-toolkit/">https://wordpress.org/plugins/debug-toolkit/</a></p>					
+					</div>
+				</section>
+
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">WordPress Performance Profiler</h2>
+						<img src="pictures/wppp1.png">
+						<p><a href="https://interconnectit.com/products/wordpress-performance-profiler/">https://interconnectit.com/products/wordpress-performance-profiler/</a></p>
+						<p><a href="https://github.com/kel/wp-performance-profiler/tree/version-033">Open Source Fork</a></p>
+					</div>
+				</section>
+
+				<section>
+					<img src="pictures/wppp2.png">
 				</section>
 
 				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<div class="background">
+						<h1>THE END</h1>
+						<center><img src="pictures/end.gif"></center>
+						<p>
+							- <a href="http://mte90.tech/Talk-WP-Debug">http://mte90.tech/Talk-WP-Debug</a>
+						</p>
+					</div>
 				</section>
 
 			</div>
