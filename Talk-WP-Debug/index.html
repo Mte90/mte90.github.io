@@ -12,10 +12,6 @@
 		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
 		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
-		<link rel="stylesheet" href="lib/css/github.css">
-
 		<!-- Printing and PDF exports -->
 		<script>
             var link = document.createElement('link');
@@ -24,6 +20,95 @@
             link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
             document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
+		<style>
+			.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fff;
+}
+
+.hljs,
+.hljs-subst {
+  color: #000;
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-symbol,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #756bb1;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #636363;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-bullet,
+.hljs-link {
+  color: #31a354;
+}
+
+.hljs-deletion,
+.hljs-variable {
+  color: #88f;
+}
+
+
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-section,
+.hljs-built_in,
+.hljs-doctag,
+.hljs-type,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-strong {
+  color: #3182bd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-attribute {
+  color: #e6550d;
+}
+			body {
+				background: url('pictures/pattern.png');
+			}
+			.background {
+				background: rgba(94, 48, 27, 0.88);
+				border: solid 10px #8f5c24;
+				color: white;
+			}
+			.background p {
+				margin-top: 0;
+			}
+			.reveal {
+				color:white;
+			}
+			.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+				color:#fff;
+				text-shadow: 2px 4px 0 #4b4949;
+			}
+			.reveal a {
+				color: #D0D0D0;
+			}
+			.reveal a:hover {
+				color: #FFF;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -33,11 +118,13 @@
 
 			<div class="slides">
 				<section>
-					<h1>The bad, the ugly and Query Monitor</h1>
-					<h3>The right way to debug in WordPress</h3>
-					<p>
-						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
-					</p>
+					<div class="background">
+						<h1>The bad, the ugly and Query Monitor</h1>
+						<h3>The right way to debug in WordPress</h3>
+						<p>
+							<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
+						</p>
+					</div>
 				</section>
 
 				<section data-background-transition="slide" data-background-image="pictures/hello.gif">
@@ -65,20 +152,13 @@
 					</div>
 				</section>
 
-				<section data-markdown class="force-top">
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-
-						```
-						<section data-markdown>
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						</section>
-						```
-					</script>
+				<section>
+					<h2>The Bad way</h2>
+					<div class="background">
+						<pre><code>echo $var;</code></pre>
+						<pre><code>print_r( $var );</code></pre>
+						<pre><code>var_dump( $var );</code></pre>
+					</div>
 				</section>
 
 				<section id="fragments">
@@ -90,49 +170,6 @@
 					<aside class="notes">
 						This slide has fragments which are also stepped through in the notes window.
 					</aside>
-				</section>
-
-				<section>
-					<h2>Fragment Styles</h2>
-					<p>There's different types of fragments, like:</p>
-					<p class="fragment grow">grow</p>
-					<p class="fragment shrink">shrink</p>
-					<p class="fragment roll-in">roll-in</p>
-					<p class="fragment fade-out">fade-out</p>
-					<p class="fragment current-visible">current-visible</p>
-					<p class="fragment highlight-red">highlight-red</p>
-					<p class="fragment highlight-blue">highlight-blue</p>
-				</section>
-
-				<section data-background="#dddddd">
-					<h2>Slide Backgrounds</h2>
-					<p>
-						Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-					</p>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-					<h2>Image Backgrounds</h2>
-					<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-				</section>
-				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-					<h2>Tiled Backgrounds</h2>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-				</section>
-
-				<section data-background-transition="slide" data-background="#4d7e65" data-background-transition="convex">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "convex".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'convex' })</code></pre>
-				</section>
-
-				<section data-background-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
 				</section>
 
 				<section>
@@ -207,12 +244,6 @@ function linkify( selector ) {
               overview: false,
               transition: 'linear', // none/fade/slide/convex/concave/zoom
               dependencies: [
-                {src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
                 {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
                     return !!document.querySelector('pre code');
                   }, callback: function () {
