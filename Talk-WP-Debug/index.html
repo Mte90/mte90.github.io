@@ -149,20 +149,36 @@
 
 				<section class="force-bottom">
 					<img src="pictures/movie.jpg">
-					<div class="background">
+					<div class="background" style="padding-bottom: 0 !important;">
 						<h2 class="white-black-shadow">Choose one</h2>
-						<blockquote>
+						<blockquote style="margin-bottom: 0;margin-top: 0;">
 							Remember in this world there are two kinds of people, my friend: Those with tools and those who have only errors. <br>You have only errors.
 						</blockquote>
 					</div>
 				</section>
 
 				<section>
-					<div class="background">
+					<div class="background" style="padding-bottom: 0 !important;">
 						<h2 class="white-black-shadow">Art of debugging</h2>
-						<blockquote cite="http://www.softpanorama.org/Lang/debugging.shtml">
+						<blockquote cite="http://www.softpanorama.org/Lang/debugging.shtml" style="margin-bottom: 0;margin-top: 0;">
 							&ldquo;While the meaning of the verb to debug is to remove errors, in reality it is more about  seeing step by step execution of a program. As well as examining it against some specification of how program should behave. A programmer who has no access to high quality debugger is like a shortsighted person. He can function but he can miss some dangerous things in the environment very easily. &rdquo;
 						</blockquote>
+					</div>
+				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">First of all</h2>
+						<pre><code>define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_LOG', true );
+define( 'SCRIPT_DEBUG', true );
+# If you need Jetpack
+define( 'JETPACK_DEV_DEBUG', true );
+define( 'JETPACK_STAGING_MODE', true );
+# If you need Freemius
+define( 'WP_FS__SKIP_EMAIL_ACTIVATION', true);
+define( 'WP_FS__DEV_MODE', true );</code></pre>
 					</div>
 				</section>
 
@@ -172,7 +188,7 @@
 						<h3>DOH</h3>
 						<p>
 							<video autoplay loop muted>
-								<source  src="pictures/1phase.webm">
+								<source type="video/webm" src="pictures/1phase.webm">
 							</video>
 						</p>
 					</div>
@@ -396,12 +412,81 @@ $debug->qm_timer( 'profile_that_callback', function () { echo 'I need to be prof
 						<img src="pictures/xdebug.gif">
 					</div>
 				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Airplane Mode</h2>
+						<a href="https://github.com/norcross/airplane-mode">https://github.com/norcross/airplane-mode</a>
+					</div>
+					<br>
+					<div class="background">
+						<h2 class="white-black-shadow">User Switching</h2>
+						<a href="https://wordpress.org/plugins/user-switching/">https://wordpress.org/plugins/user-switching</a>
+					</div>
+					<br>
+					<div class="background">
+						<h2 class="white-black-shadow">Wp Crontrol</h2>
+						<a href="https://wordpress.org/plugins/wp-crontrol/">https://wordpress.org/plugins/wp-crontrol</a>
+					</div>
+				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">Debug Bar Rewrite Rules</h2>
+						<a href="https://wordpress.org/plugins/debug-bar-rewrite-rules/">https://wordpress.org/plugins/debug-bar-rewrite-rules</a>
+					</div>
+					<br>
+					<div class="background">
+						<h2 class="white-black-shadow">WooFakePay</h2>
+						<a href="https://wordpress.org/plugins/woofakepay/">https://wordpress.org/plugins/woofakepay</a>
+					</div>
+					<br>
+					<div class="background">
+						<h2 class="white-black-shadow">JSM's Show Post Meta</h2>
+						<a href="https://wordpress.org/plugins/jsm-show-post-meta/">https://wordpress.org/plugins/jsm-show-post-meta</a>
+					</div>
+				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">WP-CLI Profile command</h2>
+						<pre><code>wp profile stage --all
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| hook                     | callback_count | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+      |
+| plugins_loaded:before    |                | 0.2855s | 0.0041s    | 19          | 83.95%      | 136        | 26           | 0s           | 0             |
+| plugins_loaded           | 34             | 0.2442s | 0.0009s    | 3           | 98.31%      | 116        | 2            | 0s           | 0             |
+| setup_theme:before       |                | 0.0005s | 0s         | 0           | 100%        | 4          | 0            | 0s           | 0             |
+| setup_theme              | 1              | 0s      | 0s         | 0           |             | 0          | 0            | 0s           | 0             |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| total (31)               | 242            | 1.4571s | 0.0284s    | 78          | 90.8%       | 3323       | 84           | 0s           | 0             |
++--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+wp profile hook --all --spotlight --url=https://yourdomain.com
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| callback                                     | location                                            | time    | query_time | query_count | cache_ratio | cache_hits | cache_misses | request_time | request_count |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| wpseo_init()                                 | wordpress-seo/wp-seo-main.php:252                   | 0.0136s | 0s         | 0           | 100%        | 34         | 0            | 0s           | 0             |
+| wp_enqueue_scripts()                         | wp-includes/script-loader.php:1294                  | 0.015s  | 0s         | 0           | 100%        | 348        | 0            | 0s           | 0             |
+| wp_trim_excerpt()                            | wp-includes/formatting.php:3289                     | 0.0186s | 0s         | 0           | 100%        | 16         | 0            | 0s           | 0             |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+| total (7)                                    |                                                     | 0.0927s | 0.0006s    | 6           | 100%        | 1054       | 0            | 0s           | 0             |
++----------------------------------------------+-----------------------------------------------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
+</code></pre>
+					</div>
+				</section>
 
 				<section>
 					<div class="background">
 						<h2 class="white-black-shadow">Debug Toolkit</h2>
 						<img src="pictures/debug-toolkit.png" style="margin-top:-10px">
 						<p><a href="https://wordpress.org/plugins/debug-toolkit/">https://wordpress.org/plugins/debug-toolkit/</a></p>					
+					</div>
+				</section>
+				
+				<section>
+					<div class="background">
+						<h2 class="white-black-shadow">WP Query Console</h2>
+						<img src="pictures/wpquery.gif">
 					</div>
 				</section>
 
