@@ -538,6 +538,13 @@ wp profile hook --all --spotlight --url=https://yourdomain.com
                   }},
               ]
             });
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                document.querySelector('.logo').style.display = 'none';
+                slides = document.querySelectorAll('.slides div').length + 1;
+                if (event.indexh === 0 || event.indexh > slides) {
+                    document.querySelector('.logo').style.display = 'block';
+                }
+            } );
 
             document.querySelector('.titolo').textContent = document.title;
 		</script>
