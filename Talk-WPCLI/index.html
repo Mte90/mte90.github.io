@@ -175,6 +175,11 @@ wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
 				<section>
 					<h2>Load PHP file before running the command</h2>
 					<pre><code data-trim>--require=fixer.php</code></pre>
+					<pre><code data-trim><?php
+// wp media regenerate --skip-delete --require=theme.php
+
+WP_CLI::add_wp_hook( 'option_template', function($parameter) { return 'iamnottwenty'; } );
+WP_CLI::add_wp_hook( 'option_stylesheet', function($parameter) { return 'iamnottwenty'; } );</code></pre>
 				</section>
 
 				<section>
