@@ -179,7 +179,8 @@ wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
 // wp media regenerate --skip-delete --require=theme.php
 
 WP_CLI::add_wp_hook( 'option_template', function($parameter) { return 'iamnottwenty'; } );
-WP_CLI::add_wp_hook( 'option_stylesheet', function($parameter) { return 'iamnottwenty'; } );</code></pre>
+WP_CLI::add_wp_hook( 'option_stylesheet', function($parameter) { return 'iamnottwenty'; } ); 
+?></code></pre>
 				</section>
 
 				<section>
@@ -449,8 +450,6 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-		<script src="lib/js/freezeframe.pkgd.min.js"></script>
-		<script src="js/gif.js"></script>
 
 		<script>
 
@@ -462,14 +461,6 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
               touch: true,
               overview: false,
               transition: 'zoom', // none/fade/slide/convex/concave/zoom
-			  keyboard: {
-				78: function () {animateGif() },
-				34: function () {animateGif() },
-				76: function () {animateGif() },
-				39: function () {animateGif() },
-				74: function () {animateGif() },
-				40: function () {animateGif() }
-			  },
               dependencies: [
                 {src: 'lib/js/classList.js', condition: function () {
                     return !document.body.classList;
