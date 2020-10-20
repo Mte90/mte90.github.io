@@ -30,7 +30,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WordCamp Bari</div><div class="hashtag">#wcbari</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Linux Day 2020</div><div class="hashtag">#ld2020</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -49,8 +49,8 @@
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla Reps & Mozilla TechSpeaker</li>
-							<li>WordPress Core Contributor/Developer</li>
-							<li>ClassicPress - i18n team lead & Founding Committee Member</li>
+							<li>WordPress Core Contributor/Developer/Translator</li>
+							<li>VVV Co-Mantainer</li>
 							<li>Project Translation Editor in WordPress Italia</li>
 						</ul>
 					</div>
@@ -60,16 +60,15 @@
 					<h2>Few info</h2>
 					<p>WordPress 3.7 or later</p>
 					<p class="fragment roll-in">No root privileges required</p>
-					<p class="fragment roll-in">SSH support (<a href="https://make.wordpress.org/cli/handbook/running-commands-remotely/">make.wordpress.org/cli/handbook/running-commands-remotely/</a>)</p>
-					<p class="fragment">Official project since December 2016</p>
-					<p class="fragment">Extendable by plugin or packages</p>
 					<p class="fragment">No login required</p>
+					<p class="fragment roll-in">SSH support (<a href="https://make.wordpress.org/cli/handbook/running-commands-remotely/">make.wordpress.org/cli/handbook/running-commands-remotely/</a>)</p>
+					<p class="fragment">Extendable by plugin or packages</p>
 					<p class="fragment"><b>FAST</b></p>
 				</section>
 
 				<section>
 					<h2>How to install it</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 php wp-cli.phar --info
 chmod +x wp-cli.phar
@@ -80,15 +79,16 @@ composer global require wp-cli/wp-cli
 Deb/RPM builds: https://github.com/wp-cli/builds
 					</code></pre>
 					<h2>Update it</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp cli update
+wp @demosite cli update # Will use settings from wp-cli for the alias
 					</code></pre>
 					<p>By <a href="https://make.wordpress.org/cli/handbook/installing/">make.wordpress.org/cli/handbook/installing/</a> with Bash/ZSH completions docs</p>
 				</section>
 
 				<section>
 					<h2>Install WordPress</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp core download --locale=it_IT
 wp core config --dbuser="wp" --dbpass="wp" --dbprefix="wp_"
 wp core install --siteurl="https://yourdomain.tld"
@@ -100,11 +100,11 @@ wp core install --prompt
 				
 				<section>
 					<h2>Why</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 $ wp post list --post_type='page' --format=ids
 1164 1186
 					</code></pre>
-					<pre class="fragment"><code data-trim>
+					<pre class="fragment"><code class="bash" data-trim>
 $ wp post delete $(wp post list --post_type='page' --format=ids)
 Success: Trashed post 1164.
 Success: Trashed post 1186.
@@ -113,7 +113,7 @@ Success: Trashed post 1186.
 				
 				<section>
 					<h2>Shell Alias</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 $ alias wp-check-all='wp core check-update && wp plugin list --update=available && wp theme list --update=available'
 $ check-all
 +-----------------+-------------+-----------------------------------------------------------+
@@ -126,7 +126,6 @@ $ check-all
 +-------------------------+----------+-----------+--------------+
 | akismet                 | inactive | available | 3.1.8        |
 | co-authors-plus         | inactive | available | 3.1.1        |
-| rest-api                | active   | available | 2.0-beta13.1 |
 +-------------------------+----------+-----------+--------------+
 +----------------------+----------+-----------+---------+
 | name                 | status   | update    | version |
@@ -145,23 +144,25 @@ $ check-all
 				
 				<section>
 					<h2>List all image URL-s in posts</h2>
-					<pre><code data-trim>
-wp post list --field=ID|xargs -I % wp post get % --field=post_content|sed -ne 's;.*\(https\?\S\+\(jpe\?g\|png\|gif\)\).*;\1;gp'
+					<pre><code class="bash" data-trim>
+wp post list --field=ID|xargs -I % wp post get % --field=post_content
+    |sed -ne 's;.*\(https\?\S\+\(jpe\?g\|png\|gif\)\).*;\1;gp'
 					</code></pre>
 					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
 				</section>
 				
 				<section>
 					<h2>Create a page from a file and flag it with the file name</h2>
-					<pre><code data-trim>
-wp post create new_page.html --post_type=page --post_title="New Page" --porcelain | xargs -I % wp post meta add % imported_from new_page.html
+					<pre><code class="bash" data-trim>
+wp post create new_page.html --post_type=page --post_title="New Page" --porcelain
+    | xargs -I % wp post meta add % imported_from new_page.html
 					</code></pre>
 					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
 				</section>
 
 				<section>
 					<h2>Change a constant on wp-config.php</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp config set WP_DEBUG true --type=constant --raw
 wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
 </code></pre>
@@ -169,38 +170,42 @@ wp config set WP_DISABLE_FATAL_ERROR_HANDLER true --type=constant --raw
 
 				<section>
 					<h2>Create posts with dummy content</h2>
-					<pre><code data-trim>wp post generate --count=10</code></pre>
+					<pre><code class="bash" data-trim>wp post generate --count=10</code></pre>
 				</section>
 				
 				<section>
 					<h2>Load PHP file before running the command</h2>
-					<pre><code data-trim>--require=fixer.php</code></pre>
-					<pre><code data-trim><?php
+					<pre><code class="bash" data-trim>--require=fixer.php</code></pre>
+					<pre><code class="php" data-trim><?php
 // wp media regenerate --skip-delete --require=theme.php
 
-WP_CLI::add_wp_hook( 'option_template', function($parameter) { return 'iamnottwenty'; } );
-WP_CLI::add_wp_hook( 'option_stylesheet', function($parameter) { return 'iamnottwenty'; } ); 
+WP_CLI::add_wp_hook( 'option_template', function($parameter) { 
+    return 'iamnottwenty'; 
+} );
+WP_CLI::add_wp_hook( 'option_stylesheet', function($parameter) { 
+    return 'iamnottwenty'; 
+} ); 
 ?></code></pre>
 				</section>
 
 				<section>
 					<h2>Import image by url</h2>
-					<pre><code data-trim>wp media import url --post_id=123 --title="It's me an image"</code></pre>
+					<pre><code class="bash" data-trim>wp media import url --post_id=123 --title="It's me an image"</code></pre>
 				</section>
 				
 				<section>
 					<h2>Migrate Taxonomy term between taxonomies</h2>
-					<pre><code data-trim>wp term migrate apple --by=slug --from=category --to=post_tag</code></pre>
+					<pre><code class="bash" data-trim>wp term migrate apple --by=slug --from=category --to=post_tag</code></pre>
 				</section>
 				
 				<section>
 					<h2>Generate WXR file from a list of IDs</h2>
-					<pre><code data-trim>wp export --post__in=$(cat id_export.txt | tr '\n' ',') --with_attachments</code></pre>
+					<pre><code class="bash" data-trim>wp export --post__in=$(cat id_export.txt | tr '\n' ',') --with_attachments</code></pre>
 				</section>
 				
 				<section>
 					<h2>Search & Replace</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp search-replace http://domain.com https://domain.com
 wp search-replace http://domain.com https://domain.com --network
 ##### OR #####
@@ -215,9 +220,9 @@ wp search-replace '&#60;script(.*?)&#62;(.*?)&#60;\/script&#62;' '' --regex
 
 				<section>
 					<h2>Upgrade all the websites in a folder</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 #!/bin/bash
-declare -a wp_sites=('/usr/local/web/site1/htdocs' '/usr/local/web/site2/htdocs' '/usr/local/web/site3/htdocs')
+declare -a wp_sites=('/usr/local/web/site1/htdocs' '/usr/local/web/site2/htdocs')
 
 for site in "${wp_sites[@]}"; do
     echo Upgrading $site...
@@ -229,7 +234,7 @@ done
 
 				<section>
 					<h2>Disable commands for a site with <i>wp-cli.yml</i></h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 disabled_commands:
     - db drop
     - search-replace
@@ -239,7 +244,7 @@ disabled_commands:
 
 				<section>
 					<h2>Database operation</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp db query "show tables;"
 wp db export
 wp db reset --yes # Yes reset the DB!
@@ -252,7 +257,7 @@ wp db size --tables --human-readable
 
 				<section>
 					<h2>Plugin management</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp plugin install glossary-by-codeat --activate
 ##### OR #####
 wp plugin activate glossary-by-codeat
@@ -264,7 +269,7 @@ wp plugin list
 
 				<section>
 					<h2>Options</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp option get option-name
 wp option add option-name
 wp option delete option-name
@@ -276,7 +281,7 @@ wp option get plugin_with_serialized_values --format=yaml
 
 				<section>
 					<h2>Various tasks</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp transient delete --expired
 wp cache flush # Redis Memcached or PHP-APCu
 wp media regenerate 
@@ -290,7 +295,7 @@ EDITOR=vim wp config edit
 				
 				<section>
 					<h2>List of WooCommerce's orders</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp wc shop_order list --customer=1 --user=1 --fields=id,status
 					</code></pre>
 					<p>By <a href="https://robotninja.com/blog/wp-cli-woocommerce-development/">robotninja.com/blog/wp-cli-woocommerce-development/</a></p>
@@ -298,7 +303,7 @@ wp wc shop_order list --customer=1 --user=1 --fields=id,status
 
 				<section>
 					<h2>Profile package</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp package install wp-cli/profile-command
 wp profile stage --allow-root --all
 +--------------------------+----------------+---------+------------+-------------+-------------+------------+--------------+--------------+---------------+
@@ -326,7 +331,7 @@ wp profile hook --all --spotlight --url=https://yourdomain.com --allow-root
 
 				<section>
 					<h2>Profile every plugin</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 #!/bin/bash
 echo "Loop of curl request, with plugin disabled for the page $1"
 
@@ -335,7 +340,8 @@ do
 echo "Plugin: $p"
     for i in {1..5}
     do
-        curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 | sed 's/\,/./'
+        curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 
+           | sed 's/\,/./'
     done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
     wp plugin activate $p
 done
@@ -351,14 +357,15 @@ echo "Loop of curl request for the page $1"
 
 for i in {1..20}
 do
-    curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 | sed 's/\,/./'
+    curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 
+       | sed 's/\,/./'
 done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
 					</code></pre>
 				</section>
 
 				<section>
 					<h2>Remove tags with 0 posts</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 wp term list post_tag --format=json > tags.json
 </code></pre>
 <pre><code data-trim>
@@ -376,7 +383,7 @@ with open('tags.json') as f:
 				
 				<section>
 					<h2>List all the URLs with content empty</h2>
-					<pre><code data-trim>
+					<pre><code class="bash" data-trim>
 #!/bin/sh
 
 site=$(wp option get home)
@@ -391,13 +398,20 @@ done
 				</section>
 				
 				<section>
+					<h2>PHP binaries that run in the WordPress context</h2>
+					<pre><code class="php" data-trim>
+#!/bin/env wp eval-file
+<?php
+echo get_bloginfo('name');
+?>
+					</code></pre>
+				</section>
+
+				<section>
 					<h2>Create a command</h2>
 					<pre><code data-trim>
 # Register a custom 'foo' command to output a supplied positional param.
-#
 # $ wp foo bar --append=qux
-# Success: bar qux
-
 /**
  * My awesome closure command
  *
@@ -418,6 +432,31 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					</code></pre>
 				</section>
 
+
+				<section>
+					<h2>From a list of url get the ids</h2>
+					<pre><code class="bash" data-trim>
+#!/bin/bash
+
+# Install:
+#     wp package install codeAtcode/wp-cli-getbyurl
+# How to use the script:
+#     cat list.txt | xargs -n1 generate-id-by-url.sh
+
+out=$(wp get-by-url "$1" --skip-plugins --skip-themes)
+if [[ -n $out ]]; then
+    command=$(cut -d'|' -f1 <<< "$out" | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+    id=$(cut -d'|' -f2 <<< "$out" | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+    taxonomy=$(cut -d'|' -f3 <<< "$out" | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+    if [[ "$taxonomy" == 'post' ]]; then
+        echo $id >> ./ids.txt
+    fi
+fi
+					</code></pre>
+					
+					<p>By <a href="https://github.com/CodeAtCode/WPCli-scripts/">https://github.com/CodeAtCode/WPCli-scripts/</a></p>
+				</section>
+
 				<section>
 					<h2>Cool packages to discover for you</h2>
 					<ul>
@@ -432,16 +471,18 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 				
 				<section>
 					<h2>Contribute to WP CLI with VVV</h2>
-					<p>
-						<a href="https://github.com/Mte90/template-wp-cli-develop">https://github.com/Mte90/template-wp-cli-develop</a>
-					</p>
+						<pre><code>utilities:
+    core:
+        - wpcli-dev
+</code></pre>
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="https://wp-cli.org/">https://wp-cli.org/</a><br>
-						- <a href="https://guides.wp-bullet.com/category/wp-cli/">https://guides.wp-bullet.com/category/wp-cli/</a>
+						- <a href="https://wp-cli.org/">wp-cli.org</a><br>
+						- <a href="https://varyingvagrantvagrants.org">VVV</a><br>
+						- <a href="https://guides.wp-bullet.com/category/wp-cli/">guides.wp-bullet.com/category/wp-cli/</a>
 					</p>
 				</section>
 
