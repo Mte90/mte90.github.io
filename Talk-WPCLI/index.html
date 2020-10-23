@@ -338,6 +338,7 @@ echo "Loop of curl request, with plugin disabled for the page $1"
 for p in $(wp plugin list --fields=name --status=active)
 do
 echo "Plugin: $p"
+    wp plugin deactivate $p
     for i in {1..5}
     do
         curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 
@@ -345,21 +346,6 @@ echo "Plugin: $p"
     done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
     wp plugin activate $p
 done
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Profile a page</h2>
-					<pre><code data-trim>
-#!/bin/bash
-
-echo "Loop of curl request for the page $1"
-
-for i in {1..20}
-do
-    curl -so /dev/null -H "Pragma: no-cache" -w "%{time_total}\n" $1 
-       | sed 's/\,/./'
-done | awk '{ sum +=$1; n++; print $1 } END { if (n > 0) print "AVG: " sum / n; }'
 					</code></pre>
 				</section>
 
@@ -432,6 +418,36 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 					</code></pre>
 				</section>
 
+				<section>
+					<h2>Remove Comments by year</h2>
+					<pre><code class="bash" data-trim>
+#!/usr/bin/python
+
+# Generate the list of comments
+# wp comment list --fields=ID,comment_date --format=json > comments.json
+
+# This script require a parameter that is the year
+
+import json, os, datetime, sys
+
+i = 0
+ids = ''
+with open('comments.json') as f:
+    comments = json.load(f)
+    print('Found ' + str(len(comments)) + ' comments')
+    print('Processing...')
+    for comment in comments:
+        date = datetime.datetime.strptime(comment['comment_date'], '%Y-%m-%d %H:%M:%S')
+        if date.year == int(sys.argv[1]):
+            i += 1
+            ids += comment['comment_ID'] + ' '
+
+os.system("wp comment delete " + ids + ' --force')
+print('Removed ' + str(i) + ' comments')
+					</code></pre>
+					
+					<p>By <a href="https://github.com/CodeAtCode/WPCli-scripts/">https://github.com/CodeAtCode/WPCli-scripts/</a></p>
+				</section>
 
 				<section>
 					<h2>From a list of url get the ids</h2>
@@ -475,6 +491,22 @@ fi
     core:
         - wpcli-dev
 </code></pre>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>WPDB-Status</h1>
+					<img src="https://raw.githubusercontent.com/CodeAtCode/WPDB-Status/master/screenshot.png"/>
+					<p>
+						- <a href="https://github.com/CodeAtCode/WPDB-Status">Plugin</a><br>
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>Prometheus Metrics in WordPress</h1>
+					<p>
+						- <a href="https://github.com/CodeAtCode/Prometheus-Metrics-in-WordPress">Plugin</a><br>
+						- <a href="https://grafana.com/grafana/dashboards/11178">Grafana Dashboard</a><br>
+					</p>
 				</section>
 
 				<section style="text-align: left;">
