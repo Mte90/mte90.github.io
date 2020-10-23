@@ -81,7 +81,6 @@ Deb/RPM builds: https://github.com/wp-cli/builds
 					<h2>Update it</h2>
 					<pre><code class="bash" data-trim>
 wp cli update
-wp @demosite cli update # Will use settings from wp-cli for the alias
 					</code></pre>
 					<p>By <a href="https://make.wordpress.org/cli/handbook/installing/">make.wordpress.org/cli/handbook/installing/</a> with Bash/ZSH completions docs</p>
 				</section>
@@ -92,6 +91,7 @@ wp @demosite cli update # Will use settings from wp-cli for the alias
 wp core download --locale=it_IT
 wp core config --dbuser="wp" --dbpass="wp" --dbprefix="wp_"
 wp core install --siteurl="https://yourdomain.tld"
+wp @demosite cli update # Will use settings from wp-cli for the alias
 ##### OR #####
 wp core install --prompt
 					</code></pre>
