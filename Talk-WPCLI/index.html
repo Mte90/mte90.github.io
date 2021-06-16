@@ -159,6 +159,11 @@ wp post create new_page.html --post_type=page --post_title="New Page" --porcelai
 					</code></pre>
 					<p>By <a href="https://make.wordpress.org/cli/handbook/shell-friends/">make.wordpress.org/cli/handbook/shell-friends/</a></p>
 				</section>
+				
+				<section>
+					<h2>Remove the featured image from the article of a category</h2>
+					<pre><code class="bash" data-trim>for id in $(wp post list --category_name='news' --format=ids); do wp post meta update $id '_thumbnail_id' ''; done</code></pre>
+				</section>
 
 				<section>
 					<h2>Change a constant on wp-config.php</h2>
