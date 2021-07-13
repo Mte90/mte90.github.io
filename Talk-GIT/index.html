@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Git in 30 minutes</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Nome Evento </div><div class="hashtag">#evento</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Git in 30 minutes</h1>
+					<h3>Handy tips for your daily fight with Git</h3>
+					<p>
+						<small>Created by <a href="https://daniele.tech/">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Italian Linux Society Council member</li>
+							<li>LUG Rieti founder</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>WordPress Rome/Terni meetup</li>
+							<li>Mozillian & Mozilla Reps & Mozilla Italia</li>
+							<li>Open Source Addicted</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+                    <h3>⚠️</h3>
+					<img src="pictures/understand.jpg">
+                    <p>
+                        Or you were following another talk instead of this.
+                    </p>
+				</section>
+				
+				<section>
+                    <h3>Git explained like I am 5 years old</h3>
+					<ul>
+						<li>A fork is a remote copy of a repository</li>
+						<li class="fragment">A branch is a mechanism to create different versions of the same repository that you can merge</li>
+						<li class="fragment">A pull request/merge request (PR/MR) is a merge request of a specific branch (usually not the master/main) of the same repository or another one</li>
+						<li class="fragment">Pull means download the latest changes of a branch</li>
+						<li class="fragment">Push means upload the latest changes of a branch</li>
+						<li class="fragment">Fetch means download all the changes in all the branch of the repository</li>
+						<li class="fragment">A conflict happens when your copy is not aligned or changed in a way that git cannot merge it</li>
+						<li class="fragment">Fast forward is an issue about a missing identification of your last commit during a merge</li>
+					</ul>
+				</section>
+				
+				<section>
+                    <h3>Git gui</h3>
+                    <p>There are Git Guis but I prefer the commandline as works always</p>
+					<img src="pictures/giterrors.jpg">
+				</section>
+				
+				<section>
+                    <h3>Git 101</h3>
+					<ul>
+						<li>Create a branch (suggested for incomplete stuff)</li>
+						<li class="fragment">Add files to git</li>
+						<li class="fragment">Write a commit understable also after some time</li>
+						<li class="fragment">Push on your server</li>
+						<li class="fragment">Now it is more easy to do a pull request</li>
+                    </ul>
+                    <img src="pictures/branch.png">
+				</section>
+				
+				<section>
+                    <h3>Git Fork 101</h3>  
+                    <img src="pictures/gitmerge.png">
+				</section>
+				
+				<section>
+                    <h3>Git Fork 101</h3>                  
+                    <ul>
+						<li>Create a fork in the service you are using</li>
+						<li class="fragment">Git clone tat repository</li>
+						<li class="fragment"><code>git remote add upstream https://original-repo</code></li>
+						<li class="fragment">With <code>git fetch --all</code> you update everything</li>
+						<li class="fragment">With <code>git merge upstream/master</code> you are merging the upstream repository in your fork</li>
+						<li class="fragment">Now you can push it on your fork as updated</li>
+					</ul>
+				</section>
+				
+				<section>
+                    <h3>Git Merge/Rebase 101</h3>          
+                    <img src="pictures/mergerebase.png">
+				</section>
+				
+				<section>
+                    <h3>Git diff/patch 101</h3>
+                    <pre><code data-trim contenteditable>
+                        git diff HEAD~6 > last-6-commits.diff
+                        git range-diff 9dcf19459ffb8b02e8232eacdc6079a265517bed..f93aca03caba4edaf787e9751db54cf42d662180
+                        https://github.com/mte90/project/pull/12.diff
+                        https://github.com/mte90/project/pull/12.patch
+                    </code></pre>
+				</section>
+				
+				<section>
+                    <h3>Git reset/clean 101</h3>
+                    <pre><code data-trim contenteditable>
+                        git reset --hard HEAD~1
+                        git reset --hard (upstream/master)
+                        git stash
+                    </code></pre>
+				</section>
+				
+				<section>
+                    <h3>Git verbose 101</h3>
+                    <pre><code data-trim contenteditable>
+                        git branch -v
+                        git remote -v
+                    </code></pre>
+				</section>
+				
+				<section>
+					<h3>You need (bash) alias!</h3>
+					<img src="pictures/git-init-git.jpg">
+				</section>
+
+				<section>
+					<h2>My alias</h2>
+					<pre><code data-trim contenteditable>
+# For Git
+alias git-commit-rename='git commit --amend'
+alias git-remove-last-commit='git reset --soft HEAD~1'
+#  To remember the SSH password for 36000 minutes
+alias git-pass='ssh-add -t 36000'
+alias gpm="git push origin master"
+alias git-restage="git update-index --again"
+alias git-rename-branch="git rename-branch"
+alias git-remove-deleted-branch-remotely="git remote prune origin"
+#  Add and remove new/deleted files from git index automatically
+function git-merge-last-commits() { git reset --soft HEAD~$1 && git commit; }
+function git-stat-months() { git diff --shortstat "@{$1 month ago}"; }
+					</code></pre>
+					<p> <a href="https://github.com/mte90/dotfiles/blob/master/.bash/alias.sh">https://github.com/mte90/dotfiles/blob/master/.bash/alias.sh</a>.</p>
+				</section>
+				
+				<section>
+					<h3>Conventional Commits!</h3>
+					<pre><code data-trim contenteditable>
+                        feat(release): updated CI
+                        refactor(engine): changed the sort order
+                        fix(css): wrong padding for header
+                        ...
+					</code></pre>
+					<p> <a href="https://www.conventionalcommits.org/en/v1.0.0/">https://www.conventionalcommits.org/en/v1.0.0/</a>.</p>
+				</section>
+
+				<section>
+					<h3>You need (bash) wrappers!</h3>
+					<img src="pictures/commits.png">
+				</section>
+
+				<section>
+					<h3>Forgit!</h3>
+					<img src="pictures/forgit.png">
+					<p> <a href="https://github.com/wfxr/forgit">https://github.com/wfxr/forgit</a>.</p>
+				</section>
+
+				<section>
+					<h3>Gitapper!</h3>
+					<p>
+					Git wrapper executed before and after the <code>git</code> commands.
+					<pre><code data-trim contenteditable>
+					git clone https://github.com/mte90/project-forked --fork
+					git checkout https://github.com/mte90/project-forked/pull/12
+					</code></pre>
+					</p>
+					<p><a href="https://github.com/Mte90/gitapper">https://github.com/Mte90/gitapper</a>.</p>
+				</section>
+
+				<section>
+					<h3>BFG Repo-Cleaner!</h3>
+					<p>
+					Remove files from a git repo once for all.
+					<pre><code data-trim contenteditable>
+					java -jar bfg.jar --strip-blobs-bigger-than 100M some-big-repo.git
+					bfg --delete-files id_{dsa,rsa}  my-repo.git
+					</code></pre>
+					</p>
+					<p><a href="https://rtyley.github.io/bfg-repo-cleaner/">https://rtyley.github.io/bfg-repo-cleaner/</a>.</p>
+				</section>
+				
+				<section>
+					<h3>You need options!</h3>
+					<img src="pictures/pushforce.jpg">
+				</section>
+
+				<section>
+                    <img src="pictures/gitwtf.jpg">
+                    <p>
+                        GitHub and GitLab let you disable the <code>force</code> solution to specific branch. Enable it!
+                    </p>
+				</section>
+
+				<section>
+                    <img src="pictures/question.jpg">
+					<p><a href="https://github.com/k88hudson/git-flight-rules">https://github.com/k88hudson/git-flight-rules</a>.</p>
+				</section>
+
+				<section style="">
+                    <img src="pictures/end.jpg">
+					<p>
+						<a href="http://mte90.tech/Talk-GIT">http://mte90.tech/Talk-GIT</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="lib/js/freezeframe.pkgd.min.js"></script>
+		<script src="js/gif.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			  keyboard: {
+				78: function () {animateGif() },
+				34: function () {animateGif() },
+				76: function () {animateGif() },
+				39: function () {animateGif() },
+				74: function () {animateGif() },
+				40: function () {animateGif() }
+			  },
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
