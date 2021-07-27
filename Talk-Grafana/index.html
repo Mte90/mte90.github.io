@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Grafana: la bellezza dei dati salverà il mondo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Nome Evento </div><div class="hashtag">#evento</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Grafana</h1>
+					<h3>la bellezza dei dati salverà il mondo</h3>
+					<p>
+						<small>Created by <a target="_blank" href="https://daniele.tech/">Daniele Scasciafratte</a> / <a target="_blank" href="http://twitter.com/mte90net">@Mte90net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Italian Linux Society Council member</li>
+							<li>LUG Rieti founder</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>WordPress Rome/Terni meetup</li>
+							<li>Mozillian & Mozilla Reps & Mozilla Italia</li>
+							<li>Open Source Addicted</li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+                    <h3>La bellezza del dato salverà il mondo</h3>
+					<img src="pictures/graph.png">
+                    <small>
+                        Non importa se il grafico è bello, quello che importa è il <b>contenuto</b> e la sua <b>comprensione</b>.
+                    </small>
+				</section>
+
+				<section class="force-bottom" data-background="pictures/datibenecomune.jpg">
+                    <div class="background">
+                        <p class="white-black-shadow">www.datibenecomune.it</p>
+					</div>
+				</section>
+
+				<section>
+                    <img src="pictures/ils.png">
+					<p><a href="https://forum.linux.it/t/analisi-sondaggio-italian-linux-society-2021/216">forum.linux.it/t/analisi-sondaggio-italian-linux-society-2021/216</a>.</p>
+				</section>
+				
+				<section>
+                    <h3>L'occhio vuole la sua parte</h3>
+					<img src="pictures/grafana.png">
+				</section>
+
+				<section>
+                    <h3>Dashboard pubbliche</h3>
+					<ul>
+						<li><a target="_blank" href="https://covid-19.aircode.it/d/9pegp-dGz/covid-19-v2">covid-19.aircode.it</a> - Stato Covid in Italia, per regione ecc</li>
+						<li><a target="_blank" href="https://dashboards.gitlab.com/d/general-public-splashscreen/general-gitlab-dashboards?orgId=1">dashboards.gitlab.com</a> - Stato server di GitLab.com</li>
+						<li><a target="_blank" href="https://grafana.wikimedia.org/d/000000605/datacenter-global-overview?orgId=1">grafana.wikimedia.org</a> - Stato Server Wikimedia</li>
+						<li><a target="_blank" href="https://monit-grafana-open.cern.ch/d/000000523/home?orgId=16">monit-grafana-open.cern.ch</a> - Stato macchine CERN</li>
+						<li><a target="_blank" href="https://stats.voice.mozit.cloud/d/MXLdNO5Gk/common-voice-public-dashboard?orgId=1">stats.voice.mozit.cloud</a> - Mozilla Common Voice in numeri</li>
+						<li><a target="_blank" href="https://dashboard.documentfoundation.org/">dashboard.documentfoundation.org</a> - Contributi a LibreOffice (Kibana)</li>
+						<li><a target="_blank" href="https://avanzamentodigitale.italia.it/it">avanzamentodigitale.italia.it</a> - Monitoraggio dei progetti di trasformazione digitale (Personalizzata)</li>
+                    </ul>
+				</section>
+				
+				<section>
+                    <h3>Cos'è Grafana</h3>
+					<ul>
+						<li>Applicativo Web per la visualizzazione e analisi interattiva di dati</li>
+						<li>Sofware Open Source con azienda che si occupa dello sviluppo di prodotti aggiuntivi e servizi</li>
+						<li>Scritto in Go e TypeScript, multipiattaforma</li>
+						<li>Requisiti minimi 256mb di Ram e 1 CPU</li>
+						<li class="fragment">Si può estendere tramite plugin e il suo gestore pacchetti</li>
+						<li class="fragment">Si interfaccia con Database o fonti dati differenti (113 fonti diverse)</li>
+						<li class="fragment">Le <b>dashboard</b> si creano da interfaccia</li>
+						<li class="fragment">Utenti e gruppi con permessi diversi</li>
+                    </ul>
+				</section>
+
+				<section>
+                    <h3>Qualche esempio reale</h3>
+					<img src="pictures/vegeta.gif">
+                    <p>
+                        Siete carichi? Io si!
+                    </p>
+				</section>
+				
+				<section>
+                    <h3>Come funziona</h3>
+                    <img src="pictures/how.jpg">
+				</section>
+				
+				<section>
+                    <h3>Prometheus DB e Grafana</h3>
+                    <ul>
+						<li><i>Prometheus</i>: Scansiona una pagina ogni tot minuti/giorni/mesi/ecc</li>
+						<li class="fragment"><i>Prometheus</i>: Si crea o si utilizza un exporter*</li>
+						<li class="fragment"><i>Prometheus</i>: Si configura globalmente quanto tempo conserva i dati*</li>
+						<li class="fragment"><i>Grafana</i>: Si crea una dashboard che interroga i dati</li>
+						<li class="fragment"><i>Grafana</i>: La dashboard può mandare notifiche in base ai dati</li>
+						<li class="fragment"><i>Prometheus/Grafana</i>: Si mette in rete locale con accesso alla macchina o esterno</li>
+					</ul>
+                    <small>
+                        * Si fa una volta e non più.
+                    </small>
+				</section>
+				
+				<section>
+                    <h3>Esempio configurazione Prometheus</h3>
+                    <pre><code>                    - job_name: "WordPress metrics"
+                        static_configs:
+                        - targets: ["domain.tld"]
+                        scrape_interval: "5m"
+                        metrics_path: "/wp-json/metrics"
+                        params:
+                            prometheus: ['fg98dfgkj']
+                            users: ['yes']
+                            posts: ['yes']
+                            pages: ['yes']
+                            autoload: ['yes']
+                            transient: ['yes']
+                            user_sessions: ['yes']
+                            posts_without_content: ['yes']
+                            posts_without_title: ['yes']
+                            db_size: ['yes']
+                            pending_updates: ['yes']
+                            scheme: "https"</pre></code>
+                    <small>
+                        <a target="_blank" href="https://github.com/CodeAtCode/Prometheus-Metrics-in-WordPress">CodeAtCode/Prometheus-Metrics-in-WordPress</a>
+                    </small>
+				</section>
+
+				<section>
+                    <h3>Esempio Dati Prometheus Exporter</h3>
+                    <pre><code># HELP wp_users_total Total number of users.
+# TYPE wp_users_total counter
+wp_users_total{host="https://domain.tld"} 117
+# HELP wp_posts_total Total number of posts published.
+# TYPE wp_posts_total counter
+wp_posts_total{host="https://domain.tld", status="published"} 11786
+wp_posts_total{host="https://domain.tld", status="draft"} 134</pre></code>
+                    <small>
+                        <a target="_blank" href="https://github.com/CodeAtCode/Prometheus-Metrics-in-WordPress">CodeAtCode/Prometheus-Metrics-in-WordPress</a>
+                    </small>
+				</section>
+
+				<section>
+                    <h3>Dati in Dashboard</h3>
+                    <img src="pictures/wp.png">
+                    <small>
+                        <a target="_blank" href="https://github.com/CodeAtCode/Prometheus-Metrics-in-WordPress">CodeAtCode/Prometheus-Metrics-in-WordPress</a>
+                    </small>
+				</section>
+
+				<section>
+                    <h3>PageSpeed in Grafana</h3>
+                    <img src="pictures/pagespeed.png">
+                    <small>
+                        <a target="_blank" href="https://github.com/foomo/pagespeed_exporter">foomo/pagespeed_exporter</a>
+                    </small>
+				</section>
+
+				<section>
+                    <h3>SSLabs in Grafana</h3>
+                    <img src="pictures/sslabs.png">
+                    <small>
+                        <a target="_blank" href="https://github.com/anas-aso/ssllabs_exporter">anas-aso/ssllabs_exporter</a>
+                    </small>
+				</section>
+				
+				<section>
+					<h3>PHP Errors in Grafana</h3>
+                    <img src="pictures/php.png">
+                    <small>
+                        <a target="_blank" href="https://github.com/CodeAtCode/phperrorlog_exporter">CodeAtCode/phperrorlog_exporter</a>
+                    </small>
+				</section>
+
+				<section>
+					<h3>Fonti di dati native</h3>
+                    <ul>
+						<li>Prometheus, Influx DB, ...</li>
+						<li>MySQL, PostgreSQL, MongoDB, Redis, ...</li>
+						<li>GitHub, GitLab, ...</li>
+						<li>Discourse Datasource, Google BigQuery, ...</li>
+						<li>Google Calendar, SalesForce, Elasticsearch, ...</li>
+						<li>JSON, SQLite, ...</li>
+					</ul>
+                    <small>
+                        <i>Attenzione: sono necessarie fonti o dati con un marchio temporale altrimenti le dashboard sono statiche!</i><br>
+                        <a target="_blank" href="https://grafana.com/grafana/plugins/?type=datasource">grafana.com/grafana/plugins/?type=datasource</a>
+                    </small>
+				</section>
+
+				<section>
+					<h3>Notifiche native</h3>
+                    <ul>
+						<li>Discord, Telegram</li>
+						<li>Email</li>
+						<li>Microsoft Teams, Slack</li>
+						<li>Webhook</li>
+					</ul>
+                    <small>
+                        <a target="_blank" href="https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/">grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/</a>
+                    </small>
+				</section>
+
+				<section>
+					<h3>Dashboard già pronte</h3>
+					<img src="pictures/dashboard.png">
+                    <small>
+                        <a target="_blank" href="https://grafana.com/grafana/dashboards">grafana.com/grafana/dashboards/</a>
+                    </small>
+				</section>
+
+				<section>
+					<h3>Per provarlo</h3>
+					<p><a target="_blank" href="https://play.grafana.org/">play.grafana.org</a></p>
+				</section>
+
+				<section style="">
+					<h3>E tu per cosa lo useresti?</h3>
+                    <img src="pictures/thankyou.gif">
+					<p>
+						<a href="http://mte90.tech/Talk-Grafana">http://mte90.tech/Talk-Grafana</a><br>
+						<a href="https://docs.google.com/presentation/d/1-k3hABmdYGYA5ggUqFlpSZcv_myEIBzO67f5M0ZEjiA/edit?usp=sharing">La <b>Privacy</b> nel mondo dei social network</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="lib/js/freezeframe.pkgd.min.js"></script>
+		<script src="js/gif.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			  keyboard: {
+				78: function () {animateGif() },
+				34: function () {animateGif() },
+				76: function () {animateGif() },
+				39: function () {animateGif() },
+				74: function () {animateGif() },
+				40: function () {animateGif() }
+			  },
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
