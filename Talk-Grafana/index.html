@@ -28,7 +28,7 @@
 
 	<body>
 		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
-		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Nome Evento </div><div class="hashtag">#evento</div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - Linux Day 2021</div><div class="hashtag">#linuxday</div></div>
 		<div class="reveal">
 
 			<div class="slides">
@@ -108,6 +108,14 @@
 				</section>
 
 				<section>
+					<h3>Dashboard già pronte</h3>
+					<img src="pictures/dashboard.png">
+                    <small>
+                        <a target="_blank" href="https://grafana.com/grafana/dashboards">grafana.com/grafana/dashboards/</a>
+                    </small>
+				</section>
+
+				<section>
                     <h3>Qualche esempio reale</h3>
 					<img src="pictures/vegeta.gif">
                     <p>
@@ -119,7 +127,36 @@
                     <h3>Come funziona</h3>
                     <img src="pictures/how.jpg">
 				</section>
-				
+
+				<section>
+					<h3>Fonti di dati native</h3>
+                    <ul>
+						<li>Prometheus, Influx DB, ...</li>
+						<li>MySQL, PostgreSQL, MongoDB, Redis, ...</li>
+						<li>GitHub, GitLab, ...</li>
+						<li>Discourse Datasource, Google BigQuery, ...</li>
+						<li>Google Calendar, SalesForce, Elasticsearch, ...</li>
+						<li>JSON, SQLite, ...</li>
+					</ul>
+                    <small>
+                        <i>Attenzione: sono necessarie fonti o dati con un marchio temporale altrimenti le dashboard sono statiche!</i><br>
+                        <a target="_blank" href="https://grafana.com/grafana/plugins/?type=datasource">grafana.com/grafana/plugins/?type=datasource</a>
+                    </small>
+				</section>
+
+				<section>
+					<h3>Notifiche native</h3>
+                    <ul>
+						<li>Discord, Telegram</li>
+						<li>Email</li>
+						<li>Microsoft Teams, Slack</li>
+						<li>Webhook</li>
+					</ul>
+                    <small>
+                        <a target="_blank" href="https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/">grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/</a>
+                    </small>
+				</section>
+
 				<section>
                     <h3>Prometheus DB e Grafana</h3>
                     <ul>
@@ -203,43 +240,6 @@ wp_posts_total{host="https://domain.tld", status="draft"} 134</pre></code>
                     <img src="pictures/php.png">
                     <small>
                         <a target="_blank" href="https://github.com/CodeAtCode/phperrorlog_exporter">CodeAtCode/phperrorlog_exporter</a>
-                    </small>
-				</section>
-
-				<section>
-					<h3>Fonti di dati native</h3>
-                    <ul>
-						<li>Prometheus, Influx DB, ...</li>
-						<li>MySQL, PostgreSQL, MongoDB, Redis, ...</li>
-						<li>GitHub, GitLab, ...</li>
-						<li>Discourse Datasource, Google BigQuery, ...</li>
-						<li>Google Calendar, SalesForce, Elasticsearch, ...</li>
-						<li>JSON, SQLite, ...</li>
-					</ul>
-                    <small>
-                        <i>Attenzione: sono necessarie fonti o dati con un marchio temporale altrimenti le dashboard sono statiche!</i><br>
-                        <a target="_blank" href="https://grafana.com/grafana/plugins/?type=datasource">grafana.com/grafana/plugins/?type=datasource</a>
-                    </small>
-				</section>
-
-				<section>
-					<h3>Notifiche native</h3>
-                    <ul>
-						<li>Discord, Telegram</li>
-						<li>Email</li>
-						<li>Microsoft Teams, Slack</li>
-						<li>Webhook</li>
-					</ul>
-                    <small>
-                        <a target="_blank" href="https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/">grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/</a>
-                    </small>
-				</section>
-
-				<section>
-					<h3>Dashboard già pronte</h3>
-					<img src="pictures/dashboard.png">
-                    <small>
-                        <a target="_blank" href="https://grafana.com/grafana/dashboards">grafana.com/grafana/dashboards/</a>
                     </small>
 				</section>
 
