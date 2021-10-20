@@ -116,7 +116,7 @@
 				<section>
 						<h3>Often the bugs are in <b>plugin</b>s</h3>
 						<ul>
-							<li>Missing <a href="https://www.pluginvulnerabilities.com/2021/09/27/wordpress-security-plugins-failed-to-protect-against-vulnerability-when-using-gutenberg-editor/">sanitizations/escaping</a></li>
+							<li>Missing <a href="https://www.pluginvulnerabilities.com/2021/09/27/wordpress-security-plugins-failed-to-protect-against-vulnerability-when-using-gutenberg-editor/">sanitizations</a>/<a href="https://www.exploitalert.com/view-details.html?id=38357">escaping</a></li>
 							<li>Features for <a href="https://jetpack.com/2021/10/14/multiple-vulnerabilities-in-wp-fastest-cache-plugin/">logged users available to non-logged</a></li>
 							<li>Non-standard
 								<ul>
@@ -125,7 +125,21 @@
 									<li>Reimplementation of already available WP features</li>
 								</ul>
 							</li>
+							<li>Also in <a href="https://www.exploitalert.com/view-details.html?id=37972">themes</a></li>
 						</ul>
+				</section>
+
+				<section>
+						<h3>What are the capabilities</h3>
+						<p>
+							WordPress uses a concept of Roles, designed to give the site owner the ability to control what users can and cannot do within the site.<br>
+							WordPress has six pre-defined roles: Super Admin, Administrator, Editor, Author, Contributor and Subscriber. Each role is allowed to perform a set of tasks called Capabilities.
+						</p>
+						<ul>
+							<li><a href="https://wordpress.org/support/article/roles-and-capabilities/">WordPress Roles and Capabilities</a></li>
+							<li><a href="https://it.wordpress.org/plugins/user-role-editor/">User Role Editor plugin</a></li>
+							<li>Missing <a href="https://www.wordfence.com/?s=Capabilities">controls on backend</a></li>
+                        </ul>
 				</section>
 
 				<section>
@@ -151,6 +165,19 @@
 				</section>
 
 				<section>
+						<h3>What is a nonce?</h3>
+						<p>
+							A nonce (token) is a "number used once" to help protect URLs and forms from certain types of misuse, malicious or otherwise. WordPress nonces aren't numbers but are a hash made up of numbers and letters. Nor are they used only once, but have a limited "lifetime" after which they expire. During that time period, the same nonce will be generated for a given user in a given context. The nonce for that action will remain the same for that user until that nonce life cycle has completed.
+						</p>
+						<ul>
+							<li><a href="https://codex.wordpress.org/WordPress_Nonces">WordPress Nonce</a></li>
+							<li>Used against CSRF</li>
+							<li>Used to identify who is the author of the request for capabilities</li>
+							<li>Missing <b>nonce</b>s or <a href="https://www.wordfence.com/?s=nonce">wrongly integrated</a></li>
+                        </ul>
+				</section>
+
+				<section>
 						<h3>Golden rules for an hacker</h3>
 						<ul>
 							<li class="fragment">Check version of plugins</li>
@@ -159,7 +186,6 @@
 								<ul>
 									<li>Generate DDOS</li>
 									<li>Actions for logged/non users</li>
-									<li>Missing <b>nonce</b>s or <a href="https://codeseekah.com/2016/01/21/wordpress-nonces-vulnerabilities/">wrongly integrated</a></li>
 									<li>Abuse this calls (<a href="https://www.wordfence.com/blog/2018/11/trends-following-vulnerability-in-wp-gdpr-compliance-plugin/">example</a>, <a href="https://blog.sucuri.net/2018/11/hackers-change-wordpress-siteurl-to-pastebin.html">example</a>, <a href="https://www.wordfence.com/blog/2019/03/recent-social-warfare-vulnerability-allowed-remote-code-execution/">example</a>)</li>
 								</ul>
 							</li>
@@ -169,6 +195,19 @@
 							<li class="fragment">Check for <ahref="https://www.shodan.io/search?query=http.html%3A%22*+The+wp-config.php+creation+script+uses+this+file%22">misconfigured web server</a></li>
 							<li class="fragment">Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
 						</ul>
+				</section>
+
+				<section>
+						<h3>Investigate with WordPress Rest API</h3>
+						<p>
+							The WordPress REST API provides an interface for applications to interact with your WordPress site by sending and receiving data as JSON (JavaScript Object Notation) objects.
+						</p>
+						<ul>
+							<li><a href="https://developer.wordpress.org/rest-api/">Rest API Handbook</a></li>
+							<li>Used heavy with Gutenberg blocks</li>
+							<li><a href="https://daniele.tech/2020/05/gutenberg-drama-2020-edition-why-wordpress-is-against-the-wp-org-users/">Gutenberg Drama 2020 Edition – Why WordPress is against the WP.org users</a></li>
+							<li><a href="https://daniele.tech/2019/05/your-wordpress-instance-is-leaking-data-also-with-gutenberg/">Your WordPress instance is leaking data (also with Gutenberg)</a></li>
+                        </ul>
 				</section>
 
 				<section>
@@ -293,6 +332,11 @@ wpscan --url www.example.com --enumerate
 				</section>
 
 				<section>
+					<h2>Money</h2>
+					<img src="pictures/zerodium.png" class="full">
+				</section>
+
+				<section>
 					<h2>Backdoor</h2>
 					<pre><code data-trim>
 @unlink(__FILE__);
@@ -319,6 +363,17 @@ if ( !is_wp_error( $user ) )
 				</section>
 
 				<section>
+					<h2>CVE Details</h2>
+                    <p>
+                        Looking at 2021, on 6 vulnerabilities in WordPress just 2 were during the development of pre-release.
+                    </p>
+                    <p>
+                        Don't forget that WP has auto updates for minor release (since 3.7) with security bugfixes (for the latest major also with usual bugfixes).
+                    </p>
+					<small><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/">https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/</a></small>
+				</section>
+
+				<section>
 					<h2>Plugins suggested to improve the security</h2>
 					<ul>
 						<li>iThemes Security</li>
@@ -330,7 +385,9 @@ if ( !is_wp_error( $user ) )
 					<h2>Grazie!</h2>
 					<img src="pictures/grazie.jpg">
 					<p>
-						- <a href="http://mte90.tech/Talk-Secure-WP">http://mte90.tech/Talk-Secure-WP</a>
+						- <a href="http://mte90.tech/Talk-Secure-WP">http://mte90.tech/Talk-Secure-WP</a><br>
+						- <a href="https://wpscan.com/plugins">WordPress Plugin Vulnerabilities by WP Scan</a><br>
+						- <a href="https://www.exploitalert.com/search-results.html?search=wordpress">Exploit for WordPress plugins</a><br>
 					</p>
 				</section>
 
