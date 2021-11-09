@@ -158,3 +158,8 @@ ul, ol, div, p {
 	font-size: 14px;
 }
 
+ @media print {
+    .backgrounds {
+        background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, rgba(77, 77, 77, 0.5) 100%);
+    }
+}
