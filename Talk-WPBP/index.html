@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>WordPress Plugin Boilerplate Powered 2.1</title>
+		<title>WordPress Plugin Boilerplate Powered 3.2</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.min.css" id="theme">
@@ -21,10 +21,6 @@
             link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
             document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
 	</head>
 
 	<body>
@@ -34,7 +30,7 @@
 
 			<div class="slides">
 				<section>
-					<h2>WordPress Plugin Boilerplate Powered 2.1</h2>
+					<h2>WordPress Plugin Boilerplate Powered 3.2</h2>
 					<img src="pictures/logo.png">
 					<p>
 						<small>Created by <a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">Mte90Net</a></small>
@@ -45,10 +41,13 @@
 					<div class="background">
 						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
 						<ul class="white-black-shadow">
-							<li>Co Founder Codeat - Full Stack Developer</li>
-							<li>Mozillian & Mozilla Reps & Mozilla Tech Speaker</li>
-							<li>WordPress Core Contributor/Developer/Translator</li>
-							<li>Open Source Multiversal</li>
+							<li>Co Founder/CTO Codeat</li>
+							<li>Italian Linux Society Council member</li>
+							<li>LUG Rieti founder</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>WordPress Rome/Terni meetup</li>
+							<li>Mozillian & Mozilla Reps & Mozilla Italia</li>
+							<li>Open Source Addicted</li>
 						</ul>
 					</div>
 				</section>
@@ -61,8 +60,8 @@
 							<li class="fragment">boilerplate plugin with examples</li>
 							<li class="fragment">snippets</li>
 							<li class="fragment">many libraries available</li>
-							<li class="fragment">bash scripts to speed up</li>
-							<li class="fragment">CoffeeScript and SASS support</li>
+							<li class="fragment">Codeception, GrumPHP, PHPStan</li>
+							<li class="fragment">SASS support</li>
 							<li class="fragment">WordPress compliant at 100%</li>
 						</ul>
 					</div>
@@ -92,8 +91,7 @@
 				<section>
 					<div>
 						<h2>WPBP/CronPlus:</h2>
-						<pre><code>
-$args = array(
+						<pre><code>$args = array(
     // hourly,daily,twicedaily,weekly,monthly or timestamp for single event
     'recurrence' => 'hourly',
     // schedule (specific interval) or single (at the time specified)
@@ -147,7 +145,8 @@ $cronplus->unschedule_event();
 						<pre><code>// This is like the woocommerce function
 function load_content_demo( $original_template ) {
         if ( is_singular( 'demo' ) && in_the_loop() ) {
-            return wpbp_get_template_part( 'plugin-name-folder', 'content', 'demo', false );
+            return wpbp_get_template_part( 'plugin-name-folder', 'content',
+					'demo', false );
         } else {
             return $original_template;
         }
@@ -162,8 +161,14 @@ $get_template_email = wpbp_get_template_part( 'plugin-name-folder' , 'header', '
 				<section>
 					<div>
 						<h2>WPBP/Debug</h2>
-						<pre><code>$debug = new WPBP_Debug( );
-$debug->log( __( 'Plugin Loaded', 'your-textdomain' ) );</code></pre>
+						<pre><code>$debug = new WPBP_Debug();
+$debug->log( __( 'Plugin Loaded', 'your-textdomain' ) );
+$debug->qm_log(
+	__( 'Error inside the log panel of Query Monitor', 'your-textdomain' )
+, 'error' );
+$debug->qm_timer( 'profile_that_callback', function () {
+	echo 'I need to be profiled!'; }
+);</code></pre>
 					</div>
 				</section>
 				
@@ -188,83 +193,92 @@ $post_columns->add_column( 'cmb2_field', array(
 				
 				<section>
 					<div>
-						<h2>WPBP/Requirements</h2>
-						<img src="pictures/requirements.png">
-					</div>
-				</section>
-				
-				<section>
-					<div>
 						<h2>WPBP/Language</h2>
 						<p>Wrap specific methods to get string or register it or get the language for Ceceppa Multilingua, Polylang and WPML plugins.</p>
-					</div>
-				</section>
-				
-				<section>
-					<div>
-						<h2>WPBP/Backbone-Modal-View</h2>
-						<img src="pictures/bb-view.gif">
 					</div>
 				</section>
 
 				<section>
 					<div>
-						<h2>Integrated modules:</h2>
+						<h2>Integrated modules</h2>
+						<img src="pictures/libraries.png" />
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<h2>Snippet included</h2>
 						<ul>
-							<li class="fragment">WebDevStudios/CMB2</li>
-							<li class="fragment">origgami/CMB2-grid</li>
-							<li class="fragment">rubeng/CMB2-tabs</li>
-							<li class="fragment">voceconnect/wp-contextual-help</li>
-							<li class="fragment">nathanielks/wp-admin-notice</li>
-							<li class="fragment">johnbillion/Extendend-Cpts</li>
-							<li class="fragment">johnbillion/Extendend-Taxos</li>
-							<li class="fragment">wpackagist-plugin/posts-to-posts</li>
-							<li class="fragment">Freemius/wordpress-sdk</li>
-							<li class="fragment">julien731/WP-Dismissible-Notices-Handler</li>
-							<li class="fragment">julien731/WP-Review-Me</li>
-							<li class="fragment">yoast/whip</li>
-							<li class="fragment">yoast/i18n-module</li>
+							<li>Dashicons as dependency of admin stylesheet</li>
+							<li>Bubble notification on pending CPTs</li>
+							<li>Import/Export settings</li>
+							<li>Custom capabilities with CPTs and taxonomy support</li>
+							<li><code>wp_localize_script</code> for passing PHP variables to JavaScript on the frontend</li>
+							<li>Class in frontend body with the slug of plugin</li>
+							<li>Shortcode example included</li>
+							<li>WP-CLI support</li>
+							<li>Support for CMB2 in the options page</li>
+							<li>Transient examples with caching</li>
 						</ul>
 					</div>
 				</section>
 
 				<section>
 					<div>
-						<h2>Snippet included:</h2>
 						<ul>
-							<li>Shortcode example code</li>
-							<li>Dashicon as dependence of admin stylesheet</li>
-							<li>Ajax for frontend/backend</li>
-							<li>Bubble notification on pending cpts</li>
-							<li>Import/Export settings</li>
-							<li>Custom capabilities with cpts and taxonomy support</li>
-							<li>wp_localize_script for pass PHP var to JS in the frontend</li>
-							<li>Class in frontend body with the slug of plugin</li>
-							<li>Support for your CPTs in Activity widget in dashboard</li>
-							<li>Support for CMB in the options page</li>
-							<li>Integrated DOM-Based Routing on frontend of <a href="https://github.com/roots/roots/blob/master/assets/js/_main.js">Roots Template</a></li>
-							<li>Transient examples with caching</li>
-							<li>Support for Web Push</li>
+							<li>
+								<code>engine</code> includes the basic classes or initialize the plugin itself
+							</li>
+							<li>
+								<code>assets</code> includes coffee/sass and js/css files
+							</li>
+							<li>
+								<code>backend</code> includes the features for the dashboard, like import/export settings
+							</li>
+							<li>
+								<code>ajax/rest</code> includes the basic code for ajax(logged/non)/rest integrations
+							</li>
+							<li>
+								<code>cli</code> includes the basic code for cli integrations
+							</li>
+							<li>
+								<code>public</code> includes the code for the frontend
+							</li>
+							<li>
+								<code>tests</code> includes the Codeception tests
+							</li>
+							<li>
+								<code>templates</code> includes the files for templating that can be copied in theme folders
+							</li>
+							<li>
+								<code>internals</code> includes the code shared between all the various folders or the website
+							</li>
+							<li>
+								<code>integrations</code> includes the integration with libraries
+							</li>
+							<li>
+								<code>languages</code> includes the mo/po file for the localization
+							</li>
 						</ul>
 					</div>
 				</section>
 
 				<section>
 					<h2>Code Generator</h2>
-					https://github.com/wpbp/generator
+					<a href="https://github.com/wpbp/generator">https://github.com/wpbp/generator</a>
 				</section>
 
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<h2>Wiki</h2>
 					<ul>
-						<li>https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered/wiki/</li>
+						<li><a href="https://wpbp.github.io/wiki.html">https://wpbp.github.io/wiki.html</a></li>
 					</ul>
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
-						- <a href="https://github.com/Mte90/WordPress-Plugin-Boilerplate-Powered">WordPress Plugin Boilerplate Powered</a>
+						- <a href="https://wpbp.github.io/">WordPress Plugin Boilerplate Powered</a>
 					</p>
 				</section>
 
