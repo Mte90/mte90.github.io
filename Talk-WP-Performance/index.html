@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Fight back Google Pagespeed: deep WordPress performance optimizations</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte - WP Roma</div><div class="hashtag">#wprome</div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Fight back Google Pagespeed</h1>
+					<h3>deep WordPress performance optimizations</h3>
+					<p>
+						<small>Created by <a href="https://daniele.tech">Daniele Scasciafratte</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>Italian Linux Society council member</li>
+							<li>WordPress Core Contributor/Developer</li>
+							<li>WordPress Rome/Terni meetup</li>
+							<li>Podcast 🇮🇹 Daniele.tech - Opinioni in open source</li>
+							<li>VVV Co-Maintainer, GlotDict creatore/co-maintainer</li>
+							<li>Mozillian & Mozilla Reps</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="force-bottom" data-transition="slide" data-background="pictures/performance.jpg">
+					<div class="background">
+						<h2 class="white-black-shadow">Metrics</h2>
+					</div>
+				</section>
+
+				<section>
+					<h3>Real Facts</h3>
+					<ul>
+						<li class="fragment"><b>AMP</b> is dead</li>
+						<li class="fragment">You need to know how Browsers works</li>
+						<li class="fragment"><b>Images</b> optimization and few <i>sizes</i></li>
+						<li class="fragment"><b>Speed</b> is not just downloading anymore but the whole experience including rendering</li>
+						<li class="fragment">Plugins for mobile versions are not needed anymore</li>
+						<li class="fragment">The database can't be ignored</li>
+						<li class="fragment"><u>Page builders/Visual composers slow down everything</u></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>How a Browser and Web server works</h3>
+					<ul>
+						<li>The browser asks for domain <u>wordpress.org</u> the ip address</li>
+						<li class="fragment">The <u>DNS server</u> respond this request</li>
+						<li class="fragment">The browser ask to the ip address the page</li>
+						<li class="fragment">The browser download the HTML page
+							<ul>
+								<li class="fragment">While reading the code, download the stuff in the <head> section following the order</li>
+								<li class="fragment">When finished to download all the assets in that section (usually) execute the JavaScript code but before need to download it and parse it</li>
+								<li class="fragment">In the meantime still keep downloading what is remaining in the page</li>
+							</ul>
+						</li>
+						<li>From a blank page the rendering starts in the browser</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>How Google Pagespeed(Lighthouse)/GTMetrix works</h3>
+					<ul>
+						<li>A browser request is executed</li>
+						<li class="fragment">One for mobile and one for desktop size</li>
+						<li class="fragment">Analyze the resources cascade, priorities</li>
+						<li class="fragment">Evaluate how much of CSS/JS content is used in that page, in percentage</li>
+						<li class="fragment">How much time is required from a blank page to something else</li>
+						<li class="fragment">How much time is required before the user can interact with the page</li>
+						<li class="fragment">How much time is used to rendering every HTML tag (including move/shift it)</li>
+						<li>How much time is requested to download everything and parse it</li>
+					</ul>
+				</section>
+
+				<section>
+					<img src="pictures/ansa.png">
+				</section>
+
+				<section>
+					<h3>Lazy load</h3>
+					<p>
+						Now it is enforced natively by WP so the image inside the page content are downloaded only if the user can see them.
+					</p>
+					<h3>Image optimization</h3>
+					<p>
+						<a href="https://wordpress.org/plugins/resmushit-image-optimizer/">reSmush.it</a> plugin, includes WP-CLI support, optimize any image for all the sizes to compress it at best without degrading it.
+					</p>
+					<h3>WebP</h3>
+					<p>
+						<a href="https://wordpress.org/plugins/webp-express/">WebP Express</a> plugin, includes WP-CLI support, generate that image version and can provide it to the browser if supported automatically, <b>without any HTML changes</b>.
+					</p>
+				</section>
+
+				<section>
+					<h3>Database maintenance</h3>
+					<p>
+						Every plugin or theme when saves something does in the database, in the 95% of cases those data are still in the database after the plugin/theme removal and <b>still loaded in memory</b> at every single page opening.
+					</p>
+					<p>
+						<b>If you don't know</b> what to handle that, as it is critical, and require WordPress knowledge it is better to test plugins and themes not on production!
+					</p>
+					<p><a href="https://github.com/CodeAtCode/WPDB-Status">WPDB-Status</a> to analyze WordPress database critical data.</p>
+				</section>
+
+				<section>
+					<h3>Language files</h3>
+					<p>
+						At every page load WordPress read all the language files and parse them in PHP without any cache, <a href="https://core.trac.wordpress.org/ticket/17268">#17268</a> bug ticket.
+					</p>
+					<p><a href="https://wordpress.org/plugins/dynamo/">DynaMo</a> plugin cache the language files content and improve the parsing flow.</p>
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<h3>HTML Hell by page builders pt.1</h3>
+					<ul>
+						<li>Usually injects in the HTML page content
+							<ul>
+								<li class="fragment">the CSS content, instead to refer to a CSS file</li>
+								<li class="fragment">The difference is that instead of a unique file to download once, parsing and caching for all the requests</li>
+								<li class="fragment">Need to download it everytime and re-parse again</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<img src="pictures/css-mess.png">
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<h3>HTML Hell by page builders pt.2</h3>
+					<ul>
+						<li>Usually injects in the HTML page content
+							<ul>
+								<li class="fragment">Too many HTML tags, everytime you put a separator, a container etc</li>
+								<li class="fragment">This create too many elements that the browser require to parse it, render etc</li>
+								<li class="fragment">How many of them are really required? Pagespeed now just report that there are too much but who knows when that will became a ranking reason?</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<img src="pictures/html-mess.png" class="full">
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<h3>Burden by page builders</h3>
+					<ul>
+						<li class="fragment">Usually the structure you define is saved as shortcode or blocks to be parsed and generate the HTML code</li>
+						<li class="fragment">Blocking you to migrate to a different solution because just works only with that plugin</li>
+						<li class="fragment">Structure and your content are mixed, so to change it you need to do a manual clean up</li>
+						<li class="fragment">All of them change the WordPress page rendering flow creating conflicts with other plugins</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#e68cff">
+					<img src="pictures/html-mess.png" class="full">
+				</section>
+
+				<section data-transition="slide" data-background="#fff954">
+					<h3>Why assets optimization matters</h3>
+					<ul>
+						<li>Very rarely plugin includes their assets only in the page where is needed.
+							<ul>
+								<li class="fragment">Contact Form 7, in all the pages injects the CSS/JS</li>
+								<li class="fragment">Gutenberg native styles are injected also if you are using the Classic Editor plugin</li>
+								<li class="fragment">Some plugins uses font icons and inject them also if need just few</li>
+							</ul>
+						</li>
+						<li class="fragment">As page builders changes how WordPress works, plugins often are not able to identify what page is the user now</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#fff954">
+					<h3>Why assets minification matters</h3>
+					<p>
+						After cleaning the assets in the pages like by home page, post types and specific pages like checkout...<br>
+						The minification can generate for that single page a more/less unique css/js file compressed at best instead of multiple ones.
+					</p>
+					<h3>WordPress Emoji are required?</h3>
+					<p>
+						After cleaning the assets in the pages like by home page, post types and specific pages like checkout...<br>
+						The minification can generate for that single page a more/less unique css/js file compressed at best instead of multiple ones.
+					</p>
+				</section>
+
+				<section>
+					<h3>Optimize fonts</h3>
+					<p>
+						Usually is enough just <b>one single font</b> that is downloaded by sizes, parsed etc. Google reports <b>always</b> the Google Font requests as very slows and performance impact anyway.
+					</p>
+					<h3>Replace Google Fonts with Bunny Fonts</h3>
+					<pre><code>https://fonts.bunny.net/css?family=Oxygen%3A400%2C700&display=swap</code></pre>
+					<pre><code>https://fonts.googleapis.com/css?family=Oxygen%3A400%2C700&display=swap</code></pre>
+				</section>
+
+				<section>
+					<h3>Redirection plugin slowdown</h3>
+					<p>
+						AS the redirect are in the database the redirection happens after the request arrive to the webserver to the PHP process, parsed etc. Can generate also conflicts with other plugins.<br>
+						The solution is to generate <pre>.htaccess</pre> rules as are more fast!
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#ff7455">
+					<h3>Website Caching</h3>
+					<p>
+						It means that the website just for frontend have an optimized HTML version (already generated) without asking to the PHP to be execute, read data from database etc.<br>
+						<b>Or</b> that the data from the database are saved somewhere else in the middle.<br>
+						<b>Or</b> that browser saves some assets without downloading again on a new page also the next day.
+					</p>
+					<a href="https://kinsta.com/blog/wordpress-cache/">Kinsta guide (about the various caching types)</a>
+				</section>
+
+				<section data-transition="slide" data-background="#ff7455">
+					<h3>Memcached/Redis</h3>
+					<p>
+						External softwares to install in the server that require specific plugins to connect it.<br>
+						They are both used for Object Caching and usually one of them is offered by the hosting provider.<br>
+						<ul>
+							<li>Redis manage better complex data</li>
+							<li>Memcached manage better tiny data</li>
+						</ul>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="#ff7455">
+					<h3>Apache/LiteSpeed/nGinx</h3>
+				</section>
+
+				<section>
+					<h2>Plugins suggested to improve performance</h2>
+					<ul>
+						<li>W3 Total Cache (advanced)</li>
+						<li>WebP Express</li>
+						<li>ResmushIt</li>
+						<li>iThemes Security (advanced)</li>
+					</ul>
+				</section>
+
+				<section data-transition="slide" data-background="#ff7455">
+					<h3>CDN</h3>
+				</section>
+
+				<section style="text-align: left;">
+					<h2>Grazie!</h2>
+					<img src="pictures/grazie.jpg">
+					<p>
+						- <a href="http://mte90.tech/Talk-Secure-WP">http://mte90.tech/Talk-Secure-WP</a><br>
+						- <a href="https://wpscan.com/plugins">WordPress Plugin Vulnerabilities by WP Scan</a><br>
+						- <a href="https://www.exploitalert.com/search-results.html?search=wordpress">Exploit for WordPress plugins</a><br>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="lib/js/freezeframe.pkgd.min.js"></script>
+		<script src="js/gif.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+			  keyboard: {
+				78: function () {animateGif() },
+				34: function () {animateGif() },
+				76: function () {animateGif() },
+				39: function () {animateGif() },
+				74: function () {animateGif() },
+				40: function () {animateGif() }
+			  },
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
