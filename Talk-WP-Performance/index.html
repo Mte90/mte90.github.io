@@ -74,32 +74,20 @@
 				</section>
 
 				<section>
-					<h3>How a Browser and Web server works</h3>
-					<ul>
-						<li>The browser asks for domain <u>wordpress.org</u> the ip address</li>
-						<li class="fragment">The <u>DNS server</u> respond this request</li>
-						<li class="fragment">The browser ask to the ip address the page</li>
-						<li class="fragment">The browser download the HTML page
-							<ul>
-								<li class="fragment">While reading the code, download the stuff in the <head> section following the order</li>
-								<li class="fragment">When finished to download all the assets in that section (usually) execute the JavaScript code but before need to download it and parse it</li>
-								<li class="fragment">In the meantime still keep downloading what is remaining in the page</li>
-							</ul>
-						</li>
-						<li>From a blank page the rendering starts in the browser</li>
-					</ul>
+					<img src="pictures/what-happens.jpg">
 				</section>
 
 				<section>
-					<h3>How Google Pagespeed(Lighthouse)/GTMetrix works</h3>
+					<h3>How Google Pagespeed (Lighthouse)/GTMetrix works</h3>
 					<ul>
-						<li>A browser request is executed</li>
-						<li class="fragment">One for mobile and one for desktop size</li>
+						<li>A browser request is executed for size, 1 mobile and 1 desktop</li>
 						<li class="fragment">Analyze the resources cascade, priorities</li>
-						<li class="fragment">Evaluate how much of CSS/JS content is used in that page, in percentage</li>
-						<li class="fragment">How much time is required from a blank page to something else</li>
-						<li class="fragment">How much time is required before the user can interact with the page</li>
-						<li class="fragment">How much time is used to rendering every HTML tag (including move/shift it)</li>
+						<li class="fragment">Evaluate in % how much of CSS/JS is used in that page</li>
+						<li class="fragment">How much time:<ul>
+							<li class="fragment">is required from a blank page to something else</li>
+							<li class="fragment">How much time is required before the user can interact with the page</li>
+							<li class="fragment">How much time is used to render every HTML tag (including move/shift it)</li>
+						</li></ul>
 						<li>How much time is requested to download everything and parse it</li>
 					</ul>
 				</section>
@@ -186,10 +174,6 @@
 					</ul>
 				</section>
 
-				<section data-transition="slide" data-background="#e68cff">
-					<img src="pictures/html-mess.png" class="full">
-				</section>
-
 				<section data-transition="slide" data-background="#fff954">
 					<h3>Why assets optimization matters</h3>
 					<ul>
@@ -230,7 +214,7 @@
 					<h3>Redirection plugin slowdown</h3>
 					<p>
 						AS the redirect are in the database the redirection happens after the request arrive to the webserver to the PHP process, parsed etc. Can generate also conflicts with other plugins.<br>
-						The solution is to generate <pre>.htaccess</pre> rules as are more fast!
+						The solution is to generate <i>.htaccess</i> rules as are more fast!
 					</p>
 				</section>
 
@@ -259,7 +243,7 @@
 				<section>
 					<h3>Web Server</h3>
 					<ul>
-						<li>Apache: the standard but an old technology</li>
+						<li>Apache: the standard, works always but an old technology</li>
 						<li>LiteSpeed: fast, free/premium version, support htaccess rules, official WordPress plugin</li>
 						<li>NGINX: fast, require administrative access to inject custom rules</li>
 					</ul>
