@@ -48,7 +48,7 @@
 							<li>WordPress Core Contributor/Developer</li>
 							<li>WordPress Rome/Terni meetup</li>
 							<li>Podcast 🇮🇹 Daniele.tech - Opinioni in open source</li>
-							<li>VVV Co-Maintainer, GlotDict creatore/co-maintainer</li>
+							<li>VVV Co-Maintainer, GlotDict creator/co-maintainer</li>
 							<li>Mozillian & Mozilla Reps</li>
 						</ul>
 					</div>
@@ -63,7 +63,7 @@
 				<section>
 					<h3>Real Facts</h3>
 					<ul>
-						<li class="fragment"><b>AMP</b> is dead</li>
+						<li><b>AMP</b> is dead</li>
 						<li class="fragment">You need to know how Browsers works</li>
 						<li class="fragment"><b>Images</b> optimization and few <i>sizes</i></li>
 						<li class="fragment"><b>Speed</b> is not just downloading anymore but the whole experience including rendering</li>
@@ -82,7 +82,7 @@
 					<ul>
 						<li>A browser request is executed for size, 1 mobile and 1 desktop</li>
 						<li class="fragment">Analyze the resources cascade, priorities</li>
-						<li class="fragment">Evaluate in % how much of CSS/JS is used in that page</li>
+						<li class="fragment">Evaluate in <b>%</b> how much of CSS/JS is used in that page</li>
 						<li class="fragment">How much time:<ul>
 							<li class="fragment">is required from a blank page to something else</li>
 							<li class="fragment">How much time is required before the user can interact with the page</li>
@@ -117,7 +117,7 @@
 						Every plugin or theme when saves something does in the database, in the 95% of cases those data are still in the database after the plugin/theme removal and <b>still loaded in memory</b> at every single page opening.
 					</p>
 					<p>
-						<b>If you don't know</b> what to handle that, as it is critical, and require WordPress knowledge it is better to test plugins and themes not on production!
+						<b>If you don't know</b> what to handle that, as it is critical, and require WordPress knowledge it is better to test plugins and themes <b>not on production</b>!
 					</p>
 					<p><a href="https://github.com/CodeAtCode/WPDB-Status">WPDB-Status</a> to analyze WordPress database critical data.</p>
 				</section>
@@ -135,7 +135,7 @@
 					<ul>
 						<li>Usually injects in the HTML page content
 							<ul>
-								<li class="fragment">the CSS content, instead to refer to a CSS file</li>
+								<li>the CSS content, instead to refer to a CSS file</li>
 								<li class="fragment">The difference is that instead of a unique file to download once, parsing and caching for all the requests</li>
 								<li class="fragment">Need to download it everytime and re-parse again</li>
 							</ul>
@@ -152,8 +152,8 @@
 					<ul>
 						<li>Usually injects in the HTML page content
 							<ul>
-								<li class="fragment">Too many HTML tags, everytime you put a separator, a container etc</li>
-								<li class="fragment">This create too many elements that the browser require to parse it, render etc</li>
+								<li>Too many HTML tags, everytime you put a separator, a container etc</li>
+								<li>This create too many elements that the browser require to parse it, render etc</li>
 								<li class="fragment">How many of them are really required? Pagespeed now just report that there are too much but who knows when that will became a ranking reason?</li>
 							</ul>
 						</li>
@@ -167,7 +167,7 @@
 				<section data-transition="slide" data-background="#e68cff">
 					<h3>Burden by page builders</h3>
 					<ul>
-						<li class="fragment">Usually the structure you define is saved as shortcode or blocks to be parsed and generate the HTML code</li>
+						<li>Usually the structure you define is saved as shortcode or blocks to be parsed and generate the HTML code</li>
 						<li class="fragment">Blocking you to migrate to a different solution because just works only with that plugin</li>
 						<li class="fragment">Structure and your content are mixed, so to change it you need to do a manual clean up</li>
 						<li class="fragment">All of them change the WordPress page rendering flow creating conflicts with other plugins</li>
@@ -222,8 +222,8 @@
 					<h3>Website Caching</h3>
 					<p>
 						It means that the website just for frontend have an optimized HTML version (already generated) without asking to the PHP to be execute, read data from database etc.<br>
-						<b>Or</b> that the data from the database are saved somewhere else in the middle.<br>
-						<b>Or</b> that browser saves some assets without downloading again on a new page also the next day.
+						<b>OR</b> that the data from the database are saved somewhere else in the middle.<br>
+						<b>OR</b> that browser saves some assets without downloading again on a new page also the next day.
 					</p>
 					<a href="https://kinsta.com/blog/wordpress-cache/">Kinsta guide (about the various caching types)</a>
 				</section>
