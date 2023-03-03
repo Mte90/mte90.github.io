@@ -133,7 +133,7 @@
 				</section>
 
 				<section>
-						<h3>What are the capabilities</h3>
+						<h3>⚠️What are the capabilities⚠️</h3>
 						<p>
 							WordPress uses a concept of Roles, designed to give the site owner the ability to control what users can and cannot do within the site.<br>
 							WordPress has six pre-defined roles: Super Admin, Administrator, Editor, Author, Contributor and Subscriber. Each role is allowed to perform a set of tasks called Capabilities.
@@ -168,7 +168,7 @@
 				</section>
 
 				<section>
-						<h3>What is a nonce?</h3>
+						<h3>⚠️What is a nonce?⚠️</h3>
 						<p>
 							A nonce (token) is a "number used once" to help protect URLs and forms from certain types of misuse, malicious or otherwise. WordPress nonces aren't numbers but are a hash made up of numbers and letters. Nor are they used only once, but have a limited "lifetime" after which they expire. During that time period, the same nonce will be generated for a given user in a given context. The nonce for that action will remain the same for that user until that nonce life cycle has completed.
 						</p>
@@ -194,13 +194,13 @@
 							<li class="fragment">Look for premium plugins not updated</li>
 							<li class="fragment">Look around for XSS</li>
 							<li class="fragment">Check for <a href="https://codeseekah.com/2012/04/09/why-wordpress-authentication-unique-keys-and-salts-are-important/">not defined SALT</a></li>
-							<li class="fragment">Check for <ahref="https://www.shodan.io/search?query=http.html%3A%22*+The+wp-config.php+creation+script+uses+this+file%22">misconfigured web server</a></li>
+							<li class="fragment">Check for <a href="https://www.shodan.io/search?query=http.html%3A%22*+The+wp-config.php+creation+script+uses+this+file%22">misconfigured web server</a></li>
 							<li class="fragment">Check if <a href="https://www.wordfence.com/blog/2017/07/wpsetup-attack/">WordPress is not installed</a></li>
 						</ul>
 				</section>
 
 				<section>
-						<h3>Investigate with WordPress Rest API</h3>
+						<h3>⚠️Investigate with WordPress Rest API⚠️</h3>
 						<p>
 							The WordPress REST API provides an interface for applications to interact with your WordPress site by sending and receiving data as JSON (JavaScript Object Notation) objects.
 						</p>
@@ -230,6 +230,10 @@
 				<section>
 					<h3>We are forgetting the real tools</h3>
 					<img src="pictures/ascii_dog.gif">
+				</section>
+
+				<section>
+					<img src="pictures/checksum.png">
 				</section>
 
 				<section>
@@ -312,6 +316,26 @@ wpscan --url www.example.com --enumerate
 						</li>
 						<li class="fragment">Check if there are new Cron jobs</b></li>
 					</ul>
+				</section>
+
+				<section>
+						<h3>What hackers do?</h3>
+						<img src="pictures/brokencode.png" class="full">
+				</section>
+
+				<section>
+						<h3>What hackers do?</h3>
+						<img src="pictures/uploader.png" class="full">
+				</section>
+
+				<section>
+						<h3>What hackers do?</h3>
+						<img src="pictures/fakeimage-include.png" class="full">
+				</section>
+
+				<section>
+						<h3>What hackers do?</h3>
+						<img src="pictures/fakeimage.png" class="full">
 				</section>
 
 				<section>
