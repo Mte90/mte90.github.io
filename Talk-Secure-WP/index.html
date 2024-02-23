@@ -168,7 +168,7 @@
 				</section>
 
 				<section>
-						<h3>⚠️What is a nonce?⚠️</h3>
+						<h3>⚠️ What is a nonce? ⚠️</h3>
 						<p>
 							A nonce (token) is a "number used once" to help protect URLs and forms from certain types of misuse, malicious or otherwise. WordPress nonces aren't numbers but are a hash made up of numbers and letters. Nor are they used only once, but have a limited "lifetime" after which they expire. During that time period, the same nonce will be generated for a given user in a given context. The nonce for that action will remain the same for that user until that nonce life cycle has completed.
 						</p>
@@ -177,6 +177,18 @@
 							<li>Used to identify who is the author of the request for capabilities</li>
 							<li>Missing <b>nonce</b>s or <a href="https://www.wordfence.com/?s=nonce">wrongly integrated</a></li>
                         </ul>
+				</section>
+
+				<section>
+						<h3>⚠️ How WordPress authenticate? ⚠️</h3>
+						<blockquote>
+    It is stateless and does not use “sessions”—it uses session cookies.<br>
+    It does not save server-side data, everything is stored in session cookies.<br>
+    Salts hash your password in your cookie.<br>
+    Authentication cookies can be stolen via XSS.<br>
+    Sends the session cookie with the httpOnly flag, JavaScript cannot access the session cookie (unless your browser has a major zero-day vulnerability)
+						</blockquote>
+						<small><a href="https://snicco.io/blog/how-wordpress-uses-authentication-cookies-and-sessions">https://snicco.io/blog/how-wordpress-uses-authentication-cookies-and-sessions</a></small>
 				</section>
 
 				<section>
@@ -200,7 +212,7 @@
 				</section>
 
 				<section>
-						<h3>⚠️Investigate with WordPress Rest API⚠️</h3>
+						<h3>⚠️ Investigate with WordPress Rest API ⚠️</h3>
 						<p>
 							The WordPress REST API provides an interface for applications to interact with your WordPress site by sending and receiving data as JSON (JavaScript Object Notation) objects.
 						</p>
@@ -283,6 +295,15 @@ wpscan --url www.example.com --enumerate
 						<li>Better for developers</li>
 						<li class="fragment">Static analysis tool for PHP</li>
 						<li class="fragment">With the WordPress extensions</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>WP-CLI Snicco/Fortress</h2>
+					<ul>
+						<li>Encrypt values on your DB, like Auth keys</li>
+						<li class="fragment">Write a tiny plugin to decrypt and pass the value decripted</li>
+						<li class="fragment">https://snicco.io/blog/introducing-fortress-vaults-and-pillars</li>
 					</ul>
 				</section>
 
