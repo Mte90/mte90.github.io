@@ -164,6 +164,8 @@ wp post create new_page.html --post_type=page --post_title="New Page" --porcelai
 				<section>
 					<h2>Remove the featured image from the article of a category</h2>
 					<pre><code class="bash" data-trim>for id in $(wp post list --category_name='news' --format=ids); do wp post meta update $id '_thumbnail_id' ''; done</code></pre>
+					<h2>Delete all the post of a specific category</h2>
+					<pre><code class="bash" data-trim>wp post delete $(wp post list --cat=1 --post_status=published --format=ids)</code></pre>
 				</section>
 
 				<section>
