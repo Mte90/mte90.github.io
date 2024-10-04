@@ -77,8 +77,8 @@
 					<p class="fragment roll-in">✔️ Standard for Linux scripts</p>
 					<p class="fragment">❌ Unique (and strange) syntax</p>
 					<p class="fragment">❌ It is easy to follow wrong practices</p>
-					<p class="fragment roll-in">✔️ Require to know Linux commands</p>
-					<p class="fragment">❌ Require time to get a (complex) script finished</p>
+					<p class="fragment roll-in">✔️ Linux commands knowledge required</p>
+					<p class="fragment">❌ Time consuming write a (complex) script finished</p>
 				</section>
 
 				<section>
@@ -137,11 +137,91 @@ echo example(1) failed {
 				</section>
 
 				<section>
+					<h3>Real Amber Script</h3>
+					<pre><code class="bash" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
+import { split, contains } from "std/text"
+import { * } from "std/fs"
+let path = "/tmp/amber-sc-tests"
+if (not dir_exist(path)) {
+    create_dir(path)
+}
+let report = "{path}/report.txt"
+trust file_write(report, "Report for Shellcheck")
+let output = ""
+let stdtests = trust $/usr/bin/ls "src/tests/stdlib/"$
+let stdlib = split(stdtests, "\n")
+loop v in stdlib {
+    if (not contains(v, ".txt") and file_exist("src/tests/stdlib/{v}")) {
+        echo "Generating Bash script for test {v}"
+        trust {
+            trust $amber "src/tests/stdlib/{v}" "{path}/{v}.sh"$
+            output = trust $shellcheck "{path}/{v}.sh"$
+        }
+        if (status != 0) {
+            echo "Shellcheck found something!"
+            trust file_append(report, output)
+        }
+    }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Real Amber Script</h3>
+					<pre><code class="bash" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
+import { make_executable } from "std/fs"
+import { download } from "std/http"
+import { is_root } from "std/env"
+import { contains } from "std/text"
+
+if not is_root() {
+    echo "This script requires root permissions!"
+    exit(1)
+}
+
+[..]
+
+fun download_to_bin(download_url, binary, packed_file) {
+    if silent download(download_url, packed_file) {
+        trust {
+            if contains("tar.gz", packed_file) {
+                $tar -zxvf "./{packed_file}" -C ./ > /dev/null 2>&1$
+                trust mv "./{binary}" "/usr/local/bin"
+            } else {
+                $gunzip -c - > "/usr/local/bin/{binary}"$
+            }
+            $rm "./{packed_file}"$
+        }
+        make_executable("/usr/local/bin/{binary}")
+    } else {
+        echo "Download for {binary} at {download_url} failed"
+        exit(1)
+    }
+}
+					</code></pre>
+					<small><a href="https://docs.amber-lang.com/by_example/lsp_installer">https://docs.amber-lang.com/by_example/lsp_installer</a></small>
+				</section>
+
+				<section>
 					<h2>Features</h2>
 					<ul>
 						<li>Integrates (if found): shfmt (shell formatter), bshchk (runtime Bash dependency checker)</li>
-						<li>Bash more readable</li>
-						<li>More easy to remember the syntax</li>
+						<li>Bash (generated) more readable</li>
+						<li>Syntax easily to remember</li>
+						<li>Standard Library + Builtins (with internal automated tests)</li>
+						<li>ShellCheck code valid (in progress)</li>
+						<li>Written in Rust (with stdlib in pure Amber)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Roadmap</h2>
+					<ul>
+						<li>More StdLib & Builtins</li>
+						<li>More readable and optimized Bash code</li>
+						<li>Improve the syntax for more features</li>
+						<li>ShellCheck code valid (in progress)</li>
+						<li>Define the Bash version to support in the generated code</li>
 					</ul>
 				</section>
 
