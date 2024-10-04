@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Amber Lang - Write easily Bash with a transpiler</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
+		<link rel="stylesheet" href="lib/css/github.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte</div><div class="hashtag"></div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Amber Lang</h1>
+					<h3>Write easily Bash with a transpiler</h3>
+					<p>
+						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow" style="margin-left: 40px;">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>Mozillian & Mozilla TechSpeaker/Reps (former)</li>
+							<li>WordPress Core Contributor (former)</li>
+							<li>Podcast 🇮🇹 Daniele.tech - Opinioni in open source</li>
+							<li>Italian Linux Society council member</li>
+							<li>Amber Lang Co-Mantainer</li>
+							<li>Book Author: <i>"Contribute to Open Source: the right way"</i></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<h2>Bash</h2>
+					<blockquote>Bash, short for Bourne-Again SHell, is a shell program and command language supported by the Free Software Foundation and first developed for the GNU Project by Brian Fox. Designed as a 100% free software alternative for the Bourne shell, it was initially released in 1989.</blockquote>
+						<small><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a></small>
+				</section>
+
+				<section>
+					<h2>Bash</h2>
+					<blockquote>Since then, Bash has become by far the most popular shell among users of Linux, becoming the default interactive shell on that operating system's various distributions and on Apple's macOS releases before Catalina in October 2019. Bash has also been ported to Microsoft Windows and distributed with Cygwin and MinGW, to DOS by the DJGPP project and to Android via various terminal emulation applications.</blockquote>
+						<small><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a></small>
+				</section>
+
+				<section>
+					<h2>Bash Pro/Cons</h2>
+					<p>✔️ It is everywhere</p>
+					<p class="fragment">✔️ Already installed (except for the commands)</p>
+					<p class="fragment roll-in">✔️ Standard for Linux scripts</p>
+					<p class="fragment">❌ Unique (and strange) syntax</p>
+					<p class="fragment">❌ It is easy to follow wrong practices</p>
+					<p class="fragment roll-in">✔️ Require to know Linux commands</p>
+					<p class="fragment">❌ Require time to get a (complex) script finished</p>
+				</section>
+
+				<section>
+					<h1 style="margin: 0;">Amber Lang</h1>
+					<img src="https://amber-lang.com/amber-logo.svg" style="max-height: 500px;"/><br>
+					<a href="https://github.com/CodeAtCode/WPDB-Status">https://amber-lang.com/</a>
+				</section>
+
+				<section>
+					<div style="float: left;width: 50%;">
+					<h3>Bash</h3>
+					<pre><code class="bash" style="max-height:100%" data-trim>
+example() {
+  local value=$1
+  if [ 1 -gt 0 ]; then
+    __array_0=(${value} ${value})
+    local numbers=("${__array_0[@]}")
+    local sum=0
+    for i in "${numbers[@]}"; do
+      sum=$(${sum} + ${numbers[${i}]})
+    done
+    echo "it's ""me"
+    returnvalue=${sum}
+    return 0
+  fi
+  return 1
+}
+example 1
+if [ $? != 0 ]; then
+    echo "What???"
+else
+    echo $returnvalue
+fi
+					</code></pre>
+					</div>
+					<div style="float: right;width: 50%;">
+					<h3>Amber</h3>
+					<pre><code class="bash" data-trim>
+fun example(value:Num = 1) {
+    if 1 > 0 {
+        let numbers = [value, value]
+        let sum = 0
+        loop i in numbers {
+            sum += numbers[i]
+        }
+        echo "it's " + "me"
+        return sum
+    }
+    fail 1
+}
+echo example(1) failed {
+    echo "What???"
+}
+					</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>Features</h2>
+					<ul>
+						<li>Integrates (if found): shfmt (shell formatter), bshchk (runtime Bash dependency checker)</li>
+						<li>Bash more readable</li>
+						<li>More easy to remember the syntax</li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://docs.amber-lang.com">docs.amber-lang.com</a><br>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+            Reveal.initialize({
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              touch: true,
+              overview: false,
+              transition: 'zoom', // none/fade/slide/convex/concave/zoom
+              dependencies: [
+                {src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                  }},
+                {src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                  }},
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                    return !!document.querySelector('pre code');
+                  }, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                  }},
+              ]
+            });
+
+            document.querySelector('.titolo').textContent = document.title;
+
+		</script>
+
+	</body>
+</html>
