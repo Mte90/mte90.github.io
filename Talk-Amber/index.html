@@ -7,25 +7,11 @@
 		<title>Amber Lang - Easily write Bash with a transpiler</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/codeat.css" id="theme">
-		<link rel="Shortcut Icon" href="https://i2.wp.com/codeat.co/wp-content/uploads/2016/02/cropped-small-logo.png?fit=32%2C32&#038;ssl=1" type="image/x-icon" />
 
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/freezeframe_styles.min.css">
 		<link rel="stylesheet" href="lib/css/github.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName('head')[0].appendChild(link);
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
 	</head>
 
 	<body>
@@ -45,7 +31,7 @@
 				<section data-transition="slide" data-background="pictures/hello.gif">
 					<div class="background">
 						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
-						<ul class="white-black-shadow" style="margin-left: 40px;">
+						<ul class="white-black-shadow">
 							<li>Co Founder/CTO Codeat</li>
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla TechSpeaker/Reps (former)</li>
@@ -116,7 +102,7 @@ fi
 					</div>
 					<div style="float: right;width: 50%;">
 					<h3>Amber</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="amber" data-trim>
 fun example(value:Num = 1) {
     if 1 > 0 {
         let numbers = [value, value]
@@ -138,7 +124,7 @@ echo example(1) failed {
 
 				<section>
 					<h3>Real Amber Script (example)</h3>
-					<pre><code class="bash" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
+					<pre><code class="amber" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
 #!/usr/bin/env amber
 import { split, contains } from "std/text"
 import { * } from "std/fs"
@@ -169,7 +155,7 @@ loop v in stdlib {
 
 				<section>
 					<h3>Real Amber Script</h3>
-					<pre><code class="bash" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
+					<pre><code class="amber" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
 import { make_executable } from "std/fs"
 import { download } from "std/http"
 import { is_root } from "std/env"
@@ -238,36 +224,109 @@ fun download_to_bin(download_url, binary, packed_file) {
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
-
+			function amber(hljs) {
+							const interpolation = {
+								className: 'interp',
+								begin: /\{/,
+								end: /}/,
+								contains: []
+							}
+							const string = {
+								scope: 'string',
+								begin: '"',
+								end: '"',
+								contains: [
+									hljs.BACKSLASH_ESCAPE,
+									interpolation
+								]
+							}
+							const command = {
+								scope: 'command',
+								begin: /\$/,
+								end: /\$/,
+								contains: [
+									hljs.BACKSLASH_ESCAPE,
+									interpolation
+								]
+							}
+							const operator = {
+								scope: 'operator',
+								match: /[-+*/%<>=!&|?]/
+							}
+							const keywords = {
+								scope: 'keyword',
+								match: /\b(ref|to|error|status|if|echo|loop|in|silent|return|fun|else|break|continue|and|or|not|let|sh|main|failed|fail|trust|then|pub|import|from|as|nameof|is)\b/
+							}
+							const type = {
+								scope: 'type',
+								match: /[A-Z][a-zA-Z0-9_]+/
+							}
+							const fun = {
+								scope: 'function',
+								match: /\b([a-zA-Z0-9_]+)\b(?=\()/
+							}
+							const variable = {
+								scope: 'variable',
+								match: /[a-zA-Z0-9_]+/
+							}
+							const range = {
+								scope: 'number',
+								match: /\.?\.\=?/
+							}
+							const constant = {
+								scope: 'number',
+								match: /\b(false|true|null)\b/
+							}
+							const compilerFlag = {
+								scope: 'comment',
+								match: /\#\[.*\]/
+							}
+							const all = [
+								hljs.C_LINE_COMMENT_MODE,
+								hljs.C_BLOCK_COMMENT_MODE,
+								hljs.C_BLOCK_COMMENT_MODE,
+								hljs.C_NUMBER_MODE,
+								string,
+								range,
+								command,
+								operator,
+								constant,
+								keywords,
+								compilerFlag,
+								type,
+								fun,
+								variable
+							]
+							interpolation.contains = all.concat([{
+									begin: /\{/,
+									end: /\}/,
+									contains: [
+										'self'
+									].concat(all)
+								}]);
+							return ({
+								case_insensitive: false,
+								contains: all
+							});
+						}
             Reveal.initialize({
-              controls: false,
-              progress: true,
-              history: true,
-              center: true,
-              touch: true,
-              overview: false,
-              transition: 'zoom', // none/fade/slide/convex/concave/zoom
-              dependencies: [
-                {src: 'lib/js/classList.js', condition: function () {
-                    return !document.body.classList;
-                  }},
-                {src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                  }},
-                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
-                    return !!document.querySelector('pre code');
-                  }, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                  }},
-              ]
-            });
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				overview: false,
+				transition: 'zoom',
+				highlight: {
+					beforeHighlight: (hljs) => hljs.registerLanguage("amber",amber)
+				},
+				plugins: [ RevealMarkdown, RevealHighlight ]
+			});
 
             document.querySelector('.titolo').textContent = document.title;
 
