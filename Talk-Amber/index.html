@@ -63,7 +63,7 @@
 					<p class="fragment roll-in">✔️ Standard for Linux scripts</p>
 					<p class="fragment">❌ Unique (and strange) syntax</p>
 					<p class="fragment">❌ It is easy to follow wrong practices</p>
-					<p class="fragment roll-in">✔️❌ Linux commands knowledge required</p>
+					<p class="fragment roll-in">✔️/❌ Linux commands knowledge required</p>
 					<p class="fragment">❌ Time consuming write a (complex) script finished</p>
 				</section>
 
@@ -209,6 +209,7 @@ fun download_to_bin(download_url, binary, packed_file) {
 						<li>More readable and optimized Bash code</li>
 						<li>Improve the syntax for more features</li>
 						<li>ShellCheck code valid (in progress)</li>
+						<li>OOP support?</li>
 						<li>Define the Bash version to support in the generated code</li>
 						<li>LSP server</li>
 					</ul>
@@ -230,91 +231,91 @@ fun download_to_bin(download_url, binary, packed_file) {
 
 		<script>
 			function amber(hljs) {
-							const interpolation = {
-								className: 'interp',
-								begin: /\{/,
-								end: /}/,
-								contains: []
-							}
-							const string = {
-								scope: 'string',
-								begin: '"',
-								end: '"',
-								contains: [
-									hljs.BACKSLASH_ESCAPE,
-									interpolation
-								]
-							}
-							const command = {
-								scope: 'command',
-								begin: /\$/,
-								end: /\$/,
-								contains: [
-									hljs.BACKSLASH_ESCAPE,
-									interpolation
-								]
-							}
-							const operator = {
-								scope: 'operator',
-								match: /[-+*/%<>=!&|?]/
-							}
-							const keywords = {
-								scope: 'keyword',
-								match: /\b(ref|to|error|status|if|echo|loop|in|silent|return|fun|else|break|continue|and|or|not|let|sh|main|failed|fail|trust|then|pub|import|from|as|nameof|is)\b/
-							}
-							const type = {
-								scope: 'type',
-								match: /[A-Z][a-zA-Z0-9_]+/
-							}
-							const fun = {
-								scope: 'function',
-								match: /\b([a-zA-Z0-9_]+)\b(?=\()/
-							}
-							const variable = {
-								scope: 'variable',
-								match: /[a-zA-Z0-9_]+/
-							}
-							const range = {
-								scope: 'number',
-								match: /\.?\.\=?/
-							}
-							const constant = {
-								scope: 'number',
-								match: /\b(false|true|null)\b/
-							}
-							const compilerFlag = {
-								scope: 'comment',
-								match: /\#\[.*\]/
-							}
-							const all = [
-								hljs.C_LINE_COMMENT_MODE,
-								hljs.C_BLOCK_COMMENT_MODE,
-								hljs.C_BLOCK_COMMENT_MODE,
-								hljs.C_NUMBER_MODE,
-								string,
-								range,
-								command,
-								operator,
-								constant,
-								keywords,
-								compilerFlag,
-								type,
-								fun,
-								variable
-							]
-							interpolation.contains = all.concat([{
-									begin: /\{/,
-									end: /\}/,
-									contains: [
-										'self'
-									].concat(all)
-								}]);
-							return ({
-								case_insensitive: false,
-								contains: all
-							});
-						}
-            Reveal.initialize({
+				const interpolation = {
+					className: 'interp',
+					begin: /\{/,
+					end: /}/,
+					contains: []
+				}
+				const string = {
+					scope: 'string',
+					begin: '"',
+					end: '"',
+					contains: [
+						hljs.BACKSLASH_ESCAPE,
+						interpolation
+					]
+				}
+				const command = {
+					scope: 'command',
+					begin: /\$/,
+					end: /\$/,
+					contains: [
+						hljs.BACKSLASH_ESCAPE,
+						interpolation
+					]
+				}
+				const operator = {
+					scope: 'operator',
+					match: /[-+*/%<>=!&|?]/
+				}
+				const keywords = {
+					scope: 'keyword',
+					match: /\b(ref|to|error|status|if|echo|loop|in|silent|return|fun|else|break|continue|and|or|not|let|sh|main|failed|fail|trust|then|pub|import|from|as|nameof|is)\b/
+				}
+				const type = {
+					scope: 'type',
+					match: /[A-Z][a-zA-Z0-9_]+/
+				}
+				const fun = {
+					scope: 'function',
+					match: /\b([a-zA-Z0-9_]+)\b(?=\()/
+				}
+				const variable = {
+					scope: 'variable',
+					match: /[a-zA-Z0-9_]+/
+				}
+				const range = {
+					scope: 'number',
+					match: /\.?\.\=?/
+				}
+				const constant = {
+					scope: 'number',
+					match: /\b(false|true|null)\b/
+				}
+				const compilerFlag = {
+					scope: 'comment',
+					match: /\#\[.*\]/
+				}
+				const all = [
+					hljs.C_LINE_COMMENT_MODE,
+					hljs.C_BLOCK_COMMENT_MODE,
+					hljs.C_BLOCK_COMMENT_MODE,
+					hljs.C_NUMBER_MODE,
+					string,
+					range,
+					command,
+					operator,
+					constant,
+					keywords,
+					compilerFlag,
+					type,
+					fun,
+					variable
+				]
+				interpolation.contains = all.concat([{
+					begin: /\{/,
+					end: /\}/,
+					contains: [
+						'self'
+					].concat(all)
+				}]);
+				return ({
+					case_insensitive: false,
+					contains: all
+				});
+			}
+			Reveal.initialize({
 				controls: false,
 				progress: true,
 				history: true,
@@ -323,14 +324,12 @@ fun download_to_bin(download_url, binary, packed_file) {
 				overview: false,
 				transition: 'zoom',
 				highlight: {
-					beforeHighlight: (hljs) => hljs.registerLanguage("amber",amber)
+					beforeHighlight: (hljs) => hljs.registerLanguage("amber", amber)
 				},
-				plugins: [ RevealMarkdown, RevealHighlight ]
+				plugins: [RevealMarkdown, RevealHighlight]
 			});
 
-            document.querySelector('.titolo').textContent = document.title;
-
+			document.querySelector('.titolo').textContent = document.title;
 		</script>
-
 	</body>
 </html>
