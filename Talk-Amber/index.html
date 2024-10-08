@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Amber Lang - Write easily Bash with a transpiler</title>
+		<title>Amber Lang - Easily write Bash with a transpiler</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/codeat.css" id="theme">
@@ -36,7 +36,7 @@
 			<div class="slides">
 				<section>
 					<h1>Amber Lang</h1>
-					<h3>Write easily Bash with a transpiler</h3>
+					<h3>Easily write Bash with a transpiler</h3>
 					<p>
 						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
 					</p>
@@ -52,7 +52,7 @@
 							<li>WordPress Core Contributor (former)</li>
 							<li>Podcast 🇮🇹 Daniele.tech - Opinioni in open source</li>
 							<li>Italian Linux Society council member</li>
-							<li>Amber Lang Co-Mantainer</li>
+							<li>Amber Lang Co-Maintainer</li>
 							<li>Book Author: <i>"Contribute to Open Source: the right way"</i></li>
 						</ul>
 					</div>
@@ -77,14 +77,14 @@
 					<p class="fragment roll-in">✔️ Standard for Linux scripts</p>
 					<p class="fragment">❌ Unique (and strange) syntax</p>
 					<p class="fragment">❌ It is easy to follow wrong practices</p>
-					<p class="fragment roll-in">✔️ Linux commands knowledge required</p>
+					<p class="fragment roll-in">✔️❌ Linux commands knowledge required</p>
 					<p class="fragment">❌ Time consuming write a (complex) script finished</p>
 				</section>
 
 				<section>
 					<h1 style="margin: 0;">Amber Lang</h1>
 					<img src="https://amber-lang.com/amber-logo.svg" style="max-height: 500px;"/><br>
-					<a href="https://github.com/CodeAtCode/WPDB-Status">https://amber-lang.com/</a>
+					<a href="https://amber-lang.com">https://amber-lang.com/</a>
 				</section>
 
 				<section>
@@ -137,8 +137,9 @@ echo example(1) failed {
 				</section>
 
 				<section>
-					<h3>Real Amber Script</h3>
+					<h3>Real Amber Script (example)</h3>
 					<pre><code class="bash" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
+#!/usr/bin/env amber
 import { split, contains } from "std/text"
 import { * } from "std/fs"
 let path = "/tmp/amber-sc-tests"
@@ -207,21 +208,23 @@ fun download_to_bin(download_url, binary, packed_file) {
 					<ul>
 						<li>Integrates (if found): shfmt (shell formatter), bshchk (runtime Bash dependency checker)</li>
 						<li>Bash (generated) more readable</li>
-						<li>Syntax easily to remember</li>
+						<li>Syntax easier to remember</li>
 						<li>Standard Library + Builtins (with internal automated tests)</li>
 						<li>ShellCheck code valid (in progress)</li>
-						<li>Written in Rust (with stdlib in pure Amber)</li>
+						<li>Written in Rust (with Standard library in pure Amber)</li>
+						<li>Editor support for VS code, Zed and Vim (initial)</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Roadmap</h2>
 					<ul>
-						<li>More StdLib & Builtins</li>
+						<li>More Standard library & Builtins</li>
 						<li>More readable and optimized Bash code</li>
 						<li>Improve the syntax for more features</li>
 						<li>ShellCheck code valid (in progress)</li>
 						<li>Define the Bash version to support in the generated code</li>
+						<li>LSP server</li>
 					</ul>
 				</section>
 
