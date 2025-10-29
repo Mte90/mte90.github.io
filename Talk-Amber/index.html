@@ -83,32 +83,34 @@
 					<div style="float: left;width: 50%;">
 					<h3>Bash</h3>
 					<pre><code class="bash" style="max-height:100%" data-trim>
-example() {
-  local value=$1
-  if [ 1 -gt 0 ]; then
-    __array_0=(${value} ${value})
-    local numbers=("${__array_0[@]}")
-    local sum=0
-    for i in "${numbers[@]}"; do
-      sum=$(${sum} + ${numbers[${i}]})
-    done
-    echo "it's ""me"
-    returnvalue=${sum}
-    return 0
-  fi
-  return 1
+example__0_v0() {
+    local value=$1
+    if [ "$(( 1 > 0 ))" != 0 ]; then
+        numbers_0=("${value}" "${value}")
+        sum_1=0
+        for i_2 in "${numbers_0[@]}"; do
+            sum_1="$(( ${sum_1} + ${numbers_0[${i_2}]} ))"
+        done
+        echo "it's ""me"
+        ret_example0_v0="${sum_1}"
+        return 0
+    fi
+    ret_example0_v0=''
+    return 1
 }
-example 1
-if [ $? != 0 ]; then
+example__0_v0 1
+__status=$?
+if [ "${__status}" != 0 ]; then
     echo "What???"
-else
-    echo $returnvalue
 fi
+ret_example0_v0__14_6="${ret_example0_v0}"
+echo "${ret_example0_v0__14_6}"
 					</code></pre>
 					</div>
 					<div style="float: right;width: 50%;">
 					<h3>Amber</h3>
 					<pre><code class="amber" data-trim>
+import * from "std/env"
 fun example(value:Num = 1) {
     if 1 > 0 {
         let numbers = [value, value]
@@ -123,6 +125,7 @@ fun example(value:Num = 1) {
 }
 echo example(1) failed {
     echo "What???"
+    is_command("echo")
 }
 					</code></pre>
 					</div>
