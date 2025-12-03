@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PicoCode – AI self-hosted Local Codebase Assistant (RAG)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/codeat.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/github.css">
+	</head>
+
+	<body>
+		<div class="barra"><div class="titolo"></div><div class="logo"></div></div>
+		<div class="barra bottom"><div class="titolo">Daniele Scasciafratte</div><div class="hashtag"></div></div>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>PicoCode</h1>
+					<h3>AI self-hosted Local Codebase Assistant (RAG)</h3>
+					<p>
+						<small><a href="http://mte90.net">Daniele Scasciafratte</a> / <a href="http://twitter.com/mte90net">@Mte90Net</a></small>
+					</p>
+				</section>
+
+				<section data-transition="slide" data-background="pictures/hello.gif">
+					<div class="background">
+						<h2 class="white-black-shadow">Daniele Scasciafratte</h2>
+						<ul class="white-black-shadow">
+							<li>Co Founder/CTO Codeat</li>
+							<li>Open Source Addicted</li>
+							<li>Mozillian & Mozilla TechSpeaker/Reps (former)</li>
+							<li>WordPress Core Contributor (former)</li>
+							<li>Italian Linux Society council member</li>
+							<li>Amber Lang Co-Maintainer</li>
+							<li>Book Author: <i>"Contribute to Open Source: the right way"</i></li>
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<img src="pictures/0.png" />
+				</section>
+
+				<section>
+					<img src="pictures/1.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/2.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/3.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/4.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/5.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/6.gif" />
+				</section>
+
+				<section>
+					<img src="pictures/7.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/8.webp" />
+				</section>
+
+				<section>
+					<img src="pictures/9.webp" />
+				</section>
+
+				<section>
+					<h2>PicoCode</h2>
+					<p class="fragment">Minimal web UI</p>
+					<p class="fragment">PyCharm/IDE integration</p>
+					<p class="fragment">Per-project databases with SQLite</p>
+					<p class="fragment">Stores vector embeddings in SQLite (<i>sqlite-vector</i>) for fast semantic search</p>
+					<p class="fragment">Indexes files and computes embeddings (OpenAI-compatible endpoint, ex: Regolo.AI)</p>
+					<p class="fragment">Asynchronous analysis</p>
+					<p class="fragment">Production deployment needs health check configuration</p>
+					<p class="fragment">File system watcher, caching, logging and rate limiter</p>
+				</section>
+
+				<section>
+					<img src="pictures/web.png" />
+				</section>
+
+				<section>
+					<img src="pictures/pycharm.png" />
+				</section>
+
+				<section>
+					<h1>Demo Time!</h1>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://github.com/CodeAtCode/PicoCode">github.com/CodeAtCode/PicoCode</a><br>
+						- <a href="https://daniele.tech/2025/11/picocode-ai-self-hosted-local-codebase-assistant-rag/">Blog post</a><br>
+						- <a href="https://github.com/copilot/tasks/pull/PR_kwDOQHCdjM6zbS7u?session_id=066c16ab-7325-4d0c-bcad-e0b0c855bf18">CoPilot example</a><br>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			function amber(hljs) {
+				const interpolation = {
+					className: 'interp',
+					begin: /\{/,
+					end: /}/,
+					contains: []
+				}
+				const string = {
+					scope: 'string',
+					begin: '"',
+					end: '"',
+					contains: [
+						hljs.BACKSLASH_ESCAPE,
+						interpolation
+					]
+				}
+				const command = {
+					scope: 'command',
+					begin: /\$/,
+					end: /\$/,
+					contains: [
+						hljs.BACKSLASH_ESCAPE,
+						interpolation
+					]
+				}
+				const operator = {
+					scope: 'operator',
+					match: /[-+*/%<>=!&|?]/
+				}
+				const keywords = {
+					scope: 'keyword',
+					match: /\b(ref|to|error|status|if|echo|loop|in|silent|return|fun|else|break|continue|and|or|not|let|sh|main|failed|fail|trust|then|pub|import|from|as|nameof|is)\b/
+				}
+				const type = {
+					scope: 'type',
+					match: /[A-Z][a-zA-Z0-9_]+/
+				}
+				const fun = {
+					scope: 'function',
+					match: /\b([a-zA-Z0-9_]+)\b(?=\()/
+				}
+				const variable = {
+					scope: 'variable',
+					match: /[a-zA-Z0-9_]+/
+				}
+				const range = {
+					scope: 'number',
+					match: /\.?\.\=?/
+				}
+				const constant = {
+					scope: 'number',
+					match: /\b(false|true|null)\b/
+				}
+				const compilerFlag = {
+					scope: 'comment',
+					match: /\#\[.*\]/
+				}
+				const all = [
+					hljs.C_LINE_COMMENT_MODE,
+					hljs.C_BLOCK_COMMENT_MODE,
+					hljs.C_BLOCK_COMMENT_MODE,
+					hljs.C_NUMBER_MODE,
+					string,
+					range,
+					command,
+					operator,
+					constant,
+					keywords,
+					compilerFlag,
+					type,
+					fun,
+					variable
+				]
+				interpolation.contains = all.concat([{
+					begin: /\{/,
+					end: /\}/,
+					contains: [
+						'self'
+					].concat(all)
+				}]);
+				return ({
+					case_insensitive: false,
+					contains: all
+				});
+			}
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				touch: true,
+				overview: false,
+				transition: 'zoom',
+				highlight: {
+					beforeHighlight: (hljs) => hljs.registerLanguage("amber", amber)
+				},
+				plugins: [RevealMarkdown, RevealHighlight]
+			});
+
+			document.querySelector('.titolo').textContent = document.title;
+		</script>
+	</body>
+</html>
