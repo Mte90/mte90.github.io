@@ -171,26 +171,26 @@ import { is_root } from "std/env"
 import { contains } from "std/text"
 
 if not is_root() {
-    echo "This script requires root permissions!"
+    echo("This script requires root permissions!")
     exit(1)
 }
 
 [..]
 
 fun download_to_bin(download_url, binary, packed_file) {
-    if silent download(download_url, packed_file) {
+    if silent file_download(download_url, packed_file)? {
         trust {
-            if contains("tar.gz", packed_file) {
+            if text_contains(packed_file, "tar.gz") {
                 $tar -zxvf "./{packed_file}" -C ./ > /dev/null 2>&1$
-                trust mv "./{binary}" "/usr/local/bin"
+                trust mv("./{binary}", "/usr/local/bin")
             } else {
-                $gunzip -c - > "/usr/local/bin/{binary}"$
+                $gunzip -c "{packed_file}" > "/usr/local/bin/{binary}"$
             }
             $rm "./{packed_file}"$
         }
-        make_executable("/usr/local/bin/{binary}")
+        file_chmod("/usr/local/bin/{binary}", "+x")?
     } else {
-        echo "Download for {binary} at {download_url} failed"
+        echo("Download for {binary} at {download_url} failed")
         exit(1)
     }
 }
@@ -202,24 +202,24 @@ fun download_to_bin(download_url, binary, packed_file) {
 					<h2>Features</h2>
 					<ul>
 						<li>Integrates (if found): bshchk (runtime Bash dependency checker)</li>
-						<li class="fragment">Support for different Bash version</li>
+						<li class="fragment">Support for Bash 3.2-5.3</li>
 						<li class="fragment">Syntax easier to remember</li>
 						<li class="fragment">Type: Integer, Float, Text, Array, Boolean etc</li>
-						<li class="fragment">Standard Library + Builtins (with internal automated tests)</li>
-						<li class="fragment">ShellCheck code valid (in progress)</li>
-						<li class="fragment">Written in Rust (with standard library in pure Amber)</li>
+						<li class="fragment">Written in Rust</li>
+						<li class="fragment">Standard Library (Amber) + Builtins (with internal automated tests)</li>
 						<li class="fragment">Editor support with plugin for VS Code, Zed and Vim</li>
-						<li class="fragment">Amber LSP with treesitter available</li>
+						<li class="fragment">Amber LSP with TreeSitter available</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Roadmap</h2>
 					<ul>
-						<li>More standard library & Builtins</li>
+						<li>More standard library function & Builtins</li>
 						<li>More readable and optimized Bash code</li>
 						<li>Improve the syntax for more features</li>
-						<li>ShellCheck code valid (in progress)</li>
+						<li>ShellCheck code <b>100%</b> (not yet)</li>
+						<li>OOP support, with commands library</li>
 					</ul>
 				</section>
 
