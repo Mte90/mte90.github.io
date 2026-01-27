@@ -36,9 +36,8 @@
 							<li>Open Source Addicted</li>
 							<li>Mozillian & Mozilla TechSpeaker/Reps (former)</li>
 							<li>WordPress Core Contributor (former)</li>
-							<li>Podcast 🇮🇹 Daniele.tech - Opinioni in open source</li>
 							<li>Italian Linux Society council member</li>
-							<li>Amber Lang Co-Maintainer</li>
+							<li><i>Amber Lang Co-Maintainer</i></li>
 							<li>Book Author: <i>"Contribute to Open Source: the right way"</i></li>
 						</ul>
 					</div>
@@ -70,7 +69,7 @@
 				<section>
 					<h1 style="margin: 0;">Amber Lang</h1>
 					<img src="https://amber-lang.com/amber-logo.svg" style="max-height: 500px;"/><br>
-					<a href="https://amber-lang.com">https://amber-lang.com/</a>
+					<a href="https://amber-lang.com">amber-lang.com</a>
 				</section>
 
 				<section>
@@ -81,35 +80,8 @@
 
 				<section>
 					<div style="float: left;width: 50%;">
-					<h3>Bash</h3>
-					<pre><code class="bash" style="max-height:100%" data-trim>
-example__0_v0() {
-    local value=$1
-    if [ "$(( 1 > 0 ))" != 0 ]; then
-        numbers_0=("${value}" "${value}")
-        sum_1=0
-        for i_2 in "${numbers_0[@]}"; do
-            sum_1="$(( ${sum_1} + ${numbers_0[${i_2}]} ))"
-        done
-        echo "it's ""me"
-        ret_example0_v0="${sum_1}"
-        return 0
-    fi
-    ret_example0_v0=''
-    return 1
-}
-example__0_v0 1
-__status=$?
-if [ "${__status}" != 0 ]; then
-    echo "What???"
-fi
-ret_example0_v0__14_6="${ret_example0_v0}"
-echo "${ret_example0_v0__14_6}"
-					</code></pre>
-					</div>
-					<div style="float: right;width: 50%;">
 					<h3>Amber</h3>
-					<pre><code class="amber" data-trim>
+					<pre style="width: 98%;"><code class="amber" data-trim>
 import * from "std/env"
 fun example(value:Num = 1) {
     if 1 > 0 {
@@ -128,6 +100,35 @@ echo example(1) failed {
     is_command("echo")
 }
 					</code></pre>
+
+					</div>
+					<div style="float: right;width: 50%;">
+					<h3>Bash</h3>
+					<pre style="width: 98%;"><code class="bash" style="max-height:100%" data-trim>
+example__0_v0() {
+    local value=$1
+    if [ "$(( 1 > 0 ))" != 0 ]; then
+        numbers_0=("${value}" "${value}")
+        sum_1=0
+        for i_2 in "${numbers_0[@]}"; do
+            sum_1="$(( ${sum_1} + \
+				${numbers_0[${i_2}]} ))"
+        done
+        echo "it's ""me"
+        ret_example0_v0="${sum_1}"
+        return 0
+    fi
+    ret_example0_v0=''
+    return 1
+}
+example__0_v0 1
+__status=$?
+if [ "${__status}" != 0 ]; then
+    echo "What???"
+fi
+ret_example0_v0__14_6="${ret_example0_v0}"
+echo "${ret_example0_v0__14_6}"
+					</code></pre>
 					</div>
 				</section>
 
@@ -135,31 +136,41 @@ echo example(1) failed {
 					<h3>Real Amber Script (example)</h3>
 					<pre><code class="amber" style="font-size: 16px;line-height: 18px;max-height:100%" data-trim>
 #!/usr/bin/env amber
-import { split, contains } from "std/text"
-import { * } from "std/fs"
+import { split, text_contains } from "std/text"
+import { file_write, file_append, dir_exists, file_exists, dir_create } from "std/fs"
 let path = "/tmp/amber-sc-tests"
-if (not dir_exist(path)) {
-    create_dir(path)
+if (not dir_exists(path)) {
+    dir_create(path) failed {
+        echo "Failed to create directory {path}"
+        exit 1
+    }
 }
+trust $ cp -r "src/tests/stdlib/" {path} $
 let report = "{path}/report.txt"
-trust file_write(report, "Report for Shellcheck")
+file_write(report, "Report for Shellcheck") failed {
+    echo "Failed to write report file"
+    exit 1
+}
 let output = ""
-let stdtests = trust $/usr/bin/ls "src/tests/stdlib/"$
+let stdtests = trust $ /usr/bin/ls "src/tests/stdlib/" $
 let stdlib = split(stdtests, "\n")
-loop v in stdlib {
-    if (not contains(v, ".txt") and file_exist("src/tests/stdlib/{v}")) {
+let output = ""
+for v in stdlib {
+    if not text_contains(v, ".txt") and file_exists("src/tests/stdlib/{v}") {
         echo "Generating Bash script for test {v}"
-        trust {
-            trust $amber "src/tests/stdlib/{v}" "{path}/{v}.sh"$
-            output = trust $shellcheck "{path}/{v}.sh"$
-        }
-        if (status != 0) {
-            echo "Shellcheck found something!"
-            trust file_append(report, output)
+        trust $ ./target/debug/amber build "src/tests/stdlib/{v}" "{path}/{v}.sh" $
+        output = $ shellcheck "{path}/{v}.sh" $ exited(code) {
+            if code != 0 {
+                echo "Shellcheck found something!"
+                file_append(report, "\n--- Issues in {v} ---\n{output}") failed {
+                    echo "Failed to append to report"
+                }
+            }
         }
     }
 }
 					</code></pre>
+					<small><a href="https://docs.amber-lang.com/by_example/sh_tester">https://docs.amber-lang.com/by_example/sh_tester</a></small>
 				</section>
 
 				<section>
@@ -202,11 +213,11 @@ fun download_to_bin(download_url, binary, packed_file) {
 					<h2>Features</h2>
 					<ul>
 						<li>Integrates (if found): bshchk (runtime Bash dependency checker)</li>
-						<li class="fragment">Support for Bash 3.2-5.3</li>
+						<li >Support for Bash 3.2-5.3 (Soon Zsh too!)</li>
 						<li class="fragment">Syntax easier to remember</li>
 						<li class="fragment">Type: Integer, Float, Text, Array, Boolean etc</li>
-						<li class="fragment">Written in Rust</li>
 						<li class="fragment">Standard Library (Amber) + Builtins (with internal automated tests)</li>
+						<li class="fragment">Written in Rust</li>
 						<li class="fragment">Editor support with plugin for VS Code, Zed and Vim</li>
 						<li class="fragment">Amber LSP with TreeSitter available</li>
 					</ul>
